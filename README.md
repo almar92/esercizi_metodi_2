@@ -18,5 +18,5 @@ Detto in parole povere, ste dispense sono l'equivalente di un mixtape, e a parte
 
 ## Contatti 
 
-Qualora eventuali futuri ~~masochisti~~ utenti volessero contribuire a quest'accrocco mi si può raggiunere all'indirizzo \textbf{marcelli.alessandro.92@gmail.com}
+Qualora eventuali futuri ~~masochisti~~ utenti volessero contribuire a quest'accrocco mi si può raggiunere all'indirizzo `marcelli.alessandro.92@gmail.com`
 
