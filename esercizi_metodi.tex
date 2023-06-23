@@ -1,0 +1,125 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper, portrait, margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{bbold}
+\usepackage{titlepic}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{soul}
+\usepackage{hyperref}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setcounter{MaxMatrixCols}{20}
+
+\newcommand{\limit}[2]{\underset{#1 \rightarrow #2}{\lim} \,}
+\newcommand{\arrowlim}[2]{\overset{#1 \rightarrow #2}{\longrightarrow}}
+\newcommand{\arrowlimtwo}[4]{\overset{\scriptsize{\begin{array}{cc}
+				#1 {}&\rightarrow #2\\
+				#3 &\rightarrow #4
+		\end{array}}
+	}{\longrightarrow}}
+
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\Four}{\mathcal{F}}
+\newcommand{\TdZ}{\mathcal{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\nextpassage}{\nonumber \\ &\downarrow \nonumber \\}
+\newcommand{\firstpassage}{ \\ &\downarrow \nonumber \\}
+\newcommand{\spacer}{\quad ; \quad}
+\newcommand{\except}[1]{\backslash \{ #1 \} }
+\newcommand{\taleche}{\; : \;}
+\newcommand{\bolditem}[1]{\item \textbf{#1}}
+\newcommand{\separator}{\nonumber \\ 
+	\nonumber \\}
+\newcommand{\double}[2]{\left\{ \begin{array}{cc}
+		#1\\
+		#2
+	\end{array}
+	\right.
+}
+\newcommand{\triple}[3]{\left\{ \begin{array}{ccc}
+		#1\\
+		#2\\
+		#3
+	\end{array}
+	\right.
+}	
+\newcommand{\quadruple}[4]{\left\{ \begin{array}{ccc}
+		#1\\
+		#2\\
+		#3\\
+		#4
+	\end{array}
+	\right.
+}	
+
+\newcommand{\nosgn}{\;\;\,}
+
+\newcommand{\quadvec}[4]{\left( \begin{array}{ccc}
+		#1\\
+		#2\\
+		#3\\
+		#4
+	\end{array}
+	\right)
+}
+
+\newcommand{\dubvec}[2]{\left( \begin{array}{ccc}
+		#1\\
+		#2
+	\end{array}
+	\right)
+}
+
+
+\begin{document}
+
+\author{Alessandro Marcelli}
+\title{\centering
+	Raccolta di esercizi e spunti di teoria per il corso di\newline
+	Metodi e Modelli Matematici per la Fisica 2,\newline
+	svolti da Davide Bufalini, Paolo Proia e Adriano Chialastri}
+\date{2023}
+
+\frontmatter
+
+\vspace*{\fill}
+\begin{center}
+	 \scalebox{1.75}{Esercizi svolti da gente brava e spunti di teoria}\\
+	 \scalebox{1.75}{per la prova scritta del corso di}\\
+	\scalebox{1.75}{Metodi e Modelli Matematici per la Fisica 2}\\[0.5cm]
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\textwidth]{./turtwig.jpg}
+	\end{figure}
+	\scalebox{1.25}{a cura di}\\
+	\scalebox{1.25}{ }\\
+	\scalebox{1.5}{Alessandro Marcelli}\\
+	\scalebox{1.25}{ }\\
+	\scalebox{1.25}{2023}
+\end{center}
+\vspace{\fill}
+
+\tableofcontents
+\include{./TeX_files/introduzione}
+
+
+\mainmatter
+\include{./TeX_files/chapter01}
+\include{./TeX_files/chapter02}
+\include{./TeX_files/chapter03}
+
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}

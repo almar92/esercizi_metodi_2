@@ -1,0 +1,264 @@
+\chapter{Equazioni Differenziali}
+
+\section{Equazioni Differenziali Reali (Adriano Chialastri)}
+
+\subsection{Esempio svolto 1: Problema di Cauchy}
+Risolvere il seguente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+\end{align}
+Iniziamo passando in \textbf{forma canonica}
+\begin{align}
+	&y(x) = A(x)v(x)	\firstpassage
+	&x^2 (\ddot{A}(x)v(x) + 2\dot{A}(x)\dot{v}(x) + A \ddot{v}(x)) - 2x (\dot{A}(x)v(x) + A \dot{v}(x)) + 2A(x)v(x) = -x \nextpassage
+	&Ax^2 \ddot{v}(x) + 2(\dot{A}(x) x^2 - A(x)x) \dot{v}(x) + (\ddot{A}(x) x^2 - 2x\dot{A}(x) +2A)v(x) = -x	
+\end{align}
+Per poter fare il passaggio dobbiamo imporre che
+\begin{align}
+	&\dot{A}(x) x^2 - A(x)x = 0 \firstpassage
+	&\dot{A}(x) x = A(x) \nextpassage
+	&A(x) = x  
+\end{align}
+Da cui otteniamo che
+\begin{align}
+	&x^3 \ddot{v}(x) + (-\cancel{2x} +\cancel{2x})v(x) = -x	\firstpassage
+	&\ddot{v}(x) = -\frac{1}{x^2} \spacer y(x) = x v(x)
+\end{align}
+Il nostro problema di Cauchy in forma canonica è quindi
+\begin{align}
+	\triple{\ddot{v}(x) = -\frac{1}{x^2}}{\dot{v}(1)=0}{v(1)=0}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea}
+\begin{align}
+	&\ddot{v}(x) = 0 \firstpassage
+	&v_{om}(x) = Ax + B  \label{kekwdiff1}\firstpassage
+	&\double{\dot{v}_{om}(1)=A=0}{v_{om}(1)=A+B=0} \to \double{A=0}{B=0} \to \text{l'operatore differenziale è invertibile} 
+\end{align}
+Dalla \ref{kekwdiff1} vediamo come
+\begin{align}
+	&v_{om}(x) = A v_1(x) + B v_2(x) \nextpassage
+	&v_{om_1}(x) = x \spacer v_{om_2}(x) = 1
+\end{align}
+Calcoliamo il Wronskiano dell'equazione
+\begin{align}
+	W(v_1,v_2) = \begin{vmatrix}
+		x && 1 \\
+		1 && 0
+	\end{vmatrix} = -1
+\end{align}
+E andiamo quindi a calcolare la \textbf{Funzione di Green}
+\begin{align}
+	G(x,y) = - \delta (x-y) (y-x) = (x-y) \delta(x-y)
+\end{align}
+Da cui otteniamo
+\begin{align}
+	v(x) &= \int_{1}^x dy \;G(x,y) \left(-\frac{1}{y^2}\right) = \nonumber \\
+		 &= \int_{1}^x dy \; \delta (x-y) (y-x) \cdot \frac{1}{y^2}= \nonumber \\
+		 &= \int_{1}^x dy \; \frac{y-x}{y^2}= \nonumber \\
+		 &= \int_{1}^x dy \; \left(\frac{1}{y} - \frac{x}{y^2}\right)= \nonumber \\
+		 &= \left[ \ln(y) + \frac{x}{y} \right]_1^x = \ln(x) +1 -x \nextpassage
+	y(x) &= xv(x) = x\ln(x) - x^2 +x
+\end{align}
+Verifichiamo la validità della soluzione
+\begin{align}
+	&\dot{y}(x) = 2 - 2x + \ln(x)\\
+	&\ddot{y}(x) = -2 + \frac{1}{x} \firstpassage
+	&\double{\dot{y}(1) = 0}{y(1) = 0} \to \double{0 -\cancel{1} +\cancel{1} =0}{\cancel{2}-\cancel{2} + 0 =0}\\
+	&x^2 \ddot{y} - 2x \dot{y} + 2y = -x \firstpassage
+	&x^2 \left( -2 + \frac{1}{x} \right) -2x \left( 2 - 2x + \ln(x) \right) + 2 \left( x\ln(x) - x^2 +x \right) = -x \nextpassage
+	& -\cancel{2x^2} + x - 4x + \cancel{4x^2} - 2x\ln(x) + 2x\ln(x) -\cancel{2x^2} +2x = -x \nextpassage
+	& + x - 4x - \cancel{2x\ln(x)} + \cancel{2x\ln(x)} +2x = -x \nextpassage
+	& -x = -x
+\end{align}
+E quindi l'esercizio è verificato.
+
+\newpage
+
+\subsection{Esempio svolto 2: Omogenea di Eulero}
+Riprendiamo il precedente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+\end{align}
+Partiamo dall'\textbf{omogenea}
+\begin{align}
+	&x^2 \ddot{y} - 2x\dot{y} + 2y = 0 \firstpassage
+	&\ddot{y} - \frac{2}{x}\dot{y} + \frac{2}{x^2}y = 0
+\end{align}
+L'omogena scritta in questa forma risulta essre un'\textbf{equazione di Eulero}. Per risolverla poniamo quindi l'\textbf{Ansatz} $y=x^\alpha$ dove otteniamo
+\begin{align}
+	&\alpha(\alpha -1) x^{\alpha-2} - 2 \alpha x^{\alpha-2} + 2x^{\alpha-2} = 0 \firstpassage
+	&\alpha^2 - \alpha - 2\alpha +2 =0 \nextpassage
+	&\alpha^2 - 3\alpha +2 =0 \nextpassage
+	&\alpha_{1,2} = \frac{3 \pm \sqrt{9-8}}{2} = \frac{3\pm 1}{2} = \double{2}{1} \nextpassage
+	&y_{{om}_1}(x) = x \spacer y_{{om}_2}(x) = x^2 \nextpassage
+	&y_{om}(x) = Ax + Bx^2   
+\end{align}
+Andiamo ora a cercare una \textbf{soluzione particolare} col \textbf{metodo delle costanti}. Poniamo
+\begin{align}
+	&y_p(x) = A(x)x + B(x)x^2 \firstpassage
+	&\dot{y_p}(x)  = \dot{A}(x)x+ A(x) + \dot{B}(x) x^2 + 2B(x)x\\
+	&\ddot{y_p}(x) = \ddot{A}(x)x+ 2\dot{A}(x) + \ddot{B}(x) x^2 + 4\dot{B}(x)x + 2B  \firstpassage
+	&x^2 (\ddot{A}(x)x+ 2\dot{A}(x) + \ddot{B}(x) x^2 + 4\dot{B}(x)x + 2B) -2 (\dot{A}(x)x+ A(x) + \dot{B}(x) x^2 + 2B(x)x) + \nonumber \\
+	&+2(A(x)x + B(x)x^2) = -x  \nextpassage
+	&\dots \nextpassage
+	&x^3 \ddot{A}(x) + x^4 \ddot{B}(x) + 2x^3 \dot{B}(x) = -x
+\end{align}
+Da cui otteniamo
+\begin{align}
+	&y(x) = y_p(x) + y_{om}(x) = y_p(x) + Ax + Bx^2 \firstpassage
+	&\double{\dot{y}(1) = \dot{y}_p(1) + A + 2B = 0}{y(1) = y_p(1) + A + B=0}
+\end{align}
+
+\newpage
+
+\subsection{Esempio svolto 3: Problema di Sturm-Liouville}
+
+Risolvere il seguente problema di Sturm-Liouville
+\begin{align}
+	\triple{x \ddot{u}(x) + 2 \dot{u}(x) + 4xu(x) = 4}{u \left( \frac{\pi}{4}\right)=0}{u \left( \frac{\pi}{2}\right)=0}
+\end{align}
+Iniziamo passando il problema in \textbf{forma canonica}
+\begin{align}
+	&u(x) = A(x)v(x) \firstpassage
+	&x(\ddot{A}(x)v(x) + 2\dot{A}(x) \dot{v}(x) + A(x) \ddot{v}(x)) + 2(\dot{A}(x)v(x) + A(x) \dot{v}(x)) + 4xA(x)v(x) = 4 \nextpassage
+	&A(x)x \cdot \ddot{v}(x) + 2(\dot{A}(x)x + A(x)) \dot{v}(x) + (x \ddot{A}(x) + 2 \dot{A}(x) + 4xA(x)) v(x) = 4 \nextpassage
+	&\dot{A}(x)x + A(x)=0 \to \ln(A(x)) = -\ln(x) \to A(x)= x^{-1}\nextpassage
+	&\frac{1}{\cancel{x}} \cancel{x}\cdot \ddot{v}(x) + \left( \cancel{\cancel{x} \frac{2}{x^{\cancel{3}^2}}} - \cancel{\frac{2}{x^2}} + 4\cancel{x} \frac{1}{\cancel{x}} \right)v(x) = 4 \nextpassage
+	&\triple{\ddot{v}(x) + 4v(x)= 4}{v \left( \frac{\pi}{4}\right)=0}{v \left( \frac{\pi}{2}\right)=0} \label{kekwdiff2}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea associata} dell'equazione in forma canonica
+\begin{align}
+	&\ddot{v}(x) + 4v(x) = 0 \firstpassage
+	&\text{Ansatz } v(x)= e^{\alpha x} \nextpassage
+	&\alpha^2 e^{\alpha} + 4 e^{\alpha} = 0 \nextpassage
+	&\alpha^2 = -4 \to \alpha_{1,2} = \pm 2i \nextpassage
+	&v_{{om}_1}(x) = e^{21x} \spacer v_{{om}_2}(x) = e^{-2ix} \nextpassage
+	&v_{{om}}(x) = Ae^{2ix} + Be^{-2ix}
+\end{align}
+Dalla \ref{kekwdiff2} ricaviamo il nostro \textbf{operatore differenziale}
+\begin{align}
+	\mathcal{L}_x^c = \frac{d^2}{dx^2} + 4
+\end{align}
+Andiamo ora a verificare se è invertibile o meno, in base alle nostre Boundary Conditions:
+\begin{align}
+	&\double{v_{om}\left( \frac{\pi}{4}\right) =& Ae^{i\frac{\pi}{2}} + Be^{-i\frac{\pi}{2}}=iA-iB = 0}{v_{om}\left( \frac{\pi}{2}\right) =& Ae^{i\pi} + Be^{-i\pi} =-A -B = 0} \to \double{A-B=0}{A+B=0} \to \double{A=0}{B=0}\firstpassage
+	&\mathcal{L}_x^c v=0 \leftrightarrow v=0 \quad \to \text{L'operatore è invertibile}
+\end{align}
+Andiamo ora a trovare due soluzioni dell'omogenea che soddisfino le BC
+\begin{align}
+	&v_A(x) \left( \frac{\pi}{4}\right) =0 \to iA - iB = 0 \to A=B \to v_A(x) = A(e^{2ix} + e^{-2ix}) \\
+	&v_B(x) \left( \frac{\pi}{2}\right) =0 \to A+b = \to A=-B \to v_B(x) = A(e^{2ix} - e^{-2ix})
+\end{align}
+Siccome non abbiamo condizioni su A, la scegliamo comoda a seconda del caso, possiamo quindi scrivere
+\begin{align}
+	&v_A(x) = \frac{1}{2}(e^{2ix} + e^{-2ix}) = \cos(2x) \\
+	&v_B(x) = \frac{1}{2i}(e^{2ix} - e^{-2ix}) = \sin(2x)\firstpassage
+	& v_{om}(x) = \tilde{A} \cos(2x) + \tilde{B} \sin(2x) 
+\end{align}
+
+Andiamo ora a calcolare le \textbf{soluzioni fondamentali dell'equazione}
+\begin{align}
+	&W(v_A,v_B) = \begin{vmatrix}
+		\cos(2x) && \sin(2x)\\
+		-2\cos(2x) && 2 \cos(2x)
+	\end{vmatrix} = \dots = 2\\
+	&\tilde{G}(x,y) = \tilde{A} \cos(2x) + \tilde{B} \sin(2x) + \frac{\delta (x-y)}{2} \left[ \cos(2y) \sin(2x) - \cos(2x) \sin(2y) \right]\\
+	&\mathcal{L}_x^c \tilde{G}(x,y) = \delta (x-y)
+\end{align}
+
+Per questo problema di SL, la \textbf{funzione di Green} sarà quindi data da
+\begin{align}
+	G(x,y) = \double{\frac{\cos(2x) \sin(2y)}{2} \quad x<y}{\frac{\cos(2y) \sin(2x)}{2} \quad x>y}
+\end{align}
+Da cui otteniamo
+\begin{align}
+	v(x) &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} dy \; G(x,y) \cdot 4 = \nonumber \\
+	&= 2\int_{\frac{\pi}{4}}^{x} dy \;\cos(2x) \sin(2y)+ 2\int_{x}^{\frac{\pi}{2}} dy \; \cos(2y) \sin(2x) = ... = \nonumber\\
+	&=1 - \sin(2x) + \cos(2x) \firstpassage
+	u(x) &= \frac{v(x)}{x} = \frac{1 - \sin(2x) + \cos(2x)}{x}
+\end{align}
+
+\bigskip
+
+VERIFICA DA COPIARE QUANDO SONO MENO ABBOTTATO (pag 7 del pdf)
+
+\newpage
+
+\subsection{Esempio svolto 3: Problema di Cauchy non lineare}
+Risolvere il seguente \textbf{problema di Cauchy}
+\begin{align}
+	\triple{x^2 \ddot{f}(x) + 3x \dot{f}(x) + f(x) = 0}{\dot{f}(1)=0}{f(1) =1}
+\end{align}
+Affinché l'operatore sia lineare dobbiamo avere BC omogenee, che non è il nostro caso. Dobbiamo quindi \textbf{linearizzare} il problema. Andiamo a definire
+\begin{align}
+	&u(x) = f(x) + mx + q\firstpassage
+	&\dot{u}(x) = \dot{f}(x) + m
+\end{align}	
+Da cui otteniamo, imponendo che siamo omogenee le BC di $u(x)$
+\begin{align}
+	&\double{\dot{u}(1) =& \dot{f}(1) + m =0}{u(1) =& f(1) + m + q=0} \to \double{0 + m=0 }{1 + m + q=0} \to \double{m=& 0}{q=& -1} \firstpassage
+	&u(x) = f(x) -1 \quad \leftrightarrow \quad f(x) = u(x)+1
+\end{align}	
+Il nostro problema diventa quindi
+\begin{align}
+	\triple{x^2 \ddot{u}(x) + 3x \dot{u}(x) + u(x) = -1}{\dot{u}(1)=0}{u(1) = 0}
+\end{align}
+Riscriviamo il problema in \textbf{forma canonica}
+\begin{align}
+	&u(x) = A(x)v(x)\firstpassage
+	&\dot{u}(x) = \dot{A}(x) v(x) + A(x) \dot{v}(x)\nextpassage
+	&\ddot{u}(x) = \ddot{A}(x) v(x) + 2\dot{A}(x) \dot{v}(x) + A(x) \ddot{v}(x)\nextpassage
+	&[A(x) x^2] \ddot{v}(x) + [2\dot{A}(x) x^2 + 3A(x)x ]\dot{v}(x) + [\ddot{A}(x)x^2 + 3\dot{A}(x)x + A(x)]v(x) = -1 \nextpassage
+	&2\dot{A}(x) x^2 + 3A(x)x=0 \to \dot{A}(x) = -\frac{3}{2}x^{-1}A(x) \to \ln(A(x)) = -\frac{3}{2} \ln(x)  \to A(x)= x^{-\frac{3}{2}} \nextpassage
+	&\dot{A}(x) = -\frac{3}{2}x^{-\frac{5}{2}} \spacer \dot{A}(x) = -\frac{15}{2}x^{-\frac{7}{2}} \nextpassage
+	&[x^{-\frac{3}{2}} x^2] \ddot{v}(x) + \left[x^2\left( \frac{15}{4}x^{-\frac{7}{2}} \right) + 3x \left( -\frac{3}{2} x^{-\frac{5}{2}} \right) + x^{-\frac{3}{2}} \right] v(x) = -1 \nextpassage
+	&[x^{-\frac{3}{2}} x^2] \ddot{v}(x) + \left[\frac{15}{4} -\frac{9}{2} +1 \right] x^{-\frac{3}{2}} v(x) = -1 \nextpassage
+	&x^{\frac{1}{2}} \ddot{v}(x) + \frac{1}{4}x^{-\frac{3}{2}} v(x) = -1 \nextpassage
+	&\triple{\ddot{v}(x) + \frac{1}{4x^2} \dot{v}(x)  = -x ^{-\frac{1}{2}}}{\dot{v}(1)=0}{v(1) = 0}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea associata} dell'equazione in forma canonica
+\begin{align}
+	\ddot{v}(x) + \frac{1}{4x^2} \dot{v}(x)  = 0
+\end{align}
+Siccome è un'equazione di Eulero usiamo l'Ansatz $v(x) = x^\alpha$ e otteniamo
+\begin{align}
+	&\alpha(\alpha-1) + \frac{1}{4} = 0 \to \alpha_{1,2} = \frac{1\pm \sqrt{1-1}}{2} = \frac{1}{2} \firstpassage
+	&v_{{om}_1}(x) = x^{\frac{1}{2}} \spacer v_{{om}_2}(x) = x^{\frac{1}{2}} \ln(x) \nextpassage
+	&v_{om}(x) = Ax^{\frac{1}{2}} + Bx^{\frac{1}{2}}\ln(x) = x^{\frac{1}{2}}(A + B\ln(x)) \firstpassage
+	&W(v_1,v_2) = \begin{vmatrix}
+		x^{\frac{1}{2}} && x^{\frac{1}{2}}\ln(x)\\
+		\frac{1}{2} x^{-\frac{1}{2}} && \frac{1}{2} x^{-\frac{1}{2}} \ln(x) + x^{-\frac{1}{2}}
+	\end{vmatrix} = \dots = 1
+\end{align}
+La soluzione generica del PdC sarà data da
+\begin{align}
+	\tilde{G}(x,y) = \alpha v_1(x) + \beta v_2(x) + \delta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] 
+\end{align}
+Siccome siamo in presenza di un PdC, a noi serve la \textbf{funzione di Green avanzata}, e quindi dobbiamo porre $\alpha=\beta=0$
+\begin{align}
+	G(x,y) &= \delta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
+		   &= \delta(x-y)\left[ y^{\frac{1}{2}} x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}}y^{\frac{1}{2}} \ln(y) \right] 
+\end{align}
+Possiamo quindi andare a calcolare la soluzione
+\begin{align}
+	v(x) &= \int_{1}^{x} dy \; G(x,y) \left( -y^{-\frac{1}{2}} \right) + \cancel{BC} = \nonumber\\
+		 &= -\int_{1}^{x} dy \; \delta(x-y)\left[ x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}} \ln(y) \right]= \nonumber\\
+		 &= -x^{\frac{1}{2}}\int_{1}^{x} dy \; \left[ \ln(x) - \ln(y) \right] = \nonumber\\
+		 &= -x^{\frac{1}{2}} \left[\ln(x)\int_{1}^{x} dy + \int_{1}^{x} dy\; \ln(y)\right] = \nonumber\\
+		 &= -x^{\frac{1}{2}} \left[\ln(x)(x-1) - [y(\ln(y) -1)]_1^x \right] = \nonumber\\
+		 &= -x^{\frac{1}{2}} \left[\ln(x)(x-1) - x(\ln(x) -1) -1 \right] = \nonumber\\
+		 &= -x^{\frac{1}{2}} \left[\cancel{x\ln(x)} -\ln(x) - \cancel{x\ln(x)} +x -1 \right] \nonumber\\
+		 &= x^{\frac{1}{2}} \left[1 +\ln(x)-x \right] \firstpassage
+	u(x) &= x^{-\frac{3}{2}} v(x) = \frac{1}{x} \left[1 +\ln(x)-x \right] \firstpassage
+	f(x) &= u(x) + 1 = \frac{1 + \ln(x)}{x}
+\end{align}
+Verifichiamo la bontà della soluzione trovata
+\begin{align}
+	&\dot{f}(x) = -\frac{\ln(x)}{x^2} \spacer \ddot{f}(x) = \frac{2\ln(x) -1}{x^3} \firstpassage
+	&\double{\dot{f}(1) = -\frac{\ln(1)}{1}=0 }{f(1) = \frac{1 + \ln(1)}{1} = 1} \quad \leftarrow \quad \text{le BC sono rispettate}\\
+	&\cancel{x^2}\frac{2\ln(x) -1}{x^{\cancel{3}}} - 3\cancel{x} \frac{\ln(x)}{x^{\cancel{2}}} + \frac{1+\ln(x)}{x} = 0 \to \frac{1}{x}[\cancel{2\ln(x)} -\cancel{3\ln(x)} + \cancel{\ln(x)} -\cancel{1} +\cancel{1}] = 0 \quad \leftarrow \quad \text{ok}
+\end{align}
+\newpage
+\section{Equazioni Differenziali Complesse}
+
+N'aggio fatto in tempo, tanto Bufalini le ha scritte bene su Latex.

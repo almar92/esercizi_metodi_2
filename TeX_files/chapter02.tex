@@ -1,0 +1,1039 @@
+\chapter{Operatori Infinito-Dimensionali}
+
+\section{Spunti di teoria (Alessandro Marcelli)}
+
+\subsection{Nozioni generali sugli spazi}
+
+\subsubsection{Spazi vettoriali}
+
+Si definisce uno \textbf{spazio vettoriale} $V$ come un insieme su un campo $K$ (di solito $\R$ o $\C$) dove sono definite le operazioni di
+\begin{enumerate}
+	\item \textbf{Somma vettoriale}
+	\begin{align}
+		V \times V &\rightarrow V\\
+		(v_1,v_2)&\rightarrow v_1 + v_2
+	\end{align}
+	\item \textbf{Prodotto per uno scalare}
+	\begin{align}
+	K \times V &\rightarrow V\\
+	(\lambda,v)&\rightarrow \lambda v
+\end{align}
+\end{enumerate}
+
+Preso $A$ sottoinsieme di $V$, ne definiamo i \textbf{punti di aderenza} come quei punti tali che, preso un loro intorno, contengono almeno un punto di $A$. \newline
+In particolare, preso un punto di aderenza $z_0$, se nel suo intorno contiene almeno un punto $z_1 \neq z_0$ appartenente ad $A$, allora $z_0$ si dice \textbf{punto di accumulazione}.
+
+Possiamo quindi dividere i punti di aderenza in due categorie
+\begin{enumerate}
+	\item tutti i punti di A
+	\item  i punti di accumulazione esterni ad $A$
+\end{enumerate}
+
+Possiamo ora definire la \textbf{chiusura} $\overline{A}$ come l'insieme dei punti di aderenza di $A$. 
+
+Un insieme $A$ si dice \textbf{denso} in $B$ se $B \subseteq \overline{A}$. In particolare se $\overline{A} = V$ l'insieme $A$ si dice \textbf{ovunque denso}
+
+
+
+\newpage
+\subsubsection{Spazi metrici, normati ed euclidei}
+
+Dato uno spazio  vettoriale V e, presi due elementi dello spazio $x$ e $y$, definita la funzione \textbf{distanza} $d(x,y)$ tale che
+\begin{align}
+	d(x,y) &\geq 0 \spacer d(x,y) = 0 \leftrightarrow x=y\\
+	d(x,y) & = d(y,x)\\
+	d(x,y) &\leq d(x,z) + d(y,z \spacer \forall x,y,z \in M) 
+\end{align}
+
+Si definisce \textbf{Spazio Metrico} la coppia $(V,d)$.
+
+Preso di nuovo lo spazio vettoriale $V$ e presi $v,w\in V$ e $\alpha \in K$ si può definire la \textbf{norma} $||\cdot|| \taleche V \rightarrow \R$ come
+\begin{align}
+	||v|| &\geq 0 \spacer ||v|| = 0 \leftrightarrow v= 0\\
+	||\alpha v || &= |\alpha|\cdot ||v||\\
+	||v + w|| &\leq ||v|| + ||w||
+\end{align}
+
+La coppia $(V, ||\cdot ||)$ si chiama \textbf{spazio normato}. 
+
+
+\textbf{Importante:} tutti gli spazi normati sono anche spazi metrici, con $d(x,y) = ||x-y||$, ma non tutti gli spazi metrici sono normati.
+
+In uno spazio metrico abbiamo che un punto $x_a\in M$ sarà
+\begin{enumerate}
+	\item di \textbf{aderenza} se e solo se $\exists \{x_n\} \in M \taleche \limit{n}{+\infty} x_n = x_a$
+	\item di \textbf{accumulazione} se e solo se $\exists \{x_n\neq x_a\} \in M \taleche \limit{n}{+\infty} x_n = x_a$
+\end{enumerate}
+
+Definiamo ora una \textbf{successione di Cauchy} come tale se
+\begin{align}
+	\forall \epsilon > 0 \; \exists n_\epsilon \taleche d(x_m,x_n) <\epsilon \quad \forall m,n > n_\epsilon
+\end{align}
+Possiamo quindi dire che uno spazio metrico $V$ si dice \textbf{completo} se ogni successione di Cauchy in esso definita è convergente.
+
+
+Uno spazio \textbf{euclideo} è uno spazio normato la cui norma è definita attraverso un \textbf{prodotto scalare}, ovvero un'applicazione $ (\cdot , \cdot) \taleche V \times V \rightarrow \C $ che, $\forall x,y,z \in V$ e $\forall \lambda, \mu \in \C$, soddisfa
+\begin{align}
+	&(x,y) = \overline{(y,x)} \quad &\text{Hermitianità}\\
+	&(x, \lambda y + \mu z) = \lambda(x,y) + \mu (x,z) \quad &\text{Linearità}\\
+	&(x,y) \geq 0 \spacer (x,x) = 0 \leftrightarrow x=0
+\end{align}
+
+Uno spazio euclideo completo si dice \textbf{spazio di Hilbert}.
+
+\subsection{Operatori}
+
+Presi due spazi di Hilbert $H_1$ e $H_2$, definiamo un \textbf{operatore lineare} $A$ come un'applicazione del tipo
+\begin{align}
+	&A \taleche \mathcal{D}_A \subseteq H_1 \rightarrow R_A \subseteq H_2 \\
+	&A(\alpha v + \beta w) = \alpha A(v) + \beta A(w) \spacer \forall v,w \in \mathcal{D}_A \quad \forall \alpha, \beta \in K
+\end{align}
+Un operatore si dice
+\begin{enumerate}
+	\item \textbf{Limitato} se $\exists N\in \R \taleche ||A(x)|| \leq N||x|| \quad \forall x \in \mathcal{D}_A$
+	\item \textbf{Continuo} se $\forall \{ x_n\} \in \mathcal{D}_A \taleche x_n \rightarrow x$ segue che $\limit{n}{infty} A(x_n) = A(x)$
+		\textbf{Nota bene:} un operatore lineare $(A,\mathcal{D}_A)$ è continuo se e solo se è limitato.
+\end{enumerate}
+
+\newpage
+
+Iniziamo definendo il seguente funzionale lineare
+\begin{align}
+	&x \rightarrow \phi_\nu(x)\\
+	&\phi_\mu(x) = (\mu, Ax) \quad \forall x \in \mathcal{D}_A
+\end{align}
+Dato quindi un operatore $A$, si definisce il suo \textbf{aggiunto} $A^\dagger$ come l'operatore per cui, grazie anche al teorema di Riesz
+\begin{align}
+	(\mu, Ax) = (A^\dagger \mu, x)
+\end{align}
+Se $A$ è lineare, limitato e densamente definio ne segue che $||A|| = ||A^\dagger||$.
+
+Un'operatore $A$ si dice \textbf{unitario} quando
+\begin{enumerate}
+	\item è \textbf{Isometrico}, ovvero 
+		\begin{align}
+			&(Ax,Ay) = (x,y) \quad \forall x,y \in \mathcal{D}_A\\
+			&||A|| = 1
+		\end{align}
+	\item il suo range è denso in H
+\end{enumerate} 
+Per gli operatori unitari vale che
+\begin{align}
+	U^\dagger U = \mathbb{1}
+\end{align}
+
+Un operatore si dice \textbf{simmetrico} quando
+\begin{align}
+	(x,Ay) = (Ax,y) \spacer \forall x,y \in \mathcal{D}_A
+\end{align}
+Se un operatore è simmetrico e $\mathcal{D}_A = \mathcal{D}_{A^\dagger}$ allora si dice che è \textbf{autoaggiunto}.
+
+
+\subsubsection{Spettri per operatori Infinito-Dimensionali}
+
+Sia $H$ uno spazio di Hilbert. Dato un \textbf{operatore lineare densamente definito}
+\begin{align}
+	A : \mathcal{D}_A \subseteq H \rightarrow R_A \subseteq H
+\end{align} 
+e definita la famiglia di operatori
+\begin{align}
+	&T_z(A) \taleche \mathcal{D}_A \rightarrow H\\
+	&T_z(A) = z\mathbb{1} - A \spacer z \in \C
+\end{align}
+
+
+Si diche che $z$ appartiene all'\textbf{insieme risolvente} $Res(A)$ dell'operatore $A$ se $T_z (A)$ è \textbf{biunivoco} con \textbf{inverso limitato}.
+
+Tale inverso prende il nome di \textbf{Operatore risolvente} di $A$ e viene definito come
+\begin{align}
+	&R_z(A) \taleche \mathcal{R}_{T_z(A)} \rightarrow H\\
+	&R_z(A) = (z\mathbb{1} - A)^{-1}
+\end{align}
+
+Se invece $z \notin Res(A)$, allora si dice che esso appartiene allo spettro di $A$.
+Rispetto agli operatori finito-dimensionali questo non implica che $z$ sia autovalore di $A$. Ci troviamo quindi a dividere gli elementi dello spettro in tre categorie:
+\begin{enumerate}
+	\item Lo \textbf{spettro puntuale} $\sigma_p(A)$, ovvero l'insieme degli autovalori di $A$, per i quali quindi esiste un $x \neq 0 \taleche Ax = zx$
+	 
+	\item Lo \textbf{spettro residuo} $\sigma_\rho(A)$, ovvero l'insieme degli $z\notin \sigma_p(A)$ per i quali $R_z(A)$ non è densamente definito.
+	
+	\item \textbf{Spettro continuo} $\sigma_c(A)$, ovvero l'insieme degli $z\notin \sigma_p(A) \cup \sigma_\rho (A)$  per i quali $R_z(A)$, per quanto densamente definito, non è limitato.
+\end{enumerate}
+
+\newpage
+
+
+\subsubsection{Operatori integrali}
+
+Si definiscono gli \textbf{operatori integrali} quella famiglia di operatori lineari del tipo
+\begin{align}
+	K \taleche L_2 [a,b] \rightarrow L_2 [a,b] 
+\end{align}
+per i quali l'azione su un vettore $f \in H$ è definita attraverso un \textbf{nucleo integrale} $K(x,t)$ nel seguente modo
+\begin{align}
+	[Kf](x) =  \int_{a}^{b} dy \; K(x,y) f(y)  
+\end{align}
+Definita la \textbf{norma di Hilbert-Schmidt} come
+\begin{align}
+	||K||_{HS} =\int_{a}^{b} dx \; \int_{a}^{b} dy \; |K(x,y)|^2
+\end{align}
+Gli operatori definiti attraverso nuclei per i quali tale norma è finita sono detti \textbf{nuclei di HIlbert-Schmidt} e sono \textbf{limitati}.
+
+Le equazioni di Fredholm sono un noto caso di studio di problemi agli autovalori Per operatori integrali lineari. Si tratta di cercare soluzioni per equazioni del tipo
+\begin{align}
+	&\phi(x) - \lambda \int_{a}^{b} dy \; K(x,y) \phi(y) = f(x) 
+\end{align}
+L'equazione può essere riscritta come
+\begin{align}
+	&(\mathbb{1} - \lambda K)\phi=f \nextpassage
+	&\left(\frac{1}{\lambda}\mathbb{1} - K \right)\phi=\frac{f}{\lambda}
+\end{align}
+Definendo $\mu = \lambda^{-1}$ e $T_\mu = (\mu \mathbb{1} - K)$ otteniamo 
+\begin{align}
+	&\left(\mu\mathbb{1} - K \right)\phi= T_\mu \phi = \tilde{f}
+\end{align}
+La sua omogenea associata è l'equazione agli autovalori per un operatore $K$
+\begin{align}
+	&\left(\mu\mathbb{1} - K \right)\phi= T_\mu \phi = 0
+\end{align}
+I $\lambda_i$ per cui questa equazione ammette soluzioni non triviali vengono detti \textbf{numeri caratteristici} dell'equazione, e sono l'inverso degli autovalori $\mu_i$
+
+\newpage
+
+\subsubsection{Operatori differenziali reali}
+
+Gli operatori differenziali $\mathcal{L}_x^{(n)}$di ordine $n$ sono definiti come
+\begin{align}
+	&\double{\mathcal{L}_x^{(n)} u(x) = f(x)}{\text{Boundary conditions}}\\
+	&\mathcal{L}_x^{(n)} = \sum_{k=0}^{n} a_k(x) \frac{d^k}{dx^k}
+\end{align}
+
+
+I problemi di ricerca di soluzioni particolari si dividono in due famiglie
+\begin{align}
+ 	&\left\{
+ 		\begin{array}{ccc}
+ 			\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+ 			\frac{d^n}{dx^n}u(x_0) &= &u^{(n)}_0\\
+ 			\frac{d^{n-1}}{dx^{n-1}}u(x_0) &= &u^{(n-1)}_0\\
+ 			\vdots\\
+ 			\frac{d}{dx}u(x_0) &= &u'_0\\
+			u(x_0) &= &u_0\\
+ 		\end{array}
+ 	\right. \quad &\text{Problemi di Cauchy}\\
+ 	&\left\{
+		\begin{array}{ccc}
+			\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+			u(x_n) &= &u_n\\
+			u(x_{n-1}) &= &u_{n-1}\\
+			\vdots\\
+			u(x_1) &= &u_1\\
+			u(x_0) &= &u_0\\
+		\end{array}
+		\right. \quad &\text{Problemi di Sturm-Liouvlille}
+\end{align}
+
+La ricerca delle soluzioni può passare attraverso il calcolo del nucleo $G(x,y)$ dell'operatore inverso, denominato \textbf{funzione di Green}, per il quale vale
+\begin{align}
+	\mathcal{L}_x^{(n)} G(x,y) = \delta(x-y)
+\end{align}
+E che quindi si può definire
+\begin{align}
+	G(x,y) = c_1 u_1(x) + c_2 u_2(x) + \theta(x-y) \left[ \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)} \right]
+\end{align}
+Dove al denominatore abbiamo il \textbf{denominatore della matrice di Wronsky}, definito come
+\begin{align}
+	W = \det \begin{pmatrix}
+		u_1^0 && u_2^0\\
+		\dot{u}_1^0 && \dot{u}_2^0
+	\end{pmatrix}
+\end{align}
+Due famiglie importanti di funzioni di Green sono le
+\begin{enumerate}
+	\item \textbf{Funzioni di Green avanzate}, utili nello studio dei problemi di Cauchy
+		\begin{align}
+			G(x,y) \equiv 0 \quad x>y
+		\end{align}
+	\item \textbf{Funzioni di Green ritardate}
+\begin{align}
+	G(x,y) \equiv 0 \quad x<y
+\end{align}
+\end{enumerate}
+
+\newpage
+
+\section{Operatori integrali (Davide Bufalini)}
+
+\subsection{Esempio 1}
+
+Dato l'operatore integrale il cui nucleo in $L^2([0,1]x[0,1])$ è dato da
+\begin{align}
+	k(x,y) = 2xy-4x^2
+\end{align}
+andiamo a
+\begin{enumerate}
+	\item discuterne lo spettro puntuale
+	\item risolvere, al variare di $\lambda \in \C$ e $\alpha \in \R$, l'equazione di Fredholm di 2a specie
+	\begin{align}
+		\phi(x) -\lambda \int_{0}^{1} dy \; k(x,y) \phi(y) = 1 -\alpha x
+	\end{align} 
+\end{enumerate}
+
+Iniziamo dal secondo punto. Possiamo riscrivere l'equazione di Fredholm come
+\begin{align}
+	\phi(x) &= \lambda \int_{0}^{1} dy \; (2xy-4x^2) \phi(y) + 1 -\alpha x = \nonumber\\
+	&= 2\lambda x \int_{0}^{1} dy \; y\phi(y) - 4x^2 \lambda \int_{0}^{1} dy \; \phi(y) + 1 -\alpha x \label{lol}
+\end{align}
+Da cui segue che
+\begin{align}
+	A &= \int_{0}^{1} dy \; \phi(y) \\
+	B &= \int_{0}^{1} dy \; y\phi(y)
+\end{align}
+Sostituendo in queste espressioni la \ref{lol} otteniamo
+\begin{align}
+	A &= \int_{0}^{1} dy \; 2y\lambda B - 4y^2 \lambda A + 1 -\alpha y = \lambda B - \frac{4}{3} A \lambda +1 - \frac{\alpha}{2}\\
+	B &= \int_{0}^{1} dy \; 2y^2\lambda B - 4y^3 \lambda A + y -\alpha y^2 = \frac{2}{3}\lambda B - A \lambda +\frac{1}{2} - \frac{\alpha}{3}
+\end{align}
+Queste equazioni formano il seguente sistema
+\begin{align}
+	\double{A\left(1+\frac{4}{3} \lambda\right) -\lambda B &= 1 -\frac{\alpha}{2}}{\lambda A + \left(1 - \frac{2}{3} \lambda \right)B &= \frac{1}{2} - \frac{\alpha}{3}}
+\end{align}
+La cui matrice è dunque
+\begin{align}
+	M = \begin{pmatrix}
+		1+\frac{4}{3} \lambda && - \lambda \\
+		\lambda && 1-\frac{2}{3} \lambda
+	\end{pmatrix}
+\end{align}
+
+Inziamo studiando l'omogenea, ovvero il caso $\det M=0$
+\begin{align}
+	&\det M = 0 \firstpassage
+	&\left( 1+\frac{4}{3} \lambda \right) \left( 1-\frac{2}{3} \lambda \right) + \lambda^2 =0 \nextpassage
+	& \frac{1}{9} \lambda^2 + \frac{2}{3} \lambda +1 = 0\nextpassage
+	& \left( 1+\frac{1}{3} \lambda \right)^2 = 0 \nextpassage
+	& \lambda_c = -3 \nextpassage
+	&\sigma_p(k) = \left\{ -\frac{1}{3} \right\}
+\end{align}
+
+Passiamo ora al caso non omogeneo. Dobbiamo distinguere due casi
+\begin{enumerate}
+	\item  $\lambda \neq \lambda_c$
+		\begin{align}
+			A &= \frac{1}{\det (M)} \begin{vmatrix} 
+	1 - \frac{\alpha}{2} && -\lambda \\
+	\frac{1}{2} - \frac{\alpha}{3} && 1 - \frac{2}{3}\alpha		
+	\end{vmatrix} = \dots = \frac{1 - \frac{\alpha}{2} - \frac{1}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \\
+	B &= \frac{1}{\det (M)} \begin{vmatrix} 
+	1 + \frac{4}{3}\alpha && 1 - \frac{\alpha}{2} \\
+	\lambda && \frac{1}{2} - \frac{\alpha}{3}		
+	\end{vmatrix} = \dots = \frac{\frac{1}{2} - \frac{\alpha}{3} + \frac{3\alpha -2}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1}	
+	\end{align}
+	Otteniamo quindi
+	\begin{align}
+		\phi(x) = 1 -\alpha x + 2 \left[ \frac{\frac{1}{2} - \frac{\alpha}{3} + \frac{3\alpha -2}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \right] \lambda x - 4 \left[ \frac{1 - \frac{\alpha}{2} - \frac{1}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \right] \lambda x^2
+	\end{align}
+
+	\item  $\lambda = \lambda_c$
+	
+	Prima di procedere dobbiamo trovare $\phi_0^{(+)}$, la soluzione dell'omogenea di $k^\dagger$ che servirà quando imporremo $<\phi_0^{(+)}, \phi> = 0$ tramite la quale potremo ricavare i valori $\alpha$ tali da restituire altre soluzioni. 
+	
+	Andiamo quindi a risolvere l'omogenea per
+	\begin{align}
+		k^\dagger (x,y) = \overline{k(x,y)} \overset{\R}{=} k(y,x) = 2yx - 4y^2
+	\end{align} 
+	Risolvendo Fredholm otteniamo quindi
+	\begin{align}
+		\phi_0^{(+)}(x) &= \lambda \int_{0}^{1} dy \; (2xy-4y^2) \phi_0^{(+)} = \nonumber\\
+		&=  2\lambda x\int_{0}^{1} dy \; y \phi_0^{(+)}(y) -4\lambda \int_{0}^{1} dy \;y^2 \phi_0^{(+)}(y) = \nonumber\\
+		&= 2\lambda x D - 4 \lambda C \spacer \double{C &= \int_{0}^{1} dy \; y \phi_0^{(+)}(y)}{D &= \int_{0}^{1} dy \;y^2 \phi_0^{(+)}(y)} \label{zero}
+	\end{align}
+	la \ref{zero} ci porta a scrivere che
+	\begin{align}
+		C &= \int_{0}^{1} dy \; \left( y^3D - 4\lambda C y^2 \right) = \frac{1}{2} \lambda D - \frac{4}{3} \lambda C\\
+		D &= \int_{0}^{1} dy \; \left( 2\lambda y^2D - 4\lambda C y \right) = \frac{2}{3} \lambda D - 2 \lambda C
+	\end{align}
+	Da cui otteniamo il sistema
+	\begin{align}
+		\double{\left(1 + \frac{4}{3} \lambda\right) C - \frac{1}{2} \lambda D &= 0}{2\lambda C + \left( 1 - \frac{2}{3}\lambda \right) D &=0} \spacer M = \begin{bmatrix}
+			1 + \frac{4}{3} \lambda && - \frac{1}{2} \lambda\\
+			2 \lambda && 1- \frac{2}{3} \lambda
+		\end{bmatrix}
+	\end{align}
+
+	L'omogenea ha lo stesso risultato di prima, con $\lambda_c = -3$, e per tale valore il sistema diventa
+	\begin{align}
+		&\double{\left(1 -4 \right) C + \frac{3}{2} D &= 0}{-6 C + \left( 1 +2 \right) D &=0} \firstpassage
+		 &\double{D &= 2C}{C &= ap} \spacer ap = \text{a piacimento}
+	\end{align}
+	Ponendo $C = \frac{1}{4\lambda_c}$ otteniamo $D = \frac{1}{2 \lambda_c}$ e arriviamo alla formula
+	\begin{align}
+		\phi_0^{(+)}(x) &= 2D \lambda_c x - 4 \lambda_c C = x-1
+	\end{align}
+	Possiamo quindi procedere
+	\begin{align}
+		&<\phi_0^{(+)},f> = 0 \firstpassage
+		&\int_{0}^{1} dx \; (x-1) (1-\alpha x) =0\nextpassage
+		&\alpha = 3
+	\end{align}
+	Per tale valore di $\alpha$ abbiamo quindi ulteriori soluzioni al problema di partenza. Se andiamo a sostituire $\lambda = \lambda_c = -3$ otteniamo
+	\begin{align}
+		&\double{\left(1 -4 \lambda\right) A +3B &= 1 - \frac{3}{2}}{-3A + (1+2)B &= \frac{1}{2}-1} \firstpassage
+		&\double{-3A +3B &= - \frac{1}{2}}{-3A + 3B &= -\frac{1}{2}} \nextpassage
+		&\double{B = &A - \frac{1}{6}}{A = &ap} \spacer ap= \text{a piacere} \nextpassage
+		&\phi_A(x) = 1 -3x +2 (-3)\left(A - \frac{1}{6}\right)x -4Ax^2(-3) \nextpassage
+		&\phi_A(x) = 1 -2x -6Ax +12Ax^2
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+\subsection{Esempio 2}
+
+Determinare i numeri caratteristii dell'operatore integrale il cui nucleo in $L^2([-1,+1]x[-1,+1])$ è dato da
+\begin{align}
+	k(x,y) = xy -x^2y^2
+\end{align}
+Si calcolino inoltre, per tutti i $\lambda\in\C$ le soluzioni dell'equazione di Fredholm
+\begin{align}
+	&\phi(x) -\lambda \int_{-1}^{+1} dy \; k(x,y) \phi(y) = 5x^3 + x^2 - 3x\\
+	&g(x) = 5x^3 + x^2 - 3x
+\end{align}
+Nel nostro caso avremo
+\begin{align}
+	\phi(x) &=\lambda \int_{-1}^{+1} dy \; (xy -x^2y^2) \phi(y)  + g(x)	= \nonumber\\
+	&=\lambda x \int_{-1}^{+1} dy \; \phi(y)  - \lambda x^2\int_{-1}^{+1} dy \; y^2 \phi(y) + g(x)\\
+	A &= \int_{-1}^{+1} dy \; \phi(y) = \\ 
+	  &=\int_{-1}^{+1} dy \; (\lambda y^2 A -\lambda y^2 B) + \int_{-1}^{+1} dy \; (5x^3 + x^2 - 3x) = \nonumber \\ 
+	  &=\frac{2}{3} A \lambda + \cancel{2} -\cancel{2}\\
+	B &= \int_{-1}^{+1} dy \; y^2 \phi(y) = \dots = -\frac{2}{5} \lambda B + \frac{2}{5}    
+\end{align}
+Abbiamo quindi il sistema
+\begin{align}
+	\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= \frac{2}{5}}
+\end{align}
+
+Per trovare lo spettro puntuale andiamo a risolvere il caso omogeneo
+\begin{align}
+	&\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= 0} \to \double{\lambda_1 = +\frac{3}{2}}{\lambda_2 = -\frac{5}{2}} \firstpassage
+	&\sigma_p(k) = \left\{ \frac{2}{3} , -\frac{2}{5} \right\}
+\end{align}
+Andiamo ora a studiare il sistema non omogeneo. Distinguiamo i due casi
+\begin{enumerate}
+	\item $\lambda \neq \lambda_c$
+	\begin{align}
+		\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= 0} \to \double{A &=0}{B &= \frac{2}{5+2\lambda}}
+	\end{align}
+	Da cui otteniamo la soluzione
+	\begin{align}
+		\phi(x) = g(x) - \frac{2}{5+2\lambda} x^2
+	\end{align}
+	\newpage
+	\item $\lambda = \lambda_c$
+	\begin{enumerate}
+		\item $\lambda=\frac{3}{2}$
+		\begin{align}
+			\double{0\cdot A &=0}{\frac{8}{5} B &= \frac{2}{5}} \to \double{A = &ap}{B = &\frac{2}{8}} \spacer ap = \text{a piacere}
+		\end{align}
+		Da cui otteniamo la famiglia di soluzioni
+		\begin{align}
+			\phi_{\frac{3}{2}}(x) = g(x) - \frac{3}{8} x^2 + \frac{3}{2}xA 
+		\end{align}
+		\item $\lambda=-\frac{5}{2}$
+		\begin{align}
+			\double{0\cdot A &=0}{0\cdot B &= \frac{2}{5}} \to \text{sistema non risolvibile}
+		\end{align}
+	
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\section{Operatori differenziali (Davide Bufalini)}
+
+\subsection{Esempio 1: Operatore Differenziale del IIo Ordine}
+
+Sia l'operatore
+\begin{align}
+	\mathcal{L}_x^\lambda = -\frac{d^2}{dx^2} - \lambda \spacer \lambda= \text{cost.}
+\end{align}
+
+Si richiede di
+\begin{enumerate}
+	\item calcolare, al variare di $\lambda$, la soluzione del problema omogeneo
+	\begin{align}
+		\triple{\mathcal{L}_x^\lambda f(x) &= 0}{f(0) &=0}{\dot{f}(\pi) &=0}
+	\end{align}
+	\item ricavare la Funzione di Green (l'operatore risolvente) per i valori in cui $\mathcal{L}_x^\lambda$ è invertibile del corrispontente problema di Sturm-Liouville
+\end{enumerate}
+
+L'operatore è in forma canonica con coefficienti costanti nella forma
+\begin{align}
+	a \ddot{f} + b \dot{f} + cf=0 \spacer \text{nel nostro caso } b=0
+\end{align}
+Prendendo un Ansatz del tipo $f(x) \sim e^{\alpha x}$ otteniamo
+\begin{align}
+	-\alpha^2 - \lambda =0 \to \alpha= \pm i \sqrt{\lambda}
+\end{align}
+Da cui segue
+\begin{align}
+	f(x) = A e^{i \sqrt{\lambda}} + B e^{-i \sqrt{\lambda}}
+\end{align}
+Imponendo l condizioni di bordo otteniamo
+\begin{align}
+	&\double{f(0) =0}{\dot{f}(\pi) =0} \to \double{A+B = &0}{i\sqrt{\lambda} \left(A e^{i \sqrt{\lambda}} - B e^{-i \sqrt{\lambda}}\right) = &0} \firstpassage
+	&\double{B = &-A}{Ai \sqrt{\lambda} 2 \cos(\sqrt{\lambda} \pi) =&0}
+\end{align}
+Escludendo le soluzioni banali $A=0=B$ e $\lambda=0$ abbiamo $n\in\Z$ autovalori nella forma
+\begin{align}
+	\lambda = \frac{(2k+1)^2}{4}
+\end{align}
+Per trovare gli autovettori corrispondenti ci affidiamo alla condizione $A = -B$ dalla quale segue
+\begin{align}
+	f_n(x)=-2i B \sin\left(\frac{2k+1}{2} x\right)
+\end{align}
+Per trovare B sfruttiamo l'ortogonalità
+\begin{align}
+	\delta_{n,m} = <f_n,f_m> &= \int_{0}^{\pi} dx \; \overline{f_n}(x) f_m(x) = \nonumber \\
+	&= \int_0^\pi dx\; (2i B^*) \sin\left(\frac{2k+1}{2} x\right) \cdot (-2i B) \sin\left(\frac{2k+1}{2} x\right)
+\end{align}
+Iniziamo studiando il caso $n=m$
+\begin{align}
+	\delta_{m,m} = <f_n,f_m> &= 4|B|^2 \int_0^\pi dx\; \sin^2\left(\frac{2k+1}{2} x\right) = 4|B|^2 \frac{\pi}{2}
+\end{align}
+Per ortonormalità imponiamo
+\begin{align}
+	4|B|^2 \frac{\pi}{2} = 1 \to |B| = \frac{1}{\sqrt{2\pi}} 
+\end{align}
+Che, nel caso $n\neq m$, diventa 	
+\begin{align}
+	B = \frac{e^{i\rho}}{\sqrt{2\pi}} \spacer \rho \in \R	
+\end{align}
+Da cui segue che
+\begin{align}
+	f_n(x) = -i \sqrt{\frac{2}{\pi}}e^{i\rho}\sin \left( \frac{2n+1}{2}x \right) \spacer \double{\rho \in \R}{n\in\Z}
+\end{align}
+
+Siccome $\lambda=0$ non è autovalore non abbiamo modi nulli.
+
+Andiamo ora a calcolare l'\textbf{operatore risolvente}.
+\begin{align}
+	&(\mathcal{L}_{SL} -\lambda \mathbb{1}) G_\lambda (x,y) = \delta (x-y) \spacer \lambda \neq \lambda_n \; \text{per evitare poli semplici} \firstpassage
+	&-\frac{d^2}{dx^2} G_x(x,y) - \lambda G_\lambda = \delta (x-y)
+\end{align}
+
+Utilizziamo un trucco. Siccome il problema è della tipologia
+\begin{align}
+	-\frac{d^2f}{dx^2} - \lambda f = 0
+\end{align}
+Andiamo a cercare due soluzioni $f^0_{1,2}$ tali che ciascua soddisfi una delle due condizioni al bordo. Una volta trovate andiamo a calcolare il Wronskiano, necessario per la definizione della funzione di Green
+\begin{align}
+	G_\lambda (x,y) = \double{\frac{f_1^0(x)f_2^0(x)}{W} \spacer x<y}{\frac{f_1^0(y)f_2^0(y)}{W} \spacer x>y}
+\end{align}
+In base alle condizioni di bordo proviamo con
+\begin{align}
+	f_1^0(x) &= \sin(\sqrt{\lambda} x) \to f_1^0(0) =0\\
+	f_2^0(x) &= \cos(\sqrt{\lambda} (\pi-x)) \to f_2^0(\pi) =0
+\end{align}
+Andiamo quindi a calcolarne il Wronskiano
+\begin{align}
+	W = \begin{vmatrix}
+		f_1^0 && f_2^0\\
+		\dot{f_1^0} && \dot{f_2^0}
+	\end{vmatrix} = \begin{vmatrix}
+	\sin(\sqrt{\lambda} x) && \cos(\sqrt{\lambda} (\pi-x))\\
+	\sqrt{\lambda}\cos(\sqrt{\lambda}x) && \sqrt{\lambda} \cos (\sqrt{\lambda} (\pi-x))
+\end{vmatrix} = \cdots = -\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)
+\end{align}
+Da cui otteniamo
+\begin{align}
+	G_\lambda (x,y) = \double{-\frac{ \sin(\sqrt{\lambda} x)\cos(\sqrt{\lambda} (\pi-x))}{\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)} \spacer x<y}{-\frac{ \sin(\sqrt{\lambda} y)\cos(\sqrt{\lambda} (\pi-y))}{\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)} \spacer x>y}
+\end{align}
+
+Vediamo come per i $\lambda_n$ che abbiamo trovato in precedenza ci siano solo poli semplici.
+
+\newpage
+
+\subsection{Esempio 2}
+
+Dato l'operatore differenziale
+\begin{align}
+	\mathcal{L}_x = -i \frac{d}{dx} + \frac{\beta}{x} \spacer \beta \in \R
+\end{align}
+Il cui nucleo è dato da
+\begin{align}
+	\mathcal{D}_{\mathcal{L}_x} = \left\{ f \in L^2 \left( \left[\frac{1}{2},1\right] \right) \taleche f\left(\frac{1}{2}\right) = f(1) \right\}
+\end{align}
+
+Si richiede di
+\begin{enumerate}
+	\item Costruire $(\mathcal{L}_x^\dagger, \mathcal{D}_{\mathcal{L}_x^\dagger})$
+	\item Discutere autovalori e autovettori di $(\mathcal{L}_x, \mathcal{D}_{\mathcal{L}_x})$
+	\item Trovare i valori di $\beta$ per cui $(\mathcal{L}_x, \mathcal{D}_{\mathcal{L}_x})$ è autoaggiunto e/o invertibile
+\end{enumerate}
+
+Partiamo dall'\textbf{aggiunto}:
+\begin{align}
+	<g,\mathcal{L}_x f> &= \int_{\frac{1}{2}}^{1} dx \; \overline{g} \left(-i \frac{d}{dx} + \frac{\beta}{x}\right) f = \nonumber\\
+	&= \int_{\frac{1}{2}}^{1} dx \; \overline{g} \left(-i \frac{d}{dx}f\right) + \int_{\frac{1}{2}}^{1} dx \; \overline{g}\left(\frac{\beta}{x} f\right) = \nonumber\\
+	&=-i \int_{\frac{1}{2}}^{1} dx \; \overline{g} \dot{f} + \int_{\frac{1}{2}}^{1} dx \; \overline{g}\frac{\beta}{x}f = \nonumber\\
+	&= \left. -i f \overline{g} \right|_{\frac{1}{2}}^{1} +i \int_{\frac{1}{2}}^{1} dx \;  \dot{\overline{g}}f + \int_{\frac{1}{2}}^{1} dx \; \overline{\left(\frac{\beta}{x} g\right)} f
+\end{align}
+Imponendo che $\mathcal{L}_x^\dagger$ sia autoagiunto otteniamo che
+\begin{align}
+	&-i f\left( \frac{1}{2} \right) \cdot\left[ \overline{g}\left(\frac{1}{2}\right) - \overline{g}(1) \right] = 0 \firstpassage
+	&\overline{g}\left(\frac{1}{2}\right) = \overline{g}(1) \nextpassage
+	&\mathcal{L}_x^\dagger = -i \frac{d}{dx} + \frac{\beta}{x} \spacer \mathcal{D}_{\mathcal{L}_x^\dagger} = \left\{ g \in L^2 \left( \left[\frac{1}{2},1\right] \right) \taleche g\left(\frac{1}{2}\right) = g(1) \right\}
+\end{align}
+Andiamo ora a calcolare gli autovalori e gli autovettori:
+\begin{align}
+	&\mathcal{L}_x f= \lambda f \firstpassage
+	&\left( -i \frac{d}{dx} + \frac{\beta}{x} \right) f = \lambda f\nextpassage
+	&\frac{df}{dx} = i\left( \lambda - \frac{\beta}{x} \right) f \nextpassage
+	&\int_{\frac{1}{2}}^{x} dt \; \frac{\dot{f}(t)}{f(t)} ) = \int_{\frac{1}{2}}^{x} dt \; \left( \lambda - \frac{\beta}{x} \right) \nextpassage
+	&\vdots\nextpassage
+	&f(x) = f\left(\frac{1}{2}\right) e^{i\left[ \lambda \left( x - \frac{1}{2} \right)  - \beta \ln(2x)\right]}
+\end{align}
+Applicando le condizioni al contorno otteniamo
+\begin{align}
+	&f(1) =  f\left(\frac{1}{2}\right) \firstpassage
+	&f\left(\frac{1}{2}\right) e^{i\frac{\lambda}{2}  - \beta \ln(2)} = f\left(\frac{1}{2}\right) e^{i\cdot 0}\nextpassage
+	&e^{i\frac{\lambda}{2}  - \beta \ln(2)} = 1 \nextpassage
+	&e^{i\frac{\lambda_n}{2}  - \beta \ln(2)} = e^{i2n\pi} \nextpassage
+	&\frac{\lambda_n}{2}  = \beta \ln(2) + 2n\pi \nextpassage
+	&\lambda_n = 2\beta \ln(2) + 4n\pi \to f_n(x) = f\left(\frac{1}{2}\right) e^{i\left[ (2\beta \ln(2) + 4n\pi) \left( x - \frac{1}{2} \right) - \beta \ln(2x)\right]}
+\end{align}
+
+\newpage
+
+\section{Operatori a blocchi (Davide Bufalini, Paolo Proia)}
+\subsection{Esempio 1 con metodo esplicito e analitico (Davide Bufalini, Paolo Proia)}
+Dato il seguente operatore a blocchi
+\begin{align}
+	\triple{(Tx)_1 \quad\;\; &= &0 \qquad \qquad \qquad}{(Tx)_{2n} \quad &= &\alpha x_{2n+1} \quad n> 1}{(Tx)_{2n+1} &= &\alpha x_{2n} \quad\quad n> 1} \spacer \alpha \in \C
+\end{align}
+Si richiede di
+\begin{enumerate}
+	\item Costruire $T^\dagger$ e calcolare $||T||$ e  $||T^\dagger||$
+	\item Discutere gli spettri puntuali e relative molteplicità
+	\item Discutere gli spettri residui
+	\item Discutere per quali valori di $\alpha \in \C$ (se esistono) l'operatore $T$ è una combinazione delle seguenti
+	\begin{enumerate}
+		\item Autoaggiunto
+		\item Unitario
+		\item Invertibile
+	\end{enumerate}
+\end{enumerate}
+
+Un possibile modo per il calcolo dell'aggiunto è iniziare esplicitando l'azione dell'operatore
+\begin{align}
+	\begin{matrix}
+		Tx_1 &= &0\\
+		Tx_2 &= &\alpha x_3\\
+		Tx_3 &= &\alpha x_2\\
+		Tx_4 &= &\alpha x_5\\
+		Tx_5 &= &\alpha x_4
+	\end{matrix} \to T= 
+	\begin{bmatrix}
+		0 && 0 && 0 && 0 && 0 && 0 && \dots \\
+		0 && 0 && \alpha && 0 && 0 && 0 && \dots \\
+		0 && \alpha && 0 && 0 && 0 && 0 && \dots \\
+		0 && 0 && 0 && 0 && \alpha && 0 && \dots \\
+		0 && 0 && 0 && \alpha && 0 && 0 && \dots \\
+		\vdots && \vdots && \vdots && \vdots && \vdots && \vdots && \ddots
+	\end{bmatrix}
+\end{align}
+Da cui segue che
+\begin{align}
+	T^\dagger= 
+	\begin{bmatrix}
+		0 && 0 && 0 && 0 && 0 && 0 && \dots \\
+		0 && 0 && \alpha^* && 0 && 0 && 0 && \dots \\
+		0 && \alpha^* && 0 && 0 && 0 && 0 && \dots \\
+		0 && 0 && 0 && 0 && \alpha^* && 0 && \dots \\
+		0 && 0 && 0 && \alpha^* && 0 && 0 && \dots \\
+		\vdots && \vdots && \vdots && \vdots && \vdots && \vdots && \ddots
+	\end{bmatrix} \to 	\triple{(T^\dagger x)_1 \quad\;\; &= &0 \;\qquad \qquad \qquad}{(T^\dagger x)_{2n} \quad &= &\alpha^* x_{2n+1} \quad n> 1}{(T^\dagger x)_{2n+1} &= &\alpha^* x_{2n} \quad\quad n> 1}
+\end{align}
+
+Un altro modo per il caclolo dell'aggiunto passa dalla sua definizione, che ci dice che
+\begin{align}
+	&(y,Tx) = (T\dagger y,x) \firstpassage
+	&\sum_{i=1}^{N} y^*_i Tx_i = \sum_{i=1}^{N} (T\dagger y_i)^* x_i
+\end{align}
+Esplicitando le somme si ottengono i seguenti confronti
+\begin{align}
+	&0 + y_2^* \cdot \alpha x_3 + y_3^* \cdot \alpha x_2 + y_4^* \cdot \alpha x_5 + y_5^* \cdot \alpha x_4 + \dots =  \nonumber \\
+	=&(T^\dagger y)_1^* \cdot x_1 + (T^\dagger y)_2^* \cdot x_2 +(T^\dagger y)_3^* \cdot x_3 +(T^\dagger y)_4^* \cdot x_4 + (T^\dagger y)_5^* \cdot x_5 + \dots\firstpassage
+	&y_1 \cdot 0 = 0  = (T^\dagger y)_1^* \cdot x_1 \to (T^\dagger y)_1 = 0\\
+	&\double{y_2^* \cdot (Tx)_2 = y_2^* \cdot \alpha x_3 = (T^\dagger y)_3^* \cdot x_3}{y_3^* \cdot (Tx)_3 = y_3^* \cdot \alpha x_2 = (T^\dagger y)_2^*\cdot x_2} \to  \double{(T^\dagger y)_2^* = \alpha y_3^*}{(T^\dagger y)_3^* = \alpha y_2^*} \to  \double{(T^\dagger y)_2
+		= \alpha^* y_3}{(T^\dagger y)_3 = \alpha^* y_2}\\
+	&\double{y_4^* \cdot (Tx)_4 = y_4^* \cdot \alpha x_5 = (T^\dagger y)_5^*\cdot x_5}{y_5^* \cdot (Tx)_5 = y_5^* \cdot \alpha x_4 = (T^\dagger y)_4^*\cdot x_4} \to \double{(T^\dagger y)_4^* = \alpha y_5^*}{(T^\dagger y)_5^* = \alpha y_4^*}\to \double{(T^\dagger y)_4 = \alpha^* y_5}{(T^\dagger y)_5 = \alpha^* y_4}\\
+	&\vdots \nonumber
+\end{align}
+Da cui otteniamo (per fortuna) lo stesso risultato
+\begin{align}
+	\triple{(T^\dagger x)_1 \quad\;\; &= &0 \;\qquad \qquad \qquad}{(T^\dagger x)_{2n} \quad &= &\alpha^* x_{2n+1} \quad n> 1}{(T^\dagger x)_{2n+1} &= &\alpha^* x_{2n} \quad\quad n> 1}
+\end{align}
+
+
+
+
+Andiamo quindi a calcolare la norma dell'operatore
+\begin{align}
+	||Tx||^2 &= <Tx,Tx> = \sum_{n=1}^{\infty} \overline{(Tx)}_n (Tx)_n = \nonumber\\
+			 &=\cancel{\overline{(Tx)}_1 (Tx)_1} + \sum_{n=2}^{\infty} (|\alpha|^2 |x_{2n+1}|^2 + |\alpha|^2 |x_{2n}|^2) = \nonumber\\
+			 &=\sum_{n=2}^{\infty} |\alpha|^2( |x_{2n+1}|^2 + |x_{2n}|^2) = \nonumber\\
+			 &=|\alpha|^2 \sum_{n=2}^{\infty} |x_{n}|^2 =|\alpha|^2( ||x||^2 - |x_1|^2) \leq |\alpha|^2 \sum_{n=1}^{\infty} |x_{n}|^2 = |\alpha|^2 ||x||^2 \firstpassage
+	||T|| &\leq |\alpha|	
+\end{align}
+Se $|x_1|=0$ allora la norma è raggiunta(?).
+Siccome per operatori limitati e densamente definiti allora $||T|| = ||T^\dagger||$ e quindi 
+\begin{align}
+	||T^\dagger|| &\leq |\alpha|	
+\end{align}
+Andiamo ora a calcolare lo \textbf{spettro puntuale}. Dobbiamo risolvere
+\begin{align}
+	T\vec{x} &= \lambda \vec{x}	
+\end{align}
+Da cui otteniamo
+\begin{align}
+	\begin{matrix}
+		Tx_1 =& 0 &= \lambda x_1 \\
+		Tx_2 =& \alpha x_3 &= \lambda x_2\\
+		Tx_3 =& \alpha x_2 &= \lambda x_3\\
+		Tx_4 =& \alpha x_5 &= \lambda x_4\\
+		Tx_5 =& \alpha x_4 &= \lambda x_5\\
+		&\dots
+	\end{matrix} 
+\end{align}
+\newpage
+Distinguiamo ora i vari casi
+\begin{enumerate}
+	\item $\lambda = 0 \spacer \alpha =0$
+		\begin{align}
+			0 &= 0\cdot x_1 \to x_1 = \text{qualsiasi} \\
+			0 &= 0\cdot x_2 \to x_2=\text{qualsiasi}\\
+			0 &= 0\cdot x_3 \to x_3=\text{qualsiasi} \\
+			&\dots \firstpassage
+			\vec{x} &= (x_1,x_2, x_3, \dots)
+		\end{align}
+	\item $\lambda = 0 \spacer \alpha \neq 0$
+		\begin{align}
+			0 &= 0\cdot x_1 \to x_1 = \text{qualsiasi} \\
+			\alpha x_3 &= 0\cdot x_2 \to x_3=0\\
+			\alpha x_2 &= 0\cdot x_3 \to x_2=0 \\
+			&\dots \firstpassage
+			\vec{x} &= (x_1,0, 0, \dots)
+		\end{align}
+	\item $\lambda \neq 0 \spacer \alpha =0$
+		\begin{align}
+			0 &= \lambda x_1 \to x_1=0 \\
+			0 &= \lambda x_2 \to x_3=0\\
+			0 &= \lambda x_3 \to x_2=0 \\
+			&\dots \firstpassage
+			\vec{x} &= (0,0, 0, \dots)
+		\end{align}
+	\item $\lambda \neq 0 \spacer \alpha \neq 0$
+		\begin{align}
+			0 &= \lambda x_1 \to x_1=0 \\
+			\alpha x_2 &= \lambda x_3 \to x_2=\frac{\lambda}{\alpha} x_3\\
+			\alpha x_3 &= \lambda x_2 \to x_3=\frac{\lambda^2}{\alpha^2} x_3 \to \left(1 - \frac{\lambda^2}{\alpha^2}\right) x_3 = 0 \\
+			\alpha x_4 &= \lambda x_5 \to x_4=\frac{\lambda}{\alpha} x_5\\
+			\alpha x_5 &= \lambda x_4 \to x_5=\frac{\lambda^2}{\alpha^2} x_5 \to \left(1 - \frac{\lambda^2}{\alpha^2}\right) x_5 = 0\\
+			&\dots \firstpassage
+			x_{2n} &=\frac{\lambda}{\alpha} x_{2n+1} \to \left(1 - \frac{\lambda^2}{\alpha^2}\right) x_{2n+1} = 0 
+		\end{align}
+	
+		\newpage
+		Dobbiamo distinguere due casi
+		\begin{enumerate}
+			\item $|\lambda| \neq |\alpha|$
+				\begin{align}
+					&\left(1 - \frac{\lambda}{\alpha^2}\right) x_{2n+1} = 0 \to x_{2n+1} = 0 \;\; \forall n \in \N \to x_n = 0 \forall n\in \N \firstpassage
+					&\vec{x} = \vec{0}
+				\end{align}
+			\item $|\lambda| = |\alpha| \to \lambda = e^{i\phi} |\alpha|$
+				\begin{align}
+					&x_{2n} =\frac{e^{i\phi} |\alpha|}{|\alpha|} x_{2n+1} \to x_{2n} = e^{i\phi}x_{2n+1}\firstpassage
+					&\vec{x} = (0, e^{i\phi}x_{3}, x_3, e^{i\phi}x_{5}, x_5,\dots)\\
+					&\sigma_p(T) = \{ \lambda \in \C \quad|\quad \lambda = e^{i\phi} |\alpha| \spacer \alpha \in \C \}
+				\end{align}
+		\end{enumerate}
+\end{enumerate}
+
+Si ottiene un risultato analogo per $\sigma(T^\dagger)$.
+
+Andiamo ora a calcolare lo \textbf{spettro residuo} dell'operatore e del suo aggiunto.
+
+Andiamo quindi a cercare 
+\begin{align}
+	&z\neq \lambda \taleche \exists \vec{\eta} \neq \vec{0} \taleche <\vec{\eta} , \vec{v}> =0 \\
+	&\vec{v} = (z\mathbb{1} - T)\vec{x} \in \text{Range}(z\mathbb{1} - T) \quad \forall \vec{x}\in \mathcal{D}_T
+\end{align}
+Nel nostro caso abbiamo
+\begin{align}
+z\mathbb{1} - T= 
+	\begin{bmatrix}
+		z      && 0       && 0       && 0       && 0       && 0      && \dots\\
+		0      && z       && -\alpha && 0       && 0       && 0      && \dots\\
+		0 	   && -\alpha && z       && 0       && 0       && 0      && \dots\\
+		0      && 0       && 0       && z       && -\alpha && 0      && \dots\\
+		0 	   && 0       && 0       && -\alpha && z       && 0      && \dots\\
+		\vdots && \vdots  && \vdots  && \vdots  && \vdots  && \vdots && \ddots
+	\end{bmatrix}
+\end{align}
+Da cui segue che
+\begin{align}
+	(z\mathbb{1} - T)\vec{x} = \left( \begin{matrix}
+		zx_1\\
+		zx_2 - \alpha x_3\\
+		zx_3 - \alpha x_2\\
+		zx_4 - \alpha x_5\\
+		zx_5 - \alpha x_4\\
+		\vdots
+	\end{matrix} \right)
+\end{align}
+E arriviamo quindi a scrivere
+\begin{align}
+	0 &= <\vec{\eta}, \vec{v} > = \sum_{n} \overline{\eta}_n v_n = \nonumber\\
+	&= \eta_1^*zx_1 + \eta_2^*(zx_2 - \alpha x_3) + \eta_3^*(zx_3 - \alpha x_2) + \dots = \nonumber \\
+	&= x_1z\eta_1^* + x_2(z\eta_2^* - \alpha \eta_3^*) + x_3(z\eta_3^* - \alpha \eta_2^*) + \dots
+\end{align}
+Siccome la somma è nulla, questo ci porta a scrivere
+\begin{align}
+	\eta^*_1 =& 0 \\
+	\eta^*_2 =& \frac{\alpha}{\lambda} \eta^*_3\\
+	\eta^*_3 =& \frac{\alpha}{\lambda} \eta^*_2 = \frac{\alpha^2}{\lambda^2} \eta^*_3 \to  \left(1-\frac{\alpha^2}{\lambda^2}\right) \eta^*_3 = 0\\
+	&\vdots \nonumber
+\end{align}
+Abbiamo però un "problema". Siccome $z \neq \lambda = e^{i\phi} |\alpha|$, abbiamo che
+\begin{align}
+	1-\frac{\alpha^2}{\lambda^2} \neq 0 \to \eta_3^* = 0 \to \vec{\eta} = \vec{0}
+\end{align}
+Ma questo non è possibile per definizione, quindi abbiamo
+\begin{align}
+	\sigma_\rho(T) = \emptyset
+\end{align}
+
+In conclusione rispondiamo alle domande del quarto punto:
+\begin{enumerate}
+	\item L'operatore è \textbf{autoaggiunto} per $\alpha = \alpha^*$, ovvero per $\alpha \in \R$, dato che in tale caso segue $T= T^\dagger$ e $\mathcal{D}_T=\mathcal{D}_{T\dagger}$
+	\item Non può mai essere \textbf{unitario}, dato che $TT^\dagger \neq \mathbb{1} \neq T^\dagger T$
+	\item Non è \textbf{invertibile} dato che $z\in \sigma_p(T)$
+\end{enumerate}
+
+
+\newpage
+
+\subsection{Esempio 2 con metodo esplicito e analitico (Davide Bufalini, Alessandro Marcelli)}
+
+Sia l'operatore in $l^2(\C)$ definito da
+\begin{align}
+	\double{(Tx)_1 =& 2^a x_2\quad\quad\quad\quad\quad\quad\quad\quad\;\;\;\;\;}{(Tx)_n =& x_n + (n+1)^ax_{n+1} \quad n \geq 2}
+\end{align}
+
+Si richiede di
+\begin{enumerate}
+	\item Costruire l'aggiunto
+	\item Discuttere gli spettripuntuali
+	\item Discutere se, al variare di $a\in\R$, $z_0=0$ appartiene allo spettro dell'operatore o dell'aggiunto
+\end{enumerate}
+
+
+Iniziamo dal primo punto.
+
+Un possiible metodo è quello di \textbf{esplicitare} l'azione dell'operatore
+\begin{align}
+	\begin{matrix}
+		Tx_1 &= &2^a x_2\\
+		Tx_2 &= &x_2 +3^a x_3\\
+		Tx_3 &= &x_3 +4^a x_4\\
+		\vdots
+	\end{matrix} \to T= 
+	\begin{bmatrix}
+		0 	   && 2^a    && 0 	   && 0 	 && 0 	   && 0 	 && \dots \\
+		0 	   && 1 	 && 3^a    && 0 	 && 0 	   && 0 	 && \dots \\
+		0	   && 0      && 1 	   && 4^a 	 && 0 	   && 0 	 && \dots \\
+		0 	   && 0 	 && 0	   && 1	     && 5^a    && 0	     && \dots \\
+		0 	   && 0 	 && 0 	   && 0		 && 1 	   && 6^a 	 && \dots \\
+		\vdots && \vdots && \vdots && \vdots && \vdots && \vdots && \ddots
+	\end{bmatrix}
+\end{align}
+Da cui otteniamo quindi
+\begin{align}
+T^\dagger= 
+	\begin{bmatrix}
+		0 	   && 0      && 0 	   && 0 	 && 0 	   && 0 	 && \dots \\
+		2^a    && 1 	 && 0      && 0 	 && 0 	   && 0 	 && \dots \\
+		0	   && 3^a    && 1 	   && 0 	 && 0 	   && 0 	 && \dots \\
+		0 	   && 0 	 && 4^a	   && 1	     && 0      && 0	     && \dots \\
+		0 	   && 0 	 && 0 	   && 5^a	 && 1 	   && 0 	 && \dots \\
+		\vdots && \vdots && \vdots && \vdots && \vdots && \vdots && \ddots
+	\end{bmatrix} \to T^\dagger = \double{(T^\dagger x)_1 =& 0}{(T^\dagger x)_n =& x_n + n^a x_{n-1} \quad n \geq 2}
+\end{align}
+Altrimenti possiamo calcolarlo \textbf{analiticamente}, studiando il prodotto
+\begin{align}
+	&(y,Tx) = (T^\dagger y, x)\firstpassage
+	&\sum_{i=1}^{n} y_i^* (Tx)_i =  \sum_{i=1}^{n} (T^\dagger y_i)^* x_i
+\end{align}
+Da cui otteniamo che
+\begin{align}
+	y_1^* (Tx)_1 &= y_1^* 2^a x_2 = (T^\dagger y)_1^* x_1\\
+	y_2^* (Tx)_2 &=	y_2^*( x_2 + 3^a x_3) = (T^\dagger y)_2^* x_2\\
+	y_3^* (Tx)_3 &=	y_3^*( x_3 + 4^a x_4) = (T^\dagger y)_3^* x_3\\
+	y_4^* (Tx)_4 &=	y_4^*( x_4 + 4^a x_5) = (T^\dagger y)_4^* x_4\\
+	y_5^* (Tx)_5 &=	y_5^*( x_5 + 6^a x_6) = (T^\dagger y)_5^* x_5
+\end{align}
+Possiamo quindi scrivere
+\begin{align}
+	&y_1^* 2^a x_2 + y_2^* x_2 + y_2^* 3^a x_3 + y_3^* x_3 + y_3^* 4^a x_4  + y_4^* x_4 + y_4^* 5^a x_5 + \dots = \nonumber \\
+	=& (y_1^* 2^a + y_2^*)x_2 + (y_2^* 3^a + y_3^*) x_3 + (y_3^* 4^a + y_4^*) x_4 =  \\
+	=&(T^\dagger y)_1^* x_1 + (T^\dagger y)_2^* x_2 + (T^\dagger y)_3^* x_3 + (T^\dagger y)_4^* x_4 + \dots
+\end{align}
+Confrontando i termini otteniamo quindi
+\begin{align}
+	(T^\dagger y)_1^* &= 0\\
+	(T^\dagger y)_2^* &= y_1^* 2^a + y_2^*\\
+	(T^\dagger y)_3^* &= y_2^* 3^a + y_3^*\\
+	(T^\dagger y)_4^* &=y_3^* 4^a + y_4^*\\
+	\vdots \nonumber
+\end{align}
+Da cui (per fortuna) otteniamo di nuovo
+\begin{align}
+	 T^\dagger = \double{(T^\dagger x)_1 =& 0}{(T^\dagger x)_n =& x_n + n^a x_{n-1} \quad n \geq 2}
+\end{align}
+
+Andiamo ora a calcolare gli spettri puntuali dell'operatore e del suo aggiunto.
+\begin{align}
+	&Tx = \lambda x \to (Tx)_n = \lambda x_n\firstpassage
+	&(Tx)_1 = 2^a x_2 = \lambda x_1\\
+	&(Tx)_2 = x_2 + 3^a x_3 = \lambda x_3\\
+	&(Tx)_3 = x_3 + 4^a x_4 = \lambda x_4\\
+	&(Tx)_4 = x_4 + 5^a x_5 = \lambda x_5\\
+	\vdots \nonumber
+\end{align}
+
+Dobbiamo ora distinguere i diversi casi: 
+
+\begin{enumerate}
+
+	\item $\lambda = 0 \spacer a=0$
+		\begin{align}
+			&x_1 = \text{indeterminato}\\
+			&x_2 = 0\\
+			&x_2 + x_3 = 0 \to x_3 =0\\
+			&x_3 + x_4 = 0 \to x_4 =0\\
+			&x_4 + x_5 = 0 \to x_5=0\\
+			&\vdots \nextpassage
+			&\vec{x} = (x_1, 0, 0, 0, \dots) \spacer \nu = 1
+		\end{align}
+		
+	\item $\lambda = 0 \spacer a \neq 0$
+		\begin{align}
+			&x_1 = \text{indeterminato}\\
+			&2^a x_2 = 0 \to x_2 = 0\\
+			&x_2 + 3^a x_3 = 0 \to x_3 =0\\
+			&x_3 + 4^a x_4 = 0 \to x_4 =0\\
+			&x_4 + 5^a x_5 = 0 \to x_5=0\\
+			&\vdots \nextpassage
+			&\vec{x} = (x_1, 0, 0, 0, \dots) \spacer \nu = 1
+		\end{align}
+
+	\item $\lambda \neq 0 \spacer a \neq 0$
+		\begin{align}
+			&2^ax_2 = \lambda x_1 \to \double{x_1 =& \text{indeterminato}}{x_2 =& \frac{\lambda}{2^a} x_1}\\
+			&x_2 + 3^a x_3 = \lambda x_2 \to x_3 = \frac{\lambda -1}{3^a} x_2 \\
+			&x_3 + 4^a x_4 = \lambda x_3 \to x_4 = \frac{\lambda -1}{4^a} x_3 = \frac{(\lambda -1)^2}{(3\cdot4)^a} x_2  = \frac{\lambda(\lambda -1)^2 }{(2\cdot 3\cdot4)^a} x_1 =  \frac{\lambda(\lambda -1)^2 }{(4!)^a} x_1\\
+			&x_4 + 5^a x_5 = \lambda x_4 \to x_5 = \frac{\lambda -1}{5^a} x_4 = \dots =  \frac{\lambda(\lambda -1)^3 }{(5!)^a} x_1\\
+			&\vdots \nextpassage
+			&\triple{x_1 =& \text{indeterminato}}{x_2 =& \frac{\lambda}{2^a} x_1}{x_n =& \frac{\lambda(\lambda -1)^{n-2} }{(n!)^a} x_1 \spacer n>2}
+		\end{align}
+
+		La situazione si complica. Dobbiamo trovare per quali $\lambda$ e $a$ abbiamo $\vec{x}\in l^2(\C)$. Andiamo a calcolare la norma
+		\begin{align}
+			||x||^2 &= \sum_{n=1}^{+\infty} |x_n|^2 = |x_1|^2 + \left| \frac{\lambda}{2^a} x_1 \right|^2 + \sum_{n=3}^{+\infty} \left| \frac{\lambda(\lambda -1)^{n-2} }{(n!)^a} x_1 \right|^2 = \nonumber \\
+			&= \left( 1 + \frac{|\lambda|^2}{2^{2a}} \right) |x_1|^2 + \sum_{n=3}^{+\infty}  \frac{|\lambda|^2|\lambda -1|^{2n-4} }{(n!)^{2a}} \left| x_1 \right|^2
+		\end{align}
+		Applichiamo ora il criterio della radice, ovvero
+		\begin{align}
+			n| \sim \frac{n^n}{e^n} \sqrt{2\pi n}
+		\end{align}
+		E otteniamo
+		\begin{align}
+			\frac{|\lambda|^2|\lambda -1|^{2n-4} }{(n!)^{2a}} \sim \frac{|\lambda|^\frac{2}{n}|\lambda -1|^\frac{{2n-4}}{n} }{\left(\frac{n^n}{e^n} \sqrt{2\pi n}\right)^\frac{2a}{n}} \sim \left| \frac{(\lambda -1)^2 e^{2a}}{n^{2a}} \right| \to \triple{0 \quad &a>0}{|\lambda -1|^2 \quad &a=0}{\infty \quad &a<0}
+		\end{align}
+		Il caso $a<0$ diverge, e quindi lo escludiamo a priori. Studiamo ora gli altri due
+		\begin{enumerate}
+			\item $a = 0 \to |\lambda -1|^2<1 \to |\lambda -1| < 1$ 
+			
+			Abbiamo quindi una regione di convergenza circolare centrata in 1 con raggio di convergenza pari a 1.
+			
+			\item $a > 0 \to 0$
+			
+			In questo caso la serie converge $\forall \lambda \in \C$, e abbiamo un raggio di convergenza infinito.
+		\end{enumerate}
+		
+\end{enumerate}
+
+\newpage
+
+Andiamo ora a studiare lo spettro puntuale dell'aggiunto.
+\begin{align}
+	&T^\dagger v = \lambda v \to (T^\dagger  v)_n = \lambda v_n\firstpassage
+	&(T^\dagger  v)_1 = 0 = \lambda v_1\\
+	&(T^\dagger  v)_2 = v_2 + 2^a v_1 = \lambda v_2\\
+	&(T^\dagger  v)_3 = v_3 + 3^a v_2 = \lambda v_3\\
+	&(T^\dagger  v)_4 = v_4 + 4^a v_3 = \lambda v_4\\
+	\vdots \nonumber
+\end{align}
+
+Di nuovo, andiamo a distinguere i vari casi
+\begin{enumerate}
+	\item $\lambda = 0 \spacer a=0$
+		\begin{align}
+			&v_1 = \text{qualsiasi}\\
+			&v_2 + v_1 = 0 \to v_2 = -v_1\\
+			&v_3 + v_2 = 0 \to v_3 = -v_2 = v_1\\
+			&v_4 + v_3 = 0 \to v_4 = -v_3 = -v_1\\
+			\vdots \nextpassage
+			&\vec{v} = (v_1, -v_1 , v_1, \dots, (-1)^{n+1}v_1, \dots) \spacer \nu = 1
+		\end{align}
+		
+
+	
+	\item $\lambda = 0 \spacer a \neq 0$
+		\begin{align}
+			&v_1 = \text{qualsiasi}\\
+			&v_2 + 2^a v_1 = 0 \to v_2 = -2^a v_1 \\
+			&v_3 + 3^a v_2 = 0 \to v_3 = -3^a v_2 = 6^a v_1 \\
+			&v_4 + 4^a v_3 = 0 \to v_2 = -4^a v_3 = -24^a v_1  \\
+			\vdots \nextpassage
+			&\vec{v} = (v_1, -2^a v_1 ,6^a v_1, \dots, (-1)^{n+1} (n!)^a v_1, \dots) \spacer \nu = 1
+		\end{align}
+		
+
+
+	\item $\lambda \neq 0 \spacer a \neq 0$
+		\begin{align}
+			&v_1 = 0\\
+			&v_2 = \lambda v_2 \to (1 - \lambda)v_2 = 0 \to \double{v_2 = 0}{\lambda = 1}\\
+			&(1 - \lambda)v_3 = -3^a v_2\\ 
+			\vdots \nonumber
+		\end{align}
+		Distinguiamo i due casi
+		\begin{enumerate}
+			\item $\lambda \neq 1 \to v_2 = 0 \to v_3 = 0 \to \dots \to \vec{v} = \vec{0}$
+			\item $\lambda = 1 \to v_2 = \text{qualsiasi} \to v_3 = v_3 -3^a v_2 \to v_2 = 0 \to \vec{v} = \vec{0}$
+		\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+Andiamo ora a studiare lo \textbf{spettro residuo}. Vale il teorema per cui
+\begin{align}
+	&\sigma_\rho (A) \subset \overline{\sigma_\rho (A^\dagger)} \leftrightarrow \sigma_\rho (A^\dagger) \subset \overline{\sigma_\rho (A)}\\
+	&0 \in\sigma_\rho (A) \to 0 \in \overline{\sigma_\rho (A^\dagger)}
+\end{align}
+
+CHIEDERE A PAOLO
