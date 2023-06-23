@@ -52,8 +52,9 @@
 \contentsline {subsection}{\numberline {2.4.2}Esempio 2 con metodo esplicito e analitico (Davide Bufalini, Alessandro Marcelli)}{44}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}Equazioni Differenziali}{49}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Equazioni Differenziali Reali (Adriano Chialastri)}{49}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Esempio svolto 1: Problema di Cauchy}{49}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Esempio svolto 2: Omogenea di Eulero}{52}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Esempio svolto 3: Problema di Sturm-Liouville}{53}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Esempio svolto 3: Problema di Cauchy non lineare}{55}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.1}Messaggio dall'autore}{49}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Esempio svolto 1: Problema di Cauchy}{49}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Esempio svolto 2: Omogenea di Eulero}{52}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Esempio svolto 3: Problema di Sturm-Liouville}{53}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Esempio svolto 3: Problema di Cauchy non lineare}{55}{subsection.3.1.5}%
 \contentsline {section}{\numberline {3.2}Equazioni Differenziali Complesse}{58}{section.3.2}%
