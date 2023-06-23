@@ -14,7 +14,7 @@ Ben lungi dall'essere un lavoro perfetto, ma sinceramente spero di non fare in t
 
 Nei titoli degli argomenti sono creditati i vari autori dei materiali raccolti. Qualora una sezione fosse composta da materiale di più persone, queste sono prima creditate nel titolo della sezione e poi nelle sottosezioni rilevanti. Se invece una sezione è farina del sacco di un solo autore, questo viene creditato solo nel titolo della sezione.
 
-Detto in parole povere, ste dispense sono l'equivalente di un mixtape, e a parte che con il buon Paolo, non ho collaborato con gli altri due autori, mi sono limitato a fare l'amanuense con il loro lavoro. Ergo se avete cacciato soldi per avere sto documento vi hanno truffato.
+Detto in parole povere, ste dispense sono l'equivalente di un mixtape, e a parte che con il buon Paolo, non ho collaborato con gli altri due autori (dei quali ho però la benedizione a pubblicare queste dispense), mi sono limitato a fare l'amanuense con il loro lavoro. Ergo se avete cacciato soldi per avere sto documento vi hanno truffato.
 
 ## Contatti 
 
