@@ -150,6 +150,8 @@ Applicando lo sviluppo ottengo
 	&= \frac{1}{z} + \sum_{n>0} \frac{2z}{z^2 - (n\pi)^2}
 \end{align}
 
+\newpage
+
 \subsubsection{Verifica dell'espansione}
 
 Dimostrare la validità della relazione
@@ -222,14 +224,10 @@ Dato che
 \begin{align}
 	Res(f(\zeta), n\pi) &= \limit{\zeta}{n\pi} \frac{d}{d\zeta} \frac{(\zeta - n\pi)^2}{(\zeta - z) \sin^2(\zeta)} \firstpassage
 	\double{u=\zeta - n\pi}{\zeta = u + n\pi} \nextpassage
-	Res(f(\zeta), n\pi) &= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \sin^2(u + n\pi)} = \nonumber\\
-	&= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) (-1)^{2n} \sin^2(u)}= \nonumber\\
-	&= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} =  \nonumber\\
-	&= \left. \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
-	&= \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
-	&= \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
-	&= \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3!} - \dots\right)^2}{(u + n\pi - z) } \right|_{u=0} = \nonumber \\
-	&= \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3} + \dots\right)}{(u + n\pi - z) } \right|_{u=0} = \nonumber \\
+	Res(f(\zeta), n\pi) &= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \sin^2(u + n\pi)} =  \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) (-1)^{2n} \sin^2(u)}= \nonumber\\
+	&= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} = \left. \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
+	&= \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
+	&= \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3!} - \dots\right)^2}{(u + n\pi - z) } \right|_{u=0} = \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3} + \dots\right)}{(u + n\pi - z) } \right|_{u=0} = \nonumber \\
 	&= \left. \frac{\left( \frac{2}{3} u + \dots \right) (u + n\pi-z ) - \left(1 + \frac{u^2}{3}\right)}{(u+ n\pi -z)^2} \right|_{u=0} = -\frac{1}{(n\pi -z)^2}
 \end{align}
 La \ref{eq3} diventa
@@ -646,7 +644,7 @@ Il procedimento si snoda nei seguenti passaggi
 		\ddot{\phi}(t_0) &: \ddot{u}(t_0) <0 
 	\end{align}
 	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$  
-	\item Una volta trovato uesto cammino, risolviamo con i metodi noti per il caso reale
+	\item Una volta trovato questo cammino, risolviamo con i metodi noti per il caso reale
 	
 \end{enumerate}
 
