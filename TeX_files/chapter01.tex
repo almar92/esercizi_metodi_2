@@ -329,15 +329,15 @@ Presa una $f(z)$ con infiniti zeri $z_j$ numerabili di ordine $\alpha_j$ che si 
 
 \subsection{Definizione molto generale (Alessandro Marcelli)}
 
-Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo che approssima "bene" il comportamento della funzione, ovvero che valgono le due seguenti proprietà:
+Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$, ovvero che valgono le due seguenti proprietà:
 \begin{enumerate}
-	\item il resto della serie è tale che $\limit{z}{z_0} R_N(z) = 0 $
-	\item La serie fornisce una buona approssimazione di $f(z)$ solo in dterminate regioni del piano complesso
+	\item il resto della serie $R_N(z) = f(z) - S_N(z)$ è tale che $\limit{z}{z_0} \frac{|R_N(z)|}{|f_N(z)|} = 0 \quad \forall N\in \N$
+	\item la serie fornisce una buona approssimazione di $f(z)$ solo in determinate regioni del piano complesso
 \end{enumerate}
 
 \subsection{Metodo risolutivo generalizzato (Paolo Proia)}
 
-Dato una funzione integrale
+Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
 \begin{align}
 	F(x) = \int_{a}^{b} dt \; e^{x\phi(t)}g(t) \label{lol0}
 \end{align}
