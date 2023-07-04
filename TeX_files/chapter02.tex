@@ -656,10 +656,10 @@ Da cui segue che
 	\end{bmatrix} \to 	\triple{(T^\dagger x)_1 \quad\;\; &= &0 \;\qquad \qquad \qquad}{(T^\dagger x)_{2n} \quad &= &\alpha^* x_{2n+1} \quad n> 1}{(T^\dagger x)_{2n+1} &= &\alpha^* x_{2n} \quad\quad n> 1}
 \end{align}
 
-Un altro modo per il caclolo dell'aggiunto passa dalla sua definizione, che ci dice che
+Un altro modo per il calcolo dell'aggiunto passa dalla sua definizione, che ci dice che
 \begin{align}
-	&(y,Tx) = (T\dagger y,x) \firstpassage
-	&\sum_{i=1}^{N} y^*_i Tx_i = \sum_{i=1}^{N} (T\dagger y_i)^* x_i
+	&(y,Tx) = (T^\dagger y,x) \firstpassage
+	&\sum_{i=1}^{N} y^*_i (Tx)_i = \sum_{i=1}^{N} (T^\dagger y)_i^* x_i
 \end{align}
 Esplicitando le somme si ottengono i seguenti confronti
 \begin{align}
@@ -875,7 +875,7 @@ T^\dagger=
 Altrimenti possiamo calcolarlo \textbf{analiticamente}, studiando il prodotto
 \begin{align}
 	&(y,Tx) = (T^\dagger y, x)\firstpassage
-	&\sum_{i=1}^{n} y_i^* (Tx)_i =  \sum_{i=1}^{n} (T^\dagger y_i)^* x_i
+	&\sum_{i=1}^{n} y_i^* (Tx)_i =  \sum_{i=1}^{n} (T^\dagger y)_i^* x_i
 \end{align}
 Da cui otteniamo che
 \begin{align}
@@ -883,7 +883,8 @@ Da cui otteniamo che
 	y_2^* (Tx)_2 &=	y_2^*( x_2 + 3^a x_3) = (T^\dagger y)_2^* x_2\\
 	y_3^* (Tx)_3 &=	y_3^*( x_3 + 4^a x_4) = (T^\dagger y)_3^* x_3\\
 	y_4^* (Tx)_4 &=	y_4^*( x_4 + 4^a x_5) = (T^\dagger y)_4^* x_4\\
-	y_5^* (Tx)_5 &=	y_5^*( x_5 + 6^a x_6) = (T^\dagger y)_5^* x_5
+	y_5^* (Tx)_5 &=	y_5^*( x_5 + 6^a x_6) = (T^\dagger y)_5^* x_5\\
+	&\vdots \nonumber
 \end{align}
 Possiamo quindi scrivere
 \begin{align}
