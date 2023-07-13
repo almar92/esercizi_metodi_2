@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  4 JUL 2023 12:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  13 JUL 2023 17:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -454,7 +454,7 @@ LaTeX Info: Redefining \nameref on input line 84.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=245, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=249, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 103.
@@ -600,20 +600,14 @@ Chapter 2.
 
 
 
-] [24] [25] [26] [27]
-Underfull \vbox (badness 1215) has occurred while \output is active []
+] [24] [25] [26] [27] [28] [29]
+Underfull \vbox (badness 4726) has occurred while \output is active []
 
- [28]
-[29] [30] [31] [32] [33] [34]
+ [30]
+[31] [32] [33] [34] [35]
 Underfull \vbox (badness 7740) has occurred while \output is active []
 
- [35]
-[36]
-Overfull \hbox (11.73462pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
-I, PAOLO PROIA) \OT1/cmr/m/n/12 37
- []
-
+ [36]
 [37] [38]
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
@@ -626,13 +620,13 @@ Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 I, PAOLO PROIA) \OT1/cmr/m/n/12 41
  []
 
-[41]
-Overfull \hbox (2.00653pt too wide) in paragraph at lines 829--829
+[41] [42]
+Overfull \hbox (2.00653pt too wide) in paragraph at lines 840--840
 []\OT1/cmr/bx/n/14.4 Esempio 2 con metodo es-plic-ito e analitico (Da-vide Bu-f
 alini, Alessan-
  []
 
-[42]
+
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 43
@@ -644,38 +638,78 @@ Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 I, PAOLO PROIA) \OT1/cmr/m/n/12 45
  []
 
-[45]) [46]
+[45] [46])
+Overfull \hbox (11.73462pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
+I, PAOLO PROIA) \OT1/cmr/m/n/12 47
+ []
+
+[47]
 \openout2 = `./TeX_files/chapter03.aux'.
 
- (./TeX_files/chapter03.tex
-Chapter 3.
-[47
+ (./TeX_files/chapter03.tex [48
 
 
 
 
 ]
+Chapter 3.
+
+Overfull \hbox (6.20793pt too wide) in paragraph at lines 3--3
+[]\OT1/cmr/bx/n/17.28 Equazioni Dif-feren-ziali Re-ali (Adri-ano Chialas-tri, A
+lessan-
+ []
+
+[49]
 Underfull \vbox (badness 5985) has occurred while \output is active []
 
- [48]
-[49] [50] [51] [52]
+ [50]
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.1.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 51
+ []
+
+[51] [52]
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.1.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 53
+ []
+
+[53] [54]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53]
-[54] [55]) [56] (./esercizi_metodi.aux (./TeX_files/introduzione.aux)
+
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.1.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 55
+ []
+
+[55] [56]
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.1.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 57
+ []
+
+[57] [58]
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.1.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 59
+ []
+
+[59]) [60] (./esercizi_metodi.aux (./TeX_files/introduzione.aux)
 (./TeX_files/chapter01.aux) (./TeX_files/chapter02.aux)
 (./TeX_files/chapter03.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 3D84AA1CFADB24175770266B27BC078F;13743.
+(rerunfilecheck)             Checksum: 00ADC18BAC4C2AF2F567F04118C6D73F;14635.
  ) 
 Here is how much of TeX's memory you used:
- 11870 strings out of 478287
- 187082 string characters out of 5849289
- 502648 words of memory out of 5000000
- 29154 multiletter control sequences out of 15000+600000
+ 11903 strings out of 478287
+ 187523 string characters out of 5849289
+ 503774 words of memory out of 5000000
+ 29157 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -696,10 +730,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (62 pages, 421776 bytes).
+Output written on esercizi_metodi.pdf (66 pages, 431822 bytes).
 PDF statistics:
- 1412 PDF objects out of 1440 (max. 8388607)
- 1298 compressed objects within 13 object streams
- 706 named destinations out of 1000 (max. 500000)
- 486 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1468 PDF objects out of 1728 (max. 8388607)
+ 1349 compressed objects within 14 object streams
+ 736 named destinations out of 1000 (max. 500000)
+ 494 words of extra memory for PDF output out of 10000 (max. 10000000)
 

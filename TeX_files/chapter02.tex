@@ -268,7 +268,7 @@ Due famiglie importanti di funzioni di Green sono le
 
 Dato l'operatore integrale il cui nucleo in $L^2([0,1]x[0,1])$ è dato da
 \begin{align}
-	k(x,y) = 2xy-4x^2
+	k(x,y) = 2xy-4x^2 \label{nucleo}
 \end{align}
 andiamo a
 \begin{enumerate}
@@ -284,10 +284,21 @@ Iniziamo dal secondo punto. Possiamo riscrivere l'equazione di Fredholm come
 	\phi(x) &= \lambda \int_{0}^{1} dy \; (2xy-4x^2) \phi(y) + 1 -\alpha x = \nonumber\\
 	&= 2\lambda x \int_{0}^{1} dy \; y\phi(y) - 4x^2 \lambda \int_{0}^{1} dy \; \phi(y) + 1 -\alpha x \label{lol}
 \end{align}
-Da cui segue che
+Notiamo come il nucleo \ref{nucleo} sia di \textbf{Pincherle-Goursat} (o \textbf{degenere}), ossia può essere riscritto come 
 \begin{align}
-	A &= \int_{0}^{1} dy \; \phi(y) \\
-	B &= \int_{0}^{1} dy \; y\phi(y)
+	k(x,y) &= \sum_{i=1}^{N} P_i(x)Q_i(y)   
+\end{align}
+Da cui segue che possiamo definire
+\begin{align}
+	A_{ij} &= \int_{0}^{1} dy \; P_i(x)Q_i(y)\\
+	B_i &= \int_{0}^{1} dy \; Q_i(y)f(y) \firstpassage
+	\phi(x) &= f(x)+ c_A\lambda A + c_B\lambda B \label{loll2}
+\end{align}
+Confrontando la \ref{loll2} e la \ref{lol} troviamo 
+\begin{align}
+	&A = \int_{0}^{1} dy \; \phi(y)\;\; \spacer c_A = -4x^2\\
+	&B = \int_{0}^{1} dy \; y\phi(y) \spacer c_B = +2x \firstpassage
+	&\phi(x) =1 -\alpha x -4x^2 \lambda A + 2x\lambda B 
 \end{align}
 Sostituendo in queste espressioni la \ref{lol} otteniamo
 \begin{align}

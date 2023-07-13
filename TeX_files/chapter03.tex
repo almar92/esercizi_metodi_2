@@ -1,6 +1,6 @@
 \chapter{Equazioni Differenziali}
 
-\section{Equazioni Differenziali Reali (Adriano Chialastri)}
+\section{Equazioni Differenziali Reali (Adriano Chialastri, Alessandro Marcelli)}
 
 \subsection{Messaggio dall'autore}
 
@@ -8,7 +8,7 @@ Riporto qui, sotto richiesta dell'autore di questi esercizi, un suo messaggio:
 
 \textit{Io sottoscritto Adriano Chialastri non mi riterrò responsabile di qualsiasi danno a cose o persone causato da questi esercizi, in quanto non svolti nel pieno esercizio delle mie facoltà mentali a causa nella prolungata permanenza presso il luogo correntemente noto come Sogene.
 }
-\subsection{Esempio 1: Problema di Cauchy}
+\subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri)}
 Risolvere il seguente problema di Cauchy
 \begin{align}
 	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
@@ -80,7 +80,7 @@ E quindi l'esercizio è verificato.
 
 \newpage
 
-\subsection{Esempio 2: Omogenea di Eulero}
+\subsection{Esempio 2: Omogenea di Eulero (Adriano Chialastri)}
 Riprendiamo il precedente problema di Cauchy
 \begin{align}
 	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
@@ -117,7 +117,7 @@ Da cui otteniamo
 
 \newpage
 
-\subsection{Esempio 3: Problema di Sturm-Liouville}
+\subsection{Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}
 
 Risolvere il seguente problema di Sturm-Liouville
 \begin{align}
@@ -190,7 +190,7 @@ VERIFICA DA COPIARE QUANDO SONO MENO ABBOTTATO (pag 7 del pdf)
 
 \newpage
 
-\subsection{Esempio 4: Problema di Cauchy non lineare}
+\subsection{Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}
 Risolvere il seguente \textbf{problema di Cauchy}
 \begin{align}
 	\triple{x^2 \ddot{f}(x) + 3x \dot{f}(x) + f(x) = 0}{\dot{f}(1)=0}{f(1) =1}
@@ -238,12 +238,12 @@ Siccome è un'equazione di Eulero usiamo l'Ansatz $v(x) = x^\alpha$ e otteniamo
 \end{align}
 La soluzione generica del PdC sarà data da
 \begin{align}
-	\tilde{G}(x,y) = \alpha v_1(x) + \beta v_2(x) + \delta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] 
+	\tilde{G}(x,y) = \alpha v_1(x) + \beta v_2(x) + \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] 
 \end{align}
 Siccome siamo in presenza di un PdC, a noi serve la \textbf{funzione di Green avanzata}, e quindi dobbiamo porre $\alpha=\beta=0$
 \begin{align}
-	G(x,y) &= \delta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
-		   &= \delta(x-y)\left[ y^{\frac{1}{2}} x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}}y^{\frac{1}{2}} \ln(y) \right] 
+	G(x,y) &= \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
+		   &= \theta(x-y)\left[ y^{\frac{1}{2}} x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}}y^{\frac{1}{2}} \ln(y) \right] 
 \end{align}
 Possiamo quindi andare a calcolare la soluzione
 \begin{align}
@@ -264,6 +264,88 @@ Verifichiamo la bontà della soluzione trovata
 	&\double{\dot{f}(1) = -\frac{\ln(1)}{1}=0 }{f(1) = \frac{1 + \ln(1)}{1} = 1} \quad \leftarrow \quad \text{le BC sono rispettate}\\
 	&\cancel{x^2}\frac{2\ln(x) -1}{x^{\cancel{3}}} - 3\cancel{x} \frac{\ln(x)}{x^{\cancel{2}}} + \frac{1+\ln(x)}{x} = 0 \to \frac{1}{x}[\cancel{2\ln(x)} -\cancel{3\ln(x)} + \cancel{\ln(x)} -\cancel{1} +\cancel{1}] = 0 \quad \leftarrow \quad \text{ok}
 \end{align}
+\newpage 
+\subsection{Esempio 5: prova d'esame (Alessandro Marcelli)}
+Sia il seguente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{f}(x) - x \dot{f}(x) + f(x) = x^2}{\dot{f}(1) = 0}{f(1)=0}
+\end{align}
+Si richede di calcolare
+\begin{enumerate}
+	\item la funzione di Green del problema
+	\item la soluzione della non omogenea col metodo di Green per $x\geq 1$
+\end{enumerate}
+Iniziamo passando l'equazione in \textbf{forma omogenea} (omettiamo la dipendenza da x per snellire la notazione)
+\begin{align}
+	&f(x) = A(x)v(x) \to f=Av\firstpassage
+	&\dot{f} = \dot{A}v + A \dot{v} \to \ddot{f} = \ddot{A}v + 2 \dot{A}\dot{v} + A \ddot{v} \nextpassage
+	&x^2 \ddot{A}v + 2x^2 \dot{A}\dot{v} +x^2 A \ddot{v} -x\dot{A}v -x A \dot{v} + Av = x^2\nextpassage
+	& x^2 \ddot{A}v +x(2x \dot{A} - A) \dot{v} + (x^2 \ddot{A} - x \dot{A} + A)v = x^2\nextpassage
+	&2x \dot{A} - A = 0 \to \frac{dA}{dx} = \frac{A}{2x} \to \int dA \; \frac{1}{A} = \int dx \; \frac{1}{2x} = \ln(A) = \ln(\sqrt{x}) \nextpassage
+	&A = \sqrt{x} = x^{\frac{1}{2}} \to \dot{A} = \frac{1}{2}x^{-\frac{1}{2}} \to \ddot{A} = -\frac{1}{4}x^{-\frac{3}{2}} \nextpassage
+	&x^{\frac{5}{2}} \ddot{v} + \frac{1}{4} x^{\frac{1}{2}} = x^2\nextpassage
+	&\ddot{v} +\frac{1}{4} x^{-2} v = x^{-\frac{1}{2}}
+\end{align}
+Cominciamo col risolvere l'omogenea:
+\begin{align}
+	\ddot{v} +\frac{1}{4} x^{-2} v = 0 
+\end{align}
+Siamo in presenza di un'equazione di eulero, visto che
+\begin{align}
+	&\ddot{v}  + \frac{a}{x} \dot{v} + \frac{b}{x^2} u = 0 \spacer a=0 \; , \; b= \frac{1}{4} \firstpassage
+	&	\ddot{v} +\frac{1}{4x^2} v = 0 
+\end{align}
+Possiamo quindi fare l'Ansatz $v = x^\alpha$, ottenendo
+\begin{align}
+	\alpha (\alpha -1) x^{\alpha -2} +\frac{1}{4} x^{\alpha -2} = 0 \to \alpha^2 - \alpha + \frac{1}{4} = 0 
+\end{align}
+Siccome $\Delta = 0$ avremo una sola soluzione in $\alpha = \frac{1}{2}$. Ci conviene quindi trasformare l'equazione con il cambio di variabile $x=e^{t}$, dove otteniamo
+\begin{align}
+	&\frac{dv}{dx} = e^{-t}\frac{dv}{dt} \to \frac{d^2v}{dx^2} = e^{-2t}\frac{d^2 v}{dt^2} - e^{-2t}\frac{dv}{dt} \firstpassage
+	&e^{-2t} \left[ \frac{d^2 v}{dt^2} - (a-1) \frac{dv}{dt} + bv\right] = 0
+\end{align}
+nel nostro caso $a=0$, quindi
+\begin{align}
+	\frac{d^2 v}{dt^2} + \frac{dv}{dt} + \frac{v}{4}= 0
+\end{align}
+Il nostro  Ansatz diventa $v = x^\alpha = (e^t)^\alpha  = e^{\alpha t}$ eotteniamo le due soluzioni
+\begin{align}
+	v_1 = e^{\alpha t} \spacer v_2 = t e^{\alpha t} 
+\end{align}
+Che, tornando nella variabile originale diventano
+\begin{align}
+	v_1 = x^\alpha \spacer v_2 = x^\alpha \ln(x) 
+\end{align}
+Nel nostro caso saranno quindi
+\begin{align}
+	&v_1 = x^\frac{1}{2} \spacer v_2 = x^\frac{1}{2} \ln(x) \firstpassage
+	&v_{om} = x^\frac{1}{2}(A + B\ln(x)) \firstpassage
+	&\dot{v}_{om} = \frac{1}{2}x^{-\frac{1}{2}}A + B \left( x^\frac{1}{2} \cdot \frac{1}{x} + \frac{1}{2}x^{-\frac{1}{2}} \right) = \frac{1}{2}x^{-\frac{1}{2}} A + \frac{3}{2}x^{-\frac{1}{2}} B = \frac{1}{2}x^{-\frac{1}{2}} (A + 3B) \nextpassage
+	&\double{v_{om}(1) = 0}{\dot{v}_{om}(1) = 0} \to \double{1^\frac{1}{2}(A + B\ln(1)) = 0 \to& A = 0}{\frac{1}{2}\cdot 1^{-\frac{1}{2}} (A + 3B)=0 \to& B = 0}
+\end{align}
+
+La soluzione omogenea è nulla, e posso quindi usare il \textbf{teorema di Green}.
+ 
+Iniziamo calcolando il \textbf{Wronskiano}
+\begin{align}
+	 W = \begin{vmatrix}
+	x^\frac{1}{2} && x^\frac{1}{2} \ln(x) \\
+	\frac{1}{2}x^{-\frac{1}{2}} && \frac{1}{2}x^{-\frac{1}{2}} \ln(x) + x^{-\frac{1}{2}}
+\end{vmatrix} = \frac{1}{2} \ln(x) + 1 - \frac{1}{2}\ln(x) = 1
+\end{align}
+Andiamo ora calcolare la \textbf{funzione di Green avanzata} del problema
+\begin{align}
+	G(x,y) &= \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
+	&= \theta(x-y)\left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] 
+\end{align}
+Possiamo ora andare a calcolare la soluzione particolare
+\begin{align}
+	v(x) &= \int_{1}^{x} dy \; G(x,y) \cdot y^2 = \nonumber\\
+		 &= \int_{1}^{x} dy \; \left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] y^2 = \nonumber\\
+		 &= x^\frac{1}{2} \ln(x)\int_{1}^{x} dy \;y^\frac{5}{2} - x^\frac{1}{2}\int_{1}^{x} dy \; y^\frac{5}{2}\ln(y)  = \nonumber\\
+		 &= x^\frac{1}{2} \ln(x) \left.\frac{2}{7}y^{\frac{7}{2}} \right|_1^x + 
+\end{align}
+
 \newpage
 \section{Equazioni Differenziali Complesse}
 
