@@ -1,5 +1,114 @@
 \chapter{Funzioni analitiche, prolungamenti ed espansioni asintotiche}
 
+\section{Nozioni generali di Analisi Complessa (Alessandro Marcelli)}
+
+\subsection{I numeri complessi}
+
+I numeri complessi possono essere espressi come somma di una \textbf{pare reale} e di una \textbf{parte immaginaria}
+\begin{align}
+	z = x + iy \spacer x,y \in \R
+\end{align}
+Si definisce il \textbf{complesso coniugato} di un numero complesso come
+\begin{align}
+	\overline{z} = x-iy
+\end{align}
+Possiamo definire il suo \textbf{modulo} come
+\begin{align}
+	|z|^2 = z \cdot \overline{z} = x^2 + y^2
+\end{align}
+Utilizzando queste due definizioni si possono riscrivere le parti reale e immaginaria come
+\begin{align}
+	x = \frac{z+ \overline{z}}{2}\\
+	y = \frac{z- \overline{z}}{2i}
+\end{align}
+Un numero complesso può essere rappresentato anche in \textbf{forma polare} nel seguente modo
+\begin{align}
+	&\double{x = \rho \cos (\theta)}{y = \rho \sin (\theta)} \spacer \double{\rho = \sqrt{x^2 + y^2}}{\theta = \arctan (\frac{y}{x})}\firstpassage
+	&\double{z =  \rho (\cos (\theta) + i\sin(\theta))}{\overline{z} = \rho (\cos (\theta) - i\sin(\theta))}
+\end{align}
+Possiamo inoltre usare la \textbf{formula di Eulero} per riscrivere
+\begin{align}
+	&e^{i\theta} = \cos(\theta)+ i \sin (\theta)\firstpassage
+	&\double{z = \rho e^{+i\theta}}{\overline{z} = \rho e^{-i\theta}}\\
+	&\cos (\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2} \spacer x= \frac{e^{i\theta} + e^{-i\theta}}{2\rho}\\
+	&\sin (\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i} \spacer x= \frac{e^{i\theta} - e^{-i\theta}}{2i\rho}
+\end{align}
+
+\newpage
+
+\subsection{Funzioni di variabile complessa}
+
+Una funzione di variabile complessa $f(z)$ per definizione può essere scritta come
+\begin{align}
+	f(z) = u(x,y) + i v(x,y) \spacer x,y, u(x,y), v(x,y) \in \R
+\end{align}
+In analogo col caso reale, $f(z)$ si dice \textbf{differenziabile}\cite{MfP} in $z_0 \in \C$ se il limite
+\begin{align}
+	\limit{\Delta z}{0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
+\end{align}
+\begin{enumerate}
+	\item esiste
+	\item è finito
+	\item il suo valore non cambia in funzione della direzione dal quale lo si approccia
+\end{enumerate}
+La difficoltà aggiuntiva rispetto al caso reale è dovuto al fatto che in campo complesso il numero di direzioni possibili è infinito. Le condizioni sono quindi molto più restrittive del caso reale, ovvero
+\begin{enumerate}
+	\item Devono essere rispettate le \textbf{condizioni di Cauchy-Riemann}:
+	\begin{align}
+		\frac{\partial u(x,y)}{\partial x} &= +\frac{\partial v(x,y)}{\partial y}\\
+		\frac{\partial u(x,y)}{\partial y} &= -\frac{\partial v(x,y)}{\partial x}		
+	\end{align}
+	\item Le derivate parziali prime di $u(x,y)$ e $v(x,y)$ devono essere continue
+\end{enumerate}
+
+Le funzioni di variabile complessa si dividono in due categorie:
+\begin{enumerate}
+	\item \textbf{funzioni a singolo valore}, ovvero che assumono lo stesso valore in $z_0$ indipendentemente dal percorso fatto per raggiungerlo. Ad esempio
+	\begin{align}
+		f(z) = \frac{1}{z}
+	\end{align}
+	\item \textbf{funzioni multivalore}, ovvero il cui valore varia a seconda del percorso fatto per raggiungere $z_0$. Ad esempio
+	\begin{align}
+		g(z) = \ln(z) = \ln |z| + i \arg (z)
+	\end{align}
+\end{enumerate}
+
+Se la funzione è differenziabile ed è a \textbf{singolo valore} per ogni punto di un insieme $\mathcal{D}$, allora si dice che è \textbf{analitica} in questo insieme, che prende il nome di \textbf{dominio di analiticità}. All'interso di $\mathcal{D}$ essa non può assumere massimi locali.
+
+Una funzione analitica può essere anche riscritta come (RITROVA GLI APPUNTI DI SANTINI)
+\begin{align}
+	f(z) = u(x,y) + iv(x,y) \to f(z) = u(z,\overline{z}) + i v(z,\overline{z})
+\end{align}
+
+Se una funzione è analitica in un punto, questo si dice \textbf{punto regolare} della funzione, altrimenti prende il nome di \textbf{punto singolare}.
+
+Per le funzioni multivalore spesso si può "barare" utilizzando le \textbf{superfici di Riemann}, che ci permettono di usare le comode proprietà delle funzioni analitiche.
+
+Il \textbf{teorema di Cauchy} ci dice che, per curve chiuse $\gamma$
+\begin{align}
+	\oint_\gamma dz \; f(z) = 0 \quad \forall \gamma \in \mathcal{D}
+\end{align}
+Siccome qualunque curva chiusa può essere scritta come combinazioni di curve con gli stessi estremi, questo implica che fissati gli estremi di integrazione il valore dell'integrale è indipendente dal percorso.
+
+
+\newpage
+\subsection{Punti di non analiticità}
+
+\subsubsection{Poli e zeri}
+
+Trovare gli appunti di Santini
+
+\subsubsection{Residui}
+
+Se in un insieme $A$ la nostra $f(z)$ presenta singolarità isolate $z_i$, non vale più il teorema di Cauchy, e quindi non si annulla l'integrale, il cui valore viene dato dalla somma dei \textbf{residui della funzione} in tali punti
+\begin{align}
+	&\oint_\gamma dz \; f(z) = \sum_{i=1}^N \text{Res} (f(z), z_i)\\
+	&\text{Res} (f(z), z_i) = \limit{z}{z_i} \frac{1}{(n-1)!} \left( \frac{d^{n-1}}{dz^{n-1}} \left[ (z-z_0)^n f(z) \right] \right) \spacer n = \text{ordine del polo}
+\end{align}
+
+
+\newpage
+
 \section{Indicatore Logaritmico (Davide Bufalini)}
 Data una funzione $f(z)$ meromorfa ,si definisce l'\textbf{indicatore logaritmico} come
 \begin{align}
@@ -47,7 +156,6 @@ Allora per definizione avremo, considerando la \ref{eq1}
 	&\sum_{k} c_k (z-z_0)^k \cdot \sum_{n=0} a_n (z-z_0)^n = 1\firstpassage
 	&\sum_{k,n} c_ka_n (z-z_0)^{n+k} = 1 \label{eq2}
 \end{align}
-
 Riscriviamo la \ref{eq2} come
 \begin{align}
 	\sum_{l=0}^{+\infty} d_l (z-z_0)^l = 1
@@ -325,34 +433,38 @@ Presa una $f(z)$ con infiniti zeri $z_j$ numerabili di ordine $\alpha_j$ che si 
 
 \section{Espansioni asintotiche (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}
 
-\subsection{Definizione molto generale (Alessandro Marcelli)}
+\subsection{Spunti di teoria (Alessandro Marcelli, Paolo Proia)}
 
-Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$, ovvero che valgono le due seguenti proprietà:
+\subsubsection{Definizione molto generale (Alessandro Marcelli)}
+
+Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$ \cite{MMF}, ovvero che valgono le due seguenti proprietà:
 \begin{enumerate}
 	\item il resto della serie $R_N(z) = f(z) - S_N(z)$ è tale che $\limit{z}{z_0} \frac{|R_N(z)|}{|f_N(z)|} = 0 \quad \forall N\in \N$
 	\item la serie fornisce una buona approssimazione di $f(z)$ solo in determinate regioni del piano complesso
 \end{enumerate}
+L'approssimazione che si va a trovare sarà tanto più buona tanto più grande è $x$, e si lavora quindi per $x \to + \infty$. Nel caso ci si trovi nel caso $x \to -\infty$ bisogna fare un cambio di variabile.
 
-\subsection{Metodo risolutivo generalizzato (Paolo Proia)}
+Il contributo maggiore sarà dato dai primi termini dell'espansione, motivo per cui di solito ci si ferma al secondo termine.
 
 Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
 \begin{align}
 	F(x) = \int_{a}^{b} dt \; e^{x\phi(t)}g(t) \label{lol0}
 \end{align}
 
+\subsubsection{Termine Leading: Metodo di Laplace (Alessandro Marcelli)}
+
+Se interessa solo il primo termine dell'espansione, detto \textbf{dominante}, basta sviluppare al secondo ordine $\phi(t)$ e $g(t)$ nel punto di massimo della prima, risolvere l'integrale con questa approssimazione e prendere il primo termine, come si vede nell'esempio svolto del paragrafo \ref{es1}.
+
+\subsubsection{Metodo risolutivo generalizzato (Paolo Proia)}
+
+Qualora servano termini successivi (di solito ci si ferma al termine Next-to-Leading) la situazione si complica, in quanto non basta sviluppare al secondo ordine e bon, in quanto ci sono casi in cui uno dei due termini può essere nullo (funzioni trigonometriche my beloved). Il procedimento si snoda quindi:
 \begin{enumerate}
 	\item Trovare massimo per \(\phi(t)\) (chiamiamo \(t_0\))
 	\item Espandere \(g(t)\) intorno a \(t_0\) per 2 o 3 termini
 	\item Prendere nota dell'esponente dell'ultimo termine (definiamo come  \(n\)) 
-	\item Parametrizzare come 
-	\begin{align}
-		\phi(t) - \phi(t_0)=-\tau^2 \label{lol1}
-	\end{align}
-	e se necessario espandere \(\phi(t)\) intorno a $t_0$ fino ad ordine \(n\)
-	\item Trovare cambio di variabile da \(t\) a \(\tau\), imponendo
-	\begin{align}
-		t - t_0 = h(\tau) = \sum_i^{n+1} c_i \tau^i
-	\end{align}
+	\item Parametrizzare come $\phi(t) - \phi(t_0)=-\tau^2 \label{lol1}$
+	ed espandere \(\phi(t)\) intorno a $t_0$ fino ad ordine \(n\)
+	\item Trovare cambio di variabile da \(t\) a \(\tau\), imponendo $t - t_0 = h(\tau) = \sum_i^{n+1} c_i \tau^i$
 	\item Sostituiamo nella \refeq{lol1} tenendo i termini fino a \(\tau^{n+1}\)
 	\item Imporre l'uguaglianza tra i coefficenti con la stessa potenza di \(\tau\) a dx e sx, trovando così \(h(\tau)\)
 	\item Essendo \(h(\tau) = t + cost. \) abbiamo che \(\dot{h}d\tau = dt\) e abbiamo così terminato il cambio di variabile
@@ -363,14 +475,13 @@ Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
 		&g(t) \to g(h(\tau)) \label{lol2}
 	\end{align}
 	Nella \ref{lol2} usiamo direttamente l'espansione in serie del punto 2
-	\item Svolgiamo il prodotto \(\dot{h}g(h(\tau))\) e teniamo i primi due termini il cui integrale è non nullo
+	\item Svolgiamo il prodotto \(\dot{h} \cdot g(h(\tau))\), sostituiamo nell'integrale e teniamo i primi $n$ termini il cui integrale è non nullo (nel caso Next-to-Leading i primi 2)
 \end{enumerate}
 
 \textbf{NOTA BENE:} qualora una delle due funzioni sia una trigonometrica elevata a potenza conviene sviluppare solo la trigonometrica e mettere a potenza lo sviluppo, e fare altri magheggi
 quali utilizzare le relazioni trigonometriche per fare il meno conti possibile.
-\newpage
 
-\subsection{Esempio svolto con metodo generalizzato (Paolo Proia)}
+\subsection{Esempio 1: metodo generalizzato (Paolo Proia)}
 
 Sia la seguente funzione integrale
 \begin{align}
@@ -440,7 +551,9 @@ Sia la seguente funzione integrale
 	\end{align}
 \end{enumerate}
 
-\subsection{Esempio 1 (Davide Bufalini)}
+\newpage
+
+\subsection{Esempio 2 (Davide Bufalini) \label{es1}}
 
 Calcolare per $x\rightarrow +\infty$ i primi due termini dell'espansione per la funzione integrale
 \begin{align}
@@ -502,7 +615,7 @@ Andiamo così a trovare i primi due termini dell'espansione
 
 
 
-\subsection{Esempio 2 (Davide Bufalini)}
+\subsection{Esempio 3 (Davide Bufalini)}
 
 Calcoliamo i termini \textbf{Leading} e \textbf{Subleading} per la funzione
 \begin{align}
@@ -560,7 +673,7 @@ Possiamo quindi finalmente sostituire
 
 \newpage
 
-\subsection{Esempio 3 (Davide Bufalini)}
+\subsection{Esempio 4 (Davide Bufalini)}
 
 Data la funzione
 \begin{align}
