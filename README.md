@@ -4,11 +4,16 @@
 
 Questa ""dispensa"" è una raccolta di materiale utile (almeno al momento della scrittura di questa introduzione) alla prova scritta dell'esame  di Metodi e Modelli Matematici per la Fisica 2 del corso di laurea magistrale in Fisica dell'Univeristà Tor Vergata. 
 
-Sono esercizi svolti da gente brava che, come esercizio personale ai fini di comprenderli al meglio, ho raccolto insieme, modificandoli quel tanto che bastava per passare dal "calcolo su foglio" a roba che sembra effettivamente una dispensa. Sul successo dell'operazione lascio il giudizio ai posteri, ammesso che ce ne saranno.
+L'intento iniziale era semplicemente quello di fare una raccolta di esercizi svolti da gente brava che nel corso del tempo ho ~~sciacallato~~ recuperato durante la preparazione di questa prova scritta, come esercizio personale al fine di una maggiore comprensione. Niente de serio, solo che me diverto più a scrive su latex che a farmi venire un crampo al braccio alla lavagna.
 
-Quando possibile ho cercato di aggiungere dei minimi richiami di teoria qualora fossero assenti dagli appunti che nel corso del tempo ho ~~sciacallato~~ raccolto durante la preparazione di questa prova scritta.
+Ho inziato quindi trascrivendo e basta, modificandoli nella forma quel tanto che bastava per passare dal "calcolo su foglio" a roba che sembra effettivamente una dispensa. 
 
-Ben lungi dall'essere un lavoro perfetto, ma sinceramente spero di non fare in tempo a renderlo tale (RIP Equazioni Differenziali in campo complesso). 
+Poi me so fatto prende la mano, e oltre a perdere un sacco di tempo a formattare il meglio possibile sti appunti, quando possibile ho cercato di aggiungere dei minimi richiami di teoria qualora fossero assenti negli svolgimenti.
+
+Sul successo dell'operazione lascio il giudizio ai posteri, ammesso che ce ne saranno.
+
+
+Ben lungi dall'essere un lavoro perfetto, ma sinceramente spero di non fare in tempo a renderlo tale (RIP Equazioni Differenziali in campo complesso).
 
 ## Crediti
 
