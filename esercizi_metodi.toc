@@ -6,9 +6,10 @@
 \contentsline {section}{\numberline {1.1}Nozioni generali di Analisi Complessa (Alessandro Marcelli)}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}I numeri complessi}{1}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Funzioni di variabile complessa}{2}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Punti di non analiticità}{3}{subsection.1.1.3}%
-\contentsline {subsubsection}{\numberline {1.1.3.1}Poli e zeri}{3}{subsubsection.1.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.1.3.2}Residui}{3}{subsubsection.1.1.3.2}%
+\contentsline {subsection}{\numberline {1.1.3}Zeri e singolarità}{3}{subsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.3.1}Zeri}{3}{subsubsection.1.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.1.3.2}Singolarità}{3}{subsubsection.1.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.1.3.3}Residui}{3}{subsubsection.1.1.3.3}%
 \contentsline {section}{\numberline {1.2}Indicatore Logaritmico (Davide Bufalini)}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Inversione e reciprocità locale (Davide Bufalini)}{5}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Funzione reciproca}{5}{subsection.1.3.1}%

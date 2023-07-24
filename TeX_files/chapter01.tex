@@ -92,11 +92,27 @@ Siccome qualunque curva chiusa può essere scritta come combinazioni di curve co
 
 
 \newpage
-\subsection{Punti di non analiticità}
+\subsection{Zeri e singolarità}
 
-\subsubsection{Poli e zeri}
+\subsubsection{Zeri}
 
-Trovare gli appunti di Santini
+Se una funzione $f(z)$ sparisce per $z=z_0$ allora tale punto viene detto \textbf{zero della funzione}. Uno zero si dice di ordine $n$ quando
+\begin{align}
+	f(z_0) = \left. \frac{df(z)}{dz} \right|_{z=z_0} =  \left. \frac{d^2 f(z)}{dz^2} \right|_{z=z_0} = \dots = \left. \frac{d^{n-1}f(z)}{dz^{n-1}} \right|_{z=z_0} = 0 \\
+	\left. \frac{d^{n}f(z)}{dz^{n}} \right|_{z=z_0} \neq 0
+\end{align}
+
+\subsubsection{Singolarità}
+
+Le \textbf{singolarità} di una funzione sono i punti in cui  una funzione non è analitica. Qualora vi sia un solo punto nell'insieme si parla di \textbf{singolarità isolata}.
+Possiamo dividerle in tre categorie
+\begin{enumerate}
+	\item \textbf{Singolarità eliminabile}, quando esiste finito il limite tendente ad essa.
+	\item \textbf{Poli di ordine $n$}, ovvero dove la serie di Laurent della funzione ha coefficienti nulli da $b_{n+1}$ in poi.
+	\item \textbf{Singolarità essenziali} quando la serie di LAurentha infinit coefficienti non nulli
+\end{enumerate}
+
+APPUNTI SANTINI DATROVARE
 
 \subsubsection{Residui}
 
@@ -322,7 +338,7 @@ Studiando i poli otteniamo
 Siccome $I_n \arrowlim{n}{+\infty} 0$ abbiamo che
 \begin{align}
 	0 &= \sum_{n\in \N} Res(f(\zeta), n\pi) + Res(f(\zeta), z) =\nonumber\\
-	  &= \sum_{n\in \N} Res(f(\zeta), n\pi) + \frac{1}{\sin^2(z)}  \label{eq3}
+	  &= \sum_{n\in \N} Res(f(\zeta), n\pi) + \frac{1}{\sin^2(z)}  \label{eq4}
 \end{align}
 Da cui otteniamo
 \begin{align}
@@ -338,7 +354,7 @@ Dato che
 	&= \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3!} - \dots\right)^2}{(u + n\pi - z) } \right|_{u=0} = \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3} + \dots\right)}{(u + n\pi - z) } \right|_{u=0} = \nonumber \\
 	&= \left. \frac{\left( \frac{2}{3} u + \dots \right) (u + n\pi-z ) - \left(1 + \frac{u^2}{3}\right)}{(u+ n\pi -z)^2} \right|_{u=0} = -\frac{1}{(n\pi -z)^2}
 \end{align}
-La \ref{eq3} diventa
+La \ref{eq4} diventa
 \begin{align}
 	\frac{1}{\sin^2(z)} = \sum_{n\in \N} \frac{1}{(n\pi -z)^2}
 \end{align}
