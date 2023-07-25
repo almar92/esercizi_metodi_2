@@ -59,12 +59,20 @@
 \contentsline {section}{\numberline {2.4}Operatori a blocchi (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}{42}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Esempio 1 con metodo esplicito e analitico (Davide Bufalini, Paolo Proia)}{42}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Esempio 2 con metodo esplicito e analitico (Davide Bufalini, Alessandro Marcelli)}{47}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Equazioni Differenziali}{53}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Equazioni Differenziali Reali (Adriano Chialastri, Alessandro Marcelli)}{53}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Messaggio dall'autore}{53}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Esempio 1: Problema di Cauchy (Adriano Chialastri)}{53}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{56}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{57}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{59}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Esempio 5: prova d'esame (Alessandro Marcelli)}{62}{subsection.3.1.6}%
-\contentsline {section}{\numberline {3.2}Equazioni Differenziali Complesse}{64}{section.3.2}%
+\contentsline {chapter}{\numberline {3}Equazioni Differenziali Ordinarie}{53}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spunti di teoria (Alessandro Marcelli)}{53}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Concetti generali}{53}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Esistenza ed unicità delle soluzioni}{53}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Distribuzioni}{54}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Equazioni Differenziali Lineari}{54}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}EDO lineari del 1o ordine}{55}{subsection.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.1.5.1}Separazione di variabili + variazione delle costanti}{55}{subsubsection.3.1.5.1}%
+\contentsline {subsubsection}{\numberline {3.1.5.2}Metodo della funzione di Green}{56}{subsubsection.3.1.5.2}%
+\contentsline {section}{\numberline {3.2}Equazioni Differenziali Reali (Adriano Chialastri, Alessandro Marcelli)}{57}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Messaggio dall'autore}{57}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Esempio 1: Problema di Cauchy (Adriano Chialastri)}{57}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{59}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{60}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{62}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Esempio 5: prova d'esame (Alessandro Marcelli)}{65}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}Equazioni Differenziali Complesse}{67}{section.3.3}%

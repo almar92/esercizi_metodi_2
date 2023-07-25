@@ -1,5 +1,154 @@
-\chapter{Equazioni Differenziali}
+\chapter{Equazioni Differenziali Ordinarie}
 
+
+
+\section{Spunti di teoria (Alessandro Marcelli)}
+
+\subsection{Concetti generali}
+
+Un'\textbf{equazione differenziale ordinaria} (EDO) di ordine $n$ viene genricamente definita come
+\begin{align}
+	\Phi(x, u, u', u'', \dots, u^{(n)}) = 0
+\end{align}
+In questo corso ci si occupa solo di equazioni che possono essere scritte in \textbf{forma normale}, ovvero dove si può esplicitare in funzione della derivata massima
+\begin{align}
+	u^{(n)}=f(x, u, u', u'', \dots, u^{(n-1)})
+\end{align}
+con la proprietà di poter essere riscritte come sistemi di $n$ EDO del 1o ordine
+nel seguente modo
+\begin{align}
+	\left\{\begin{array}{c}
+		v_1 \quad = u' \hfill \\
+		v_2 \quad = v_1' = u'' \hfill \\
+		\dots \hfill \\
+		v_{n-1} = v_{n-2}' \hfill \\
+		v_n \quad = f(x, u, v_1, v_2, \dots, v_{n-1}) \hfill 
+	\end{array}
+	\right.
+\end{align}
+Questo sistema definisce un insieme infinito di curve detto \textbf{integrale generale} dell'equazione.
+
+Per individuare una curva specifica bisogna specificare almeno un punto  per cui deve passare, e i rispettivi valori che le varie derivate vi devono assumere fino alla $u^{(n-1)}$. Questo prende il nome di \textbf{problema di Cauchy}.
+
+Nota: visto che come abbiamo visto i problemi di ordine superiore al primo possono essere visti come combinazione di EDO al primo ordine, nella teoria ci appoggeremo a problemi del 1o ordine del tipo
+\begin{align}
+	\left\{\begin{array}{c}
+		u'(x) \; = F(x,u(x)) \hfill \\
+		u(x_0) \;  = u_0 \hfill 
+	\end{array}
+	\right.
+\end{align}
+
+\subsection{Esistenza ed unicità delle soluzioni}
+
+L'esistenza delle soluzioni di una EDO è dettata dai seguenti due teoremi:
+\begin{enumerate}
+	\item \textbf{Teorema di Cauchy:} \textit{sia assegnato un problema di Cauchy in un dominio
+		\begin{align}
+			\mathcal{D} = (a,b)x(c,d) \taleche (x_0,u_0) \in \mathcal{D}
+		\end{align}
+		Se rispetto ad $u$ si verifica la condizione di Lipschitzianità per $F(x,u)$
+		\begin{align}
+			|F(x,u_1) - F(x,u_2)| \leq L|u_1 - u_2|
+		\end{align}
+		Allora la soluzione del problema di Cauchy esiste ed è unica.	
+	}
+	\item \textbf{Teorema di Peano:} \textit{sia assegnato un problema di Cauchy in un dominio
+		\begin{align}
+			\mathcal{D} = (a,b)x(c,d) \taleche (x_0,u_0) \in \mathcal{D}
+		\end{align}
+		Se la $F(x,u)$ è continua, allora esiste un opportuno intorno $(x_0, x_0+\delta) \in \mathcal{D}$ tale per cui la soluzione del problema esiste.
+	}
+\end{enumerate}
+
+Qualora ci si trovi nel secondo caso, non è più sufficiente un unico punto per determinare la soluzione, e bisogna ijnvece specificare, in numero pari all'ordine della EDO, delle \textbf{condizioni di bordo} (in inglese \textbf{Boundary Conditions}, BC), arriviamo così a definire due tipi di problemi:
+\begin{enumerate}
+	\item \textbf{Problemi di Dirichlet:} condizioni al bordo su $u(x)$. Nel caso di equazioni lineari, questi si riconducono allo studio degli autovalori dei corrispondenti operatori lineari, e prendono il nome di \textbf{Problemi di Sturm-Liouville}.
+	\item \textbf{Problemi di Neumann:} condizioni al bordo su $u'(x)$
+\end{enumerate}
+
+\subsection{Distribuzioni}
+
+Le \textbf{distribuzioni} sono una famiglia di operatori lineari integrali definite come
+\begin{align}
+	(T,\phi) &= \int_{-\infty}^{+\infty} dx \; T(x) \phi(x)\\
+	(T',\phi) &= \int_{-\infty}^{+\infty} dx \; T'(x) \phi(x) = -\int_{-\infty}^{+\infty} dx \; T(x) \phi'(x) = -(T,\phi')
+\end{align}
+
+Per quanto riguarda questo corso ci limiteremo allo spazio $S^{\infty}$ delle \textbf{funzioni di prova}, con derivate continue di ogni ordine che all'infinito tendono a zero più rapidamente di ogni potenza.
+
+Esempi noti di distribuzioni sono la \textbf{delta} e la \textbf{theta}.
+
+La continuità delle distribuzioni come funzionali consente di ottenere una loro definizione come limite di altre distribuzioni.
+
+\subsection{Equazioni Differenziali Lineari}
+Si parla di EDO lineari di ordine $n$ quando possono essere poste nella forma
+\begin{align}
+	&\mathcal{L}^{(n)}_x u(x) = f(x) \label{edolin}\\
+	&\mathcal{L}^{(n)}_x = \sum_{k=0}^{n} c_k(x) \frac{d^k}{dx^k}
+\end{align}
+Lo studio passa quindi da $F$ ai vari $c_k$. Notiamo come possiamo avere singolarità della soluzione solo intorno a punti singolari dei coefficienti, che definiamo come \textbf{punti singolari fissi}.
+
+Spesso le soluzioni sono note solo attraverso sviluppi in serie di Laurent intorno a tali punti.
+
+Nel caso lineare, la continuità dei coefficienti ci garantisce esistenza ed unicità delle soluzioni.
+
+Definiamo la \textbf{omogenea associata} dell'equazione \ref{edolin} come
+\begin{align}
+	&\mathcal{L}^{(n)}_x u(x) = \sum_{k=0}^{n} c_k(x) \frac{d^k}{dx^k}u(x) = 0
+\end{align}
+L'integrale generale di una EDO lineare può essere scritto come combinazione della soluzione dell'omogenea $u_{om}(x)$ e di una soluzione particolare $u_{p}(x)$
+\begin{align}
+	u(x) = u_{om}(x) + u_{p}(x)
+\end{align}
+
+
+
+
+
+\subsection{EDO lineari del 1o ordine}
+
+Sia il problema di Cauchy
+\begin{align}
+	\left\{\begin{array}{c}
+		c_1 (x) u'(x) + c_0(x) u(x) \; = f(x) \hfill \\
+		u(x_0) \;  = u_0 \hfill 
+	\end{array}
+	\right.
+\end{align}
+Possiamo risolvere il problema in due modi:
+
+\subsubsection{Separazione di variabili + variazione delle costanti}
+	\begin{enumerate}
+		\item La soluzione dell'omogenea si ricava per \textbf{separazione delle variabili}
+		\begin{align}
+			&c_1 (x) u'(x) + c_0(x) u(x) \; = 0 \firstpassage
+			&c_1 (x) u'(x) = - c_0(x) u(x) \nextpassage
+			&\frac{du}{dx} = -\frac{c_0(x)}{c_1(x)} u(x)\nextpassage
+			&\int_{u_0}^u du \; \frac{1}{u}= - \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}\nextpassage
+			&\ln(u(x)) - C = - \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)} \spacer C = \ln (u_0)\nextpassage
+			&u_{om}(x) = e^C e^{- \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}}
+		\end{align}
+		\item La soluzione della particolare invece col metodo della \textbf{variazione delle costanti}, ovvero ponendo
+		\begin{align}
+			&u_p(x) = a(x) u_{om}(x)\firstpassage
+			&u'_p(x)= a'(x) u_{om}(x) +  a(x) u'_{om}(x) \nextpassage
+			&c_1(x) \cdot [a'(x) u_{om}(x) +  a(x) u'_{om}(x)] + c_0 a(x) u_{om}(x) =f(x) \nextpassage
+			&c_1(x)u_{om}(x) \cdot a'(x) + \cancel{[c_1(x)u'_{om}(x) + c_0(x)u_{om}(x)]\cdot a(x)} = f(x)\nextpassage
+			&c_1(x)u_{om}(x) \cdot a'(x) = f(x) \nextpassage
+			&a'(x) =\frac{f(x)}{c_1(x)u_{om}(x)} \nextpassage
+			&a(x) = \int_{x_0}^{x} dt\; \frac{f(t)}{c_1(t)u_{om}(t)} \nextpassage
+			&u_p(x) = \left[ \int_{x_0}^{x} dt\; \frac{f(t)}{c_1(t)u_{om}(t)} \right] \cdot \left[ e^C e^{- \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}} \right]
+		\end{align}
+		\item si sommano le due soluzioni, e si trova la curva che rispetta le condizioni iniziali del problema
+	\end{enumerate}	
+\subsubsection{Metodo della funzione di Green} lo abbiamo già introdotto nel capitolo degli operatori. Andiamo a cercare una soluzione nel senso delle distribuzioni per
+	\begin{align}
+		\mathcal{L}^{(1)}_x G(x,y) = \delta(x-y)
+	\end{align}
+
+
+\newpage
 \section{Equazioni Differenziali Reali (Adriano Chialastri, Alessandro Marcelli)}
 
 \subsection{Messaggio dall'autore}
@@ -8,6 +157,7 @@ Riporto qui, sotto richiesta dell'autore di questi esercizi, un suo messaggio:
 
 \textit{Io sottoscritto Adriano Chialastri non mi riterrò responsabile di qualsiasi danno a cose o persone causato da questi esercizi, in quanto non svolti nel pieno esercizio delle mie facoltà mentali a causa nella prolungata permanenza presso il luogo correntemente noto come Sogene.
 }
+
 \subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri)}
 Risolvere il seguente problema di Cauchy
 \begin{align}
