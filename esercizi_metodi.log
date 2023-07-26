@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 JUL 2023 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 JUL 2023 20:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -451,7 +451,7 @@ LaTeX Info: Redefining \nameref on input line 84.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=329, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=333, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 103.
@@ -510,72 +510,71 @@ l.37 \newpage
 <to be read again> 
                    \relax 
 l.94 \newpage
-              [2] [3] [4] [5] [6] [7] [8] [9]
+              [2] [3] [4] [5] [6] [7] [8]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 343.
+
+[9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 327.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 327.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 327.
+(hyperref)                removing `math shift' on input line 418.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 327.
+(hyperref)                removing `\mathop' on input line 418.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 327.
+(hyperref)                removing `\mathgroup' on input line 418.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 327.
+(hyperref)                removing `\symoperators' on input line 418.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 327.
+(hyperref)                removing `\@ifnextchar' on input line 418.
 
-[10] [11] [12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 418.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 418.
+
+[11] [12]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 13
  []
 
 [13] [14]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 15
  []
 
 [15] [16]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 17
  []
 
 [17] [18]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 19
  []
 
 [19] [20]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 21
  []
 
 [21] [22]
-Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
-ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 23
- []
-
-[23]
 
 LaTeX Warning: Command \textdegree invalid in math mode on input line 903.
 
@@ -583,30 +582,36 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 903.
 LaTeX Warning: Command \textdegree invalid in math mode on input line 903.
 
 Missing character: There is no ° in font cmr12!
-[24])
+
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 1.8.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
-ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 25
+\OT1/cmr/m/sl/12 1.6.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 23
  []
 
-[25]
+[23]) [24]
 \openout2 = `./TeX_files/chapter02.aux'.
 
- (./TeX_files/chapter02.tex [26
-
-
-
-
-]
+ (./TeX_files/chapter02.tex
 Chapter 2.
-[27] [28] [29] [30] [31] [32] [33]
+[25
+
+
+
+
+] [26] [27] [28] [29] [30] [31]
 Underfull \vbox (badness 4726) has occurred while \output is active []
 
- [34]
-[35] [36] [37] [38] [39]
+ [32]
+[33] [34] [35] [36] [37]
 Underfull \vbox (badness 7740) has occurred while \output is active []
 
- [40]
+ [38]
+[39] [40]
+Overfull \hbox (11.73462pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
+I, PAOLO PROIA) \OT1/cmr/m/n/12 41
+ []
+
 [41] [42]
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
@@ -614,12 +619,6 @@ I, PAOLO PROIA) \OT1/cmr/m/n/12 43
  []
 
 [43] [44]
-Overfull \hbox (11.73462pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
-I, PAOLO PROIA) \OT1/cmr/m/n/12 45
- []
-
-[45] [46]
 Overfull \hbox (2.00653pt too wide) in paragraph at lines 840--840
 []\OT1/cmr/bx/n/14.4 Esempio 2 con metodo es-plic-ito e analitico (Da-vide Bu-f
 alini, Alessan-
@@ -628,44 +627,50 @@ alini, Alessan-
 
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
+I, PAOLO PROIA) \OT1/cmr/m/n/12 45
+ []
+
+[45] [46]
+Overfull \hbox (11.73462pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 47
  []
 
-[47] [48]
+[47] [48])
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 49
  []
 
-[49] [50])
-Overfull \hbox (11.73462pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
-I, PAOLO PROIA) \OT1/cmr/m/n/12 51
- []
-
-[51]
+[49]
 \openout2 = `./TeX_files/chapter03.aux'.
 
- (./TeX_files/chapter03.tex [52
+ (./TeX_files/chapter03.tex [50
 
 
 
 
 ]
 Chapter 3.
-[53]
+[51]
 Overfull \hbox (12.40942pt too wide) in paragraph at lines 101--103
 \OT1/cmr/m/n/12 L'integrale gen-erale di una EDO lin-eare pu^^Ro es-sere scritt
 o come com-bi-nazione della soluzione dell'omogenea
  []
 
-[54] [55] [56] [57] [58]
+[52] [53] [54] [55] [56]
 Overfull \hbox (6.20793pt too wide) in paragraph at lines 237--237
 []\OT1/cmr/bx/n/17.28 Equazioni Dif-feren-ziali Re-ali (Adri-ano Chialas-tri, A
 lessan-
  []
 
 
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 57
+ []
+
+[57] [58]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 59
@@ -677,43 +682,37 @@ Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 ANDRO MARCELLI) \OT1/cmr/m/n/12 61
  []
 
-[61] [62]
+[61]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [62]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 63
  []
 
-[63]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64]
+[63] [64]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 65
  []
 
-[65] [66]
-Overfull \hbox (15.79698pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
-ANDRO MARCELLI) \OT1/cmr/m/n/12 67
- []
-
-[67] [68]) [69] [70
+[65] [66]) [67] [68
 
 
 
-] (./esercizi_metodi.bbl) [71
+] (./esercizi_metodi.bbl) [69
 
 ] (./esercizi_metodi.aux
 (./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
 (./TeX_files/chapter02.aux) (./TeX_files/chapter03.aux))
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: D20EFC37F9010DB3CED34472F0EAE1CC;19057.
+(rerunfilecheck)             Checksum: 4C8175C0D06EBFCADE274D797C2992D4;19650.
  ) 
 Here is how much of TeX's memory you used:
- 12049 strings out of 478287
- 189638 string characters out of 5849289
- 504106 words of memory out of 5000000
+ 12047 strings out of 478287
+ 189714 string characters out of 5849289
+ 504107 words of memory out of 5000000
  29186 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -735,10 +734,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (77 pages, 465993 bytes).
+Output written on esercizi_metodi.pdf (75 pages, 464679 bytes).
 PDF statistics:
- 1731 PDF objects out of 2073 (max. 8388607)
- 1599 compressed objects within 16 object streams
- 850 named destinations out of 1000 (max. 500000)
- 654 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1727 PDF objects out of 1728 (max. 8388607)
+ 1597 compressed objects within 16 object streams
+ 848 named destinations out of 1000 (max. 500000)
+ 662 words of extra memory for PDF output out of 10000 (max. 10000000)
 
