@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  25 JUL 2023 15:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  26 JUL 2023 19:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -451,7 +451,7 @@ LaTeX Info: Redefining \nameref on input line 84.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=317, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=329, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 103.
@@ -654,24 +654,18 @@ I, PAOLO PROIA) \OT1/cmr/m/n/12 51
 ]
 Chapter 3.
 [53]
-Overfull \hbox (12.40942pt too wide) in paragraph at lines 99--101
+Overfull \hbox (12.40942pt too wide) in paragraph at lines 101--103
 \OT1/cmr/m/n/12 L'integrale gen-erale di una EDO lin-eare pu^^Ro es-sere scritt
 o come com-bi-nazione della soluzione dell'omogenea
  []
 
-[54] [55] [56]
-Overfull \hbox (6.20793pt too wide) in paragraph at lines 152--152
+[54] [55] [56] [57] [58]
+Overfull \hbox (6.20793pt too wide) in paragraph at lines 237--237
 []\OT1/cmr/bx/n/17.28 Equazioni Dif-feren-ziali Re-ali (Adri-ano Chialas-tri, A
 lessan-
  []
 
 
-Overfull \hbox (15.79698pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
-ANDRO MARCELLI) \OT1/cmr/m/n/12 57
- []
-
-[57] [58]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 59
@@ -683,38 +677,44 @@ Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 ANDRO MARCELLI) \OT1/cmr/m/n/12 61
  []
 
-[61]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [62]
+[61] [62]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 63
  []
 
-[63] [64]
+[63]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [64]
 Overfull \hbox (15.79698pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
 ANDRO MARCELLI) \OT1/cmr/m/n/12 65
  []
 
-[65] [66]) [67] [68
+[65] [66]
+Overfull \hbox (15.79698pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 3.2.  EQUAZIONI DIFFERENZIALI REALI (ADRIANO CHIALASTRI, ALESS
+ANDRO MARCELLI) \OT1/cmr/m/n/12 67
+ []
+
+[67] [68]) [69] [70
 
 
 
-] (./esercizi_metodi.bbl) [69
+] (./esercizi_metodi.bbl) [71
 
 ] (./esercizi_metodi.aux
 (./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
 (./TeX_files/chapter02.aux) (./TeX_files/chapter03.aux))
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 46F82A019E9D8543A7C544F6751448F5;18441.
+(rerunfilecheck)             Checksum: D20EFC37F9010DB3CED34472F0EAE1CC;19057.
  ) 
 Here is how much of TeX's memory you used:
- 12016 strings out of 478287
- 189132 string characters out of 5849289
- 503982 words of memory out of 5000000
- 29181 multiletter control sequences out of 15000+600000
+ 12049 strings out of 478287
+ 189638 string characters out of 5849289
+ 504106 words of memory out of 5000000
+ 29186 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -735,10 +735,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (75 pages, 458704 bytes).
+Output written on esercizi_metodi.pdf (77 pages, 465993 bytes).
 PDF statistics:
- 1674 PDF objects out of 1728 (max. 8388607)
- 1544 compressed objects within 16 object streams
- 822 named destinations out of 1000 (max. 500000)
- 630 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1731 PDF objects out of 2073 (max. 8388607)
+ 1599 compressed objects within 16 object streams
+ 850 named destinations out of 1000 (max. 500000)
+ 654 words of extra memory for PDF output out of 10000 (max. 10000000)
 
