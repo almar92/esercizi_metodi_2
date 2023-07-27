@@ -1,6 +1,6 @@
 \chapter{Funzioni analitiche, prolungamenti ed espansioni asintotiche}
 
-\section{Spunti di teoria (Davide Bufalini, Alessandro Marcelli)}
+\section{Spunti di teoria generale (Davide Bufalini, Alessandro Marcelli)}
 
 \subsection{I numeri complessi (Alessandro Marcelli)}
 
@@ -150,7 +150,52 @@ Facciamo alcune osservazioni:
 
 \newpage
 
-\subsection{Inversione e reciprocità locale (Davide Bufalini)}
+\subsection{Espansione di Weierstrass (Davide Bufalini)}
+Presa una $f(z)$ con infiniti zeri $z_j$ numerabili di ordine $\alpha_j$ che si accumulano all'infinito (e mai allo zero???) allora vale lo sviluppo
+\begin{align}
+	f(z) =f(0) e^{z\frac{f'(0)}{f(0)}} \prod_{n=1}^{+\infty}\left( 1 - \frac{z}{z_n} \right)^{\alpha_n} e^{\alpha_n \frac{z}{z_n}}
+\end{align}
+
+\subsection{Funzioni speciali (Alessandro Marcelli)}
+
+\subsubsection{Funzione Gamma di Eulero}
+\begin{align}
+	\Gamma(z) &= \int_{0}^{\infty} dt \; e^{-t} t^{z-1} = \dots =  \quad &\text{Integrale Euleriano di II tipo}\\
+	&= \frac{1}{z} \prod_{k=1}^{\infty} \left( 1+ \frac{1}{k} \right)^z \left( 1+ \frac{z}{k} \right)^{-1}
+\end{align}
+Gode della proprietà	
+\begin{align}
+	&\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)} \firstpassage
+	&\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{2}\right) = \pi \rightarrow \Gamma \left( \frac{1}{2} \right) = \sqrt{\pi} \\
+	&\Gamma\left(\frac{1}{2} + \xi\right) \Gamma\left(\frac{1}{2} - \xi\right) = \frac{\pi}{\cos(\pi \xi)}\\
+	&\sqrt{\pi} \Gamma(2z) = 2^{2z-1} \Gamma(z) \Gamma \left( z + \frac{1}{2} \right)\\
+	&\Gamma(\overline{z}) = \overline{\Gamma(z)}
+\end{align}
+In campo complesso si può prolungare tramite il cammino di Hankel, e si arriva ad ottenere
+\begin{align}
+	\Gamma(n) = (n-1)!
+\end{align}
+
+\subsubsection{Funzione Digamma}
+\begin{align}
+	\psi(z) = \frac{\Gamma'(z)}{\Gamma(z)} = \frac{d}{dz} \ln \Gamma (z)
+\end{align}
+\subsubsection{Funzione beta di Eulero}
+\begin{align}
+	B(p,q) &= \int_{0}^{1} dt \; t^{p-1} (1-t)^{q-1} = \dots =  \quad &\text{Integrale Euleriano di I tipo}\\
+	&= \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
+\end{align}
+
+\subsubsection{Funzione zeta di Riemann generalizzata}
+
+Sono stanco capo.
+
+\newpage
+
+
+\section{Inversione e reciprocità locale (Davide Bufalini)}
+
+\subsection{Spunti di teoria (Davide Bufalini)}
 
 Sia una $f(z)$ analitica con centro dello sviluppo in $z_0$ tale che
 \begin{align}
@@ -223,100 +268,7 @@ Possiamo quindi procedere in due modi:
 
 \newpage
 
-\subsection{Espansione di Weierstrass (Davide Bufalini)}
-Presa una $f(z)$ con infiniti zeri $z_j$ numerabili di ordine $\alpha_j$ che si accumulano all'infinito (e mai allo zero???) allora vale lo sviluppo
-\begin{align}
-	f(z) =f(0) e^{z\frac{f'(0)}{f(0)}} \prod_{n=1}^{+\infty}\left( 1 - \frac{z}{z_n} \right)^{\alpha_n} e^{\alpha_n \frac{z}{z_n}}
-\end{align}
 
-\subsection{Funzioni speciali (Alessandro Marcelli)}
-
-\subsubsection{Funzione Gamma di Eulero}
-\begin{align}
-	\Gamma(z) &= \int_{0}^{\infty} dt \; e^{-t} t^{z-1} = \dots =  \quad &\text{Integrale Euleriano di II tipo}\\
-	&= \frac{1}{z} \prod_{k=1}^{\infty} \left( 1+ \frac{1}{k} \right)^z \left( 1+ \frac{z}{k} \right)^{-1}
-\end{align}
-Gode della proprietà	
-\begin{align}
-	&\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)} \firstpassage
-	&\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{2}\right) = \pi \rightarrow \Gamma \left( \frac{1}{2} \right) = \sqrt{\pi} \\
-	&\Gamma\left(\frac{1}{2} + \xi\right) \Gamma\left(\frac{1}{2} - \xi\right) = \frac{\pi}{\cos(\pi \xi)}\\
-	&\sqrt{\pi} \Gamma(2z) = 2^{2z-1} \Gamma(z) \Gamma \left( z + \frac{1}{2} \right)\\
-	&\Gamma(\overline{z}) = \overline{\Gamma(z)}
-\end{align}
-In campo complesso si può prolungare tramite il cammino di Hankel, e si arriva ad ottenere
-\begin{align}
-	\Gamma(n) = (n-1)!
-\end{align}
-
-\subsubsection{Funzione Digamma}
-\begin{align}
-	\psi(z) = \frac{\Gamma'(z)}{\Gamma(z)} = \frac{d}{dz} \ln \Gamma (z)
-\end{align}
-\subsubsection{Funzione beta di Eulero}
-\begin{align}
-	B(p,q) &= \int_{0}^{1} dt \; t^{p-1} (1-t)^{q-1} = \dots =  \quad &\text{Integrale Euleriano di I tipo}\\
-	&= \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
-\end{align}
-
-\subsubsection{Funzione zeta di Riemann generalizzata}
-
-Sono stanco capo.
-
-
-
-\newpage
-
-\newpage
-\subsection{Espansioni asintotiche (Alessandro Marcelli, Paolo Proia)}
-
-\subsubsection{Definizione molto generale (Alessandro Marcelli)}
-
-Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$ \cite{MMF}, ovvero che valgono le due seguenti proprietà:
-\begin{enumerate}
-	\item il resto della serie $R_N(z) = f(z) - S_N(z)$ è tale che $\limit{z}{z_0} \frac{|R_N(z)|}{|f_N(z)|} = 0 \quad \forall N\in \N$
-	\item la serie fornisce una buona approssimazione di $f(z)$ solo in determinate regioni del piano complesso
-\end{enumerate}
-L'approssimazione che si va a trovare sarà tanto più buona tanto più grande è $x$, e si lavora quindi per $x \to + \infty$. Nel caso ci si trovi nel caso $x \to -\infty$ bisogna fare un cambio di variabile.
-
-Il contributo maggiore sarà dato dai primi termini dell'espansione, motivo per cui di solito ci si ferma al secondo termine.
-
-Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
-\begin{align}
-	F(x) = \int_{a}^{b} dt \; e^{x\phi(t)}g(t) \label{lol0}
-\end{align}
-
-\subsubsection{Termine Leading: Metodo di Laplace (Alessandro Marcelli)}
-
-Se interessa solo il primo termine dell'espansione, detto \textbf{dominante}, basta sviluppare al secondo ordine $\phi(t)$ e $g(t)$ nel punto di massimo della prima, risolvere l'integrale con questa approssimazione e prendere il primo termine, come si vede nell'esempio svolto del paragrafo \ref{es1}.
-
-\subsubsection{Metodo risolutivo generalizzato (Paolo Proia)}
-
-Qualora servano termini successivi (di solito ci si ferma al termine Next-to-Leading) la situazione si complica, in quanto non basta sviluppare al secondo ordine e bon, in quanto ci sono casi in cui uno dei due termini può essere nullo (funzioni trigonometriche my beloved). Il procedimento si snoda quindi:
-\begin{enumerate}
-	\item Trovare massimo per \(\phi(t)\) (chiamiamo \(t_0\))
-	\item Espandere \(g(t)\) intorno a \(t_0\) per 2 o 3 termini
-	\item Prendere nota dell'esponente dell'ultimo termine (definiamo come  \(n\)) 
-	\item Parametrizzare come $\phi(t) - \phi(t_0)=-\tau^2 \label{lol1}$
-	ed espandere \(\phi(t)\) intorno a $t_0$ fino ad ordine \(n\)
-	\item Trovare cambio di variabile da \(t\) a \(\tau\), imponendo $t - t_0 = h(\tau) = \sum_i^{n+1} c_i \tau^i$
-	\item Sostituiamo nella \refeq{lol1} tenendo i termini fino a \(\tau^{n+1}\)
-	\item Imporre l'uguaglianza tra i coefficenti con la stessa potenza di \(\tau\) a dx e sx, trovando così \(h(\tau)\)
-	\item Essendo \(h(\tau) = t + cost. \) abbiamo che \(\dot{h}d\tau = dt\) e abbiamo così terminato il cambio di variabile
-	\item Sostituiamo nella \ref{lol0}
-	\begin{align}
-		&\phi(t) = \phi(t_0) - \tau^2\\
-		&dt=\dot{h}d\tau\\
-		&g(t) \to g(h(\tau)) \label{lol2}
-	\end{align}
-	Nella \ref{lol2} usiamo direttamente l'espansione in serie del punto 2
-	\item Svolgiamo il prodotto \(\dot{h} \cdot g(h(\tau))\), sostituiamo nell'integrale e teniamo i primi $n$ termini il cui integrale è non nullo (nel caso Next-to-Leading i primi 2)
-\end{enumerate}
-
-\textbf{NOTA BENE:} qualora una delle due funzioni sia una trigonometrica elevata a potenza conviene sviluppare solo la trigonometrica e mettere a potenza lo sviluppo, e fare altri magheggi
-quali utilizzare le relazioni trigonometriche per fare il meno conti possibile.
-
-\section{Calcolo inverse (Davide Bufalini)}
 \subsection{Numeri di Eulero}
 
 Data la relazione
@@ -338,7 +290,7 @@ Presa una $f(z)$ analitica nell'origine e con infiniti poli semplici che si accu
 \end{align}
 
 
-\section{Esempio: cotangente}
+\subsection{Esempio 1: $\cot (z)$}
 
 \subsubsection{Calcolo dell'espansione}
 
@@ -415,7 +367,7 @@ E la tesi è così dimostrata.
 
 \newpage
 
-\subsection{Esempio: $\sin^{-2}(z)$}
+\subsection{Esempio 2: $\sin^{-2}(z)$}
 
 Utilizziamo l'integrale (di Cauchy? Chiedere)
 \begin{align}
@@ -496,6 +448,92 @@ E possiamo quindi applicare SW
 \newpage
 
 \section{Espansioni asintotiche (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}
+
+\subsection{Spunti di teoria (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}
+
+\subsubsection{Definizione molto generale (Alessandro Marcelli)}
+
+Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$ \cite{MMF}, ovvero che valgono le due seguenti proprietà:
+\begin{enumerate}
+	\item il resto della serie $R_N(z) = f(z) - S_N(z)$ è tale che $\limit{z}{z_0} \frac{|R_N(z)|}{|f_N(z)|} = 0 \quad \forall N\in \N$
+	\item la serie fornisce una buona approssimazione di $f(z)$ solo in determinate regioni del piano complesso
+\end{enumerate}
+L'approssimazione che si va a trovare sarà tanto più buona tanto più grande è $x$, e si lavora quindi per $x \to + \infty$. Nel caso ci si trovi nel caso $x \to -\infty$ bisogna fare un cambio di variabile.
+
+Il contributo maggiore sarà dato dai primi termini dell'espansione, motivo per cui di solito ci si ferma al secondo termine.
+
+Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
+\begin{align}
+	F(x) = \int_{a}^{b} dt \; e^{x\phi(t)}g(t) \label{lol0}
+\end{align}
+
+\subsubsection{Termine Leading: Metodo di Laplace (Alessandro Marcelli)}
+
+Se interessa solo il primo termine dell'espansione, detto \textbf{dominante}, basta sviluppare al secondo ordine $\phi(t)$ e $g(t)$ nel punto di massimo della prima, risolvere l'integrale con questa approssimazione e prendere il primo termine, come si vede nell'esempio svolto del paragrafo \ref{es1}.
+
+\subsubsection{Metodo risolutivo generalizzato (Paolo Proia)}
+
+Qualora servano termini successivi (di solito ci si ferma al termine Next-to-Leading) la situazione si complica, in quanto non basta sviluppare al secondo ordine e bon, in quanto ci sono casi in cui uno dei due termini può essere nullo (funzioni trigonometriche my beloved). Il procedimento si snoda quindi:
+\begin{enumerate}
+	\item Trovare massimo per \(\phi(t)\) (chiamiamo \(t_0\))
+	\item Espandere \(g(t)\) intorno a \(t_0\) per 2 o 3 termini
+	\item Prendere nota dell'esponente dell'ultimo termine (definiamo come  \(n\)) 
+	\item Parametrizzare come $\phi(t) - \phi(t_0)=-\tau^2 \label{lol1}$
+	ed espandere \(\phi(t)\) intorno a $t_0$ fino ad ordine \(n\)
+	\item Trovare cambio di variabile da \(t\) a \(\tau\), imponendo $t - t_0 = h(\tau) = \sum_i^{n+1} c_i \tau^i$
+	\item Sostituiamo nella \refeq{lol1} tenendo i termini fino a \(\tau^{n+1}\)
+	\item Imporre l'uguaglianza tra i coefficenti con la stessa potenza di \(\tau\) a dx e sx, trovando così \(h(\tau)\)
+	\item Essendo \(h(\tau) = t + cost. \) abbiamo che \(\dot{h}d\tau = dt\) e abbiamo così terminato il cambio di variabile
+	\item Sostituiamo nella \ref{lol0}
+	\begin{align}
+		&\phi(t) = \phi(t_0) - \tau^2\\
+		&dt=\dot{h}d\tau\\
+		&g(t) \to g(h(\tau)) \label{lol2}
+	\end{align}
+	Nella \ref{lol2} usiamo direttamente l'espansione in serie del punto 2
+	\item Svolgiamo il prodotto \(\dot{h} \cdot g(h(\tau))\), sostituiamo nell'integrale e teniamo i primi $n$ termini il cui integrale è non nullo (nel caso Next-to-Leading i primi 2)
+\end{enumerate}
+
+\textbf{NOTA BENE:} qualora una delle due funzioni sia una trigonometrica elevata a potenza conviene sviluppare solo la trigonometrica e mettere a potenza lo sviluppo, e fare altri magheggi
+quali utilizzare le relazioni trigonometriche per fare il meno conti possibile.
+
+\subsubsection{Metodo del punto di sella (Davide Bufalini)}
+
+Abbiamo finora visto integrali sulla retta reale. Qualora si abbia una generica curva $\gamma \in \C$ il procedimento si complica leggermente. 
+
+Presa una funzione integrale della forma
+\begin{align}
+	I(x) = \int_\gamma dt \; e^{x\phi(t)} g(t)
+\end{align}
+Qualora $\phi(t)$ e $g(t)$ siano analitiche in un dominio $\mathit{D}$ e si abbia $\gamma \subseteq \mathit{D}$ abbiamo un problema. Infatti, riscrivendo la $\phi(t)$ nella seguente forma
+\begin{align}
+	\phi(t) &= u(t) + iv(t)
+\end{align}
+All'interno del dominio non è detto che $v(t)$ sia costante, il che ci impedisce di restringerci al caso reale. Inoltre, per $t \in \gamma$ il termine $e^{iv(t)}$ oscilla fortemente, portanto la $I(x)$ ad essere mediata a 0. 
+
+Cerchiamo un modo per rendere costante la $v(t)$ e rendere massima la $u(t)$, in modo da rispettare il comportamento asintotico.
+Il procedimento si snoda nei seguenti passaggi
+\begin{enumerate}
+	\item Riscriviamo la $\phi(t)$ come
+	\begin{align}
+		\phi(t) = \phi(x,y) = u(x,y) + iv(x,y)
+	\end{align}
+	Possiamo farlo in più modi
+	\begin{enumerate}
+		\item Coordinate cartesiane, sostituendo $t = x + iy$
+		\item Coordinate polari, sostituendo $t = \sqrt{x^2 + y^2}\cdot e^{i \arctan \left(\frac{x}{y}\right)}$
+	\end{enumerate}
+	\item Cerchiamo il punto di sella $t_0$ di $\phi(t)$ tale
+	\begin{align}
+		\phi(t_0) &= 0 \\
+		\ddot{\phi}(t_0) &: \ddot{u}(t_0) <0 
+	\end{align}
+	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$  
+	\item Una volta trovato questo cammino, risolviamo con i metodi noti per il caso reale
+	
+\end{enumerate}
+
+\newpage
 
 \subsection{Esempio 1: metodo generalizzato (Paolo Proia)}
 
@@ -741,43 +779,9 @@ Possiamo quindi riscrivere la nostra funzione integrale come
 
 \newpage
 
-\subsection{Metodo del punto di sella (Davide Bufalini)}
 
-Abbiamo finora visto integrali sulla retta reale. Qualora si abbia una generica curva $\gamma \in \C$ il procedimento si complica leggermente. 
 
-Presa una funzione integrale della forma
-\begin{align}
-	I(x) = \int_\gamma dt \; e^{x\phi(t)} g(t)
-\end{align}
-Qualora $\phi(t)$ e $g(t)$ siano analitiche in un dominio $\mathit{D}$ e si abbia $\gamma \subseteq \mathit{D}$ abbiamo un problema. Infatti, riscrivendo la $\phi(t)$ nella seguente forma
-\begin{align}
-	\phi(t) &= u(t) + iv(t)
-\end{align}
-All'interno del dominio non è detto che $v(t)$ sia costante, il che ci impedisce di restringerci al caso reale. Inoltre, per $t \in \gamma$ il termine $e^{iv(t)}$ oscilla fortemente, portanto la $I(x)$ ad essere mediata a 0. 
-
-Cerchiamo un modo per rendere costante la $v(t)$ e rendere massima la $u(t)$, in modo da rispettare il comportamento asintotico.
-Il procedimento si snoda nei seguenti passaggi
-\begin{enumerate}
-	\item Riscriviamo la $\phi(t)$ come
-	\begin{align}
-		\phi(t) = \phi(x,y) = u(x,y) + iv(x,y)
-	\end{align}
-	Possiamo farlo in più modi
-	\begin{enumerate}
-		\item Coordinate cartesiane, sostituendo $t = x + iy$
-		\item Coordinate polari, sostituendo $t = \sqrt{x^2 + y^2}\cdot e^{i \arctan \left(\frac{x}{y}\right)}$
-	\end{enumerate}
-	\item Cerchiamo il punto di sella $t_0$ di $\phi(t)$ tale
-	\begin{align}
-		\phi(t_0) &= 0 \\
-		\ddot{\phi}(t_0) &: \ddot{u}(t_0) <0 
-	\end{align}
-	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$  
-	\item Una volta trovato questo cammino, risolviamo con i metodi noti per il caso reale
-	
-\end{enumerate}
-
-\subsection{Esempio 1}
+\subsection{Esempio 5: Punto di sella 1 (Davide Bufalini)}
 
 Calcoliamo il termine leading per l'espansione asintotica  della funzione integrale
 \begin{align}
@@ -858,7 +862,7 @@ Siccome stiamo su sviluppando sul punto di sella $(0,-1)$ il denominatore può e
 
 \newpage
 
-\subsection{Esempio 2}
+\subsection{Esempio 6: Punto di sella 2 (Davide Bufalini)}
 
 Calcoliamo i termini Leading e Subleading per lo sviluppo asintotico della seguente funzione integrale
 \begin{align}

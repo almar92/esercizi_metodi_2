@@ -2,7 +2,7 @@
 
 
 
-\section{Spunti di teoria (Alessandro Marcelli)}
+\section{Spunti di teoria generale (Alessandro Marcelli)}
 
 \subsection{Concetti generali}
 
@@ -105,7 +105,7 @@ L'integrale generale di una EDO lineare può essere scritto come combinazione de
 \end{align}
 
 
-\subsection{EDO lineari del 1o ordine}
+\section{EDO lineari del 1o ordine [teoria](Alessandro Marcelli)}
 
 Sia il problema di Cauchy
 \begin{align}
@@ -117,7 +117,7 @@ Sia il problema di Cauchy
 \end{align}
 Possiamo risolvere il problema in due modi:
 
-\subsubsection{Separazione di variabili + variazione delle costanti}
+\subsection{Separazione di variabili + variazione delle costanti}
 	\begin{enumerate}
 		\item La soluzione dell'omogenea si ricava per \textbf{separazione delle variabili}
 		\begin{align}
@@ -142,7 +142,7 @@ Possiamo risolvere il problema in due modi:
 		\item si sommano le due soluzioni, e si trova la curva che rispetta le condizioni iniziali del problema
 	\end{enumerate}
 	
-\subsubsection{Metodo della funzione di Green} 
+\subsection{Metodo della funzione di Green} 
 Il metodo della \textbf{funzione di Green} lo abbiamo già introdotto nel capitolo degli operatori. Andiamo a cercare una soluzione nel senso delle distribuzioni per
 	\begin{align}
 		\mathcal{L}^{(1)}_x G(x,y) = \delta(x-y) \label{green1}
@@ -225,7 +225,82 @@ Invece, nel caso di problemi generali del tipo \ref{ode1ord1}, il procedimento s
 
 \newpage
 
-\subsection{EDO lineari del 2o ordine}
+\section{EDO lineari del 2o ordine (Adriano Chialastri, Alessandro Marcelli)}
+
+
+\subsection{Spunti di teoria (Alessandro Marcelli)}
+
+Le EDO del 2o ordine sono rappresentabili come
+\begin{align}
+	c_2(x) u''(x) + c_1(x) u'(x) + c_0(x)u(x) = f(x)
+\end{align}
+Seguendo il procedimento illustrato in \ref{canon}, possono essere sempre ridotte in \textbf{forma canonica}
+\begin{align}
+	v''(x) + c(x)v(x) = g(x)
+\end{align}
+dove, ovviamente le condizioni al contorno vanno trasformate di conseguenza.
+
+Rispetto alle EDO del 1o ordine, c'è la difficoltà aggiuntiva data dal fatto che non sempre si può trovare una soluzione dell'omogenea (e quindi l'integrale generale). Questo problema non si pone però per due famiglie di equazioni omogenee:
+\begin{enumerate}
+	\item \textbf{Omogenee a coefficienti costanti:}
+	\begin{align}
+		a u''(x) + b u'(x) + c u(x) = 0 \label{edo2ord1}
+	\end{align}
+	In questo caso si procede con l'\textbf{Ansatz} (o \textbf{ipotesi}) $u(x) = e^{\alpha x}$ e si va a cercare il parametro $\alpha$ tramite l'equazione caratteristica
+	\begin{align}
+		&a \alpha^2 + b \alpha + c = 0\firstpassage
+		& \alpha_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \firstpassage
+		&u_1(x) = e^{\alpha_1 x} \spacer u_2(x) = e^{\alpha_2 x}
+	\end{align}
+	Se le soluzioni coincidono, e quindi si ha
+	\begin{align}
+		\alpha = -\frac{b}{2a}
+	\end{align}
+	si procede nel seguente modo
+	\begin{align}
+		&u_1(x) = e^{\alpha x} \spacer u_2(x) = \rho(x)e^{\alpha x} \firstpassage
+		&\cancel{(a \alpha^2 + b \alpha + c)\rho(x)e^{\alpha x}} + (a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x))e^{\alpha x} = 0
+	\end{align}
+	Il primo termine si annulla, vista la \ref{edo2ord1}, otteniamo quindi
+	\begin{align}
+		&(a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x))e^{\alpha x} = 0\firstpassage
+		&a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x)=0 \nextpassage
+		&a \rho''(x) + b \rho'(x) - \cancel{2a}\frac{b}{\cancel{2a}} \rho'(x)=0 \to a \rho''(x) + \cancel{b \rho'(x)} - \cancel{b\rho'(x)} =0 \nextpassage
+		&\rho''(x) = 0 \nextpassage
+		&\rho(x) = c_1x + c_2
+	\end{align}
+	la soluzione più semplice si ha per $c_1 = 1$ e $c_2 = 0$, che ci restituisce
+	\begin{align}
+		u_2(x) = x e^{\alpha x}
+	\end{align}
+
+	\item \textbf{Equazioni di Eulero del 2o ordine:}
+	\begin{align}
+		u''(x) + \frac{a}{x}u'(x) + \frac{b}{x^2}u(x) = 0 \spacer a,b \;\;\ \text{costanti}
+	\end{align}
+	Stavolta le soluzioni le andiamo a cercare con l'Ansatz $u(x) = x^\alpha$, ottenendo la seguente equazione caratteristica
+	\begin{align}
+		&\alpha (\alpha - 1) + a\alpha + b = 0 \firstpassage
+		&\alpha^2 + (a-1)\alpha + b = 0 \nextpassage
+		&\alpha_{1,2} = \frac{(1-a) \pm \sqrt{(a-1)^2 - 4b}}{2} \firstpassage
+		&u_1 (x) = x^{\alpha_1} \spacer u_2 (x) = x^{\alpha_2}
+	\end{align}
+	Nel caso di soluzioni coincidenti
+	\begin{align}
+		a = \frac{1-a}{2}
+	\end{align}
+	conviene trasformare l'equazione in una a coefficienti costanti col cambio di variabili
+	\begin{align}
+		&x(t) = e^t\firstpassage
+		&\frac{d}{dx}u(x(t)) =e^{-t} \frac{du}{dt} \nextpassage
+		&\frac{d^2}{dx^2}u(x(t)) =e^{-2t} \frac{d^2u}{dt^2} - e^{-2t} \frac{du}{dt} \nextpassage
+		&e^{-2t} \left[ \frac{d^2u}{dt^2} + (a-1)\frac{du}{dt} + bu \right] = 0 \nextpassage
+		&u_1(t) = e^{\alpha t} \spacer u_2(t) = te^{\alpha t} \nextpassage
+		&u_1(x) = x^\alpha \spacer u_2(x) = x^\alpha \ln(x)
+	\end{align}
+\end{enumerate}
+
+\newpage
 
 \subsubsection{Metodo del Wronskiano}
 
@@ -234,7 +309,6 @@ Invece, nel caso di problemi generali del tipo \ref{ode1ord1}, il procedimento s
 
 
 \newpage
-\section{Equazioni Differenziali Reali (Adriano Chialastri, Alessandro Marcelli)}
 
 \subsection{Messaggio dall'autore}
 
@@ -243,7 +317,7 @@ Riporto qui, sotto richiesta dell'autore di questi esercizi, un suo messaggio:
 \textit{Io sottoscritto Adriano Chialastri non mi riterrò responsabile di qualsiasi danno a cose o persone causato da questi esercizi, in quanto non svolti nel pieno esercizio delle mie facoltà mentali a causa nella prolungata permanenza presso il luogo correntemente noto come Sogene.
 }
 
-\subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri)}
+\subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri) \label{canon}}
 Risolvere il seguente problema di Cauchy
 \begin{align}
 	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}

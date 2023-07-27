@@ -1,6 +1,6 @@
 \chapter{Operatori Infinito-Dimensionali}
 
-\section{Spunti di teoria (Alessandro Marcelli)}
+\section{Spunti di teoria generale (Alessandro Marcelli)}
 
 \subsection{Nozioni generali sugli spazi}
 
@@ -162,8 +162,9 @@ Rispetto agli operatori finito-dimensionali questo non implica che $z$ sia autov
 
 \newpage
 
+\section{Operatori integrali (Davide Bufalini, Alessandro Marcelli)}
 
-\subsubsection{Operatori integrali}
+\subsection{Spunti di teoria (Alessandro Marcelli)}
 
 Si definiscono gli \textbf{operatori integrali} quella famiglia di operatori lineari del tipo
 \begin{align}
@@ -200,71 +201,9 @@ I $\lambda_i$ per cui questa equazione ammette soluzioni non triviali vengono de
 
 \newpage
 
-\subsubsection{Operatori differenziali reali}
-
-Gli operatori differenziali $\mathcal{L}_x^{(n)}$di ordine $n$ sono definiti come
-\begin{align}
-	&\double{\mathcal{L}_x^{(n)} u(x) = f(x)}{\text{Boundary conditions}}\\
-	&\mathcal{L}_x^{(n)} = \sum_{k=0}^{n} a_k(x) \frac{d^k}{dx^k}
-\end{align}
 
 
-I problemi di ricerca di soluzioni particolari si dividono in due famiglie
-\begin{align}
- 	&\left\{
- 		\begin{array}{ccc}
- 			\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
- 			\frac{d^n}{dx^n}u(x_0) &= &u^{(n)}_0\\
- 			\frac{d^{n-1}}{dx^{n-1}}u(x_0) &= &u^{(n-1)}_0\\
- 			\vdots\\
- 			\frac{d}{dx}u(x_0) &= &u'_0\\
-			u(x_0) &= &u_0\\
- 		\end{array}
- 	\right. \quad &\text{Problemi di Cauchy}\\
- 	&\left\{
-		\begin{array}{ccc}
-			\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
-			u(x_n) &= &u_n\\
-			u(x_{n-1}) &= &u_{n-1}\\
-			\vdots\\
-			u(x_1) &= &u_1\\
-			u(x_0) &= &u_0\\
-		\end{array}
-		\right. \quad &\text{Problemi di Sturm-Liouvlille}
-\end{align}
-
-La ricerca delle soluzioni può passare attraverso il calcolo del nucleo $G(x,y)$ dell'operatore inverso, denominato \textbf{funzione di Green}, per il quale vale
-\begin{align}
-	\mathcal{L}_x^{(n)} G(x,y) = \delta(x-y)
-\end{align}
-E che quindi si può definire
-\begin{align}
-	G(x,y) = c_1 u_1(x) + c_2 u_2(x) + \theta(x-y) \left[ \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)} \right]
-\end{align}
-Dove al denominatore abbiamo il \textbf{denominatore della matrice di Wronsky}, definito come
-\begin{align}
-	W = \det \begin{pmatrix}
-		u_1^0 && u_2^0\\
-		\dot{u}_1^0 && \dot{u}_2^0
-	\end{pmatrix}
-\end{align}
-Due famiglie importanti di funzioni di Green sono le
-\begin{enumerate}
-	\item \textbf{Funzioni di Green avanzate}, utili nello studio dei problemi di Cauchy
-		\begin{align}
-			G(x,y) \equiv 0 \quad x>y
-		\end{align}
-	\item \textbf{Funzioni di Green ritardate}
-\begin{align}
-	G(x,y) \equiv 0 \quad x<y
-\end{align}
-\end{enumerate}
-
-\newpage
-
-\section{Operatori integrali (Davide Bufalini)}
-
-\subsection{Esempio 1}
+\subsection{Esempio 1 (Davide Bufalini)}
 
 Dato l'operatore integrale il cui nucleo in $L^2([0,1]x[0,1])$ è dato da
 \begin{align}
@@ -399,7 +338,7 @@ Passiamo ora al caso non omogeneo. Dobbiamo distinguere due casi
 
 \newpage
 
-\subsection{Esempio 2}
+\subsection{Esempio 2 (Davide Bufalini)}
 
 Determinare i numeri caratteristii dell'operatore integrale il cui nucleo in $L^2([-1,+1]x[-1,+1])$ è dato da
 \begin{align}
@@ -460,9 +399,72 @@ Andiamo ora a studiare il sistema non omogeneo. Distinguiamo i due casi
 
 \newpage
 
-\section{Operatori differenziali (Davide Bufalini)}
+\section{Operatori differenziali (Davide Bufalini, Alessandro Marcelli)}
 
-\subsection{Esempio 1: Operatore Differenziale del IIo Ordine}
+\subsection{Spunti di teoria (Alessandro Marcelli)}
+
+Gli operatori differenziali $\mathcal{L}_x^{(n)}$di ordine $n$ sono definiti come
+\begin{align}
+	&\double{\mathcal{L}_x^{(n)} u(x) = f(x)}{\text{Boundary conditions}}\\
+	&\mathcal{L}_x^{(n)} = \sum_{k=0}^{n} a_k(x) \frac{d^k}{dx^k}
+\end{align}
+
+
+I problemi di ricerca di soluzioni particolari si dividono in due famiglie
+\begin{align}
+	&\left\{
+	\begin{array}{ccc}
+		\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+		\frac{d^n}{dx^n}u(x_0) &= &u^{(n)}_0\\
+		\frac{d^{n-1}}{dx^{n-1}}u(x_0) &= &u^{(n-1)}_0\\
+		\vdots\\
+		\frac{d}{dx}u(x_0) &= &u'_0\\
+		u(x_0) &= &u_0\\
+	\end{array}
+	\right. \quad &\text{Problemi di Cauchy}\\
+	&\left\{
+	\begin{array}{ccc}
+		\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+		u(x_n) &= &u_n\\
+		u(x_{n-1}) &= &u_{n-1}\\
+		\vdots\\
+		u(x_1) &= &u_1\\
+		u(x_0) &= &u_0\\
+	\end{array}
+	\right. \quad &\text{Problemi di Sturm-Liouvlille}
+\end{align}
+
+La ricerca delle soluzioni può passare attraverso il calcolo del nucleo $G(x,y)$ dell'operatore inverso, denominato \textbf{funzione di Green}, per il quale vale
+\begin{align}
+	\mathcal{L}_x^{(n)} G(x,y) = \delta(x-y)
+\end{align}
+E che quindi si può definire
+\begin{align}
+	G(x,y) = c_1 u_1(x) + c_2 u_2(x) + \theta(x-y) \left[ \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)} \right]
+\end{align}
+Dove al denominatore abbiamo il \textbf{denominatore della matrice di Wronsky}, definito come
+\begin{align}
+	W = \det \begin{pmatrix}
+		u_1^0 && u_2^0\\
+		\dot{u}_1^0 && \dot{u}_2^0
+	\end{pmatrix}
+\end{align}
+Due famiglie importanti di funzioni di Green sono le
+\begin{enumerate}
+	\item \textbf{Funzioni di Green avanzate}, utili nello studio dei problemi di Cauchy
+	\begin{align}
+		G(x,y) \equiv 0 \quad x>y
+	\end{align}
+	\item \textbf{Funzioni di Green ritardate}
+	\begin{align}
+		G(x,y) \equiv 0 \quad x<y
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+
+\subsection{Esempio 1: Operatore Differenziale del IIo Ordine (Davide Bufalini)}
 
 Sia l'operatore
 \begin{align}
@@ -565,7 +567,7 @@ Vediamo come per i $\lambda_n$ che abbiamo trovato in precedenza ci siano solo p
 
 \newpage
 
-\subsection{Esempio 2}
+\subsection{Esempio 2 (Davide Bufalini)}
 
 Dato l'operatore differenziale
 \begin{align}
