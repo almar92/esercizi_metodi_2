@@ -304,9 +304,86 @@ Rispetto alle EDO del 1o ordine, c'è la difficoltà aggiuntiva data dal fatto c
 
 \subsubsection{Metodo del Wronskiano}
 
+Si definisce il \textbf{determinante di Wronsky} ( anche detto \textbf{Wronskiano}) di due funzioni $u_1$ e $u_2$ come
+\begin{align}
+	W(u_1(x),u_2(x)) = W(x) = \begin{vmatrix}
+		u_1(x) & u_2(x) \\
+		u'_1(x) &u'_2(x)
+	\end{vmatrix} = u_1(x) u'_2(x) - u'_1(x) u_2(x) 
+\end{align}
+Se  $u_1(x)= a\cdot u_2(x)$, ovvero sono linearmente dipendenti, allora $W=0$.
+
+Presa in considerazione una EDO del tipo
+\begin{align}
+	&a(x) u''(x) + b(x) u'(x) + c(x) u(x) = 0 \firstpassage
+	&u''(x) + \frac{b(x)}{a(x)} u'(x) + \frac{c(x)}{a(x)} u(x) = 0\nextpassage
+	&u''(x) + a_1(x) u'(x) + a_2(x) u(x) = 0 \\
+	&a_1(x) =  \frac{b(x)}{a(x)} \spacer a_2(x)=\frac{c(x)}{a(x)}
+\end{align}
+e prese duesaoluzioni $u_1(x)$ e $u_2(x)$ possiamo ricavare
+\begin{align}
+	&u_1(x)u_2''(x) + a_1(x) u_1(x)u_2'(x) + a_2(x) u_1(x)u_2(x) = 0 \\
+	&u_2(x)u_1''(x) + a_1(x) u_2(x)u_1'(x) + a_2(x) u_2(x)u_1(x) = 0\firstpassagecomm{sottraggo membro a membro}
+	&u_1(x)u_2''(x) - u_2(x)u_1''(x) + a_1(x) u_1(x)u_2'(x) - a_1(x) u_2(x)u_1'(x) + \cancel{ a_2(x) u_1(x)u_2(x)} - \cancel{a_2(x) u_2(x)u_1(x)} = 0 \nextpassage
+	&[u_1(x)u_2''(x) - u_2(x)u_1''(x)]+ a_1(x) [  u_1(x)u_2'(x) - u_2(x)u_1'(x)] = 0\nextpassage
+	&W'(x) + a_1(x)W(x) = 0
+\end{align}
+Per separazione delle variabili, e definendo $W(x_0)=W_0$ otteniamo la \textbf{formula di Liouville}
+\begin{align}
+	W(x) = W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)
+\end{align}
+Da cui notiamo che
+\begin{enumerate}
+	\item In formacanonica $W=0$
+	\item Se $\exists x_1 \taleche W(x_1) = 0 \to W(x) = 0\quad\forall x$
+	\item Se $u_1$ e $u_2$ sono lin ind allora $W(x) \neq 0 \quad \forall x$
+\end{enumerate}
+Nota una delle due soluzioni, dalla formula di Liouville possiamo ricavare una definizione implicita dell'altra nel seguente modo
+\begin{align}
+	&\frac{W}{u_1^2(x)} = \frac{u_1(x)u_2'(x) - u_2(x)u_1'(x)}{u_1^2(x)}\\
+	&\frac{W}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
+	&\frac{u_1(x)u_2'(x) - u_2(x)u_1'(x)}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)}
+\end{align}
+Il termninea sinistra altro non è che 
+\begin{align}
+&\frac{u_1(x)u_2'(x) - u_2(x)u_1'(x)}{u_1^2(x)} = \frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right)
+\end{align}
+Da cui otteniamo, sostituendo $W_0$ con $A$ per liberare l'estremo inferior edi integrazione
+\begin{align}
+&\frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right) = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
+& \int^x d\eta \; \frac{d}{d\eta} \left( \frac{u_2(\eta)}{u_1(\eta)} \right) =\int^x d\eta \; \frac{A \cdot exp\left( -\int_{x_0}^{\eta} d\xi a_1(\xi) \right)}{u_1^2(\eta)} + c_1 \nextpassage
+&u_2(x) = Au_1(x) \int^x d\eta \; \frac{1}{u_1^2(\eta)}\cdot exp\left( -\int_{x_0}^{\eta} d\xi a_1(\xi) \right) + c_1u_1(x)
+\end{align}
+
 
 \subsubsection{Metodo della funzione di Green}
+Consideriamo ora l'operatore differenziale in forma normale
+\begin{align}
+	\mathcal{L}_x^{(2)} =\frac{d^2}{dx^2} + a_1(x)\frac{d}{dx} + a_2(x)
+\end{align}
+Ne definiamo una \textbf{soluzione fondamentale} $G(x,y)$ come
+\begin{align}
+	&\mathcal{L}_x^{(2)} G(x,y)= \delta(x-y) \label{greenedo2}
+\end{align}
+Imponiamo la condzione di continuità 
+\begin{align}
+	&\frac{d^2}{dx^2}G(x,y) \propto \delta(x-y)
+\end{align}
+Da cui 
+\begin{align}
+	&\left.\frac{d}{dx}G(x,y) \right|_{y-\epsilon}^{y+\epsilon} + 0 = 1 \firstpassage
+	&G'(y_+,y) - G'(y_-,y) = 1
+\end{align}
+Siano ora $u_1(x)$ e $u_2(x)$ due soluzioni della omogenea associata alla \ref{greenedo2}, possiamo scrivere
+\begin{align}
+	G(x,y) = A u_1(x) + B u_2(x) + G_P(x,y)
+\end{align}
+La soluzone particolare può essere scritta nella forma
+\begin{align}
+	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \quad x<y}{d_1 u_1 (x) + d_2 u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
+\end{align}
 
+FINISCO DOMANI
 
 \newpage
 

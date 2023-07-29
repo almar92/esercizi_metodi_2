@@ -72,11 +72,11 @@
 \contentsline {section}{\numberline {3.3}EDO lineari del 2o ordine (Adriano Chialastri, Alessandro Marcelli)}{54}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Spunti di teoria (Alessandro Marcelli)}{54}{subsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.1.1}Metodo del Wronskiano}{56}{subsubsection.3.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.2}Metodo della funzione di Green}{56}{subsubsection.3.3.1.2}%
-\contentsline {subsection}{\numberline {3.3.2}Messaggio dall'autore}{57}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Esempio 1: Problema di Cauchy (Adriano Chialastri) }{57}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{59}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{60}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{62}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Esempio 5: prova d'esame (Alessandro Marcelli)}{65}{subsection.3.3.7}%
-\contentsline {section}{\numberline {3.4}Equazioni Differenziali Complesse}{67}{section.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}Metodo della funzione di Green}{57}{subsubsection.3.3.1.2}%
+\contentsline {subsection}{\numberline {3.3.2}Messaggio dall'autore}{58}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Esempio 1: Problema di Cauchy (Adriano Chialastri) }{58}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{60}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{61}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{63}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Esempio 5: prova d'esame (Alessandro Marcelli)}{66}{subsection.3.3.7}%
+\contentsline {section}{\numberline {3.4}Equazioni Differenziali Complesse}{68}{section.3.4}%
