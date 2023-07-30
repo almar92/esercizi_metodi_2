@@ -344,7 +344,7 @@ Nota una delle due soluzioni, dalla formula di Liouville possiamo ricavare una d
 	&\frac{W}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
 	&\frac{u_1(x)u_2'(x) - u_2(x)u_1'(x)}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)}
 \end{align}
-Il termninea sinistra altro non è che 
+Il termnine a sinistra altro non è che 
 \begin{align}
 &\frac{u_1(x)u_2'(x) - u_2(x)u_1'(x)}{u_1^2(x)} = \frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right)
 \end{align}
@@ -382,9 +382,70 @@ La soluzone particolare può essere scritta nella forma
 \begin{align}
 	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \quad x<y}{d_1 u_1 (x) + d_2 u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
 \end{align}
+Per la condizione di continuità abbiamo che
+\begin{align}
+	&c_1 u_1 (y) + c_2 u_2 (y) = d_1 u_1 (y) + d_2 u_2 (y)\firstpassage
+	&(c_1 - d_1) u_1 (y) +(c_2 - d_2)u_2 (y) =0
+\end{align}
+Mentre per il salto della derivata
+\begin{align}
+	&d_1 u'_1 (y) + d_2 u'_2 (y) - c_1 u_1 (y) - c_2 u_2 (y) = 1 \firstpassage
+	&(d_1 - c_1)u'_1 (y) + (d_2 - c_2)u'_2 (y) = 1 
+\end{align}
+Otteniamo quindi il sistema
+\begin{align}
+	\double{(c_1 - d_1) u_1 (y) +(c_2 - d_2)u_2 (y) =0}{(d_1 - c_1)u'_1 (y) + (d_2 - c_2)u'_2 (y) = 1}
+\end{align}
+Se prendiamo come incognite le differenze tra i coefficienti tra parentesi, possiamo riscrivere il sistema come il prdotto matrice-vettore
+\begin{align}
+	\begin{pmatrix}
+		u_1 (y) & u_2 (y)\\
+		u'_1 (y) & u'_2 (y)
+	\end{pmatrix} \left( \begin{array}{c}
+	c_1 - d_1\\
+	c_2 - d_2
+\end{array} \right) = \left( \begin{array}{c}
+0\\
+1
+\end{array} \right)
+\end{align}
+Notiamo come la matrice dei coefficienti altro non è che la matrice di Wronsky di $u_1(x)$ e $u_2(x)$, e che quindi non ha mai determinante nullo. 
 
-FINISCO DOMANI
-
+Possiamo quindi scrivere le soluzioni come
+\begin{align}
+d_1 - c_1 &= \frac{1}{W(y)} \cdot \begin{vmatrix}
+			0 & u_2(y) \\
+			1 & u'_2(y)
+	\end{vmatrix} = -\frac{u_2(y)}{W(y)} \to d_1 = c_1  -\frac{u_2(y)}{W(y)}\\
+d_2 - c_2 &= \frac{1}{W(y)} \cdot \begin{vmatrix}
+	u_1(y) & 0\\
+	u'_1(y) & 1
+\end{vmatrix} = +\frac{u_1(y)}{W(y)} \to d_2 = c_2 +\frac{u_1(y)}{W(y)}
+\end{align}
+Trovate queste possiamo riscrivere la soluzione particolare come
+\begin{align}
+	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \hfill x<y}{\left[  c_1  -\frac{u_2(y)}{W(y)} \right] u_1 (x) + \left[ c_2 +\frac{u_1(y)}{W(y)} \right] u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
+\end{align}
+Possiamo riscrivere la seconda come
+\begin{align}
+&\left[  c_1  -\frac{u_2(y)}{W(y)} \right] u_1 (x) + \left[ c_2 +\frac{u_1(y)}{W(y)} \right] u_2 (x)\firstpassage
+&c_1 u_1 (x) + c_2 u_2 (x) + \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
+\end{align}
+Conforntando con il caso $x<y$ e impiegando il funzionale a gradino $\theta(x-y)$ possiamo riscrivere la soluzuione particolare nella seguente forma compatta
+\begin{align}
+	G_P(x,y)= c_1 u_1 (x) + c_2 u_2 (x) + \theta(x-y) \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
+\end{align}
+Riportiamo due casi noti che ci saranno utili più avanti
+\begin{enumerate}
+	\item \textbf{Funzione di Green avanzata}
+		\begin{align}
+			&G(x,y) \equiv 0 \quad x<y 
+		\end{align}
+	\item \textbf{Funzione di Green ritardata}
+		\begin{align}
+			&G(x,y) \equiv 0 \quad x>y 
+		\end{align}
+\end{enumerate}
 \newpage
 
 \subsection{Messaggio dall'autore}

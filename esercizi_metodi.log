@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.21)  29 JUL 2023 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.21)  30 JUL 2023 10:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -679,25 +679,27 @@ Overfull \hbox (4.08366pt too wide) detected at line 330
 []
  []
 
-[56] [57] [58] [59] [60] [61] [62]
+[56] [57] [58] [59] [60] [61] [62] [63]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-[64] [65] [66] [67]) [68] (./esercizi_metodi.bbl) [69
+ [64]
+[65] [66] [67] [68]) [69] [70
 
 
 
+] (./esercizi_metodi.bbl) [71
 
-] (./esercizi_metodi.aux
-(./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
-(./TeX_files/chapter02.aux) (./TeX_files/chapter03.aux))
+]
+(./esercizi_metodi.aux (./TeX_files/introduzione.aux)
+(./TeX_files/chapter01.aux) (./TeX_files/chapter02.aux)
+(./TeX_files/chapter03.aux))
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
 (rerunfilecheck)             Checksum: 90DE756524A5EB7DA1E1F8A288F14AE9;21280.
  ) 
 Here is how much of TeX's memory you used:
- 12098 strings out of 478287
- 190431 string characters out of 5849289
- 503449 words of memory out of 5000000
+ 12116 strings out of 478287
+ 190685 string characters out of 5849289
+ 503451 words of memory out of 5000000
  29192 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -719,10 +721,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (75 pages, 477173 bytes).
+Output written on esercizi_metodi.pdf (77 pages, 481077 bytes).
 PDF statistics:
- 1785 PDF objects out of 2073 (max. 8388607)
- 1654 compressed objects within 17 object streams
- 893 named destinations out of 1000 (max. 500000)
+ 1813 PDF objects out of 2073 (max. 8388607)
+ 1680 compressed objects within 17 object streams
+ 911 named destinations out of 1000 (max. 500000)
  662 words of extra memory for PDF output out of 10000 (max. 10000000)
 
