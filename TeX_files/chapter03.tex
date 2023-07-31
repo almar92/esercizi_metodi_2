@@ -568,6 +568,117 @@ Nel caso di condizioni omogenee, sappiamo che $G(x_0,y) = 0 = \dot{G}(x_0,y)$ e 
 \end{align}
 Se non ci si vuole ricondurre al caso di condizioni omogenee, bisogna tener da conto dei termini aggiuntivi. Ma perché dovremmo volerci far del male?
 
+\subsubsection{Operatori lineari, unicità delle soluzioni e teorema dell'alernativa}
+
+Vediamo un rapido excursus sugli operatori che ci serivrà nel prossimo paragrafo. 
+Sia l'operatore $A$ definito come
+\begin{align}
+	&A \taleche \mathcal{H} \to \mathcal{H}\\
+	&\mathcal{H} = \overline{\mathcal{D}(A)}\\
+	&A \vec{x} = \vec{y} \spacer \vec{x} \in \mathcal{D}(A) \; , \; \vec{y} \in \mathcal{H} \label{syseq}
+\end{align}
+Definiamo il \textbf{nucleo} dell'operatore come l'insieme dei vettori mappati nel vettore nullo. Qualora esso contenga solo il vettore nullo, si di che è \textbf{triviale}.
+
+Vale il seguente teorema: \textit{se il nucle di $A$ non è nullo, allora la soluzione di \ref{syseq} non è unica, eviceversa.}
+
+Il teorema si può dimostrare in entrambe le direzioni:
+\begin{enumerate}
+	\item $Ker(A) \neq \{\vec{0}\} \implies$ non unicità della soluzione
+	\begin{align}
+		&\vec{x}_0 \in \ker(A) \implies A \vec{x}_0 =  \vec{0}\\
+		&\vec{x}_s \taleche A \vec{x}_s = \vec{y} \firstpassage
+		& A \vec{x}_0 + A \vec{x}_s =  \vec{0} + \vec{y} \to A(\vec{x}_0 + \vec{x}_s) = \vec{y} 
+	\end{align}
+	\item Non unicità della soluzione $\implies Ker(A) \neq \{\vec{0}\}$
+	\begin{align}
+		&\vec{x}_1 \taleche A \vec{x}_1 = \vec{y} \\
+		&\vec{x}_2 \taleche A \vec{x}_2 = \vec{y} \firstpassage
+		& A \vec{x}_1 + A \vec{x}_2 =  \vec{y} - \vec{y} = \vec{0} \to A(\vec{x}_1 - \vec{x}_2) = \vec{0} 
+	\end{align}
+\end{enumerate}
+Ci viene quindi in aiuto il \textbf{teorema dell'alternativa:} \textit{Sia l'operatore $A$ definito come
+	\begin{align}
+		&A \taleche \mathcal{H} \to \mathcal{H}\\
+		&\mathcal{H} = \overline{\mathcal{D}(A)}\\
+		&R(A) \quad \text{chiuso}\\
+		&A \vec{x} = \vec{y} 
+	\end{align}	
+allora il sistema ammetterà soluzioni $\vec{y}$ (ovvero $\vec{y} \in R(A)$) se e solo se $\vec{y} \perp ker(A^\dagger)$
+}
+Anche qui dimostriamo entrambe le "direzioni":
+\begin{enumerate}
+	\item $ \vec{y} \in R(A)  \implies \vec{y} \perp ker(A^\dagger)$
+	\begin{align}
+		&\vec{z} \in Ker(A^\dagger) \firstpassage
+		&A^\dagger \vec{z} = \vec{0} \nextpassage
+		&(\vec{y}, \vec{z}) = (A\vec{x}, \vec{z}) = (\vec{x}, A^\dagger\vec{z}) = (\vec{x}, \vec{0}) = 0 \firstpassage
+		&\vec{y} \perp ker(A^\dagger)
+	\end{align}
+	
+	\item $\vec{y} \perp ker(A^\dagger) \implies \vec{y} \in R(A)$
+	
+	Sia $\vec{y} \perp ker(A^\dagger)$, vogliamo dimostrare che appartenza all'insieme risolvente $R(A)$. Iniziamo decomponendolo
+	\begin{align}
+		\vec{y} = \vec{y}_R + \vec{y}_R^\perp \spacer \vec{y}_R \in R(A) \; , \; \vec{y}_R^\perp \in R^\perp (A)
+	\end{align}
+	Questo è possibile solo quando $R(A)$ è chiuso, ovvero è un sottospazio vettoriale di $\mathcal{H}$ tale che
+	\begin{align}
+		\mathcal{H} = R(A) \oplus R^\perp(A) \label{decomp}
+	\end{align}	
+	Possiamo quindi riscrivere
+	\begin{align}
+		&\vec{y} - \vec{y}_R = \vec{y}_R^\perp \firstpassage
+		&(\vec{y}_R^\perp, \vec{y}_R) = (\vec{y} - \vec{y}_R, A \vec{x})
+	\end{align}
+	Per costruzione questo vale
+	\begin{align}
+		&(\vec{y} - \vec{y}_R, A \vec{x}) = 0 \quad \forall \vec{x} \in \mathcal{D}(A) \firstpassage
+		&(A^\dagger(\vec{y} - \vec{y}_R),\vec{x}) = 0 \quad \forall \vec{x} \in \mathcal{D}(A)  
+	\end{align}
+	Affinché il prodotto sia nullo per ogni $\vec{x}$, deve essere per forza
+	\begin{align}
+		&A^\dagger(\vec{y} - \vec{y}_R) = \vec{0} \firstpassage
+		&(\vec{y} - \vec{y}_R) \in ker(A^\dagger) \nextpassage
+		&0 = (\vec{y} - \vec{y}_R, \vec{y}) = (\vec{y} - \vec{y}_R, \vec{y}- \vec{y}_R + \vec{y}_R) = || \vec{y} - \vec{y}_R||^2 + (\vec{y} - \vec{y}_R, \vec{y}_R) =  || \vec{y} - \vec{y}_R||^2 + \cancel{(\vec{y}_R^\perp, \vec{y}_R)} \nextpassage
+		&\vec{y} = \vec{y}_R \in R(A) 
+	\end{align}
+\end{enumerate}
+Abbiamo quindi dalla \ref{decomp} una decomposizione dello spazio di Hilbert $\mathcal{H}$, da cui possiamo notare due possibili situazioni
+\begin{enumerate}
+	\item $R(A)$ non è chiuso $\implies \mathcal{H} = R(A^\dagger) \oplus ker(A^\dagger)$
+	
+	In questo caso l'esistenza della soluzione non è garantita dalla condizione $\vec{y} \perp ker(A^\dagger)$.
+	
+	\item $R(A)$ è chiuso $\implies \mathcal{H} = R(A^\dagger) \oplus ker(A)$
+	
+	In questo caso vale il teorema dell'alternativa, e quindi
+	\begin{enumerate}
+		\item $A \vec{x} = \vec{y}$ ammete un'unica soluzione
+		
+		\item $A \vec{x} = \vec{0}$ ammette soluzioni non banali, e quindi		
+			\begin{enumerate}
+				\item $\vec{y} \perp ker(A^\dagger) \implies A \vec{x} = \vec{y}$ ammette soluzioni
+				\item $\vec{y} \; \cancel{\perp} \; ker(A^\dagger) \implies A \vec{x} = \vec{y}$ non ammette soluzioni
+			\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+
+\subsubsection{Applicazione del teorema dell'alternativa alle funzioni di Green}
+
+Che cosa succede quando viene meno la condizione di invertibilità dell'operatore differenziale? Ci troviamo in presenza di \textbf{modi nulli}, ovvero di auovettori corrispondenti all'autovalore zero. 
+
+Se quindi prendiamo il problema
+\begin{align}
+	\triple{\mathcal{L}_x^C v(x)=0}{\mathcal{B}_a^{om}(v) = 0}{\mathcal{B}_b^{om}(v) = 0}
+\end{align}
+In questo caso, la funzione di Green propriamente detta non esiste. Possiamo però restringerci al caso dove l'operatore è invertibile, ovvero il sottospazio ortogonale al quello dei modi nulli. 
+Possiamo definire in questo sottospazio una nuova funzione di Green
+\begin{align}
+	\mathcal{L}_x^C \tilde{G} = \delta + r \spacer (\delta + r) \perp ker(\mathcal{L}_x^C) 
+\end{align}
+
+DIMOSTRAZIONE LA FO DOPO PRANZO
 
 \newpage
 
