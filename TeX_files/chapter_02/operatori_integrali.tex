@@ -1,0 +1,236 @@
+\section{Operatori integrali (Davide Bufalini, Alessandro Marcelli)}
+
+\subsection{Spunti di teoria (Alessandro Marcelli)}
+
+Si definiscono gli \textbf{operatori integrali} quella famiglia di operatori lineari del tipo
+\begin{align}
+	K \taleche L_2 [a,b] \rightarrow L_2 [a,b] 
+\end{align}
+per i quali l'azione su un vettore $f \in H$ è definita attraverso un \textbf{nucleo integrale} $K(x,t)$ nel seguente modo
+\begin{align}
+	[Kf](x) =  \int_{a}^{b} dy \; K(x,y) f(y)  
+\end{align}
+Definita la \textbf{norma di Hilbert-Schmidt} come
+\begin{align}
+	||K||_{HS} =\int_{a}^{b} dx \; \int_{a}^{b} dy \; |K(x,y)|^2
+\end{align}
+Gli operatori definiti attraverso nuclei per i quali tale norma è finita sono detti \textbf{nuclei di HIlbert-Schmidt} e sono \textbf{limitati}.
+
+Le equazioni di Fredholm sono un noto caso di studio di problemi agli autovalori Per operatori integrali lineari. Si tratta di cercare soluzioni per equazioni del tipo
+\begin{align}
+	&\phi(x) - \lambda \int_{a}^{b} dy \; K(x,y) \phi(y) = f(x) 
+\end{align}
+L'equazione può essere riscritta come
+\begin{align}
+	&(\mathbb{1} - \lambda K)\phi=f \nextpassage
+	&\left(\frac{1}{\lambda}\mathbb{1} - K \right)\phi=\frac{f}{\lambda}
+\end{align}
+Definendo $\mu = \lambda^{-1}$ e $T_\mu = (\mu \mathbb{1} - K)$ otteniamo 
+\begin{align}
+	&\left(\mu\mathbb{1} - K \right)\phi= T_\mu \phi = \tilde{f}
+\end{align}
+La sua omogenea associata è l'equazione agli autovalori per un operatore $K$
+\begin{align}
+	&\left(\mu\mathbb{1} - K \right)\phi= T_\mu \phi = 0
+\end{align}
+I $\lambda_i$ per cui questa equazione ammette soluzioni non triviali vengono detti \textbf{numeri caratteristici} dell'equazione, e sono l'inverso degli autovalori $\mu_i$
+
+\newpage
+
+
+
+\subsection{Esempio 1 (Davide Bufalini)}
+
+Dato l'operatore integrale il cui nucleo in $L^2([0,1]x[0,1])$ è dato da
+\begin{align}
+	k(x,y) = 2xy-4x^2 \label{nucleo}
+\end{align}
+andiamo a
+\begin{enumerate}
+	\item discuterne lo spettro puntuale
+	\item risolvere, al variare di $\lambda \in \C$ e $\alpha \in \R$, l'equazione di Fredholm di 2a specie
+	\begin{align}
+		\phi(x) -\lambda \int_{0}^{1} dy \; k(x,y) \phi(y) = 1 -\alpha x
+	\end{align} 
+\end{enumerate}
+
+Iniziamo dal secondo punto. Possiamo riscrivere l'equazione di Fredholm come
+\begin{align}
+	\phi(x) &= \lambda \int_{0}^{1} dy \; (2xy-4x^2) \phi(y) + 1 -\alpha x = \nonumber\\
+	&= 2\lambda x \int_{0}^{1} dy \; y\phi(y) - 4x^2 \lambda \int_{0}^{1} dy \; \phi(y) + 1 -\alpha x \label{lol}
+\end{align}
+Notiamo come il nucleo \ref{nucleo} sia di \textbf{Pincherle-Goursat} (o \textbf{degenere}), ossia può essere riscritto come 
+\begin{align}
+	k(x,y) &= \sum_{i=1}^{N} P_i(x)Q_i(y)   
+\end{align}
+Da cui segue che possiamo definire
+\begin{align}
+	A_{ij} &= \int_{0}^{1} dy \; P_i(x)Q_i(y)\\
+	B_i &= \int_{0}^{1} dy \; Q_i(y)f(y) \firstpassage
+	\phi(x) &= f(x)+ c_A\lambda A + c_B\lambda B \label{loll2}
+\end{align}
+Confrontando la \ref{loll2} e la \ref{lol} troviamo 
+\begin{align}
+	&A = \int_{0}^{1} dy \; \phi(y)\;\; \spacer c_A = -4x^2\\
+	&B = \int_{0}^{1} dy \; y\phi(y) \spacer c_B = +2x \firstpassage
+	&\phi(x) =1 -\alpha x -4x^2 \lambda A + 2x\lambda B 
+\end{align}
+Sostituendo in queste espressioni la \ref{lol} otteniamo
+\begin{align}
+	A &= \int_{0}^{1} dy \; 2y\lambda B - 4y^2 \lambda A + 1 -\alpha y = \lambda B - \frac{4}{3} A \lambda +1 - \frac{\alpha}{2}\\
+	B &= \int_{0}^{1} dy \; 2y^2\lambda B - 4y^3 \lambda A + y -\alpha y^2 = \frac{2}{3}\lambda B - A \lambda +\frac{1}{2} - \frac{\alpha}{3}
+\end{align}
+Queste equazioni formano il seguente sistema
+\begin{align}
+	\double{A\left(1+\frac{4}{3} \lambda\right) -\lambda B &= 1 -\frac{\alpha}{2}}{\lambda A + \left(1 - \frac{2}{3} \lambda \right)B &= \frac{1}{2} - \frac{\alpha}{3}}
+\end{align}
+La cui matrice è dunque
+\begin{align}
+	M = \begin{pmatrix}
+		1+\frac{4}{3} \lambda && - \lambda \\
+		\lambda && 1-\frac{2}{3} \lambda
+	\end{pmatrix}
+\end{align}
+
+Inziamo studiando l'omogenea, ovvero il caso $\det M=0$
+\begin{align}
+	&\det M = 0 \firstpassage
+	&\left( 1+\frac{4}{3} \lambda \right) \left( 1-\frac{2}{3} \lambda \right) + \lambda^2 =0 \nextpassage
+	& \frac{1}{9} \lambda^2 + \frac{2}{3} \lambda +1 = 0\nextpassage
+	& \left( 1+\frac{1}{3} \lambda \right)^2 = 0 \nextpassage
+	& \lambda_c = -3 \nextpassage
+	&\sigma_p(k) = \left\{ -\frac{1}{3} \right\}
+\end{align}
+
+Passiamo ora al caso non omogeneo. Dobbiamo distinguere due casi
+\begin{enumerate}
+	\item  $\lambda \neq \lambda_c$
+	\begin{align}
+		A &= \frac{1}{\det (M)} \begin{vmatrix} 
+			1 - \frac{\alpha}{2} && -\lambda \\
+			\frac{1}{2} - \frac{\alpha}{3} && 1 - \frac{2}{3}\alpha		
+		\end{vmatrix} = \dots = \frac{1 - \frac{\alpha}{2} - \frac{1}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \\
+		B &= \frac{1}{\det (M)} \begin{vmatrix} 
+			1 + \frac{4}{3}\alpha && 1 - \frac{\alpha}{2} \\
+			\lambda && \frac{1}{2} - \frac{\alpha}{3}		
+		\end{vmatrix} = \dots = \frac{\frac{1}{2} - \frac{\alpha}{3} + \frac{3\alpha -2}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1}	
+	\end{align}
+	Otteniamo quindi
+	\begin{align}
+		\phi(x) = 1 -\alpha x + 2 \left[ \frac{\frac{1}{2} - \frac{\alpha}{3} + \frac{3\alpha -2}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \right] \lambda x - 4 \left[ \frac{1 - \frac{\alpha}{2} - \frac{1}{6} \lambda}{\frac{\lambda^2}{9} + \frac{2}{3}\lambda + 1} \right] \lambda x^2
+	\end{align}
+	
+	\item  $\lambda = \lambda_c$
+	
+	Prima di procedere dobbiamo trovare $\phi_0^{(+)}$, la soluzione dell'omogenea di $k^\dagger$ che servirà quando imporremo $<\phi_0^{(+)}, \phi> = 0$ tramite la quale potremo ricavare i valori $\alpha$ tali da restituire altre soluzioni. 
+	
+	Andiamo quindi a risolvere l'omogenea per
+	\begin{align}
+		k^\dagger (x,y) = \overline{k(x,y)} \overset{\R}{=} k(y,x) = 2yx - 4y^2
+	\end{align} 
+	Risolvendo Fredholm otteniamo quindi
+	\begin{align}
+		\phi_0^{(+)}(x) &= \lambda \int_{0}^{1} dy \; (2xy-4y^2) \phi_0^{(+)} = \nonumber\\
+		&=  2\lambda x\int_{0}^{1} dy \; y \phi_0^{(+)}(y) -4\lambda \int_{0}^{1} dy \;y^2 \phi_0^{(+)}(y) = \nonumber\\
+		&= 2\lambda x D - 4 \lambda C \spacer \double{C &= \int_{0}^{1} dy \; y \phi_0^{(+)}(y)}{D &= \int_{0}^{1} dy \;y^2 \phi_0^{(+)}(y)} \label{zero}
+	\end{align}
+	la \ref{zero} ci porta a scrivere che
+	\begin{align}
+		C &= \int_{0}^{1} dy \; \left( y^3D - 4\lambda C y^2 \right) = \frac{1}{2} \lambda D - \frac{4}{3} \lambda C\\
+		D &= \int_{0}^{1} dy \; \left( 2\lambda y^2D - 4\lambda C y \right) = \frac{2}{3} \lambda D - 2 \lambda C
+	\end{align}
+	Da cui otteniamo il sistema
+	\begin{align}
+		\double{\left(1 + \frac{4}{3} \lambda\right) C - \frac{1}{2} \lambda D &= 0}{2\lambda C + \left( 1 - \frac{2}{3}\lambda \right) D &=0} \spacer M = \begin{bmatrix}
+			1 + \frac{4}{3} \lambda && - \frac{1}{2} \lambda\\
+			2 \lambda && 1- \frac{2}{3} \lambda
+		\end{bmatrix}
+	\end{align}
+	
+	L'omogenea ha lo stesso risultato di prima, con $\lambda_c = -3$, e per tale valore il sistema diventa
+	\begin{align}
+		&\double{\left(1 -4 \right) C + \frac{3}{2} D &= 0}{-6 C + \left( 1 +2 \right) D &=0} \firstpassage
+		&\double{D &= 2C}{C &= ap} \spacer ap = \text{a piacimento}
+	\end{align}
+	Ponendo $C = \frac{1}{4\lambda_c}$ otteniamo $D = \frac{1}{2 \lambda_c}$ e arriviamo alla formula
+	\begin{align}
+		\phi_0^{(+)}(x) &= 2D \lambda_c x - 4 \lambda_c C = x-1
+	\end{align}
+	Possiamo quindi procedere
+	\begin{align}
+		&<\phi_0^{(+)},f> = 0 \firstpassage
+		&\int_{0}^{1} dx \; (x-1) (1-\alpha x) =0\nextpassage
+		&\alpha = 3
+	\end{align}
+	Per tale valore di $\alpha$ abbiamo quindi ulteriori soluzioni al problema di partenza. Se andiamo a sostituire $\lambda = \lambda_c = -3$ otteniamo
+	\begin{align}
+		&\double{\left(1 -4 \lambda\right) A +3B &= 1 - \frac{3}{2}}{-3A + (1+2)B &= \frac{1}{2}-1} \firstpassage
+		&\double{-3A +3B &= - \frac{1}{2}}{-3A + 3B &= -\frac{1}{2}} \nextpassage
+		&\double{B = &A - \frac{1}{6}}{A = &ap} \spacer ap= \text{a piacere} \nextpassage
+		&\phi_A(x) = 1 -3x +2 (-3)\left(A - \frac{1}{6}\right)x -4Ax^2(-3) \nextpassage
+		&\phi_A(x) = 1 -2x -6Ax +12Ax^2
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+\subsection{Esempio 2 (Davide Bufalini)}
+
+Determinare i numeri caratteristii dell'operatore integrale il cui nucleo in $L^2([-1,+1]x[-1,+1])$ è dato da
+\begin{align}
+	k(x,y) = xy -x^2y^2
+\end{align}
+Si calcolino inoltre, per tutti i $\lambda\in\C$ le soluzioni dell'equazione di Fredholm
+\begin{align}
+	&\phi(x) -\lambda \int_{-1}^{+1} dy \; k(x,y) \phi(y) = 5x^3 + x^2 - 3x\\
+	&g(x) = 5x^3 + x^2 - 3x
+\end{align}
+Nel nostro caso avremo
+\begin{align}
+	\phi(x) &=\lambda \int_{-1}^{+1} dy \; (xy -x^2y^2) \phi(y)  + g(x)	= \nonumber\\
+	&=\lambda x \int_{-1}^{+1} dy \; \phi(y)  - \lambda x^2\int_{-1}^{+1} dy \; y^2 \phi(y) + g(x)\\
+	A &= \int_{-1}^{+1} dy \; \phi(y) = \\ 
+	&=\int_{-1}^{+1} dy \; (\lambda y^2 A -\lambda y^2 B) + \int_{-1}^{+1} dy \; (5x^3 + x^2 - 3x) = \nonumber \\ 
+	&=\frac{2}{3} A \lambda + \cancel{2} -\cancel{2}\\
+	B &= \int_{-1}^{+1} dy \; y^2 \phi(y) = \dots = -\frac{2}{5} \lambda B + \frac{2}{5}    
+\end{align}
+Abbiamo quindi il sistema
+\begin{align}
+	\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= \frac{2}{5}}
+\end{align}
+
+Per trovare lo spettro puntuale andiamo a risolvere il caso omogeneo
+\begin{align}
+	&\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= 0} \to \double{\lambda_1 = +\frac{3}{2}}{\lambda_2 = -\frac{5}{2}} \firstpassage
+	&\sigma_p(k) = \left\{ \frac{2}{3} , -\frac{2}{5} \right\}
+\end{align}
+Andiamo ora a studiare il sistema non omogeneo. Distinguiamo i due casi
+\begin{enumerate}
+	\item $\lambda \neq \lambda_c$
+	\begin{align}
+		\double{\left( 1 - \frac{2}{3}\lambda \right) A &=0}{\left( 1 + \frac{2}{5}\lambda \right) B &= 0} \to \double{A &=0}{B &= \frac{2}{5+2\lambda}}
+	\end{align}
+	Da cui otteniamo la soluzione
+	\begin{align}
+		\phi(x) = g(x) - \frac{2}{5+2\lambda} x^2
+	\end{align}
+	\newpage
+	\item $\lambda = \lambda_c$
+	\begin{enumerate}
+		\item $\lambda=\frac{3}{2}$
+		\begin{align}
+			\double{0\cdot A &=0}{\frac{8}{5} B &= \frac{2}{5}} \to \double{A = &ap}{B = &\frac{2}{8}} \spacer ap = \text{a piacere}
+		\end{align}
+		Da cui otteniamo la famiglia di soluzioni
+		\begin{align}
+			\phi_{\frac{3}{2}}(x) = g(x) - \frac{3}{8} x^2 + \frac{3}{2}xA 
+		\end{align}
+		\item $\lambda=-\frac{5}{2}$
+		\begin{align}
+			\double{0\cdot A &=0}{0\cdot B &= \frac{2}{5}} \to \text{sistema non risolvibile}
+		\end{align}
+		
+	\end{enumerate}
+\end{enumerate}
+
+\newpage

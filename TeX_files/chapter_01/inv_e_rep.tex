@@ -1,0 +1,87 @@
+\section{Inversione e reciprocità locale (Davide Bufalini)}
+
+\subsection{Spunti di teoria (Davide Bufalini)}
+
+Sia una $f(z)$ analitica con centro dello sviluppo in $z_0$ tale che
+\begin{align}
+	f(z) = \sum_{n=0}^{+\infty} a_n (z-z_0)^n	\label{eq1}
+\end{align}
+allora, preso un intorno di $z_0$, vi si possino definire la reciproca della funzione $\frac{1}{f}$ e la sua inversa $z^{-1}$.
+
+\subsubsection{Funzione reciproca}
+
+Definiamo la reciproca come
+\begin{align}
+	\frac{1}{f} = \sum_{k} c_k (z-z_0)^k
+\end{align}
+Allora per definizione avremo, considerando la \ref{eq1}
+\begin{align}
+	&\sum_{k} c_k (z-z_0)^k \cdot \sum_{n=0} a_n (z-z_0)^n = 1\firstpassage
+	&\sum_{k,n} c_ka_n (z-z_0)^{n+k} = 1 \label{eq2}
+\end{align}
+Riscriviamo la \ref{eq2} come
+\begin{align}
+	\sum_{l=0}^{+\infty} d_l (z-z_0)^l = 1
+\end{align}
+definendo
+\begin{align}
+	l &= n+k\\
+	d_l &= \sum_{n=0}^{l}c_{l-n}a_n
+\end{align}
+Vediamo come
+\begin{align}
+	1 = d_0 &= c_0a_0 \quad \rightarrow& \quad &c_0 = \frac{1}{a_0}\\
+	0 = d_1 &= c_0a_1 + c_1a_0 \quad \rightarrow& \quad &c_1 = -\frac{a_1}{a_0^2} = -\frac{a_1}{a_0} c_0\\
+	0 = d_2 &= c_0a_2 + c_1a_1 + c_2a_0 \quad \rightarrow& \quad &c_2 = \dots = -\frac{1}{a_0}\left( -\frac{a_2}{a_0} + \frac{a_1^2}{a_0^2} \right) \\
+	\dots \nonumber
+\end{align}
+Andiamo ora a scrivere
+\begin{align}
+	\frac{1}{f} &= \frac{1}{a_0}\cdot \frac{1}{1 + \frac{a_1}{a_0}(z-z_0) + \frac{a_2}{a_0} (z-z_0)^2 + \dots} := \frac{1}{a_0} \cdot \frac{1}{1-h(z)}
+\end{align}
+Siccome $|h(z)| \arrowlim{z}{z_0} 0$, possiamo appoggiarci al concetto di serie geometrica
+\begin{align}
+	\frac{1}{f} = \frac{1}{a_0}\cdot (1 + h(z) + h^2(z) + \dots)
+\end{align}
+
+\subsubsection{Funzione inversa}
+
+Iniziamo notando come $F(z_0) = a_0$, da cui troviamo che, definendo
+\begin{align}
+	g(w) = f^{-1}(w) = \sum_{n=0}^{+\infty} b_n(w-w_0)^n
+\end{align}
+Si ottiene
+\begin{align}
+	g(w_0) = f^{-1}(w_0) = b_0 = z_0
+\end{align}
+
+Possiamo quindi procedere in due modi:
+\begin{enumerate}
+	\item \textbf{Per serie:}
+	\begin{align}
+		&f(z) - f(z_0) = \sum_{n=1}^{+\infty} a_n (z-z_0)^n= w-w_0\firstpassage
+		& z -z_0 = g(w) - g(w_0) = 	 \sum_{n=1}^{+\infty} b_n(w-w_0)^n	\firstpassage
+		& w - w_0 = \sum_{n=1}^{+\infty} a_n (\sum_{k=1}^{+\infty} b_k (w-w_0)^k)^n
+	\end{align}
+	\item \textbf{Formula di Lagrange:}
+	\begin{align}
+		b_0 &= g(w_0) = z_0\\
+		b_n &= \frac{1}{n!} \frac{d^{n-1}}{dz^{n-1}} \left. \left[ \frac{z-z_0}{f(z) - f(z_0)} \right] \right|_{z=z_0}
+	\end{align}
+	
+\end{enumerate}
+
+\newpage
+
+
+\subsection{Numeri di Eulero}
+
+Data la relazione
+\begin{align}
+	\frac{1}{\coth (z)} &= \sum_{n=0}^{+\infty} \frac{E_n}{n!}z^n\\
+	E_{2n+1} &= 0 \quad \forall n\\
+	E_n &= \text{numeri di eulero}
+\end{align}
+
+\subsection{Numeri di Bernoulli}
+\newpage

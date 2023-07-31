@@ -1,0 +1,122 @@
+\section{Espansione di Mittag-Leffler (Davide Bufalini)}
+
+Presa una $f(z)$ analitica nell'origine e con infiniti poli semplici che si accumulano all'infinito, vale la seguente approssimazione
+\begin{align}
+	f(z) &= f(0) + \sum_{n=1}^{+\infty} R_n \cdot \left( \frac{1}{z-z_n} + \frac{1}{z_n} \right)\\
+	R_n &= Res(f, z_n)
+\end{align}
+
+
+\subsection{Esempio 1: $\cot (z)$}
+
+\subsubsection{Calcolo dell'espansione}
+
+La funzione  
+\begin{align}
+	f(z) = \cot(z)
+\end{align}
+ha poli in $z_n = n\pi$ con $n\in \Z$, ma \textbf{non} è analitica in $z=0$.
+
+Per eliminare la singolarità in 0 considero allora la funzione
+\begin{align}
+	f(z) = \cot(z) - \frac{1}{z}
+\end{align}
+I cui residui saranno
+\begin{align}
+	R_n = \limit{z}{n\pi} \left[ (z-n\pi) \cdot \frac{z\cot(z) -1}{z} \right] = \dots = 1  
+\end{align}
+Applicando lo sviluppo ottengo
+\begin{align}
+	\cot(z) - \frac{1}{z} &= \sum_{n\neq 0} \left( \frac{1}{z-n\pi} + \frac{1}{n\pi}\right) \firstpassage
+	\cot(z) &= \frac{1}{z} + \sum_{n\neq 0} \left( \frac{1}{z-n\pi} + \frac{1}{n\pi}\right) = \nonumber\\
+	&= \frac{1}{z} + \sum_{n>0} \left[ \frac{1}{z-n\pi} + \frac{1}{n\pi} - \left( \frac{1}{-z-n\pi} + \frac{1}{n\pi} \right) \right] = \nonumber\\
+	&= \dots  = \nonumber\\
+	&= \frac{1}{z} + \sum_{n>0} \frac{2z}{z^2 - (n\pi)^2}
+\end{align}
+
+\newpage
+
+\subsubsection{Verifica dell'espansione}
+
+Dimostrare la validità della relazione
+\begin{align}
+	\cot(z) = \frac{1}{z} + \sum_{n>0} \frac{2z}{z^2 - (n\pi)^2}
+\end{align}
+
+Iniziamo dimostrando l'analiticità. Come abbiamo visto prima, dobbiamo prendere
+\begin{align}
+	f(z) = \cot(z) - \frac{1}{z}
+\end{align}
+Andiamo quindi a calcolarne il limite in 0
+\begin{align}
+	\limit{z}{0} \cot(z) \frac{1}{z} &= \limit{z}{0} \frac{\frac{z\cos(z)}{\sin(z)} -1}{z} = \nonumber\\
+	&= \limit{z}{0} \frac{z\cos(z) - \sin(z)}{z\sin (z)} = \nonumber\\
+	&= \limit{z}{0}\frac{\cos(z) \cdot [z - \tan (z)]}{z - \sin(z)} = \limit{z}{0} \frac{\cot(z)}{z} \cdot(z-\tan(z)) = 1\cdot 0 = 0
+\end{align}
+Verificata l'analiticità, procediamo a studiare poli e residui della funzione. 
+
+Avremo dei poli semplici quando $\sin(z) = 0$, e qundi per $z_n=n\pi$, con $n=0$ \textbf{escluso}, in quanto vi si annulla la funzione. Ne segue che i residui saranno
+\begin{align}
+	Res(f,z_n) = \limit{z}{n\pi}  (z-n\pi) \cdot \frac{z\cot(z) -1}{z}
+\end{align} 
+Facendo il cambio di variaible $u=z-n\pi$ otteniamo
+\begin{align}
+	Res(f,z_n) = \limit{u}{0} u \cdot \frac{(u+n\pi)\cot(u+n\pi) -1}{u+n\pi} \label{eq3}
+\end{align} 
+Se però osserviamo un attimo il termine $\cot(u+n\pi)$ notiamo come lo si possa manipolare nel seguente modo
+\begin{align}
+	\cot(u+n\pi) &= \frac{\cos(u+n\pi)}{\sin(u+n\pi)} = \frac{\cos(u)\cdot(-1)^n}{\sin(u)\cdot(-1)^n} = \frac{\cos(u)}{\sin(u)} = \cot(u)
+\end{align}
+Possiamo quindi riscrivere la \ref{eq3} come
+\begin{align}
+	Res(f,z_n) &= \limit{u}{0} u \cdot \frac{(u+n\pi)\cot(u) -1}{u+n\pi} \simeq \limit{u}{0} u\cdot \frac{(u+n\pi)\cdot \frac{1}{u} -1}{u+n\pi} = \nonumber\\
+	&= \left. \frac{u+n\pi -u}{u+n\pi} \right|_{u=0} = 1 \quad \forall n\in \N
+\end{align} 
+
+Possiamo quindi applicare lo sviluppo
+\begin{align}
+	f(z) &= \sum_{n\neq 0} \left( \frac{1}{n-n\pi} + \frac{1}{n\pi} \right) = \nonumber\\
+	&= \sum_{n=-\infty}^{-1} \left( \frac{1}{n-n\pi} + \frac{1}{n\pi} \right) + \sum_{n=1}^{+\infty} \left( \frac{1}{n-n\pi} + \frac{1}{n\pi} \right) = \nonumber \\
+	&= \sum_{n>0} \left[ \frac{1}{z-n\pi} + \frac{1}{n\pi} - \left( \frac{1}{-z-n\pi} + \frac{1}{n\pi} \right) \right] = \nonumber\\
+	&= 2z\sum_{n=1}^{+\infty} \frac{1}{z^2 - (n\pi)^2}
+\end{align}
+E la tesi è così dimostrata.
+
+\newpage
+
+\subsection{Esempio 2: $\sin^{-2}(z)$}
+
+Utilizziamo l'integrale (di Cauchy? Chiedere)
+\begin{align}
+	I_n = \oint_{Q_n} \frac{d\zeta}{(\zeta -z) \sin^2(\zeta)}
+\end{align}
+Studiando i poli otteniamo
+\begin{align}
+	\zeta_0 &= z \quad &\text{polo semplice}\\
+	\zeta_n &= n\pi \; n\in \N  \quad &\text{poli doppi}
+\end{align}
+Siccome $I_n \arrowlim{n}{+\infty} 0$ abbiamo che
+\begin{align}
+	0 &= \sum_{n\in \N} Res(f(\zeta), n\pi) + Res(f(\zeta), z) =\nonumber\\
+	&= \sum_{n\in \N} Res(f(\zeta), n\pi) + \frac{1}{\sin^2(z)}  \label{eq4}
+\end{align}
+Da cui otteniamo
+\begin{align}
+	\frac{1}{\sin^2(\zeta)} &= -\sum_{n\in \N} Res(f(\zeta), n\pi)
+\end{align}
+Dato che
+\begin{align}
+	Res(f(\zeta), n\pi) &= \limit{\zeta}{n\pi} \frac{d}{d\zeta} \frac{(\zeta - n\pi)^2}{(\zeta - z) \sin^2(\zeta)} \firstpassage
+	\double{u=\zeta - n\pi}{\zeta = u + n\pi} \nextpassage
+	Res(f(\zeta), n\pi) &= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \sin^2(u + n\pi)} =  \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) (-1)^{2n} \sin^2(u)}= \nonumber\\
+	&= \limit{u}{0} \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} = \left. \frac{d}{du} \frac{u^2}{(u + n\pi - z) \left(u -\frac{u^3}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
+	&= \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \left. \frac{d}{du} \frac{1}{(u + n\pi - z) \left(1 -\frac{u^2}{3!} + \dots\right)^2} \right|_{u=0} = \nonumber \\
+	&= \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3!} - \dots\right)^2}{(u + n\pi - z) } \right|_{u=0} = \left. \frac{d}{du} \frac{\left(1 +\frac{u^2}{3} + \dots\right)}{(u + n\pi - z) } \right|_{u=0} = \nonumber \\
+	&= \left. \frac{\left( \frac{2}{3} u + \dots \right) (u + n\pi-z ) - \left(1 + \frac{u^2}{3}\right)}{(u+ n\pi -z)^2} \right|_{u=0} = -\frac{1}{(n\pi -z)^2}
+\end{align}
+La \ref{eq4} diventa
+\begin{align}
+	\frac{1}{\sin^2(z)} = \sum_{n\in \N} \frac{1}{(n\pi -z)^2}
+\end{align}
+
+\newpage

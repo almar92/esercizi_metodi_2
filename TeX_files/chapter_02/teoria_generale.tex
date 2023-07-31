@@ -1,0 +1,161 @@
+\section{Spunti di teoria generale (Alessandro Marcelli)}
+
+\subsection{Nozioni generali sugli spazi}
+
+\subsubsection{Spazi vettoriali}
+
+Si definisce uno \textbf{spazio vettoriale} $V$ come un insieme su un campo $K$ (di solito $\R$ o $\C$) dove sono definite le operazioni di
+\begin{enumerate}
+	\item \textbf{Somma vettoriale}
+	\begin{align}
+		V \times V &\rightarrow V\\
+		(v_1,v_2)&\rightarrow v_1 + v_2
+	\end{align}
+	\item \textbf{Prodotto per uno scalare}
+	\begin{align}
+		K \times V &\rightarrow V\\
+		(\lambda,v)&\rightarrow \lambda v
+	\end{align}
+\end{enumerate}
+
+Preso $A$ sottoinsieme di $V$, ne definiamo i \textbf{punti di aderenza} come quei punti tali che, preso un loro intorno, contengono almeno un punto di $A$. \newline
+In particolare, preso un punto di aderenza $z_0$, se nel suo intorno contiene almeno un punto $z_1 \neq z_0$ appartenente ad $A$, allora $z_0$ si dice \textbf{punto di accumulazione}.
+
+Possiamo quindi dividere i punti di aderenza in due categorie
+\begin{enumerate}
+	\item tutti i punti di A
+	\item  i punti di accumulazione esterni ad $A$
+\end{enumerate}
+
+Possiamo ora definire la \textbf{chiusura} $\overline{A}$ come l'insieme dei punti di aderenza di $A$. 
+
+Un insieme $A$ si dice \textbf{denso} in $B$ se $B \subseteq \overline{A}$. In particolare se $\overline{A} = V$ l'insieme $A$ si dice \textbf{ovunque denso}.
+
+
+
+\newpage
+\subsubsection{Spazi metrici, normati ed euclidei}
+
+Dato uno spazio  vettoriale V e, presi due elementi dello spazio $x$ e $y$, definita la funzione \textbf{distanza} $d(x,y)$ tale che
+\begin{align}
+	d(x,y) &\geq 0 \spacer d(x,y) = 0 \leftrightarrow x=y\\
+	d(x,y) & = d(y,x)\\
+	d(x,y) &\leq d(x,z) + d(y,z \spacer \forall x,y,z \in M) 
+\end{align}
+
+Si definisce \textbf{Spazio Metrico} la coppia $(V,d)$.
+
+Preso di nuovo lo spazio vettoriale $V$ e presi $v,w\in V$ e $\alpha \in K$ si può definire la \textbf{norma} $||\cdot|| \taleche V \rightarrow \R$ come
+\begin{align}
+	||v|| &\geq 0 \spacer ||v|| = 0 \leftrightarrow v= 0\\
+	||\alpha v || &= |\alpha|\cdot ||v||\\
+	||v + w|| &\leq ||v|| + ||w||
+\end{align}
+
+La coppia $(V, ||\cdot ||)$ si chiama \textbf{spazio normato}. 
+
+
+\textbf{Importante:} tutti gli spazi normati sono anche spazi metrici, con $d(x,y) = ||x-y||$, ma non tutti gli spazi metrici sono normati.
+
+In uno spazio metrico abbiamo che un punto $x_a\in M$ sarà
+\begin{enumerate}
+	\item di \textbf{aderenza} se e solo se $\exists \{x_n\} \in M \taleche \limit{n}{+\infty} x_n = x_a$
+	\item di \textbf{accumulazione} se e solo se $\exists \{x_n\neq x_a\} \in M \taleche \limit{n}{+\infty} x_n = x_a$
+\end{enumerate}
+
+Definiamo ora una \textbf{successione di Cauchy} come tale se
+\begin{align}
+	\forall \epsilon > 0 \; \exists n_\epsilon \taleche d(x_m,x_n) <\epsilon \quad \forall m,n > n_\epsilon
+\end{align}
+Possiamo quindi dire che uno spazio metrico $V$ si dice \textbf{completo} se ogni successione di Cauchy in esso definita è convergente.
+
+
+Uno spazio \textbf{euclideo} è uno spazio normato la cui norma è definita attraverso un \textbf{prodotto scalare}, ovvero un'applicazione $ (\cdot , \cdot) \taleche V \times V \rightarrow \C $ che, $\forall x,y,z \in V$ e $\forall \lambda, \mu \in \C$, soddisfa
+\begin{align}
+	&(x,y) = \overline{(y,x)} \quad &\text{Hermitianità}\\
+	&(x, \lambda y + \mu z) = \lambda(x,y) + \mu (x,z) \quad &\text{Linearità}\\
+	&(x,y) \geq 0 \spacer (x,x) = 0 \leftrightarrow x=0
+\end{align}
+
+Uno spazio euclideo completo si dice \textbf{spazio di Hilbert}.
+
+\subsection{Operatori}
+
+Presi due spazi di Hilbert $H_1$ e $H_2$, definiamo un \textbf{operatore lineare} $A$ come un'applicazione del tipo
+\begin{align}
+	&A \taleche \mathcal{D}_A \subseteq H_1 \rightarrow R_A \subseteq H_2 \\
+	&A(\alpha v + \beta w) = \alpha A(v) + \beta A(w) \spacer \forall v,w \in \mathcal{D}_A \quad \forall \alpha, \beta \in K
+\end{align}
+Un operatore si dice
+\begin{enumerate}
+	\item \textbf{Limitato} se $\exists N\in \R \taleche ||A(x)|| \leq N||x|| \quad \forall x \in \mathcal{D}_A$
+	\item \textbf{Continuo} se $\forall \{ x_n\} \in \mathcal{D}_A \taleche x_n \rightarrow x$ segue che $\limit{n}{infty} A(x_n) = A(x)$
+	\textbf{Nota bene:} un operatore lineare $(A,\mathcal{D}_A)$ è continuo se e solo se è limitato.
+\end{enumerate}
+
+\newpage
+
+Iniziamo definendo il seguente funzionale lineare
+\begin{align}
+	&x \rightarrow \phi_\nu(x)\\
+	&\phi_\mu(x) = (\mu, Ax) \quad \forall x \in \mathcal{D}_A
+\end{align}
+Dato quindi un operatore $A$, si definisce il suo \textbf{aggiunto} $A^\dagger$ come l'operatore per cui, grazie anche al teorema di Riesz
+\begin{align}
+	(\mu, Ax) = (A^\dagger \mu, x)
+\end{align}
+Se $A$ è lineare, limitato e densamente definito ne segue che $||A|| = ||A^\dagger||$.
+
+Un'operatore $A$ si dice \textbf{unitario} quando
+\begin{enumerate}
+	\item è \textbf{Isometrico}, ovvero 
+	\begin{align}
+		&(Ax,Ay) = (x,y) \quad \forall x,y \in \mathcal{D}_A\\
+		&||A|| = 1
+	\end{align}
+	\item il suo range è denso in H
+\end{enumerate} 
+Per gli operatori unitari vale che
+\begin{align}
+	U^\dagger U = \mathbb{1}
+\end{align}
+
+Un operatore si dice \textbf{simmetrico} quando
+\begin{align}
+	(x,Ay) = (Ax,y) \spacer \forall x,y \in \mathcal{D}_A
+\end{align}
+Se un operatore è simmetrico e $\mathcal{D}_A = \mathcal{D}_{A^\dagger}$ allora si dice che è \textbf{autoaggiunto}.
+
+
+\subsubsection{Spettri per operatori Infinito-Dimensionali}
+
+Sia $H$ uno spazio di Hilbert. Dato un \textbf{operatore lineare densamente definito}
+\begin{align}
+	A : \mathcal{D}_A \subseteq H \rightarrow R_A \subseteq H
+\end{align} 
+e definita la famiglia di operatori
+\begin{align}
+	&T_z(A) \taleche \mathcal{D}_A \rightarrow H\\
+	&T_z(A) = z\mathbb{1} - A \spacer z \in \C
+\end{align}
+
+
+Si diche che $z$ appartiene all'\textbf{insieme risolvente} $Res(A)$ dell'operatore $A$ se $T_z (A)$ è \textbf{biunivoco} con \textbf{inverso limitato}.
+
+Tale inverso prende il nome di \textbf{Operatore risolvente} di $A$ e viene definito come
+\begin{align}
+	&R_z(A) \taleche \mathcal{R}_{T_z(A)} \rightarrow H\\
+	&R_z(A) = (z\mathbb{1} - A)^{-1}
+\end{align}
+
+Se invece $z \notin Res(A)$, allora si dice che esso appartiene allo spettro di $A$.
+Rispetto agli operatori finito-dimensionali questo non implica che $z$ sia autovalore di $A$. Ci troviamo quindi a dividere gli elementi dello spettro in tre categorie:
+\begin{enumerate}
+	\item Lo \textbf{spettro puntuale} $\sigma_p(A)$, ovvero l'insieme degli autovalori di $A$, per i quali quindi esiste un $x \neq 0 \taleche Ax = zx$
+	
+	\item Lo \textbf{spettro residuo} $\sigma_\rho(A)$, ovvero l'insieme degli $z\notin \sigma_p(A)$ per i quali $R_z(A)$ non è densamente definito.
+	
+	\item \textbf{Spettro continuo} $\sigma_c(A)$, ovvero l'insieme degli $z\notin \sigma_p(A) \cup \sigma_\rho (A)$  per i quali $R_z(A)$, per quanto densamente definito, non è limitato.
+\end{enumerate}
+
+\newpage

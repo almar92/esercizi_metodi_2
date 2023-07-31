@@ -1,0 +1,219 @@
+\section{Operatori differenziali (Davide Bufalini, Alessandro Marcelli)}
+
+\subsection{Spunti di teoria (Alessandro Marcelli)}
+
+Gli operatori differenziali $\mathcal{L}_x^{(n)}$di ordine $n$ sono definiti come
+\begin{align}
+	&\double{\mathcal{L}_x^{(n)} u(x) = f(x)}{\text{Boundary conditions}}\\
+	&\mathcal{L}_x^{(n)} = \sum_{k=0}^{n} a_k(x) \frac{d^k}{dx^k}
+\end{align}
+
+
+I problemi di ricerca di soluzioni particolari si dividono in due famiglie
+\begin{align}
+	&\left\{
+	\begin{array}{ccc}
+		\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+		\frac{d^n}{dx^n}u(x_0) &= &u^{(n)}_0\\
+		\frac{d^{n-1}}{dx^{n-1}}u(x_0) &= &u^{(n-1)}_0\\
+		\vdots\\
+		\frac{d}{dx}u(x_0) &= &u'_0\\
+		u(x_0) &= &u_0\\
+	\end{array}
+	\right. \quad &\text{Problemi di Cauchy}\\
+	&\left\{
+	\begin{array}{ccc}
+		\mathcal{L}_x^{(n)} u(x) &= &f(x)\\
+		u(x_n) &= &u_n\\
+		u(x_{n-1}) &= &u_{n-1}\\
+		\vdots\\
+		u(x_1) &= &u_1\\
+		u(x_0) &= &u_0\\
+	\end{array}
+	\right. \quad &\text{Problemi di Sturm-Liouvlille}
+\end{align}
+
+La ricerca delle soluzioni può passare attraverso il calcolo del nucleo $G(x,y)$ dell'operatore inverso, denominato \textbf{funzione di Green}, per il quale vale
+\begin{align}
+	\mathcal{L}_x^{(n)} G(x,y) = \delta(x-y)
+\end{align}
+E che quindi si può definire
+\begin{align}
+	G(x,y) = c_1 u_1(x) + c_2 u_2(x) + \theta(x-y) \left[ \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)} \right]
+\end{align}
+Dove al denominatore abbiamo il \textbf{denominatore della matrice di Wronsky}, definito come
+\begin{align}
+	W = \det \begin{pmatrix}
+		u_1^0 && u_2^0\\
+		\dot{u}_1^0 && \dot{u}_2^0
+	\end{pmatrix}
+\end{align}
+Due famiglie importanti di funzioni di Green sono le
+\begin{enumerate}
+	\item \textbf{Funzioni di Green avanzate}, utili nello studio dei problemi di Cauchy
+	\begin{align}
+		G(x,y) \equiv 0 \quad x>y
+	\end{align}
+	\item \textbf{Funzioni di Green ritardate}
+	\begin{align}
+		G(x,y) \equiv 0 \quad x<y
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+
+\subsection{Esempio 1: Operatore Differenziale del IIo Ordine (Davide Bufalini)}
+
+Sia l'operatore
+\begin{align}
+	\mathcal{L}_x^\lambda = -\frac{d^2}{dx^2} - \lambda \spacer \lambda= \text{cost.}
+\end{align}
+
+Si richiede di
+\begin{enumerate}
+	\item calcolare, al variare di $\lambda$, la soluzione del problema omogeneo
+	\begin{align}
+		\triple{\mathcal{L}_x^\lambda f(x) &= 0}{f(0) &=0}{\dot{f}(\pi) &=0}
+	\end{align}
+	\item ricavare la Funzione di Green (l'operatore risolvente) per i valori in cui $\mathcal{L}_x^\lambda$ è invertibile del corrispontente problema di Sturm-Liouville
+\end{enumerate}
+
+L'operatore è in forma canonica con coefficienti costanti nella forma
+\begin{align}
+	a \ddot{f} + b \dot{f} + cf=0 \spacer \text{nel nostro caso } b=0
+\end{align}
+Prendendo un Ansatz del tipo $f(x) \sim e^{\alpha x}$ otteniamo
+\begin{align}
+	-\alpha^2 - \lambda =0 \to \alpha= \pm i \sqrt{\lambda}
+\end{align}
+Da cui segue
+\begin{align}
+	f(x) = A e^{i \sqrt{\lambda}} + B e^{-i \sqrt{\lambda}}
+\end{align}
+Imponendo l condizioni di bordo otteniamo
+\begin{align}
+	&\double{f(0) =0}{\dot{f}(\pi) =0} \to \double{A+B = &0}{i\sqrt{\lambda} \left(A e^{i \sqrt{\lambda}} - B e^{-i \sqrt{\lambda}}\right) = &0} \firstpassage
+	&\double{B = &-A}{Ai \sqrt{\lambda} 2 \cos(\sqrt{\lambda} \pi) =&0}
+\end{align}
+Escludendo le soluzioni banali $A=0=B$ e $\lambda=0$ abbiamo $n\in\Z$ autovalori nella forma
+\begin{align}
+	\lambda = \frac{(2k+1)^2}{4}
+\end{align}
+Per trovare gli autovettori corrispondenti ci affidiamo alla condizione $A = -B$ dalla quale segue
+\begin{align}
+	f_n(x)=-2i B \sin\left(\frac{2k+1}{2} x\right)
+\end{align}
+Per trovare B sfruttiamo l'ortogonalità
+\begin{align}
+	\delta_{n,m} = <f_n,f_m> &= \int_{0}^{\pi} dx \; \overline{f_n}(x) f_m(x) = \nonumber \\
+	&= \int_0^\pi dx\; (2i B^*) \sin\left(\frac{2k+1}{2} x\right) \cdot (-2i B) \sin\left(\frac{2k+1}{2} x\right)
+\end{align}
+Iniziamo studiando il caso $n=m$
+\begin{align}
+	\delta_{m,m} = <f_n,f_m> &= 4|B|^2 \int_0^\pi dx\; \sin^2\left(\frac{2k+1}{2} x\right) = 4|B|^2 \frac{\pi}{2}
+\end{align}
+Per ortonormalità imponiamo
+\begin{align}
+	4|B|^2 \frac{\pi}{2} = 1 \to |B| = \frac{1}{\sqrt{2\pi}} 
+\end{align}
+Che, nel caso $n\neq m$, diventa 	
+\begin{align}
+	B = \frac{e^{i\rho}}{\sqrt{2\pi}} \spacer \rho \in \R	
+\end{align}
+Da cui segue che
+\begin{align}
+	f_n(x) = -i \sqrt{\frac{2}{\pi}}e^{i\rho}\sin \left( \frac{2n+1}{2}x \right) \spacer \double{\rho \in \R}{n\in\Z}
+\end{align}
+
+Siccome $\lambda=0$ non è autovalore non abbiamo modi nulli.
+
+Andiamo ora a calcolare l'\textbf{operatore risolvente}.
+\begin{align}
+	&(\mathcal{L}_{SL} -\lambda \mathbb{1}) G_\lambda (x,y) = \delta (x-y) \spacer \lambda \neq \lambda_n \; \text{per evitare poli semplici} \firstpassage
+	&-\frac{d^2}{dx^2} G_x(x,y) - \lambda G_\lambda = \delta (x-y)
+\end{align}
+
+Utilizziamo un trucco. Siccome il problema è della tipologia
+\begin{align}
+	-\frac{d^2f}{dx^2} - \lambda f = 0
+\end{align}
+Andiamo a cercare due soluzioni $f^0_{1,2}$ tali che ciascua soddisfi una delle due condizioni al bordo. Una volta trovate andiamo a calcolare il Wronskiano, necessario per la definizione della funzione di Green
+\begin{align}
+	G_\lambda (x,y) = \double{\frac{f_1^0(x)f_2^0(x)}{W} \spacer x<y}{\frac{f_1^0(y)f_2^0(y)}{W} \spacer x>y}
+\end{align}
+In base alle condizioni di bordo proviamo con
+\begin{align}
+	f_1^0(x) &= \sin(\sqrt{\lambda} x) \to f_1^0(0) =0\\
+	f_2^0(x) &= \cos(\sqrt{\lambda} (\pi-x)) \to f_2^0(\pi) =0
+\end{align}
+Andiamo quindi a calcolarne il Wronskiano
+\begin{align}
+	W = \begin{vmatrix}
+		f_1^0 && f_2^0\\
+		\dot{f_1^0} && \dot{f_2^0}
+	\end{vmatrix} = \begin{vmatrix}
+		\sin(\sqrt{\lambda} x) && \cos(\sqrt{\lambda} (\pi-x))\\
+		\sqrt{\lambda}\cos(\sqrt{\lambda}x) && \sqrt{\lambda} \cos (\sqrt{\lambda} (\pi-x))
+	\end{vmatrix} = \cdots = -\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)
+\end{align}
+Da cui otteniamo
+\begin{align}
+	G_\lambda (x,y) = \double{-\frac{ \sin(\sqrt{\lambda} x)\cos(\sqrt{\lambda} (\pi-x))}{\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)} \spacer x<y}{-\frac{ \sin(\sqrt{\lambda} y)\cos(\sqrt{\lambda} (\pi-y))}{\sqrt{\lambda} \cos( \sqrt{\lambda} \pi)} \spacer x>y}
+\end{align}
+
+Vediamo come per i $\lambda_n$ che abbiamo trovato in precedenza ci siano solo poli semplici.
+
+\newpage
+
+\subsection{Esempio 2 (Davide Bufalini)}
+
+Dato l'operatore differenziale
+\begin{align}
+	\mathcal{L}_x = -i \frac{d}{dx} + \frac{\beta}{x} \spacer \beta \in \R
+\end{align}
+Il cui nucleo è dato da
+\begin{align}
+	\mathcal{D}_{\mathcal{L}_x} = \left\{ f \in L^2 \left( \left[\frac{1}{2},1\right] \right) \taleche f\left(\frac{1}{2}\right) = f(1) \right\}
+\end{align}
+
+Si richiede di
+\begin{enumerate}
+	\item Costruire $(\mathcal{L}_x^\dagger, \mathcal{D}_{\mathcal{L}_x^\dagger})$
+	\item Discutere autovalori e autovettori di $(\mathcal{L}_x, \mathcal{D}_{\mathcal{L}_x})$
+	\item Trovare i valori di $\beta$ per cui $(\mathcal{L}_x, \mathcal{D}_{\mathcal{L}_x})$ è autoaggiunto e/o invertibile
+\end{enumerate}
+
+Partiamo dall'\textbf{aggiunto}:
+\begin{align}
+	<g,\mathcal{L}_x f> &= \int_{\frac{1}{2}}^{1} dx \; \overline{g} \left(-i \frac{d}{dx} + \frac{\beta}{x}\right) f = \nonumber\\
+	&= \int_{\frac{1}{2}}^{1} dx \; \overline{g} \left(-i \frac{d}{dx}f\right) + \int_{\frac{1}{2}}^{1} dx \; \overline{g}\left(\frac{\beta}{x} f\right) = \nonumber\\
+	&=-i \int_{\frac{1}{2}}^{1} dx \; \overline{g} \dot{f} + \int_{\frac{1}{2}}^{1} dx \; \overline{g}\frac{\beta}{x}f = \nonumber\\
+	&= \left. -i f \overline{g} \right|_{\frac{1}{2}}^{1} +i \int_{\frac{1}{2}}^{1} dx \;  \dot{\overline{g}}f + \int_{\frac{1}{2}}^{1} dx \; \overline{\left(\frac{\beta}{x} g\right)} f
+\end{align}
+Imponendo che $\mathcal{L}_x^\dagger$ sia autoagiunto otteniamo che
+\begin{align}
+	&-i f\left( \frac{1}{2} \right) \cdot\left[ \overline{g}\left(\frac{1}{2}\right) - \overline{g}(1) \right] = 0 \firstpassage
+	&\overline{g}\left(\frac{1}{2}\right) = \overline{g}(1) \nextpassage
+	&\mathcal{L}_x^\dagger = -i \frac{d}{dx} + \frac{\beta}{x} \spacer \mathcal{D}_{\mathcal{L}_x^\dagger} = \left\{ g \in L^2 \left( \left[\frac{1}{2},1\right] \right) \taleche g\left(\frac{1}{2}\right) = g(1) \right\}
+\end{align}
+Andiamo ora a calcolare gli autovalori e gli autovettori:
+\begin{align}
+	&\mathcal{L}_x f= \lambda f \firstpassage
+	&\left( -i \frac{d}{dx} + \frac{\beta}{x} \right) f = \lambda f\nextpassage
+	&\frac{df}{dx} = i\left( \lambda - \frac{\beta}{x} \right) f \nextpassage
+	&\int_{\frac{1}{2}}^{x} dt \; \frac{\dot{f}(t)}{f(t)} ) = \int_{\frac{1}{2}}^{x} dt \; \left( \lambda - \frac{\beta}{x} \right) \nextpassage
+	&\vdots\nextpassage
+	&f(x) = f\left(\frac{1}{2}\right) e^{i\left[ \lambda \left( x - \frac{1}{2} \right)  - \beta \ln(2x)\right]}
+\end{align}
+Applicando le condizioni al contorno otteniamo
+\begin{align}
+	&f(1) =  f\left(\frac{1}{2}\right) \firstpassage
+	&f\left(\frac{1}{2}\right) e^{i\frac{\lambda}{2}  - \beta \ln(2)} = f\left(\frac{1}{2}\right) e^{i\cdot 0}\nextpassage
+	&e^{i\frac{\lambda}{2}  - \beta \ln(2)} = 1 \nextpassage
+	&e^{i\frac{\lambda_n}{2}  - \beta \ln(2)} = e^{i2n\pi} \nextpassage
+	&\frac{\lambda_n}{2}  = \beta \ln(2) + 2n\pi \nextpassage
+	&\lambda_n = 2\beta \ln(2) + 4n\pi \to f_n(x) = f\left(\frac{1}{2}\right) e^{i\left[ (2\beta \ln(2) + 4n\pi) \left( x - \frac{1}{2} \right) - \beta \ln(2x)\right]}
+\end{align}
+
+\newpage

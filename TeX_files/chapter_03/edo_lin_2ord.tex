@@ -1,0 +1,803 @@
+\section{EDO lineari del 2o ordine (Adriano Chialastri, Alessandro Marcelli)}
+
+
+\subsection{Spunti di teoria (Alessandro Marcelli)}
+
+Le EDO del 2o ordine sono rappresentabili come
+\begin{align}
+	c_2(x) u''(x) + c_1(x) u'(x) + c_0(x)u(x) = f(x)
+\end{align}
+Seguendo il procedimento illustrato in \ref{canon}, possono essere sempre ridotte in \textbf{forma canonica}
+\begin{align}
+	v''(x) + c(x)v(x) = g(x)
+\end{align}
+dove, ovviamente le condizioni al contorno vanno trasformate di conseguenza.
+
+Rispetto alle EDO del 1o ordine, c'è la difficoltà aggiuntiva data dal fatto che non sempre si può trovare una soluzione dell'omogenea (e quindi l'integrale generale). Questo problema non si pone però per due famiglie di equazioni omogenee:
+\begin{enumerate}
+	\item \textbf{Omogenee a coefficienti costanti:}
+	\begin{align}
+		a u''(x) + b u'(x) + c u(x) = 0 \label{edo2ord1}
+	\end{align}
+	In questo caso si procede con l'\textbf{Ansatz} (o \textbf{ipotesi}) $u(x) = e^{\alpha x}$ e si va a cercare il parametro $\alpha$ tramite l'equazione caratteristica
+	\begin{align}
+		&a \alpha^2 + b \alpha + c = 0\firstpassage
+		& \alpha_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \firstpassage
+		&u_1(x) = e^{\alpha_1 x} \spacer u_2(x) = e^{\alpha_2 x}
+	\end{align}
+	Se le soluzioni coincidono, e quindi si ha
+	\begin{align}
+		\alpha = -\frac{b}{2a}
+	\end{align}
+	si procede nel seguente modo
+	\begin{align}
+		&u_1(x) = e^{\alpha x} \spacer u_2(x) = \rho(x)e^{\alpha x} \firstpassage
+		&\cancel{(a \alpha^2 + b \alpha + c)\rho(x)e^{\alpha x}} + (a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x))e^{\alpha x} = 0
+	\end{align}
+	Il primo termine si annulla, vista la \ref{edo2ord1}, otteniamo quindi
+	\begin{align}
+		&(a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x))e^{\alpha x} = 0\firstpassage
+		&a \rho''(x) + b \rho'(x) + 2a\alpha \rho'(x)=0 \nextpassage
+		&a \rho''(x) + b \rho'(x) - \cancel{2a}\frac{b}{\cancel{2a}} \rho'(x)=0 \to a \rho''(x) + \cancel{b \rho'(x)} - \cancel{b\rho'(x)} =0 \nextpassage
+		&\rho''(x) = 0 \nextpassage
+		&\rho(x) = c_1x + c_2
+	\end{align}
+	la soluzione più semplice si ha per $c_1 = 1$ e $c_2 = 0$, che ci restituisce
+	\begin{align}
+		u_2(x) = x e^{\alpha x}
+	\end{align}
+	
+	\item \textbf{Equazioni di Eulero del 2o ordine:}
+	\begin{align}
+		u''(x) + \frac{a}{x}u'(x) + \frac{b}{x^2}u(x) = 0 \spacer a,b \;\;\ \text{costanti}
+	\end{align}
+	Stavolta le soluzioni le andiamo a cercare con l'Ansatz $u(x) = x^\alpha$, ottenendo la seguente equazione caratteristica
+	\begin{align}
+		&\alpha (\alpha - 1) + a\alpha + b = 0 \firstpassage
+		&\alpha^2 + (a-1)\alpha + b = 0 \nextpassage
+		&\alpha_{1,2} = \frac{(1-a) \pm \sqrt{(a-1)^2 - 4b}}{2} \firstpassage
+		&u_1 (x) = x^{\alpha_1} \spacer u_2 (x) = x^{\alpha_2}
+	\end{align}
+	Nel caso di soluzioni coincidenti
+	\begin{align}
+		a = \frac{1-a}{2}
+	\end{align}
+	conviene trasformare l'equazione in una a coefficienti costanti col cambio di variabili
+	\begin{align}
+		&x(t) = e^t\firstpassage
+		&\frac{d}{dx}u(x(t)) =e^{-t} \frac{du}{dt} \nextpassage
+		&\frac{d^2}{dx^2}u(x(t)) =e^{-2t} \frac{d^2u}{dt^2} - e^{-2t} \frac{du}{dt} \nextpassage
+		&e^{-2t} \left[ \frac{d^2u}{dt^2} + (a-1)\frac{du}{dt} + bu \right] = 0 \nextpassage
+		&u_1(t) = e^{\alpha t} \spacer u_2(t) = te^{\alpha t} \nextpassage
+		&u_1(x) = x^\alpha \spacer u_2(x) = x^\alpha \ln(x)
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+\subsubsection{Metodo del Wronskiano}
+
+Si definisce il \textbf{determinante di Wronsky} ( anche detto \textbf{Wronskiano}) di due funzioni $u_1$ e $u_2$ come
+\begin{align}
+	W(u_1(x),u_2(x)) = W(x) = \begin{vmatrix}
+		u_1(x) & u_2(x) \\
+		\dot{u}_1(x) &\dot{u}_2(x)
+	\end{vmatrix} = u_1(x) \dot{u}_2(x) - \dot{u}_1(x) u_2(x) 
+\end{align}
+Se  $u_1(x)= a\cdot u_2(x)$, ovvero sono linearmente dipendenti, allora $W=0$.
+
+Presa in considerazione una EDO del tipo
+\begin{align}
+	&a(x) \ddot{u}(x) + b(x) \dot{u}(x) + c(x) u(x) = 0 \firstpassage
+	&\ddot{u}(x) + \frac{b(x)}{a(x)} \dot{u}(x) + \frac{c(x)}{a(x)} u(x) = 0\nextpassage
+	&\ddot{u}(x) + a_1(x) \dot{u}(x) + a_2(x) u(x) = 0 \\
+	&a_1(x) =  \frac{b(x)}{a(x)} \spacer a_2(x)=\frac{c(x)}{a(x)}
+\end{align}
+e prese duesaoluzioni $u_1(x)$ e $u_2(x)$ possiamo ricavare
+\begin{align}
+	&u_1(x)\ddot{u}_2(x) + a_1(x) u_1(x)\dot{u}_2(x) + a_2(x) u_1(x)u_2(x) = 0 \\
+	&u_2(x)\ddot{u}_1(x) + a_1(x) u_2(x)\dot{u}_1(x) + a_2(x) u_2(x)u_1(x) = 0\firstpassagecomm{sottraggo membro a membro}
+	&u_1(x)\ddot{u}_2(x) - u_2(x)\ddot{u}_1(x) + a_1(x) u_1(x)\dot{u}_2(x) - a_1(x) u_2(x)\dot{u}_1(x) + \cancel{ a_2(x) u_1(x)u_2(x)} - \cancel{a_2(x) u_2(x)u_1(x)} = 0 \nextpassage
+	&[u_1(x)\ddot{u}_2(x) - u_2(x)\ddot{u}_1(x)]+ a_1(x) [  u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)] = 0\nextpassage
+	&\dot{W}(x) + a_1(x)W(x) = 0
+\end{align}
+Per separazione delle variabili, e definendo $W(x_0)=W_0$ otteniamo la \textbf{formula di Liouville}
+\begin{align}
+	W(x) = W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)
+\end{align}
+Da cui notiamo che
+\begin{enumerate}
+	\item In formacanonica $W=0$
+	\item Se $\exists x_1 \taleche W(x_1) = 0 \to W(x) = 0\quad\forall x$
+	\item Se $u_1$ e $u_2$ sono lin ind allora $W(x) \neq 0 \quad \forall x$
+\end{enumerate}
+Nota una delle due soluzioni, dalla formula di Liouville possiamo ricavare una definizione implicita dell'altra nel seguente modo
+\begin{align}
+	&\frac{W}{u_1^2(x)} = \frac{u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)}{u_1^2(x)}\\
+	&\frac{W}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
+	&\frac{u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)}
+\end{align}
+Il termnine a sinistra altro non è che 
+\begin{align}
+	&\frac{u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)}{u_1^2(x)} = \frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right)
+\end{align}
+Da cui otteniamo, sostituendo $W_0$ con $A$ per liberare l'estremo inferior edi integrazione
+\begin{align}
+	&\frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right) = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
+	& \int^x d\eta \; \frac{d}{d\eta} \left( \frac{u_2(\eta)}{u_1(\eta)} \right) =\int^x d\eta \; \frac{A \cdot exp\left( -\int_{x_0}^{\eta} d\xi a_1(\xi) \right)}{u_1^2(\eta)} + c_1 \nextpassage
+	&u_2(x) = Au_1(x) \int^x d\eta \; \frac{1}{u_1^2(\eta)}\cdot exp\left( -\int_{x_0}^{\eta} d\xi a_1(\xi) \right) + c_1u_1(x)
+\end{align}
+
+
+\subsubsection{Metodo della funzione di Green}
+Consideriamo ora l'operatore differenziale in forma normale
+\begin{align}
+	\mathcal{L}_x^{(2)} =\frac{d^2}{dx^2} + a_1(x)\frac{d}{dx} + a_2(x)
+\end{align}
+Ne definiamo una \textbf{soluzione fondamentale} $G(x,y)$ come
+\begin{align}
+	&\mathcal{L}_x^{(2)} G(x,y)= \delta(x-y) \label{greenedo2}
+\end{align}
+Imponiamo la condzione di continuità 
+\begin{align}
+	&\frac{d^2}{dx^2}G(x,y) \propto \delta(x-y)
+\end{align}
+Da cui 
+\begin{align}
+	&\left.\frac{d}{dx}G(x,y) \right|_{y-\epsilon}^{y+\epsilon} + 0 = 1 \firstpassage
+	&G'(y_+,y) - G'(y_-,y) = 1
+\end{align}
+Siano ora $u_1(x)$ e $u_2(x)$ due soluzioni della omogenea associata alla \ref{greenedo2}, possiamo scrivere
+\begin{align}
+	G(x,y) = A u_1(x) + B u_2(x) + G_P(x,y)
+\end{align}
+La soluzone particolare può essere scritta nella forma
+\begin{align}
+	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \quad x<y}{d_1 u_1 (x) + d_2 u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
+\end{align}
+Per la condizione di continuità abbiamo che
+\begin{align}
+	&c_1 u_1 (y) + c_2 u_2 (y) = d_1 u_1 (y) + d_2 u_2 (y)\firstpassage
+	&(c_1 - d_1) u_1 (y) +(c_2 - d_2)u_2 (y) =0
+\end{align}
+Mentre per il salto della derivata
+\begin{align}
+	&d_1 \dot{u}_1 (y) + d_2 \dot{u}_2 (y) - c_1 \dot{u}_1 (y) - c_2 \dot{u}_2 (y) = 1 \firstpassage
+	&(d_1 - c_1)\dot{u}_1 (y) + (d_2 - c_2)\dot{u}_2 (y) = 1 
+\end{align}
+Otteniamo quindi il sistema
+\begin{align}
+	\double{(c_1 - d_1) u_1 (y) +(c_2 - d_2)u_2 (y) =0}{(d_1 - c_1)\dot{u}_1 (y) + (d_2 - c_2)\dot{u}_2 (y) = 1}
+\end{align}
+Se prendiamo come incognite le differenze tra i coefficienti tra parentesi, possiamo riscrivere il sistema come il prdotto matrice-vettore
+\begin{align}
+	\begin{pmatrix}
+		u_1 (y) & u_2 (y)\\
+		\dot{u}_1 (y) & \dot{u}_2 (y)
+	\end{pmatrix} \left( \begin{array}{c}
+		c_1 - d_1\\
+		c_2 - d_2
+	\end{array} \right) = \left( \begin{array}{c}
+		0\\
+		1
+	\end{array} \right)
+\end{align}
+Notiamo come la matrice dei coefficienti altro non è che la matrice di Wronsky di $u_1(x)$ e $u_2(x)$, e che quindi non ha mai determinante nullo. 
+
+Possiamo quindi scrivere le soluzioni come
+\begin{align}
+	d_1 - c_1 &= \frac{1}{W(y)} \cdot \begin{vmatrix}
+		0 & u_2(y) \\
+		1 & \dot{u}_2(y)
+	\end{vmatrix} = -\frac{u_2(y)}{W(y)} \to d_1 = c_1  -\frac{u_2(y)}{W(y)}\\
+	d_2 - c_2 &= \frac{1}{W(y)} \cdot \begin{vmatrix}
+		u_1(y) & 0\\
+		\dot{u}_1(y) & 1
+	\end{vmatrix} = +\frac{u_1(y)}{W(y)} \to d_2 = c_2 +\frac{u_1(y)}{W(y)}
+\end{align}
+Trovate queste possiamo riscrivere la soluzione particolare come
+\begin{align}
+	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \hfill x<y}{\left[  c_1  -\frac{u_2(y)}{W(y)} \right] u_1 (x) + \left[ c_2 +\frac{u_1(y)}{W(y)} \right] u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
+\end{align}
+Possiamo riscrivere la seconda come
+\begin{align}
+	&\left[  c_1  -\frac{u_2(y)}{W(y)} \right] u_1 (x) + \left[ c_2 +\frac{u_1(y)}{W(y)} \right] u_2 (x)\firstpassage
+	&c_1 u_1 (x) + c_2 u_2 (x) + \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
+\end{align}
+Conforntando con il caso $x<y$ e impiegando il funzionale a gradino $\theta(x-y)$ possiamo riscrivere la soluzuione particolare nella seguente forma compatta
+\begin{align}
+	G_P(x,y)= c_1 u_1 (x) + c_2 u_2 (x) + \theta(x-y) \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
+\end{align}
+Riportiamo due casi noti che ci saranno utili più avanti
+\begin{enumerate}
+	\item \textbf{Funzione di Green avanzata}
+	\begin{align}
+		&G(x,y) \equiv 0 \quad x<y 
+	\end{align}
+	\item \textbf{Funzione di Green ritardata}
+	\begin{align}
+		&G(x,y) \equiv 0 \quad x>y 
+	\end{align}
+\end{enumerate}
+\newpage
+
+\subsubsection{Teorema di Green}
+
+Il teorema di Green consente di stabilire le condizioni al bordo per il calcolo della funzione di Green di un problema differenziale lineare.
+
+Iniziamo considerando i problemi di Sturm-Liouville con condizioni accessorie date sul bordo dell'intervallo $[a,b]$
+\begin{align}
+	\triple{\mathcal{L}_x^{(2)} v(x) &= g(x) \hfill}{\mathcal{\tilde{B}}_a(v) &= \tilde{\alpha}_1 v(a) + \tilde{\beta}_1 \dot{v}(a) - \gamma_1 = 0}{\mathcal{\tilde{B}}_b(v) &= \tilde{\alpha}_2 v(b) + \tilde{\beta}_2 \dot{v}(b) - \gamma_2 = 0}
+\end{align}
+Sappiamo dalla teoria delle EDO al 1o ordine che 
+\begin{enumerate}
+	\item è sempre possibile ricondurre un problema in forma canonica
+	\begin{align}
+		\mathcal{L}_x^{C} = \frac{d^2}{dx^2} + c(x) \label{omcond3}
+	\end{align} 
+	\item con l'opportuno cambio di variabili ci si può ricondurre al caso di condizioni omogenee
+	\begin{align}
+		\double{v(x) = u(x)+ mx + q}{\dot{v}(x) = \dot{u}(x) +m \hfill}			
+	\end{align}
+\end{enumerate}
+Possiamo quindi riscrivere
+\begin{align}
+	\triple{\mathcal{L}_x^{C} u(x) &= f(x) \hfill}{\mathcal{B}^{om}_a(u) &= \alpha_1 u(a) + \beta_1 \dot{u}(a) = 0}{\mathcal{B}^{om}_b(u) &= \alpha_2 u(b) + \beta_2 \dot{u}(b) = 0} \label{omcond1}
+\end{align}
+ed enunciare il \textbf{teorema di Green:} \textit{Sia il problema di Sturm-Liouville appena definito. Se l'omogenea ammette solo la soluzione banale, ovvero
+	\begin{align}
+		u^{om}(x) = 0
+	\end{align}
+	all'ora l'integrale generale è dato da
+	\begin{align}
+		u(y) = \int_{a}^{b} dx \; G(x,y) f(x) + \left.\left[ u(x) \frac{dG(x,y)}{dx} - G(x,y) \frac{du(x)}{dx} \right]\right|_a^b
+	\end{align}
+	Dove si ha che $G(x,y)$ è soluzione fondamentale di
+	\begin{align}
+		\mathcal{L}_x^{C} G(x,y) = \delta(x-y) \label{omcond2}
+	\end{align}
+}
+La dimostrazione passa per la funzione integrale
+\begin{align}
+	E(y) = \int_{a}^{b} dx \; [G(x,y) \mathcal{L}_x^{C} u(x) - u(x)  \mathcal{L}_x^{C} G(x,y)]
+\end{align}
+Utilizzando la \ref{omcond1} e la \ref{omcond2} otteniamo
+\begin{align}
+	E(y) &= \int_{a}^{b} dx \; [G(x,y) f(x) - u(x)  \delta(x-y)] = \nonumber \\
+	&= -u(y) +\int_{a}^{b} dx \; G(x,y) f(y) \label{greendim1}
+\end{align}
+Usando invece la \ref{omcond3} otteniamo
+\begin{align}
+	E(y) &= \int_{a}^{b} dx \; G(x,y) [\ddot{u}(x) + c(x)u(x)] - u(x)  [\ddot{G}(x,y) + c(x) G(x,y)] = \nonumber\\
+	&= \left.[G(x,y)\dot{u}(x) - u(x)\dot{G}(x,y)]\right|_a^b - \int_{a}^{b} dx \; \cancel{\dot{G}(x,y) \dot{u}(x)} - \cancel{\dot{u}(x) \dot{G}(x,y)}  \label{greendim2}
+\end{align}
+Uguagliando \ref{greendim1} e \ref{greendim2} segue la tesi.
+
+\subsubsection{Applicazione del teorema di Green ai problemi di Sturm-Liouville}
+
+Notiamo come nel caso di condizioni
+\begin{align}
+	\double{u(a)=0}{u(b)=0}
+\end{align}
+si abbia
+\begin{align}
+	\double{\dot{G}(a,y)=0}{\dot{G}(b,y)=0}
+\end{align}
+Quindi, siccome non sono note le derivate $\dot{a}$ e $\dot{b}$, basta imporre le condizioni
+\begin{align}
+	\double{G(a,y)=0}{G(b,y)=0}
+\end{align}
+Questo può essere generalizzato al problema generale. Magari scoccio Paolo e lo vedo con lui.
+
+Possiamo quindi dire che dato il problema
+\begin{align}
+	\triple{\mathcal{L}_x^{C} u(x) &= f(x) \hfill}{\mathcal{B}^{om}_a(u) &= \alpha_1 u(a) + \beta_1 \dot{u}(a) = 0}{\mathcal{B}^{om}_b(u) &= \alpha_2 u(b) + \beta_2 \dot{u}(b) = 0} \label{omcond1}
+\end{align}
+La funzione di Green associata sarà data da
+\begin{align}
+	\triple{\mathcal{L}_x^{C} G(x,y) &= \delta(x-y)}{\mathcal{B}^{om}_a(G) &= 0 \hfill}{\mathcal{B}^{om}_b(G) &= 0 \hfill}
+\end{align}
+Da qui possiamo ricavare una definizione operativa. Definiamo due soluzioni $u_1(x)$ e $u_2(x)$ e imponiamo
+\begin{align}
+	\double{\mathcal{B}^{om}_a(u_1(x)) = 0}{\mathcal{B}^{om}_b(u_2(x)) = 0}
+\end{align}
+Preso il Wronskiano costante $W(u_1(x),u_2(x))$ possiamo scrivere la funzione di Green come
+\begin{align}
+	G(x,y) = \double{\frac{1}{W(u_1(x),u_2(x))}u_1(x)u_2(y) \quad x<y}{\frac{1}{W(u_1(x),u_2(x))}u_1(y)u_2(x) \quad x>y}
+\end{align}
+Questa soluzione rispetta 
+\begin{enumerate}
+	\item le condizioni al bordo (per costruzione) 
+	\item la condizione di continuità di $G(x,y)$
+	\item la condizione di salto pari a 1 della derivata
+\end{enumerate}
+\newpage
+\subsubsection{Applicazione del teorema di Green ai problemi di Cauchy}
+
+Ora prendiamo in considerazione le seguenti condizioni iniziali
+\begin{align}
+	\double{\dot{u}(x_0)=0}{u(x_0)=0}
+\end{align}
+Applichiamo il teorema di Green, integrando da $x_0$ a $x = \Delta$ e ponendo $\Delta > y$. 
+Allora la formula data dal teorema di Green diventa
+\begin{align}
+	u(y) = \int_{x_0}^{\Delta} dx \; G(x,y) f(x) + \left.\left[ u(x) \frac{dG(x,y)}{dx} - G(x,y) \frac{du(x)}{dx} \right]\right|_{x_0}^\Delta
+\end{align}
+Scrivendo per esteso i termini al bordo dati dal secondo termine avremo
+\begin{align}
+	u(\Delta) \dot{G}(\Delta,y) - u(x_0) \dot{G}(x_0,y) - G(\Delta,y) \dot{u}(\Delta) + G(x_0,y) \dot{u}(x_0) 
+\end{align}
+Per annullare i termini in $\Delta$, che non conosciamo, dobbiamo imporre 
+\begin{align}
+	&\dot{G}(\Delta, y) = G(\Delta, y) = 0	
+\end{align}
+Ma, siccome $\Delta>y$, questa condizione altro non è che la \textbf{funzione di Green avanzata}. Si dice quindi che la funzione di Green "propaga" la soluzione da $x_0$ a $y$, e possiamo riscrivere
+\begin{align}
+	u(y) = \int_{x_0}^{\Delta} dx \; G(x,y) f(x) +  G(x_0,y) \dot{u}(x_0) - u(x_0) \dot{G}(x_0,y) 
+\end{align}
+Nel caso di condizioni omogenee, sappiamo che $G(x_0,y) = 0 = \dot{G}(x_0,y)$ e quindi ci riduciamo al problema di convoluzione
+\begin{align}
+	u(y) = \int_{x_0}^{\Delta} dx \; G(x,y) f(x)
+\end{align}
+Se non ci si vuole ricondurre al caso di condizioni omogenee, bisogna tener da conto dei termini aggiuntivi. Ma perché dovremmo volerci far del male?
+
+\subsubsection{Operatori lineari, unicità delle soluzioni e teorema dell'alernativa}
+
+Vediamo un rapido excursus sugli operatori che ci serivrà nel prossimo paragrafo. 
+Sia l'operatore $A$ definito come
+\begin{align}
+	&A \taleche \mathcal{H} \to \mathcal{H}\\
+	&\mathcal{H} = \overline{\mathcal{D}(A)}\\
+	&A \vec{x} = \vec{y} \spacer \vec{x} \in \mathcal{D}(A) \; , \; \vec{y} \in \mathcal{H} \label{syseq}
+\end{align}
+Definiamo il \textbf{nucleo} dell'operatore come l'insieme dei vettori mappati nel vettore nullo. Qualora esso contenga solo il vettore nullo, si di che è \textbf{triviale}.
+
+Vale il seguente teorema: \textit{se il nucle di $A$ non è nullo, allora la soluzione di \ref{syseq} non è unica, eviceversa.}
+
+Il teorema si può dimostrare in entrambe le direzioni:
+\begin{enumerate}
+	\item $Ker(A) \neq \{\vec{0}\} \implies$ non unicità della soluzione
+	\begin{align}
+		&\vec{x}_0 \in \ker(A) \implies A \vec{x}_0 =  \vec{0}\\
+		&\vec{x}_s \taleche A \vec{x}_s = \vec{y} \firstpassage
+		& A \vec{x}_0 + A \vec{x}_s =  \vec{0} + \vec{y} \to A(\vec{x}_0 + \vec{x}_s) = \vec{y} 
+	\end{align}
+	\item Non unicità della soluzione $\implies Ker(A) \neq \{\vec{0}\}$
+	\begin{align}
+		&\vec{x}_1 \taleche A \vec{x}_1 = \vec{y} \\
+		&\vec{x}_2 \taleche A \vec{x}_2 = \vec{y} \firstpassage
+		& A \vec{x}_1 + A \vec{x}_2 =  \vec{y} - \vec{y} = \vec{0} \to A(\vec{x}_1 - \vec{x}_2) = \vec{0} 
+	\end{align}
+\end{enumerate}
+Ci viene quindi in aiuto il \textbf{teorema dell'alternativa:} \textit{Sia l'operatore $A$ definito come
+	\begin{align}
+		&A \taleche \mathcal{H} \to \mathcal{H}\\
+		&\mathcal{H} = \overline{\mathcal{D}(A)}\\
+		&R(A) \quad \text{chiuso}\\
+		&A \vec{x} = \vec{y} 
+	\end{align}	
+	allora il sistema ammetterà soluzioni $\vec{y}$ (ovvero $\vec{y} \in R(A)$) se e solo se $\vec{y} \perp ker(A^\dagger)$
+}
+Anche qui dimostriamo entrambe le "direzioni":
+\begin{enumerate}
+	\item $ \vec{y} \in R(A)  \implies \vec{y} \perp ker(A^\dagger)$
+	\begin{align}
+		&\vec{z} \in Ker(A^\dagger) \firstpassage
+		&A^\dagger \vec{z} = \vec{0} \nextpassage
+		&(\vec{y}, \vec{z}) = (A\vec{x}, \vec{z}) = (\vec{x}, A^\dagger\vec{z}) = (\vec{x}, \vec{0}) = 0 \firstpassage
+		&\vec{y} \perp ker(A^\dagger)
+	\end{align}
+	
+	\item $\vec{y} \perp ker(A^\dagger) \implies \vec{y} \in R(A)$
+	
+	Sia $\vec{y} \perp ker(A^\dagger)$, vogliamo dimostrare che appartenza all'insieme risolvente $R(A)$. Iniziamo decomponendolo
+	\begin{align}
+		\vec{y} = \vec{y}_R + \vec{y}_R^\perp \spacer \vec{y}_R \in R(A) \; , \; \vec{y}_R^\perp \in R^\perp (A)
+	\end{align}
+	Questo è possibile solo quando $R(A)$ è chiuso, ovvero è un sottospazio vettoriale di $\mathcal{H}$ tale che
+	\begin{align}
+		\mathcal{H} = R(A) \oplus R^\perp(A) \label{decomp}
+	\end{align}	
+	Possiamo quindi riscrivere
+	\begin{align}
+		&\vec{y} - \vec{y}_R = \vec{y}_R^\perp \firstpassage
+		&(\vec{y}_R^\perp, \vec{y}_R) = (\vec{y} - \vec{y}_R, A \vec{x})
+	\end{align}
+	Per costruzione questo vale
+	\begin{align}
+		&(\vec{y} - \vec{y}_R, A \vec{x}) = 0 \quad \forall \vec{x} \in \mathcal{D}(A) \firstpassage
+		&(A^\dagger(\vec{y} - \vec{y}_R),\vec{x}) = 0 \quad \forall \vec{x} \in \mathcal{D}(A)  
+	\end{align}
+	Affinché il prodotto sia nullo per ogni $\vec{x}$, deve essere per forza
+	\begin{align}
+		&A^\dagger(\vec{y} - \vec{y}_R) = \vec{0} \firstpassage
+		&(\vec{y} - \vec{y}_R) \in ker(A^\dagger) \nextpassage
+		&0 = (\vec{y} - \vec{y}_R, \vec{y}) = (\vec{y} - \vec{y}_R, \vec{y}- \vec{y}_R + \vec{y}_R) = || \vec{y} - \vec{y}_R||^2 + (\vec{y} - \vec{y}_R, \vec{y}_R) =  || \vec{y} - \vec{y}_R||^2 + \cancel{(\vec{y}_R^\perp, \vec{y}_R)} \nextpassage
+		&\vec{y} = \vec{y}_R \in R(A) 
+	\end{align}
+\end{enumerate}
+Abbiamo quindi dalla \ref{decomp} una decomposizione dello spazio di Hilbert $\mathcal{H}$, da cui possiamo notare due possibili situazioni
+\begin{enumerate}
+	\item $R(A)$ non è chiuso $\implies \mathcal{H} = R(A^\dagger) \oplus ker(A^\dagger)$
+	
+	In questo caso l'esistenza della soluzione non è garantita dalla condizione $\vec{y} \perp ker(A^\dagger)$.
+	
+	\item $R(A)$ è chiuso $\implies \mathcal{H} = R(A^\dagger) \oplus ker(A)$
+	
+	In questo caso vale il teorema dell'alternativa, e quindi
+	\begin{enumerate}
+		\item $A \vec{x} = \vec{y}$ ammete un'unica soluzione
+		
+		\item $A \vec{x} = \vec{0}$ ammette soluzioni non banali, e quindi		
+		\begin{enumerate}
+			\item $\vec{y} \perp ker(A^\dagger) \implies A \vec{x} = \vec{y}$ ammette soluzioni
+			\item $\vec{y} \; \cancel{\perp} \; ker(A^\dagger) \implies A \vec{x} = \vec{y}$ non ammette soluzioni
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+
+\subsubsection{Applicazione del teorema dell'alternativa alle funzioni di Green}
+
+Che cosa succede quando viene meno la condizione di invertibilità dell'operatore differenziale? Ci troviamo in presenza di \textbf{modi nulli}, ovvero di auovettori corrispondenti all'autovalore zero. 
+
+Se quindi prendiamo il problema
+\begin{align}
+	\triple{\mathcal{L}_x^C v(x)=0}{\mathcal{B}_a^{om}(v) = 0}{\mathcal{B}_b^{om}(v) = 0}
+\end{align}
+In questo caso, la funzione di Green propriamente detta non esiste. Possiamo però restringerci al caso dove l'operatore è invertibile, ovvero il sottospazio ortogonale al quello dei modi nulli. 
+Possiamo definire in questo sottospazio una nuova funzione di Green
+\begin{align}
+	\mathcal{L}_x^C \tilde{G} = \delta + r \spacer (\delta + r) \perp ker(\mathcal{L}_x^C) 
+\end{align}
+
+La dimostrazione la troviamo più avanti come esempio svolto (da fare).
+
+\newpage
+
+\subsection{Messaggio dall'autore}
+
+Riporto qui, sotto richiesta dell'autore della maggior parte di questi esercizi, un suo messaggio:
+
+\textit{Io sottoscritto Adriano Chialastri non mi riterrò responsabile di qualsiasi danno a cose o persone causato da questi esercizi, in quanto non svolti nel pieno esercizio delle mie facoltà mentali a causa nella prolungata permanenza presso il luogo correntemente noto come Sogene.
+}
+
+\subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri) \label{canon}}
+Risolvere il seguente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+\end{align}
+Iniziamo passando in \textbf{forma canonica}
+\begin{align}
+	&y(x) = A(x)v(x)	\firstpassage
+	&x^2 (\ddot{A}(x)v(x) + 2\dot{A}(x)\dot{v}(x) + A \ddot{v}(x)) - 2x (\dot{A}(x)v(x) + A \dot{v}(x)) + 2A(x)v(x) = -x \nextpassage
+	&Ax^2 \ddot{v}(x) + 2(\dot{A}(x) x^2 - A(x)x) \dot{v}(x) + (\ddot{A}(x) x^2 - 2x\dot{A}(x) +2A)v(x) = -x	
+\end{align}
+Per poter fare il passaggio dobbiamo imporre che
+\begin{align}
+	&\dot{A}(x) x^2 - A(x)x = 0 \firstpassage
+	&\dot{A}(x) x = A(x) \nextpassage
+	&A(x) = x  
+\end{align}
+Da cui otteniamo che
+\begin{align}
+	&x^3 \ddot{v}(x) + (-\cancel{2x} +\cancel{2x})v(x) = -x	\firstpassage
+	&\ddot{v}(x) = -\frac{1}{x^2} \spacer y(x) = x v(x)
+\end{align}
+Il nostro problema di Cauchy in forma canonica è quindi
+\begin{align}
+	\triple{\ddot{v}(x) = -\frac{1}{x^2}}{\dot{v}(1)=0}{v(1)=0}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea}
+\begin{align}
+	&\ddot{v}(x) = 0 \firstpassage
+	&v_{om}(x) = Ax + B  \label{kekwdiff1}\firstpassage
+	&\double{\dot{v}_{om}(1)=A=0}{v_{om}(1)=A+B=0} \to \double{A=0}{B=0} \to \text{l'operatore differenziale è invertibile} 
+\end{align}
+Dalla \ref{kekwdiff1} vediamo come
+\begin{align}
+	&v_{om}(x) = A v_1(x) + B v_2(x) \nextpassage
+	&v_{om_1}(x) = x \spacer v_{om_2}(x) = 1
+\end{align}
+Calcoliamo il Wronskiano dell'equazione
+\begin{align}
+	W(v_1,v_2) = \begin{vmatrix}
+		x && 1 \\
+		1 && 0
+	\end{vmatrix} = -1
+\end{align}
+E andiamo quindi a calcolare la \textbf{Funzione di Green}
+\begin{align}
+	G(x,y) = - \delta (x-y) (y-x) = (x-y) \delta(x-y)
+\end{align}
+Da cui otteniamo
+\begin{align}
+	v(x) &= \int_{1}^x dy \;G(x,y) \left(-\frac{1}{y^2}\right) = \nonumber \\
+	&= \int_{1}^x dy \; \delta (x-y) (y-x) \cdot \frac{1}{y^2}= \nonumber \\
+	&= \int_{1}^x dy \; \frac{y-x}{y^2}= \nonumber \\
+	&= \int_{1}^x dy \; \left(\frac{1}{y} - \frac{x}{y^2}\right)= \nonumber \\
+	&= \left[ \ln(y) + \frac{x}{y} \right]_1^x = \ln(x) +1 -x \nextpassage
+	y(x) &= xv(x) = x\ln(x) - x^2 +x
+\end{align}
+Verifichiamo la validità della soluzione
+\begin{align}
+	&\dot{y}(x) = 2 - 2x + \ln(x)\\
+	&\ddot{y}(x) = -2 + \frac{1}{x} \firstpassage
+	&\double{\dot{y}(1) = 0}{y(1) = 0} \to \double{0 -\cancel{1} +\cancel{1} =0}{\cancel{2}-\cancel{2} + 0 =0}\\
+	&x^2 \ddot{y} - 2x \dot{y} + 2y = -x \firstpassage
+	&x^2 \left( -2 + \frac{1}{x} \right) -2x \left( 2 - 2x + \ln(x) \right) + 2 \left( x\ln(x) - x^2 +x \right) = -x \nextpassage
+	& -\cancel{2x^2} + x - 4x + \cancel{4x^2} - 2x\ln(x) + 2x\ln(x) -\cancel{2x^2} +2x = -x \nextpassage
+	& + x - 4x - \cancel{2x\ln(x)} + \cancel{2x\ln(x)} +2x = -x \nextpassage
+	& -x = -x
+\end{align}
+E quindi l'esercizio è verificato.
+
+\newpage
+
+\subsection{Esempio 2: Omogenea di Eulero (Adriano Chialastri)}
+Riprendiamo il precedente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+\end{align}
+Partiamo dall'\textbf{omogenea}
+\begin{align}
+	&x^2 \ddot{y} - 2x\dot{y} + 2y = 0 \firstpassage
+	&\ddot{y} - \frac{2}{x}\dot{y} + \frac{2}{x^2}y = 0
+\end{align}
+L'omogena scritta in questa forma risulta essre un'\textbf{equazione di Eulero}. Per risolverla poniamo quindi l'\textbf{Ansatz} $y=x^\alpha$ dove otteniamo
+\begin{align}
+	&\alpha(\alpha -1) x^{\alpha-2} - 2 \alpha x^{\alpha-2} + 2x^{\alpha-2} = 0 \firstpassage
+	&\alpha^2 - \alpha - 2\alpha +2 =0 \nextpassage
+	&\alpha^2 - 3\alpha +2 =0 \nextpassage
+	&\alpha_{1,2} = \frac{3 \pm \sqrt{9-8}}{2} = \frac{3\pm 1}{2} = \double{2}{1} \nextpassage
+	&y_{{om}_1}(x) = x \spacer y_{{om}_2}(x) = x^2 \nextpassage
+	&y_{om}(x) = Ax + Bx^2   
+\end{align}
+Andiamo ora a cercare una \textbf{soluzione particolare} col \textbf{metodo delle costanti}. Poniamo
+\begin{align}
+	&y_p(x) = A(x)x + B(x)x^2 \firstpassage
+	&\dot{y_p}(x)  = \dot{A}(x)x+ A(x) + \dot{B}(x) x^2 + 2B(x)x\\
+	&\ddot{y_p}(x) = \ddot{A}(x)x+ 2\dot{A}(x) + \ddot{B}(x) x^2 + 4\dot{B}(x)x + 2B  \firstpassage
+	&x^2 (\ddot{A}(x)x+ 2\dot{A}(x) + \ddot{B}(x) x^2 + 4\dot{B}(x)x + 2B) -2 (\dot{A}(x)x+ A(x) + \dot{B}(x) x^2 + 2B(x)x) + \nonumber \\
+	&+2(A(x)x + B(x)x^2) = -x  \nextpassage
+	&\dots \nextpassage
+	&x^3 \ddot{A}(x) + x^4 \ddot{B}(x) + 2x^3 \dot{B}(x) = -x
+\end{align}
+Da cui otteniamo
+\begin{align}
+	&y(x) = y_p(x) + y_{om}(x) = y_p(x) + Ax + Bx^2 \firstpassage
+	&\double{\dot{y}(1) = \dot{y}_p(1) + A + 2B = 0}{y(1) = y_p(1) + A + B=0}
+\end{align}
+
+\newpage
+
+\subsection{Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}
+
+Risolvere il seguente problema di Sturm-Liouville
+\begin{align}
+	\triple{x \ddot{u}(x) + 2 \dot{u}(x) + 4xu(x) = 4}{u \left( \frac{\pi}{4}\right)=0}{u \left( \frac{\pi}{2}\right)=0}
+\end{align}
+Iniziamo passando il problema in \textbf{forma canonica}
+\begin{align}
+	&u(x) = A(x)v(x) \firstpassage
+	&x(\ddot{A}(x)v(x) + 2\dot{A}(x) \dot{v}(x) + A(x) \ddot{v}(x)) + 2(\dot{A}(x)v(x) + A(x) \dot{v}(x)) + 4xA(x)v(x) = 4 \nextpassage
+	&A(x)x \cdot \ddot{v}(x) + 2(\dot{A}(x)x + A(x)) \dot{v}(x) + (x \ddot{A}(x) + 2 \dot{A}(x) + 4xA(x)) v(x) = 4 \nextpassage
+	&\dot{A}(x)x + A(x)=0 \to \ln(A(x)) = -\ln(x) \to A(x)= x^{-1}\nextpassage
+	&\frac{1}{\cancel{x}} \cancel{x}\cdot \ddot{v}(x) + \left( \cancel{\cancel{x} \frac{2}{x^{\cancel{3}^2}}} - \cancel{\frac{2}{x^2}} + 4\cancel{x} \frac{1}{\cancel{x}} \right)v(x) = 4 \nextpassage
+	&\triple{\ddot{v}(x) + 4v(x)= 4}{v \left( \frac{\pi}{4}\right)=0}{v \left( \frac{\pi}{2}\right)=0} \label{kekwdiff2}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea associata} dell'equazione in forma canonica
+\begin{align}
+	&\ddot{v}(x) + 4v(x) = 0 \firstpassage
+	&\text{Ansatz } v(x)= e^{\alpha x} \nextpassage
+	&\alpha^2 e^{\alpha} + 4 e^{\alpha} = 0 \nextpassage
+	&\alpha^2 = -4 \to \alpha_{1,2} = \pm 2i \nextpassage
+	&v_{{om}_1}(x) = e^{21x} \spacer v_{{om}_2}(x) = e^{-2ix} \nextpassage
+	&v_{{om}}(x) = Ae^{2ix} + Be^{-2ix}
+\end{align}
+Dalla \ref{kekwdiff2} ricaviamo il nostro \textbf{operatore differenziale}
+\begin{align}
+	\mathcal{L}_x^c = \frac{d^2}{dx^2} + 4
+\end{align}
+Andiamo ora a verificare se è invertibile o meno, in base alle nostre Boundary Conditions:
+\begin{align}
+	&\double{v_{om}\left( \frac{\pi}{4}\right) =& Ae^{i\frac{\pi}{2}} + Be^{-i\frac{\pi}{2}}=iA-iB = 0}{v_{om}\left( \frac{\pi}{2}\right) =& Ae^{i\pi} + Be^{-i\pi} =-A -B = 0} \to \double{A-B=0}{A+B=0} \to \double{A=0}{B=0}\firstpassage
+	&\mathcal{L}_x^c v=0 \leftrightarrow v=0 \quad \to \text{L'operatore è invertibile}
+\end{align}
+Andiamo ora a trovare due soluzioni dell'omogenea che soddisfino le BC
+\begin{align}
+	&v_A(x) \left( \frac{\pi}{4}\right) =0 \to iA - iB = 0 \to A=B \to v_A(x) = A(e^{2ix} + e^{-2ix}) \\
+	&v_B(x) \left( \frac{\pi}{2}\right) =0 \to A+b = \to A=-B \to v_B(x) = A(e^{2ix} - e^{-2ix})
+\end{align}
+Siccome non abbiamo condizioni su A, la scegliamo comoda a seconda del caso, possiamo quindi scrivere
+\begin{align}
+	&v_A(x) = \frac{1}{2}(e^{2ix} + e^{-2ix}) = \cos(2x) \\
+	&v_B(x) = \frac{1}{2i}(e^{2ix} - e^{-2ix}) = \sin(2x)\firstpassage
+	& v_{om}(x) = \tilde{A} \cos(2x) + \tilde{B} \sin(2x) 
+\end{align}
+
+Andiamo ora a calcolare le \textbf{soluzioni fondamentali dell'equazione}
+\begin{align}
+	&W(v_A,v_B) = \begin{vmatrix}
+		\cos(2x) && \sin(2x)\\
+		-2\cos(2x) && 2 \cos(2x)
+	\end{vmatrix} = \dots = 2\\
+	&\tilde{G}(x,y) = \tilde{A} \cos(2x) + \tilde{B} \sin(2x) + \frac{\delta (x-y)}{2} \left[ \cos(2y) \sin(2x) - \cos(2x) \sin(2y) \right]\\
+	&\mathcal{L}_x^c \tilde{G}(x,y) = \delta (x-y)
+\end{align}
+
+Per questo problema di SL, la \textbf{funzione di Green} sarà quindi data da
+\begin{align}
+	G(x,y) = \double{\frac{\cos(2x) \sin(2y)}{2} \quad x<y}{\frac{\cos(2y) \sin(2x)}{2} \quad x>y}
+\end{align}
+Da cui otteniamo
+\begin{align}
+	v(x) &= \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} dy \; G(x,y) \cdot 4 = \nonumber \\
+	&= 2\int_{\frac{\pi}{4}}^{x} dy \;\cos(2x) \sin(2y)+ 2\int_{x}^{\frac{\pi}{2}} dy \; \cos(2y) \sin(2x) = ... = \nonumber\\
+	&=1 - \sin(2x) + \cos(2x) \firstpassage
+	u(x) &= \frac{v(x)}{x} = \frac{1 - \sin(2x) + \cos(2x)}{x}
+\end{align}
+
+\bigskip
+
+VERIFICA DA COPIARE QUANDO SONO MENO ABBOTTATO (pag 7 del pdf)
+
+\newpage
+
+\subsection{Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}
+Risolvere il seguente \textbf{problema di Cauchy}
+\begin{align}
+	\triple{x^2 \ddot{f}(x) + 3x \dot{f}(x) + f(x) = 0}{\dot{f}(1)=0}{f(1) =1}
+\end{align}
+Affinché l'operatore sia lineare dobbiamo avere BC omogenee, che non è il nostro caso. Dobbiamo quindi \textbf{linearizzare} il problema. Andiamo a definire
+\begin{align}
+	&u(x) = f(x) + mx + q\firstpassage
+	&\dot{u}(x) = \dot{f}(x) + m
+\end{align}	
+Da cui otteniamo, imponendo che siamo omogenee le BC di $u(x)$
+\begin{align}
+	&\double{\dot{u}(1) =& \dot{f}(1) + m =0}{u(1) =& f(1) + m + q=0} \to \double{0 + m=0 }{1 + m + q=0} \to \double{m=& 0}{q=& -1} \firstpassage
+	&u(x) = f(x) -1 \quad \leftrightarrow \quad f(x) = u(x)+1
+\end{align}	
+Il nostro problema diventa quindi
+\begin{align}
+	\triple{x^2 \ddot{u}(x) + 3x \dot{u}(x) + u(x) = -1}{\dot{u}(1)=0}{u(1) = 0}
+\end{align}
+Riscriviamo il problema in \textbf{forma canonica}
+\begin{align}
+	&u(x) = A(x)v(x)\firstpassage
+	&\dot{u}(x) = \dot{A}(x) v(x) + A(x) \dot{v}(x)\nextpassage
+	&\ddot{u}(x) = \ddot{A}(x) v(x) + 2\dot{A}(x) \dot{v}(x) + A(x) \ddot{v}(x)\nextpassage
+	&[A(x) x^2] \ddot{v}(x) + [2\dot{A}(x) x^2 + 3A(x)x ]\dot{v}(x) + [\ddot{A}(x)x^2 + 3\dot{A}(x)x + A(x)]v(x) = -1 \nextpassage
+	&2\dot{A}(x) x^2 + 3A(x)x=0 \to \dot{A}(x) = -\frac{3}{2}x^{-1}A(x) \to \ln(A(x)) = -\frac{3}{2} \ln(x)  \to A(x)= x^{-\frac{3}{2}} \nextpassage
+	&\dot{A}(x) = -\frac{3}{2}x^{-\frac{5}{2}} \spacer \dot{A}(x) = -\frac{15}{2}x^{-\frac{7}{2}} \nextpassage
+	&[x^{-\frac{3}{2}} x^2] \ddot{v}(x) + \left[x^2\left( \frac{15}{4}x^{-\frac{7}{2}} \right) + 3x \left( -\frac{3}{2} x^{-\frac{5}{2}} \right) + x^{-\frac{3}{2}} \right] v(x) = -1 \nextpassage
+	&[x^{-\frac{3}{2}} x^2] \ddot{v}(x) + \left[\frac{15}{4} -\frac{9}{2} +1 \right] x^{-\frac{3}{2}} v(x) = -1 \nextpassage
+	&x^{\frac{1}{2}} \ddot{v}(x) + \frac{1}{4}x^{-\frac{3}{2}} v(x) = -1 \nextpassage
+	&\triple{\ddot{v}(x) + \frac{1}{4x^2} \dot{v}(x)  = -x ^{-\frac{1}{2}}}{\dot{v}(1)=0}{v(1) = 0}
+\end{align}
+Andiamo ora a risolvere l'\textbf{omogenea associata} dell'equazione in forma canonica
+\begin{align}
+	\ddot{v}(x) + \frac{1}{4x^2} \dot{v}(x)  = 0
+\end{align}
+Siccome è un'equazione di Eulero usiamo l'Ansatz $v(x) = x^\alpha$ e otteniamo
+\begin{align}
+	&\alpha(\alpha-1) + \frac{1}{4} = 0 \to \alpha_{1,2} = \frac{1\pm \sqrt{1-1}}{2} = \frac{1}{2} \firstpassage
+	&v_{{om}_1}(x) = x^{\frac{1}{2}} \spacer v_{{om}_2}(x) = x^{\frac{1}{2}} \ln(x) \nextpassage
+	&v_{om}(x) = Ax^{\frac{1}{2}} + Bx^{\frac{1}{2}}\ln(x) = x^{\frac{1}{2}}(A + B\ln(x)) \firstpassage
+	&W(v_1,v_2) = \begin{vmatrix}
+		x^{\frac{1}{2}} && x^{\frac{1}{2}}\ln(x)\\
+		\frac{1}{2} x^{-\frac{1}{2}} && \frac{1}{2} x^{-\frac{1}{2}} \ln(x) + x^{-\frac{1}{2}}
+	\end{vmatrix} = \dots = 1
+\end{align}
+La soluzione generica del PdC sarà data da
+\begin{align}
+	\tilde{G}(x,y) = \alpha v_1(x) + \beta v_2(x) + \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] 
+\end{align}
+Siccome siamo in presenza di un PdC, a noi serve la \textbf{funzione di Green avanzata}, e quindi dobbiamo porre $\alpha=\beta=0$
+\begin{align}
+	G(x,y) &= \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
+	&= \theta(x-y)\left[ y^{\frac{1}{2}} x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}}y^{\frac{1}{2}} \ln(y) \right] 
+\end{align}
+Possiamo quindi andare a calcolare la soluzione
+\begin{align}
+	v(x) &= \int_{1}^{x} dy \; G(x,y) \left( -y^{-\frac{1}{2}} \right) + \cancel{BC} = \nonumber\\
+	&= -\int_{1}^{x} dy \; \delta(x-y)\left[ x^{\frac{1}{2}} \ln(x) -x^{\frac{1}{2}} \ln(y) \right]= \nonumber\\
+	&= -x^{\frac{1}{2}}\int_{1}^{x} dy \; \left[ \ln(x) - \ln(y) \right] = \nonumber\\
+	&= -x^{\frac{1}{2}} \left[\ln(x)\int_{1}^{x} dy + \int_{1}^{x} dy\; \ln(y)\right] = \nonumber\\
+	&= -x^{\frac{1}{2}} \left[\ln(x)(x-1) - [y(\ln(y) -1)]_1^x \right] = \nonumber\\
+	&= -x^{\frac{1}{2}} \left[\ln(x)(x-1) - x(\ln(x) -1) -1 \right] = \nonumber\\
+	&= -x^{\frac{1}{2}} \left[\cancel{x\ln(x)} -\ln(x) - \cancel{x\ln(x)} +x -1 \right] \nonumber\\
+	&= x^{\frac{1}{2}} \left[1 +\ln(x)-x \right] \firstpassage
+	u(x) &= x^{-\frac{3}{2}} v(x) = \frac{1}{x} \left[1 +\ln(x)-x \right] \firstpassage
+	f(x) &= u(x) + 1 = \frac{1 + \ln(x)}{x}
+\end{align}
+Verifichiamo la bontà della soluzione trovata
+\begin{align}
+	&\dot{f}(x) = -\frac{\ln(x)}{x^2} \spacer \ddot{f}(x) = \frac{2\ln(x) -1}{x^3} \firstpassage
+	&\double{\dot{f}(1) = -\frac{\ln(1)}{1}=0 }{f(1) = \frac{1 + \ln(1)}{1} = 1} \quad \leftarrow \quad \text{le BC sono rispettate}\\
+	&\cancel{x^2}\frac{2\ln(x) -1}{x^{\cancel{3}}} - 3\cancel{x} \frac{\ln(x)}{x^{\cancel{2}}} + \frac{1+\ln(x)}{x} = 0 \to \frac{1}{x}[\cancel{2\ln(x)} -\cancel{3\ln(x)} + \cancel{\ln(x)} -\cancel{1} +\cancel{1}] = 0 \quad \leftarrow \quad \text{ok}
+\end{align}
+\newpage 
+\subsection{Esempio 5: prova d'esame (Alessandro Marcelli)}
+Sia il seguente problema di Cauchy
+\begin{align}
+	\triple{x^2 \ddot{f}(x) - x \dot{f}(x) + f(x) = x^2}{\dot{f}(1) = 0}{f(1)=0}
+\end{align}
+Si richede di calcolare
+\begin{enumerate}
+	\item la funzione di Green del problema
+	\item la soluzione della non omogenea col metodo di Green per $x\geq 1$
+\end{enumerate}
+Iniziamo passando l'equazione in \textbf{forma omogenea} (omettiamo la dipendenza da x per snellire la notazione)
+\begin{align}
+	&f(x) = A(x)v(x) \to f=Av\firstpassage
+	&\dot{f} = \dot{A}v + A \dot{v} \to \ddot{f} = \ddot{A}v + 2 \dot{A}\dot{v} + A \ddot{v} \nextpassage
+	&x^2 \ddot{A}v + 2x^2 \dot{A}\dot{v} +x^2 A \ddot{v} -x\dot{A}v -x A \dot{v} + Av = x^2\nextpassage
+	& x^2 \ddot{A}v +x(2x \dot{A} - A) \dot{v} + (x^2 \ddot{A} - x \dot{A} + A)v = x^2\nextpassage
+	&2x \dot{A} - A = 0 \to \frac{dA}{dx} = \frac{A}{2x} \to \int dA \; \frac{1}{A} = \int dx \; \frac{1}{2x} = \ln(A) = \ln(\sqrt{x}) \nextpassage
+	&A = \sqrt{x} = x^{\frac{1}{2}} \to \dot{A} = \frac{1}{2}x^{-\frac{1}{2}} \to \ddot{A} = -\frac{1}{4}x^{-\frac{3}{2}} \nextpassage
+	&x^{\frac{5}{2}} \ddot{v} + \frac{1}{4} x^{\frac{1}{2}} = x^2\nextpassage
+	&\ddot{v} +\frac{1}{4} x^{-2} v = x^{-\frac{1}{2}}
+\end{align}
+Cominciamo col risolvere l'omogenea:
+\begin{align}
+	\ddot{v} +\frac{1}{4} x^{-2} v = 0 
+\end{align}
+Siamo in presenza di un'equazione di eulero, visto che
+\begin{align}
+	&\ddot{v}  + \frac{a}{x} \dot{v} + \frac{b}{x^2} u = 0 \spacer a=0 \; , \; b= \frac{1}{4} \firstpassage
+	&	\ddot{v} +\frac{1}{4x^2} v = 0 
+\end{align}
+Possiamo quindi fare l'Ansatz $v = x^\alpha$, ottenendo
+\begin{align}
+	\alpha (\alpha -1) x^{\alpha -2} +\frac{1}{4} x^{\alpha -2} = 0 \to \alpha^2 - \alpha + \frac{1}{4} = 0 
+\end{align}
+Siccome $\Delta = 0$ avremo una sola soluzione in $\alpha = \frac{1}{2}$. Ci conviene quindi trasformare l'equazione con il cambio di variabile $x=e^{t}$, dove otteniamo
+\begin{align}
+	&\frac{dv}{dx} = e^{-t}\frac{dv}{dt} \to \frac{d^2v}{dx^2} = e^{-2t}\frac{d^2 v}{dt^2} - e^{-2t}\frac{dv}{dt} \firstpassage
+	&e^{-2t} \left[ \frac{d^2 v}{dt^2} - (a-1) \frac{dv}{dt} + bv\right] = 0
+\end{align}
+nel nostro caso $a=0$, quindi
+\begin{align}
+	\frac{d^2 v}{dt^2} + \frac{dv}{dt} + \frac{v}{4}= 0
+\end{align}
+Il nostro  Ansatz diventa $v = x^\alpha = (e^t)^\alpha  = e^{\alpha t}$ eotteniamo le due soluzioni
+\begin{align}
+	v_1 = e^{\alpha t} \spacer v_2 = t e^{\alpha t} 
+\end{align}
+Che, tornando nella variabile originale diventano
+\begin{align}
+	v_1 = x^\alpha \spacer v_2 = x^\alpha \ln(x) 
+\end{align}
+Nel nostro caso saranno quindi
+\begin{align}
+	&v_1 = x^\frac{1}{2} \spacer v_2 = x^\frac{1}{2} \ln(x) \firstpassage
+	&v_{om} = x^\frac{1}{2}(A + B\ln(x)) \firstpassage
+	&\dot{v}_{om} = \frac{1}{2}x^{-\frac{1}{2}}A + B \left( x^\frac{1}{2} \cdot \frac{1}{x} + \frac{1}{2}x^{-\frac{1}{2}} \right) = \frac{1}{2}x^{-\frac{1}{2}} A + \frac{3}{2}x^{-\frac{1}{2}} B = \frac{1}{2}x^{-\frac{1}{2}} (A + 3B) \nextpassage
+	&\double{v_{om}(1) = 0}{\dot{v}_{om}(1) = 0} \to \double{1^\frac{1}{2}(A + B\ln(1)) = 0 \to& A = 0}{\frac{1}{2}\cdot 1^{-\frac{1}{2}} (A + 3B)=0 \to& B = 0}
+\end{align}
+
+La soluzione omogenea è nulla, e posso quindi usare il \textbf{teorema di Green}.
+
+Iniziamo calcolando il \textbf{Wronskiano}
+\begin{align}
+	W = \begin{vmatrix}
+		x^\frac{1}{2} && x^\frac{1}{2} \ln(x) \\
+		\frac{1}{2}x^{-\frac{1}{2}} && \frac{1}{2}x^{-\frac{1}{2}} \ln(x) + x^{-\frac{1}{2}}
+	\end{vmatrix} = \frac{1}{2} \ln(x) + 1 - \frac{1}{2}\ln(x) = 1
+\end{align}
+Andiamo ora calcolare la \textbf{funzione di Green avanzata} del problema
+\begin{align}
+	G(x,y) &= \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
+	&= \theta(x-y)\left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] 
+\end{align}
+Possiamo ora andare a calcolare la soluzione particolare
+\begin{align}
+	v(x) &= \int_{1}^{x} dy \; G(x,y) \cdot y^2 = \nonumber\\
+	&= \int_{1}^{x} dy \; \left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] y^2 = \nonumber\\
+	&= x^\frac{1}{2} \ln(x)\int_{1}^{x} dy \;y^\frac{5}{2} - x^\frac{1}{2}\int_{1}^{x} dy \; y^\frac{5}{2}\ln(y)  = \nonumber\\
+	&= x^\frac{1}{2} \ln(x) \left.\frac{2}{7}y^{\frac{7}{2}} \right|_1^x + 
+\end{align}
+
+\newpage

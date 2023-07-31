@@ -1,0 +1,39 @@
+\section{Sommerfeld-Watson (Davide Bufalini)}
+
+Utile strumento per il calcolo delle somme di serie. Sia una funzione $g(z)$ analitica ovunque tranne che in singolarità polari isolate $z_k$ e sia 
+\begin{align}
+	\limit{|z|}{+\infty} |zq(z) =0|
+\end{align}
+Allora valgono le seguenti relazioni
+\begin{align}
+	\sum_{n\in \Z} (-1)^n g(n) &= -\pi \sum_{k} Res\left( \frac{g(z)}{\sin(\pi z)}, z=z_k \right)\\
+	\sum_{n\in \Z} g(n)  &= -\pi \sum_{k} Res\left( g(z)\cot(\pi z), z=z_k \right)
+\end{align}
+
+\subsection{Esempio 1}
+
+Calcolare la somma della serie
+\begin{align}
+	S(a) = \sum_{n=1}^{+\infty} \frac{(-1)^n}{n^2 + a^2} \spacer a \in \R \backslash \{0\}
+\end{align}
+Iniziamo notando che possiamo scrivere
+\begin{align}
+	\sum_{n=1}^{+\infty} \frac{(-1)^n}{n^2 + a^2} = 2S(a) + \frac{1}{a^2}
+\end{align}
+Ponendo
+\begin{align}
+	g(z)=\frac{1}{n^2 + a^2}
+\end{align}
+Otteniamo
+\begin{align}
+	&z^2 + a^2= 0 \firstpassage
+	&z_p= \pm ia	
+\end{align}
+E possiamo quindi applicare SW
+\begin{align}
+	&\limit{z}{\pm ia} \frac{z\pm ia}{z^2+a^2} \cdot \frac{1}{\sin(\pi z)} = \dots = -\frac{1}{2a\sinh(\pi a)} \firstpassage
+	&\frac{(-1)^n}{n^2 + a^2} = -\pi Res \left(\frac{g(z)}{\sin(\pi z)}, z_p\right) = -\frac{\pi}{2a\sinh(\pi a)} \nextpassage
+	&S(a) = -\frac{1}{2a^2} + \frac{\pi}{4a\sinh(\pi a)}
+\end{align}
+
+\newpage

@@ -1,0 +1,480 @@
+\section{Espansioni asintotiche (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}
+
+\subsection{Spunti di teoria (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}
+
+\subsubsection{Definizione molto generale (Alessandro Marcelli)}
+
+Lo sviluppo in serie può essere esteso anche al caso in cui la funzione oggetto di studio $f(z)$ non sia analitica in $z_0$, trovando uno sviluppo $f(z) \sim \sum_{n=1}^{\infty} a_n f_n(z)$ che approssima "bene" il comportamento della funzione in un intorno di $z_0$ \cite{MMF}, ovvero che valgono le due seguenti proprietà:
+\begin{enumerate}
+	\item il resto della serie $R_N(z) = f(z) - S_N(z)$ è tale che $\limit{z}{z_0} \frac{|R_N(z)|}{|f_N(z)|} = 0 \quad \forall N\in \N$
+	\item la serie fornisce una buona approssimazione di $f(z)$ solo in determinate regioni del piano complesso
+\end{enumerate}
+L'approssimazione che si va a trovare sarà tanto più buona tanto più grande è $x$, e si lavora quindi per $x \to + \infty$. Nel caso ci si trovi nel caso $x \to -\infty$ bisogna fare un cambio di variabile.
+
+Il contributo maggiore sarà dato dai primi termini dell'espansione, motivo per cui di solito ci si ferma al secondo termine.
+
+Nel nostro caso ci interessiamo della famiglia di funzioni integrali del tipo
+\begin{align}
+	F(x) = \int_{a}^{b} dt \; e^{x\phi(t)}g(t) \label{lol0}
+\end{align}
+
+\subsubsection{Termine Leading: Metodo di Laplace (Alessandro Marcelli)}
+
+Se interessa solo il primo termine dell'espansione, detto \textbf{dominante}, basta sviluppare al secondo ordine $\phi(t)$ e $g(t)$ nel punto di massimo della prima, risolvere l'integrale con questa approssimazione e prendere il primo termine, come si vede nell'esempio svolto del paragrafo \ref{es1}.
+
+\subsubsection{Metodo risolutivo generalizzato (Paolo Proia)}
+
+Qualora servano termini successivi (di solito ci si ferma al termine Next-to-Leading) la situazione si complica, in quanto non basta sviluppare al secondo ordine e bon, in quanto ci sono casi in cui uno dei due termini può essere nullo (funzioni trigonometriche my beloved). Il procedimento si snoda quindi:
+\begin{enumerate}
+	\item Trovare massimo per \(\phi(t)\) (chiamiamo \(t_0\))
+	\item Espandere \(g(t)\) intorno a \(t_0\) per 2 o 3 termini
+	\item Prendere nota dell'esponente dell'ultimo termine (definiamo come  \(n\)) 
+	\item Parametrizzare come $\phi(t) - \phi(t_0)=-\tau^2 \label{lol1}$
+	ed espandere \(\phi(t)\) intorno a $t_0$ fino ad ordine \(n\)
+	\item Trovare cambio di variabile da \(t\) a \(\tau\), imponendo $t - t_0 = h(\tau) = \sum_i^{n+1} c_i \tau^i$
+	\item Sostituiamo nella \refeq{lol1} tenendo i termini fino a \(\tau^{n+1}\)
+	\item Imporre l'uguaglianza tra i coefficenti con la stessa potenza di \(\tau\) a dx e sx, trovando così \(h(\tau)\)
+	\item Essendo \(h(\tau) = t + cost. \) abbiamo che \(\dot{h}d\tau = dt\) e abbiamo così terminato il cambio di variabile
+	\item Sostituiamo nella \ref{lol0}
+	\begin{align}
+		&\phi(t) = \phi(t_0) - \tau^2\\
+		&dt=\dot{h}d\tau\\
+		&g(t) \to g(h(\tau)) \label{lol2}
+	\end{align}
+	Nella \ref{lol2} usiamo direttamente l'espansione in serie del punto 2
+	\item Svolgiamo il prodotto \(\dot{h} \cdot g(h(\tau))\), sostituiamo nell'integrale e teniamo i primi $n$ termini il cui integrale è non nullo (nel caso Next-to-Leading i primi 2)
+\end{enumerate}
+
+\textbf{NOTA BENE:} qualora una delle due funzioni sia una trigonometrica elevata a potenza conviene sviluppare solo la trigonometrica e mettere a potenza lo sviluppo, e fare altri magheggi
+quali utilizzare le relazioni trigonometriche per fare il meno conti possibile.
+
+\subsubsection{Metodo del punto di sella (Davide Bufalini)}
+
+Abbiamo finora visto integrali sulla retta reale. Qualora si abbia una generica curva $\gamma \in \C$ il procedimento si complica leggermente. 
+
+Presa una funzione integrale della forma
+\begin{align}
+	I(x) = \int_\gamma dt \; e^{x\phi(t)} g(t)
+\end{align}
+Qualora $\phi(t)$ e $g(t)$ siano analitiche in un dominio $\mathit{D}$ e si abbia $\gamma \subseteq \mathit{D}$ abbiamo un problema. Infatti, riscrivendo la $\phi(t)$ nella seguente forma
+\begin{align}
+	\phi(t) &= u(t) + iv(t)
+\end{align}
+All'interno del dominio non è detto che $v(t)$ sia costante, il che ci impedisce di restringerci al caso reale. Inoltre, per $t \in \gamma$ il termine $e^{iv(t)}$ oscilla fortemente, portanto la $I(x)$ ad essere mediata a 0. 
+
+Cerchiamo un modo per rendere costante la $v(t)$ e rendere massima la $u(t)$, in modo da rispettare il comportamento asintotico.
+Il procedimento si snoda nei seguenti passaggi
+\begin{enumerate}
+	\item Riscriviamo la $\phi(t)$ come
+	\begin{align}
+		\phi(t) = \phi(x,y) = u(x,y) + iv(x,y)
+	\end{align}
+	Possiamo farlo in più modi
+	\begin{enumerate}
+		\item Coordinate cartesiane, sostituendo $t = x + iy$
+		\item Coordinate polari, sostituendo $t = \sqrt{x^2 + y^2}\cdot e^{i \arctan \left(\frac{x}{y}\right)}$
+	\end{enumerate}
+	\item Cerchiamo il punto di sella $t_0$ di $\phi(t)$ tale
+	\begin{align}
+		\phi(t_0) &= 0 \\
+		\ddot{\phi}(t_0) &: \ddot{u}(t_0) <0 
+	\end{align}
+	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$  
+	\item Una volta trovato questo cammino, risolviamo con i metodi noti per il caso reale
+	
+\end{enumerate}
+
+\newpage
+
+\subsection{Esempio 1: metodo generalizzato (Paolo Proia)}
+
+Sia la seguente funzione integrale
+\begin{align}
+	I(t)    &= \int_{1}^{+\infty} dt \; e^{-x \frac{t^2}{2}}t^x \frac{1}{t^2 + 1} = \int_{1}^{+\infty} dt \; e^{-x \frac{t^2}{2}} e^{x\ln(t)} \frac{1}{t^2 + 1} = \int_{1}^{+\infty} dt \; e^{x\left(\ln(t) -\frac{t^2}{2}\right)} \frac{1}{t^2 + 1}\\
+	\phi(t) &= \ln(t) - \frac{t^2}{2} \\
+	g(t)    &= \frac{1}{t^2 + 1}
+\end{align}
+
+\begin{enumerate}
+	\item Trovare massimo per \(\phi(y)\) (chiamiamo \(y_0\))
+	\begin{align}
+		\dot{\phi}(t) &=\frac{1}{t} - t = \frac{1- t^2}{t} = 0 \to t = \pm 1\\
+		\ddot{\phi}(t) &= -\frac{1}{t^2} - 1 = -\frac{t^2+1}{t^2}  \\
+		\dddot{\phi}(t) &= \frac{2}{t^3}
+	\end{align}
+	Escoludiamo il risulato negativo, siccome $\phi(t)$ non è definito in quel punto. Abbiamo quindi
+	\begin{align}
+		t_0=+1 \quad ; \quad\phi_0 = -\frac{1}{2}
+	\end{align}
+	\item Espandiamo \(g(t)\) intorno a \(t_0\)
+	\begin{align}
+		g(t) &\simeq g(t_0) + g(t_0)\cdot(t-t_0) = \frac{1}{2} - \frac{1}{2} (t-1) = 1-\frac{t}{2} 
+	\end{align}
+	\item Notiamo come ci siamo fermati per \(n=1\)
+	\item Parametrizziamo
+	\begin{align}
+		&\phi(t)= -\frac{1}{2} + 0\cdot(t-1) - \frac{1}{2}\cdot 2 \cdot(t-1)^2  + \frac{1}{3!} \cdot 2 (t-t_0)^3= -\frac{1}{2} - (t-1)^2 + \frac{1}{3} (t-t_0)^3= -\tau^2
+	\end{align}
+	\item Troviamo cambio di variabile da \(t\) a \(\tau\), fermandoci al terzo ordine, essendo lo sviluppo in t al 3o ordine
+	\begin{align}
+		&t-t_0 = t-1 = c_1 \tau + c_2 \tau^2 + c_3 \tau^3 + O(\tau^4)\\
+		&\phi(t) = - \frac{1}{2} - (c_1 \tau + c_2 \tau^2 + c_3 \tau^3)^2+ \frac{1}{3} (c_1 \tau + c_2 \tau^2 + c_3 \tau^3)^3
+	\end{align}
+	\item Andiamo quindi a sostituire
+	\begin{align}
+		\phi(t) + \frac{1}{2} &=  - (c_1 \tau + c_2 \tau^2 + c_3 \tau^3)^2+ \frac{1}{3} (c_1 \tau + c_2 \tau^2 + c_3 \tau^3)^3 = \dots = \nonumber\\
+		&= -c_1^2 \tau^2 - 2c_1c_2 \tau^3 + \frac{1}{3}c_1^3 \tau^3
+	\end{align}
+	\item Andiamo ora a confrontare
+	\begin{align}
+		\phi(t) + \frac{1}{2} &= -\tau^2\\
+		\phi(t) + \frac{1}{2} &= -c_1^2 \tau^2 - 2c_1c_2 \tau^3 + \frac{1}{3}c_1^3 \tau^3
+	\end{align}
+	Ne segue che
+	\begin{align}
+		&-c_1^2 \tau^2 = -\tau^2 &\to c_1 = 1\\
+		&-2c_1c_2 \tau^3 + \frac{1}{3}c_1^3 \tau^3=0 &\to -2c_2 + \frac{1}{3} = 0 \to c_2 = \frac{1}{6}
+	\end{align}
+	Abbiamo così trovato
+	\begin{align}
+		t-1 = h(\tau) = \tau + \frac{1}{6}\tau^2
+	\end{align}
+	\item Sostuiamo e troviamo
+	\begin{align}
+		t-1 = \tau + \frac{1}{6}\tau^2 \to d(t-1) = dt = \left( 1 + \frac{1}{3} \tau \right) d\tau
+	\end{align}
+	\item Sostituiamo infine nella nostra funzione integrale
+	\begin{align}
+		I(x) &= \int_{0}^{+\infty} d\tau \; e^{-x \left( \tau^2 + \frac{1}{\tau} \right)} \left( 1 + \frac{1}{3} \tau \right) \left(\frac{1}{2} - \frac{\tau}{2}\right) = \nonumber\\
+		&= \int_{0}^{+\infty} d\tau \; e^{-x \left( \tau^2 + \frac{1}{\tau} \right)} \left( \frac{1}{2}- \frac{1}{2}\tau + \frac{1}{6} \tau - \frac{1}{6} \tau^2 \right) = \nonumber\\
+		&= \int_{0}^{+\infty} d\tau \; e^{-x \left( \tau^2 + \frac{1}{\tau} \right)} \left( \frac{1}{2} - \frac{1}{3} \tau \right) = \nonumber\\
+		&= e^{-\frac{x}{2}}\int_{0}^{+\infty} d\tau \; e^{-x\tau^2} \left( \frac{1}{2} - \frac{1}{3} \tau \right)
+	\end{align}
+	\item abbiamo quindi
+	\begin{align}
+		I(x) &= e^{-\frac{x}{2}} \left( \frac{1}{2} \int_{0}^{+\infty} d\tau \; e^{-x\tau^2} - \frac{1}{3} \int_{0}^{+\infty} d\tau \; e^{-x\tau^2}\tau \right)
+	\end{align}
+\end{enumerate}
+
+\newpage
+
+\subsection{Esempio 2 (Davide Bufalini) \label{es1}}
+
+Calcolare per $x\rightarrow +\infty$ i primi due termini dell'espansione per la funzione integrale
+\begin{align}
+	F(x) = \int_{0}^{\frac{\pi}{2}} dt \; e^{x\cos(t)}\sin^3(t)
+\end{align}
+
+Partiamo dal \textbf{termine Leading}. Siccome abbiamo
+\begin{align}
+	\phi(t) &= \cos(t) \\
+	g(t) &= \sin^3(t)
+\end{align}
+Andiamo a cercarne il punto di massimo, che troviamo in
+\begin{align}
+	&\frac{d \phi(t)}{dt} = -\sin(t) \firstpassage
+	&\sin(t) = 0 \nextpassage
+	&t_0=0
+\end{align}
+Andiamo quindi a sviluppare
+\begin{align}
+	\phi(t) &\simeq 1- \frac{t^2}{2} + o(t^3)  \\
+	g(t) &\simeq \left( t - \frac{t^3}{6} \right)^3 \simeq t^3 \quad \text{termine leading}
+\end{align}
+E otteniamo
+\begin{align}
+	F(x) &\simeq \int_{0}^{\frac{\pi}{2}} dt \; e^{x\left(1- \frac{t^2}{2}\right)}t^3 = \nonumber\\
+	&= \int_{0}^{+\infty} dt \; e^x e^{-x\frac{t^2}{2}}t^3
+\end{align}
+Applicando la sostituzione
+\begin{align}
+	&y= \frac{t^2}{2} \quad \leftrightarrow \quad t^2 = 2y \\
+	&dy = tdt
+\end{align}
+Possiamo arrivare ad ottenere il termine cercato
+\begin{align}
+	F(x) &= \int_{0}^{\frac{\pi}{2}} dy \; e^x e^{-xy}2y = \nonumber\\
+	&= 2e^x\int_{0}^{+\infty} dy \;e^{-xy}y = \nonumber\\
+	&= 2e^x \frac{\Gamma(2)}{x^2} = \frac{2e^x}{x^2}
+\end{align}
+
+Per quanto riguarda il termine \textbf{Sub-leading}, andiamo a parametrizzare la $\phi(t)$ nel seguente modo
+\begin{align}
+	&\phi(t) - \phi(t_0) = -\tau^2 \firstpassage
+	&\cos(t) - 1 = -\tau^2 \nextpassage
+	&t= \arccos(i-\tau^2) \firstpassage
+	&dt = -\frac{d\tau}{\sqrt{1-(1-\tau^2)^2}}\cdot(-2\tau) = \frac{2\tau d\tau}{\sqrt{2\tau^2-\tau^4}} = \frac{2d\tau}{\sqrt{2-\tau^2}}
+\end{align}
+Andiamo così a trovare i primi due termini dell'espansione
+\begin{align}
+	F(x) &\simeq \int_{0}^{+\infty} \frac{2d\tau}{\sqrt{2-\tau^2}} \; e^{x\left(1- \tau^2\right)}(\sqrt{1-cos^2(t)})^3 = \nonumber\\
+	&= \int_{0}^{+\infty} \frac{2d\tau}{\sqrt{2-\tau^2}} \; e^{x\left(1- \tau^2\right)}(\sqrt{1-(1-\tau^2)^2})^3 = \nonumber\\
+	&=\int_{0}^{+\infty} \frac{2d\tau}{\sqrt{2-\tau^2}} \; e^{x\left(1- \tau^2\right)}(\sqrt{2\tau^2-t^4})^3 = \nonumber\\
+	&=\int_{0}^{+\infty} \frac{2d\tau}{\sqrt{2-\tau^2}} \; e^{x\left(1- \tau^2\right)}(\tau\sqrt{2-\tau^2})^3 = \nonumber\\
+	&=\int_{0}^{+\infty} 2d\tau \; e^{x\left(1- \tau^2\right)}\tau^3 (2-\tau^2) = \nonumber\\
+	&=2e^x \left[ 2\int_{0}^{+\infty}d\tau \; e^{-x\tau^2} \tau^3 - \int_{0}^{+\infty} d\tau\; e^{-x\tau^2}\tau^5 \right] = \nonumber\\
+	&= 2e^x\left[ 2\frac{\Gamma(2)}{x^2} - \frac{1}{2} \frac{\Gamma(3)}{x^3} \right] = \nonumber \\
+	&= \frac{2e^x}{x^2} - \frac{2}{2} \frac{e^x 2!}{x^3} =\nonumber\\
+	&= \frac{2e^x}{x^2} -\frac{2e^x}{x^3}
+\end{align}
+
+
+
+\subsection{Esempio 3 (Davide Bufalini)}
+
+Calcoliamo i termini \textbf{Leading} e \textbf{Subleading} per la funzione
+\begin{align}
+	I(x) = \int_\R dt \; e^{-x \cosh(t)}
+\end{align}
+Iniziamo individuando le  nostre funzioni
+\begin{align}
+	\phi(t) &= -\cosh(t)\\
+	g(t) &= 1 \firstpassage
+	\frac{d\phi(t)}{dt} &= \sinh(t) = 0 \quad \rightarrow \quad t_0 = 0
+\end{align}
+
+Inziamo col termine \textbf{Leading}. Sviluppando intorno a $t_0$ otteniamo
+\begin{align}
+	&\phi(t) \simeq -\left( 1 + \frac{t^2}{2} \right)\firstpassage
+	&I(x) = \int_\R dt e^{-x}e^{-x \frac{t^2}{2}} = e^{-x} \frac{2\pi}{x}	
+\end{align}
+
+Per quanto riguarda il termine \textbf{Subleading} andiamo a parametrizzare
+\begin{align}
+	&\phi(t) - \phi(t_0) = -\tau^2 \firstpassage
+	& \cosh(t) -(-1) = -\tau^2
+\end{align}
+Siccome abbiamo
+\begin{align}
+	dt = \left( \frac{dt}{d\tau} \right) d\tau
+\end{align}
+Dobbiamo trovare una espressione per $t(\tau)$ per il calcolo ello Jacobiamo.
+
+Siccome abbiamo $t_0 = 0$ andiamo a sviluppare per $t$ piccoli
+\begin{align}
+	&\cosh(t) = 1 + \frac{t^2}{2} + \frac{t^4}{24} + \dots \firstpassage
+	&\cancel{1} + \frac{t^2}{2} + \frac{t^4}{24} + \dots = \cancel{1} + \tau^2 \nextpassage
+	&\frac{t^2}{2} \left( 1 + \frac{t^2}{12} \right) = \tau^2 \firstpassage
+	&t^2 = \frac{2\tau^2}{1 + \frac{t^2}{12}} = 2\tau^2 \left( 1 - \frac{t^2}{12} + \left( \frac{t^2}{12} \right)^2 + \dots \right) \simeq 2\tau^2 - 2\tau^2 \frac{t^2}{12} \firstpassage
+	&t^2 \left( 1 + \frac{\tau^2}{6} \right) = 2\tau^2 \nextpassage
+	&t^2=\frac{2\tau^2}{1 + \frac{\tau^2}{6}}\nextpassage
+	&t=\frac{\sqrt{2}\tau}{\sqrt{1 + \frac{\tau^2}{6}}} \simeq \sqrt{2}\tau \left( 1 - \frac{1}{2} \frac{\tau^2}{6} \right) = \sqrt{2}\tau \left( 1 - \frac{\tau^2}{12} \right)
+\end{align}
+Dunque otteniamo
+\begin{align}
+	t &= \sqrt{2} \tau - \frac{\sqrt{2}}{12}\tau^3 \firstpassage
+	dt &= \left( \sqrt{2} - \frac{\sqrt{2}}{4}\tau^2 \right)d\tau 
+\end{align}
+
+Possiamo quindi finalmente sostituire
+\begin{align}
+	I(x) &= \int_\R dt \; e^{-x} e^{-\frac{t^2}{2} x} = \nonumber \\
+	&= e^{-x} \int_\R d\tau \; e^{-x\tau^2}  \left( \sqrt{2} - \frac{\sqrt{2}}{4}\tau^2 \right) = \nonumber \\
+	&= e^{-x}\sqrt{2} \left[ \int_\R d\tau \; e^{-x\tau^2}   -\int_\R d\tau \;e^{-x\tau^2}  \frac{1}{4}\tau^2  \right]= \nonumber \\
+	&= e^{-x}\sqrt{2} \left[ \sqrt{\frac{\pi}{x}}   - \frac{1}{4}\cdot\frac{1}{x} \cdot \frac{1}{2} \cdot \sqrt{\frac{\pi}{x}}  \right]= \nonumber \\
+	&=e^{-x}\sqrt{\frac{2\pi}{x}} - \frac{1}{8x}e^{-x}\sqrt{\frac{2\pi}{x}}= \nonumber \\
+	&=e^{-x}\sqrt{\frac{2\pi}{x}}\left[1 - \frac{1}{8x}\right]
+\end{align}
+
+\newpage
+
+\subsection{Esempio 4 (Davide Bufalini)}
+
+Data la funzione
+\begin{align}
+	\int_{\frac{\pi}{2}}^{\frac{3}{4}\pi} dt \; e^{-\frac{x}{\sin(t)}} (1 + \cot (t))
+\end{align}
+se ne calcoli l'espansione.
+
+Iniziamo trovando il punto di sella
+\begin{align}
+	&\phi(t) = -\frac{1}{\sin(t)}\firstpassage
+	&\frac{d\phi}{dt} = \frac{\cos (t)}{\sin^2 (t)} = 0 \firstpassage
+	& t_0 = \frac{\pi}{2}
+\end{align}
+Siccome il punto cade su uno degli estremi, ci basta considerare $t(\tau) \sim o(\tau^2)$
+Parametrizziamo
+\begin{align}
+	&\phi(t) - \phi(t_0) = -\tau^2\firstpassage
+	&-\frac{1}{\sin (t)}-\left(-\frac{1}{\sin \left( \frac{\pi}{2}\right)}\right) = -\tau^2 \nextpassage
+	&-\frac{1}{\sin (t)} = 1 +\tau^2\nextpassage
+	&\sin (t) = -\frac{1}{1+\tau^2} = 1 - \tau^2 + \tau^4 + \dots \nextpassage
+	&\frac{1}{2} \left( t -\frac{\pi}{2} \right)^2 = \tau^2 + o(\tau^3) \label{kekw}
+\end{align}
+Espandendo $\tau$ si ha che
+\begin{align}
+	t -\frac{\pi}{2} = c_1 \tau + c_2 \tau^2 + c_3 \tau^3 + \dots \label{kukw}
+\end{align}
+Sostituendo nella \ref{kekw}
+\begin{align}
+	&\frac{1}{2} \left( c_1 \tau + c_2 \tau^2 \right)^2 = \tau^2 \firstpassage
+	&c_1^2 \tau^2 + 2c_1 c_2 \tau^3 + c_2^2 \tau^4 = 2 \tau^2\nextpassage
+	&\double{c_1 = &\sqrt{2}}{c_2 = &0}
+\end{align}
+Sostituendo nella \ref{kukw} otteniamo
+\begin{align}
+	&t -\frac{\pi}{2} = \sqrt{2}\tau + o(\tau^3)	\firstpassage
+	&dt = \sqrt{2}d\tau
+\end{align}
+Sviluppiamo ora $g(t)$ intorno a $t_0$
+\begin{align}
+	g(t) = 1 + \cot(t) = 1 - \left( t -\frac{\pi}{2} \right) \sim 1 - \sqrt{2}\tau +o(\tau^3)
+\end{align}
+Possiamo quindi riscrivere la nostra funzione integrale come
+\begin{align}
+	I(x) &= \int_{0}^{+\infty} \sqrt{2} d\tau \; e^{-x(1+\tau^2)}(1 - \sqrt{2}\tau) = \nonumber\\
+	&= \sqrt{2}e^{-x} \int_{0}^{+\infty}  d\tau \; e^{-\tau^2}(1 - \sqrt{2}\tau) = \nonumber\\
+	&=e^{-x} \left[ \sqrt{\frac{\pi}{2x}} - \frac{1}{x} \right]
+\end{align}
+
+
+\newpage
+
+
+
+\subsection{Esempio 5: Punto di sella 1 (Davide Bufalini)}
+
+Calcoliamo il termine leading per l'espansione asintotica  della funzione integrale
+\begin{align}
+	F(x) &= \int_\R dy \; e^{-x[2y^2 -(y-i)^2]} \frac{1}{y^2 + 2}\\
+	g(y) &=  \frac{1}{y^2 + 2}\\
+	\phi(y) &= 2y^2 -(y-i)^2
+\end{align}
+
+Iniziamo trovando il punto di sella di $\phi(y)$, e calcoliamo preliminarmente
+\begin{align}
+	\phi(y) &=  (y-i)^2 -2y^2 = y^2 - 2iy -1 -2y^2 = -y^2 - 2iy -1 \\
+	\dot{\phi}(y) &= 2y + 2i\\
+	\ddot{\phi}(y) &= 2
+\end{align}
+Troviamo quindi che
+\begin{align}
+	&2y + 2i = 0 \firstpassage
+	&y_0=-i\firstpassage
+	&y_0= (0,-1)
+\end{align}
+
+Passiamo in coordinate cartesiane sostituendo $y = a+ib$
+\begin{align}
+	\phi(y)) &= \phi(a,b) = -(a+ib)^2 -2i(a+ib) -1 = \nonumber\\
+	&= -a^2 - 2iab + b^2 - 2ia + 2b -1 =   \nonumber\\
+	&= (b^2 -a^2 + 2b -1) -2ia(b + 1)
+\end{align}
+Da cui abbiamo che
+\begin{align}
+	u(a,b) &= b^2 -a^2 + 2b -1\\
+	v(a,b) &= -2a(b + 1)
+\end{align}
+Cerchiamo ora i cammini a fase costante passanti per $y_0$. Sostituendo troviamo che
+\begin{align}
+	&v(0,-1) = -2\cdot 0 \cdot (0 + 1) =0\\
+	&a(b + 1) = 0 \to \double{a=0 \quad &\text{asse immaginario}}{b=-1 \quad &\text{asse reale traslato di $-i$}}
+\end{align}
+Ma quale dei due cammini è quello che serve a noi? Andiamo a sostituire nell'espressione di $u(a,b)$:
+\begin{enumerate}
+	\item Sostituiamo $a=0$
+	\begin{align}
+		u(0,b) &= b^2 + 2b-1 \\
+		\left. \frac{d u}{d b} \right|_{a=0} &= 2b + 2 \\ 
+		\left. \frac{d^2 u}{d b^2} \right|_{a=0} &= 2 \geq 0  
+	\end{align}
+	Siccome non abbiamo $\ddot u <0$ questo cammino non va bene.
+	\item Sostituiamo $b=-1$
+	\begin{align}
+		u(a,-1) &= 1 -a^2 -2-1 = -a^2 -2 \\
+		\left. \frac{d u}{d a} \right|_{b=-1} &= -2a\\ 
+		\left. \frac{d^2 u}{d a^2} \right|_{b=-1} &= -2 \leq 0  
+	\end{align}
+\end{enumerate}
+
+Il cammino giusto è quindi 
+\begin{align}
+	\gamma^*= \left\{ (a,b) \in \C \taleche (a,b) = (a,-1) \right\}
+\end{align}
+I cui punti sono parametrizzati come
+\begin{align}
+	y= a - i \spacer a \in \R
+\end{align}
+E da cui segue che
+\begin{align}
+	Re(\phi) &= u(a,b) = -a^2 - 2 \\
+	Im (\phi) &=v(a,b) = 0
+\end{align}
+Andiamo quindi a sostituire nella nostra funzione integrale ed otteniamo
+\begin{align}
+	F(x) &= \int_\R da \; e^{x[-2-a^2]} \frac{1}{a^2 -2ia -1 + 2} =\nonumber\\
+	&= \int_\R da \; e^{x[-2-a^2]} \frac{1}{a^2 -2ia +1} 
+\end{align}
+
+Siccome stiamo su sviluppando sul punto di sella $(0,-1)$ il denominatore può essre approssimato a $1$, e abbiamo quindi
+\begin{align}
+	F(x) &= e^{-2x}\int_\R da \; e^{-xa^2} = e^{-2x} \sqrt{\frac{\pi}{x}}
+\end{align}
+
+\newpage
+
+\subsection{Esempio 6: Punto di sella 2 (Davide Bufalini)}
+
+Calcoliamo i termini Leading e Subleading per lo sviluppo asintotico della seguente funzione integrale
+\begin{align}
+	F(x) &= \int_{-i\infty}^{+i\infty} dx \; e^{ix(z^2-2z)} \frac{1}{\sqrt{1+z}}\\
+	g(z) &=\frac{1}{\sqrt{1+z}}\\
+	\phi(z) &= i(z^2-2z)
+\end{align}
+Andiamo a calcolare le derivate di $\phi(z)$ e a trovare il punto di sella
+\begin{align}
+	\phi(z) &= i(z^2-2z)\\
+	\dot{\phi}(z) &= i(2z-2) \to z_0=1\\
+	\ddot{\phi}(z) &= 2i
+\end{align}
+Passiamo in coordinate cartesiane ponendo $z = x+iy$ e otteniamo
+\begin{align}
+	z_0 &= x_0 + iy_0 = 1 \to z_0=(1,0)\\
+	\phi(x,y) &= i[( x+iy )^2 -2x -2iy] = i( x^2 + 2ixy -y^2  -2x -2iy) = \nonumber\\
+	&= i[( x^2 -y^2 -2x ) + 2i (xy -y)]  = \nonumber\\
+	&=2y(1-x) + i( x^2 -y^2 -2x )
+\end{align}
+Da cui quindi otteniamo
+\begin{align}
+	\phi(x,y) &= u(x,y) + iv(x,y)\\
+	u(x,y) &= 2y(1-x) \to u(0,1) = 2\\
+	v(x,y) &= x^2 -y^2 -2x \to v(0,1) = -1
+\end{align}
+Vogliamo quindi trovare i percorsi tali che $Im(\phi(z)) = -1$. Per fare ciò poniamo
+\begin{align}
+	&x^2 -y^2 -2x = -1\firstpassage
+	&x^2 -y^2 -2x +1 =0\nextpassage
+	&(x-1)^2 = y^2\nextpassage
+	&y=\pm(x-1)
+\end{align}
+Le nostre curve sono quindi due rette. Cerchiamo ora quale fa al caso nostro
+\begin{align}
+	y_1=x-1 \to u_1(x) &= -2(1-x)^2 \to \dot{u}_1(x) = -4(1-x)\\
+	y_2=1-x \to u_2(x) &= +2(1-x)^2 \to \dot{u}_2(x) = +4(1-x)
+\end{align}
+
+Studiando l'andamento delle derivate notiamo come $u_1(x)$ abbia un massimo in $x=1$,e che quindi è la nostra curva d'interesse.
+
+Andiamo ora a parametrizzare. Siccome i punti della nostra curva sono ruotati di $45°$ rispetto all'asse reale, scriviamo
+\begin{align}
+	&z = 1+ e^{i\frac{\pi}{4}} \tau\firstpassage
+	&dz = e^{i\frac{\pi}{4}} d\tau
+\end{align}	
+Possiamo quindi riscrivere
+\begin{align}	
+	\phi(\tau) &= i[(1+ e^{i\frac{\pi}{4}} \tau)^2-2(1+ e^{i\frac{\pi}{4}} \tau)] =\nonumber\\
+	&= i[ 1 + \cancel{2e^{i\frac{\pi}{4}}\tau} + e^{i\frac{\pi}{2}}\tau^2 - 2 -\cancel{2e^{i\frac{\pi}{4}}\tau} ]=\nonumber\\
+	&= i (e^{i\frac{\pi}{2}}\tau^2 -1)=\nonumber\\
+	&= i (-i\tau^2 -1) = -\tau^2 -i
+\end{align}
+
+\textbf{Nota bene:} abbiamo bisogno del termine subleading, ma questo non compare dalla formula del $d\tau$ che si ferma prima di $\tau^2$. Dobbiamo quindi sviluppare $g(z)$ intorno a $z_0$
+\begin{align}
+	g(z) = \left. \frac{1}{\sqrt{1+z}} \right|_{z=1 + e^{1\frac{\pi}{2}}} = \frac{1}{\sqrt{2}} \frac{1}{\sqrt{1 + \frac{e^{1\frac{\pi}{2}}}{2}}} \sim 1 - \cancel{\frac{e^{i\frac{\pi}{4}}}{4}\tau} + \frac{3}{8} \frac{e^{i\frac{\pi}{2}}}{4} \tau^2
+\end{align}
+Possiamo quindi riscrivere la nostra funzione integrale come
+\begin{align}
+	I(x) &= \int_\R d\tau; \frac{e^{x(-i-\tau^2)}}{\sqrt{2}} \left( 1  + \frac{3}{32} i \tau^2 \right)e^{i\frac{\pi}{4}} = \nonumber \\
+	&= \frac{e^{-i\left( x-\frac{\pi}{4} \right)}}{\sqrt{2}}\left[ \int_\R d\tau  \; e^{-x\tau^2}  + \frac{3i}{32} \int_\R d\tau \; e^{-x\tau^2} \tau^2\right] = \nonumber \\
+	&= \frac{e^{-i\left( x-\frac{\pi}{4} \right)}}{\sqrt{2}}\left[ \sqrt{\frac{\pi}{x}}   + \frac{3i}{32} \sqrt{\frac{\pi}{x^3}} \right]
+\end{align}

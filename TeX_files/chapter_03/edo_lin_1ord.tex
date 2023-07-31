@@ -1,0 +1,119 @@
+\section{EDO lineari del 1o ordine [teoria](Alessandro Marcelli)}
+
+Sia il problema di Cauchy
+\begin{align}
+	\left\{\begin{array}{c}
+		c_1 (x) u'(x) + c_0(x) u(x) \; = f(x) \hfill \\
+		u(x_0) \;  = u_0 \hfill 
+	\end{array}
+	\right. \label{ode1ord1}
+\end{align}
+Possiamo risolvere il problema in due modi:
+
+\subsection{Separazione di variabili + variazione delle costanti}
+\begin{enumerate}
+	\item La soluzione dell'omogenea si ricava per \textbf{separazione delle variabili}
+	\begin{align}
+		&c_1 (x) u'(x) + c_0(x) u(x) \; = 0 \firstpassage
+		&c_1 (x) u'(x) = - c_0(x) u(x) \nextpassage
+		&\frac{du}{dx} = -\frac{c_0(x)}{c_1(x)} u(x)\nextpassage
+		&\int_{u_0}^u du \; \frac{1}{u}= - \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}\nextpassage
+		&\ln(u(x)) - C = - \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)} \spacer C = \ln (u_0)\nextpassage
+		&u_{om}(x) = e^C e^{- \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}}
+	\end{align}
+	\item La soluzione della particolare invece col metodo della \textbf{variazione delle costanti}, ovvero ponendo
+	\begin{align}
+		&u_p(x) = a(x) u_{om}(x)\firstpassage
+		&u'_p(x)= a'(x) u_{om}(x) +  a(x) u'_{om}(x) \nextpassage
+		&c_1(x) \cdot [a'(x) u_{om}(x) +  a(x) u'_{om}(x)] + c_0 a(x) u_{om}(x) =f(x) \nextpassage
+		&c_1(x)u_{om}(x) \cdot a'(x) + \cancel{[c_1(x)u'_{om}(x) + c_0(x)u_{om}(x)]\cdot a(x)} = f(x)\nextpassage
+		&c_1(x)u_{om}(x) \cdot a'(x) = f(x) \nextpassage
+		&a'(x) =\frac{f(x)}{c_1(x)u_{om}(x)} \nextpassage
+		&a(x) = \int_{x_0}^{x} dt\; \frac{f(t)}{c_1(t)u_{om}(t)} \nextpassage
+		&u_p(x) = \left[ \int_{x_0}^{x} dt\; \frac{f(t)}{c_1(t)u_{om}(t)} \right] \cdot \left[ e^C e^{- \int_{x_0}^x dt \;  \frac{c_0(t)}{c_1(t)}} \right]
+	\end{align}
+	\item si sommano le due soluzioni, e si trova la curva che rispetta le condizioni iniziali del problema
+\end{enumerate}
+
+\subsection{Metodo della funzione di Green} 
+Il metodo della \textbf{funzione di Green} lo abbiamo già introdotto nel capitolo degli operatori. Andiamo a cercare una soluzione nel senso delle distribuzioni per
+\begin{align}
+	\mathcal{L}^{(1)}_x G(x,y) = \delta(x-y) \label{green1}
+\end{align}
+Abbiamo visto come l'integrale generale, la soluzione fondamentale è definita a meno di soluzioni dell'omogenea. 
+
+Prendiamo in considerazione un problema a \textbf{condizioni omogenee} (o \textbf{nulle})
+\begin{align}
+	\left\{\begin{array}{c}
+		c_1 (x) u'(x) + c_0(x) u(x) \; = g(x) \hfill \\
+		v(x_0) \;  = 0 \hfill 
+	\end{array}
+	\right.
+\end{align}
+
+\textbf{Nota:} qualunque problema del tipo \ref{ode1ord1} può essere riscritto in questo modo col cambio di variabili
+\begin{align}
+	v(x) &= u(x) - u_0\\
+	g(x) &= f(x) - c_0(x)u_0
+\end{align}
+
+Per il \textbf{teorema dell'alternativa}, se l'omogenea ammette solo la soluzione nulla, allora il problema ha soluzione unica.
+
+In questo caso $\mathcal{L}^{(1)}_x$ risulta essere invertibile e la soluzione fondamentale con condizione iniziale omogenea $G(x_0,y) = 0$ della \ref{green1} prende il nome di \textbf{funzione di Green} dell'operatore ed è il nucleo integrale dell'operatore inverso. Grazie ad essa possiamo ricavare la soluzione come \textbf{convoluzione} col termine forzante $g(x)$
+\begin{align}
+	u(x) = \int dy \; G(x,y) g(y) = G * g
+\end{align}
+Andiamo a risolvere la \ref{green1}
+\begin{align}
+	&c_1 (x) \frac{d}{dx}G(x,y) + c_0(x) G(x,y)  = \delta(x-y) \firstpassage
+	&\frac{d}{dx}G(x,y) + \frac{c_0(x)}{c_1(x)} G(x,y)  = \frac{\delta(x-y)}{c_1(x)}\firstpassage
+	&\int_{y-\epsilon}^{y+\epsilon} dx \;\frac{d}{dx}G(x,y) + \int_{y-\epsilon}^{y+\epsilon} dx \;\frac{c_0(x)}{c_1(x)} G(x,y)  = \int_{y-\epsilon}^{y+\epsilon} dx \;\frac{\delta(x-y)}{c_1(x)}
+\end{align}
+Essendo i $c_k(x)$ regolari, l'integrando può al più fare un "salto" e quindi la sua primitiva $F$ è continua, e quindi nel limite $\epsilon \to 0$ il secondo integrale si annulla
+\begin{align}
+	\limit{\epsilon}{0}\int_{y-\epsilon}^{y+\epsilon} dx \;\frac{c_0(x)}{c_1(x)} G(x,y)  = \int_{y}^{y} dx \;\frac{c_0(x)}{c_1(x)} G(x,y) = F(y,y) - F(y,y) = 0
+\end{align}
+Otteniamo quindi la condizione di salto
+\begin{align}
+	&G(y+\epsilon,y) - G(y-\epsilon,y) = \frac{1}{c_1(y)}\firstpassage
+	&G(y_+,y) = G(y_-,y) + \frac{1}{c_1(y)}
+\end{align}
+
+\newpage
+Andiamo ora a calcolare una soluzione dell'omogenea per \ref{green1}
+\begin{align}
+	&\frac{d}{dx}G(x,y) + \frac{c_0(x)}{c_1(x)} G(x,y)  = 0\firstpassage
+	&G(x,y) = A_-(y) exp\left( - \int_{x}^{y} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) \; ; \;  x<y\\
+	&G(x,y) = A_+(y) exp\left( - \int_{x}^{y} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) \; ; \; x>y
+\end{align}
+Applicando la condizione di salto
+\begin{align}
+	&A_+(y_) = A_-(y) + \frac{1}{c_1(y)} \firstpassage
+	&G(x,y) = A_-(y) \cdot exp\left( - \int_{x}^{y} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) \; ; \;  x<y\\
+	&G(x,y) = \left[  A_-(y) + \frac{1}{c_1(y)} \right] \cdot exp\left( - \int_{x}^{y} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) \; ; \;  x>y \firstpassage
+	&G(x,y) = \left[  A_-(y) + \frac{\theta(x-y)}{c_1(y)} \right] \cdot exp\left( - \int_{x}^{y} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right)	
+\end{align}
+Nel caso di problemi alle condizioni omogenee, possiamo fare l'ipotesi $x_0 < y$ , e la funzione di Green del problema deve soddisfare $G(x_0,y) = 0$, il che ci restituisce
+\begin{align}
+	&G(x,y) = \frac{\theta(x-y)}{c_1(y)} \cdot exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right)	
+\end{align}
+Invece, nel caso di problemi generali del tipo \ref{ode1ord1}, il procedimento si snoda in due passaggi:
+\begin{enumerate}
+	\item Calcoliamo la convoluzione della generica soluzione fondamentale, tenendo a mente che $a<x_0<b$
+	\begin{align}
+		u(x) &= \int_a^b dy \; G(x,y) f(y) =	\nonumber\\
+		&= \int_{x_0}^b dy \;\left[  A(y) + \frac{\theta(x-y)}{c_1(y)} \right] \cdot exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) \cdot f(y) =	\nonumber\\
+		&= \int_{x_0}^b dy \; A(y) f(y) \cdot exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) + \nonumber\\
+		&+ \int_{x_0}^x dy \;  \frac{f(y)}{c_1(x)} \cdot exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) 
+	\end{align}
+	\item Imponiamo ora le condizioni iniziali del problema, ottenendo così la definizione implicita di $A(y)$
+	\begin{align}
+		u_0 &= \int_{x_0}^b dy \; A(y) f(y) \cdot exp\left( - \int_{y}^{_0} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) 
+	\end{align}
+	Da cui otteniamo infine l'integrale generale
+	\begin{align}
+		u(x) &= u_0 \cdot  exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) + \int_{x_0}^x dy \;  \frac{f(y)}{c_1(x)} \cdot exp\left( - \int_{y}^{x} d\xi\; \frac{c_0(\xi)}{c_1(\xi)}\right) 
+	\end{align}
+\end{enumerate}
+
+\newpage

@@ -1,0 +1,191 @@
+\section{Spunti di teoria generale (Davide Bufalini, Alessandro Marcelli)}
+
+\subsection{I numeri complessi (Alessandro Marcelli)}
+
+I numeri complessi possono essere espressi come somma di una \textbf{pare reale} e di una \textbf{parte immaginaria}
+\begin{align}
+	z = x + iy \spacer x,y \in \R
+\end{align}
+Si definisce il \textbf{complesso coniugato} di un numero complesso come
+\begin{align}
+	\overline{z} = x-iy
+\end{align}
+Possiamo definire il suo \textbf{modulo} come
+\begin{align}
+	|z|^2 = z \cdot \overline{z} = x^2 + y^2
+\end{align}
+Utilizzando queste due definizioni si possono riscrivere le parti reale e immaginaria come
+\begin{align}
+	x = \frac{z+ \overline{z}}{2}\\
+	y = \frac{z- \overline{z}}{2i}
+\end{align}
+Un numero complesso può essere rappresentato anche in \textbf{forma polare} nel seguente modo
+\begin{align}
+	&\double{x = \rho \cos (\theta)}{y = \rho \sin (\theta)} \spacer \double{\rho = \sqrt{x^2 + y^2}}{\theta = \arctan (\frac{y}{x})}\firstpassage
+	&\double{z =  \rho (\cos (\theta) + i\sin(\theta))}{\overline{z} = \rho (\cos (\theta) - i\sin(\theta))}
+\end{align}
+Possiamo inoltre usare la \textbf{formula di Eulero} per riscrivere
+\begin{align}
+	&e^{i\theta} = \cos(\theta)+ i \sin (\theta)\firstpassage
+	&\double{z = \rho e^{+i\theta}}{\overline{z} = \rho e^{-i\theta}}\\
+	&\cos (\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2} \spacer x= \frac{e^{i\theta} + e^{-i\theta}}{2\rho}\\
+	&\sin (\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i} \spacer x= \frac{e^{i\theta} - e^{-i\theta}}{2i\rho}
+\end{align}
+
+\newpage
+
+\subsection{Funzioni di variabile complessa (Alessandro Marcelli)}
+
+Una funzione di variabile complessa $f(z)$ per definizione può essere scritta come
+\begin{align}
+	f(z) = u(x,y) + i v(x,y) \spacer x,y, u(x,y), v(x,y) \in \R
+\end{align}
+In analogo col caso reale, $f(z)$ si dice \textbf{differenziabile}\cite{MfP} in $z_0 \in \C$ se il limite
+\begin{align}
+	\limit{\Delta z}{0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}
+\end{align}
+\begin{enumerate}
+	\item esiste
+	\item è finito
+	\item il suo valore non cambia in funzione della direzione dal quale lo si approccia
+\end{enumerate}
+La difficoltà aggiuntiva rispetto al caso reale è dovuto al fatto che in campo complesso il numero di direzioni possibili è infinito. Le condizioni sono quindi molto più restrittive del caso reale, ovvero
+\begin{enumerate}
+	\item Devono essere rispettate le \textbf{condizioni di Cauchy-Riemann}:
+	\begin{align}
+		\frac{\partial u(x,y)}{\partial x} &= +\frac{\partial v(x,y)}{\partial y}\\
+		\frac{\partial u(x,y)}{\partial y} &= -\frac{\partial v(x,y)}{\partial x}		
+	\end{align}
+	\item Le derivate parziali prime di $u(x,y)$ e $v(x,y)$ devono essere continue
+\end{enumerate}
+
+Le funzioni di variabile complessa si dividono in due categorie:
+\begin{enumerate}
+	\item \textbf{funzioni a singolo valore}, ovvero che assumono lo stesso valore in $z_0$ indipendentemente dal percorso fatto per raggiungerlo. Ad esempio
+	\begin{align}
+		f(z) = \frac{1}{z}
+	\end{align}
+	\item \textbf{funzioni multivalore}, ovvero il cui valore varia a seconda del percorso fatto per raggiungere $z_0$. Ad esempio
+	\begin{align}
+		g(z) = \ln(z) = \ln |z| + i \arg (z)
+	\end{align}
+\end{enumerate}
+
+Se la funzione è differenziabile ed è a \textbf{singolo valore} per ogni punto di un insieme $\mathcal{D}$, allora si dice che è \textbf{analitica} in questo insieme, che prende il nome di \textbf{dominio di analiticità}. All'interso di $\mathcal{D}$ essa non può assumere massimi locali.
+
+Una funzione analitica può essere anche riscritta come (RITROVA GLI APPUNTI DI SANTINI)
+\begin{align}
+	f(z) = u(x,y) + iv(x,y) \to f(z) = u(z,\overline{z}) + i v(z,\overline{z})
+\end{align}
+
+Se una funzione è analitica in un punto, questo si dice \textbf{punto regolare} della funzione, altrimenti prende il nome di \textbf{punto singolare}.
+
+Per le funzioni multivalore spesso si può "barare" utilizzando le \textbf{superfici di Riemann}, che ci permettono di usare le comode proprietà delle funzioni analitiche.
+
+Il \textbf{teorema di Cauchy} ci dice che, per curve chiuse $\gamma$
+\begin{align}
+	\oint_\gamma dz \; f(z) = 0 \quad \forall \gamma \in \mathcal{D}
+\end{align}
+Siccome qualunque curva chiusa può essere scritta come combinazioni di curve con gli stessi estremi, questo implica che fissati gli estremi di integrazione il valore dell'integrale è indipendente dal percorso.
+
+
+\newpage
+\subsection{Zeri e singolarità (Alessandro Marcelli)}
+
+\subsubsection{Zeri}
+
+Se una funzione $f(z)$ sparisce per $z=z_0$ allora tale punto viene detto \textbf{zero della funzione}. Uno zero si dice di ordine $n$ quando
+\begin{align}
+	f(z_0) = \left. \frac{df(z)}{dz} \right|_{z=z_0} =  \left. \frac{d^2 f(z)}{dz^2} \right|_{z=z_0} = \dots = \left. \frac{d^{n-1}f(z)}{dz^{n-1}} \right|_{z=z_0} = 0 \spacer
+	\left. \frac{d^{n}f(z)}{dz^{n}} \right|_{z=z_0} \neq 0
+\end{align}
+
+\subsubsection{Singolarità}
+
+Le \textbf{singolarità} di una funzione sono i punti in cui  una funzione non è analitica. Qualora vi sia un solo punto nell'insieme si parla di \textbf{singolarità isolata}.
+Possiamo dividerle in tre categorie
+\begin{enumerate}
+	\item \textbf{Singolarità eliminabile}, quando esiste finito il limite tendente ad essa.
+	\item \textbf{Poli di ordine $n$}, ovvero dove la serie di Laurent della funzione ha coefficienti nulli da $b_{n+1}$ in poi.
+	\item \textbf{Singolarità essenziali} quando la serie di LAurentha infinit coefficienti non nulli
+\end{enumerate}
+
+APPUNTI SANTINI DATROVARE
+
+\subsubsection{Residui}
+
+Se in un insieme $A$ la nostra $f(z)$ presenta singolarità isolate $z_i$, non vale più il teorema di Cauchy, e quindi non si annulla l'integrale, il cui valore viene dato dalla somma dei \textbf{residui della funzione} in tali punti
+\begin{align}
+	&\oint_\gamma dz \; f(z) = \sum_{i=1}^N \text{Res} (f(z), z_i)\\
+	&\text{Res} (f(z), z_i) = \limit{z}{z_i} \frac{1}{(n-1)!} \left( \frac{d^{n-1}}{dz^{n-1}} \left[ (z-z_0)^n f(z) \right] \right) \spacer n = \text{ordine del polo}
+\end{align}
+
+
+\subsection{Indicatore Logaritmico (Davide Bufalini)}
+Data una funzione $f(z)$ meromorfa ,si definisce l'\textbf{indicatore logaritmico} come
+\begin{align}
+	L_f(z) = \frac{d}{dz}ln(f(z)) = \frac{f'(z)}{f(z)}
+\end{align}
+$L_f(z)$ sarà dotata di poli semplici.
+
+Facciamo alcune osservazioni:
+\begin{enumerate}
+	\item Se $f(z)$ ha $N$ poli e $K$ zeri allora
+	\begin{align}
+		\oint_C \frac{dz}{2\pi i} L_f(z) = \sum_{i=1}^{N} m_i - \sum_{l=1}^{M}r_l
+	\end{align}
+	Le quantità $m_i$ e $r_l$ sono rispettivamente le molteplicità dei poli e degli zeri di $f(z)$.
+	\item Per l'indicatore logaritmico vale la seguente relazione
+	\begin{align}
+		\int_{z_i}^{z_f}\frac{dz}{2\pi i} L_f(z) = \frac{1}{2\pi} \Delta_c Arg(f(z))
+	\end{align}
+	\item In generale vale che
+	\begin{align}
+		\oint_C \frac{dz}{2\pi i} L_f(z) \phi(z) = \sum_{i=1}^{N} m_i\phi(a_i) - \sum_{l=1}^{M}r_l\phi(b_lcc)
+	\end{align}
+	Dove $a_i$ e $b_l$ sono rispettivamente i poli e gli zeri di $\phi(z)$. 
+\end{enumerate}
+
+\newpage
+
+\subsection{Espansione di Weierstrass (Davide Bufalini)}
+Presa una $f(z)$ con infiniti zeri $z_j$ numerabili di ordine $\alpha_j$ che si accumulano all'infinito (e mai allo zero???) allora vale lo sviluppo
+\begin{align}
+	f(z) =f(0) e^{z\frac{f'(0)}{f(0)}} \prod_{n=1}^{+\infty}\left( 1 - \frac{z}{z_n} \right)^{\alpha_n} e^{\alpha_n \frac{z}{z_n}}
+\end{align}
+
+\subsection{Funzioni speciali (Alessandro Marcelli)}
+
+\subsubsection{Funzione Gamma di Eulero}
+\begin{align}
+	\Gamma(z) &= \int_{0}^{\infty} dt \; e^{-t} t^{z-1} = \dots =  \quad &\text{Integrale Euleriano di II tipo}\\
+	&= \frac{1}{z} \prod_{k=1}^{\infty} \left( 1+ \frac{1}{k} \right)^z \left( 1+ \frac{z}{k} \right)^{-1}
+\end{align}
+Gode della proprietà	
+\begin{align}
+	&\Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)} \firstpassage
+	&\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{2}\right) = \pi \rightarrow \Gamma \left( \frac{1}{2} \right) = \sqrt{\pi} \\
+	&\Gamma\left(\frac{1}{2} + \xi\right) \Gamma\left(\frac{1}{2} - \xi\right) = \frac{\pi}{\cos(\pi \xi)}\\
+	&\sqrt{\pi} \Gamma(2z) = 2^{2z-1} \Gamma(z) \Gamma \left( z + \frac{1}{2} \right)\\
+	&\Gamma(\overline{z}) = \overline{\Gamma(z)}
+\end{align}
+In campo complesso si può prolungare tramite il cammino di Hankel, e si arriva ad ottenere
+\begin{align}
+	\Gamma(n) = (n-1)!
+\end{align}
+
+\subsubsection{Funzione Digamma}
+\begin{align}
+	\psi(z) = \frac{\Gamma'(z)}{\Gamma(z)} = \frac{d}{dz} \ln \Gamma (z)
+\end{align}
+\subsubsection{Funzione beta di Eulero}
+\begin{align}
+	B(p,q) &= \int_{0}^{1} dt \; t^{p-1} (1-t)^{q-1} = \dots =  \quad &\text{Integrale Euleriano di I tipo}\\
+	&= \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
+\end{align}
+
+\subsubsection{Funzione zeta di Riemann generalizzata}
+
+Sono stanco capo.
+
+\newpage
