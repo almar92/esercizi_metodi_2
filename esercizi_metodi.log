@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.6)  31 JUL 2023 17:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.6)  1 AUG 2023 18:06
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **esercizi_metodi.tex
 (./esercizi_metodi.tex
@@ -596,7 +596,10 @@ Overfull \hbox (29.50932pt too wide) has occurred while \output is active
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 17
  []
 
-[17] [18]
+[17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 1.5.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
 ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 19
@@ -609,6 +612,12 @@ ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 21
  []
 
 [21] [22]
+Overfull \hbox (29.50932pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 1.5.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
+ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 23
+ []
+
+[23]
 
 LaTeX Warning: Command \textdegree invalid in math mode on input line 458.
 
@@ -616,35 +625,29 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 458.
 LaTeX Warning: Command \textdegree invalid in math mode on input line 458.
 
 Missing character: There is no ° in font cmr12!
-
+[24]))
 Overfull \hbox (29.50932pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 1.5.  ESPANSIONI ASINTOTICHE (DAVIDE BUFALINI, ALESSANDRO MARC
-ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 23
+ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 25
  []
 
-[23])) [24]
+[25]
 \openout2 = `./TeX_files/chapter02.aux'.
 
- (./TeX_files/chapter02.tex
+ (./TeX_files/chapter02.tex [26
+
+
+
+
+]
 Chapter 2.
-(./TeX_files/chapter_02/teoria_generale.tex [25
-
-
-
-
-] [26] [27])
-(./TeX_files/chapter_02/operatori_integrali.tex [28] [29] [30] [31] [32]
-[33]) (./TeX_files/chapter_02/operatori_differenziali.tex [34] [35] [36]
+(./TeX_files/chapter_02/teoria_generale.tex [27] [28] [29])
+(./TeX_files/chapter_02/operatori_integrali.tex [30] [31] [32] [33] [34]
+[35]) (./TeX_files/chapter_02/operatori_differenziali.tex [36] [37] [38]
 Underfull \vbox (badness 7740) has occurred while \output is active []
 
- [37]
-[38]) (./TeX_files/chapter_02/operatori_a_blocchi.tex
-Overfull \hbox (11.73462pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
-I, PAOLO PROIA) \OT1/cmr/m/n/12 39
- []
-
-[39] [40]
+ [39]
+[40]) (./TeX_files/chapter_02/operatori_a_blocchi.tex
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 41
@@ -656,30 +659,36 @@ Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 I, PAOLO PROIA) \OT1/cmr/m/n/12 43
  []
 
-[43]
-Overfull \hbox (2.00653pt too wide) in paragraph at lines 221--221
-[]\OT1/cmr/bx/n/14.4 Esempio 2 con metodo es-plic-ito e analitico (Da-vide Bu-f
-alini, Alessan-
- []
-
-[44]
+[43] [44]
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 45
  []
 
-[45] [46]
+[45]
+Overfull \hbox (2.00653pt too wide) in paragraph at lines 221--221
+[]\OT1/cmr/bx/n/14.4 Esempio 2 con metodo es-plic-ito e analitico (Da-vide Bu-f
+alini, Alessan-
+ []
+
+[46]
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 47
  []
 
-[47])) [48]
+[47] [48]
+Overfull \hbox (11.73462pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
+I, PAOLO PROIA) \OT1/cmr/m/n/12 49
+ []
+
+[49])) [50]
 \openout2 = `./TeX_files/chapter03.aux'.
 
  (./TeX_files/chapter03.tex
 Chapter 3.
-(./TeX_files/chapter_03/teoria_generale.tex [49
+(./TeX_files/chapter_03/teoria_generale.tex [51
 
 
 
@@ -690,24 +699,24 @@ Overfull \hbox (12.40942pt too wide) in paragraph at lines 97--99
 o come com-bi-nazione della soluzione dell'omogenea
  []
 
-) (./TeX_files/chapter_03/edo_lin_1ord.tex [50] [51] [52] [53])
-(./TeX_files/chapter_03/edo_lin_2ord.tex [54] [55]
+) (./TeX_files/chapter_03/edo_lin_1ord.tex [52] [53] [54] [55])
+(./TeX_files/chapter_03/edo_lin_2ord.tex [56] [57]
 Overfull \hbox (3.36156pt too wide) detected at line 103
 []
  []
 
-[56] [57] [58]
+[58] [59] [60]
 Overfull \hbox (27.09805pt too wide) in paragraph at lines 228--229
 []\OT1/cmr/m/n/12 Iniziamo con-siderando i prob-lemi di Sturm-Liouville con con
 -dizioni ac-ces-sorie date sul bordo dell'intervallo
  []
 
-[59] [60] [61] [62] [63] [64] [65] [66] [67] [68]
+[61] [62] [63] [64] [65] [66] [67] [68] [69] [70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-[70] [71] [72] [73]) (./TeX_files/chapter_03/edo_complesse.tex)) [74]
-(./esercizi_metodi.bbl) [75
+ [71]
+[72] [73] [74] [75]) (./TeX_files/chapter_03/edo_complesse.tex)) [76]
+(./esercizi_metodi.bbl) [77
 
 
 
@@ -722,9 +731,9 @@ Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
 (rerunfilecheck)             Checksum: CE16E787F1950EEE0A106CE13704BD16;23489.
  ) 
 Here is how much of TeX's memory you used:
- 12373 strings out of 478287
- 196912 string characters out of 5849290
- 504886 words of memory out of 5000000
+ 12375 strings out of 478287
+ 196926 string characters out of 5849290
+ 504885 words of memory out of 5000000
  29323 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -746,10 +755,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (81 pages, 500374 bytes).
+Output written on esercizi_metodi.pdf (83 pages, 501256 bytes).
 PDF statistics:
- 1953 PDF objects out of 2073 (max. 8388607)
- 1814 compressed objects within 19 object streams
- 986 named destinations out of 1000 (max. 500000)
+ 1961 PDF objects out of 2073 (max. 8388607)
+ 1820 compressed objects within 19 object streams
+ 988 named destinations out of 1000 (max. 500000)
  718 words of extra memory for PDF output out of 10000 (max. 10000000)
 
