@@ -2,7 +2,74 @@
 
 \subsection{Spunti di teoria}
 
-lol inizio domani
+\subsubsection{Concetti introduttivi}
+
+Per iniziare il discorso, consideriamo il seguente problema di Cauchy del 1o ordine
+\begin{align}
+	\double{\dot{u}(x) = p(x)u(x)}{u(x) = u_0 \hfill}
+\end{align}
+Sappiamo che la soluzione sarà data da
+\begin{align}
+	u(x) = u_0 \cdot exp \left( - \int_{0}^{x} d\xi \; p(\xi) \right) \label{comp1}
+\end{align}
+Se prolunghiamo sui complessi e sviluppiamo in serie la $p(\xi)$ otteniamo
+\begin{align}
+	&p(\xi) = \sum_{k} c_k \xi^k \firstpassage
+	&\int d\xi \; p(\xi) = \sum_{k \neq 1} c_k \frac{\xi ^{k+1}}{k+1} + c_{-1} \ln(\xi)
+\end{align}
+Avremo due casi
+\begin{enumerate}
+	\item $p(\xi)$ non possiede singolarità, e allora l'unica soluzione possibile è la \ref{comp1}
+	\item $p(\xi)$ presenta dei poli, e allora abbiamo due scenari possibili
+	\begin{enumerate}
+		\item $c_{-1} \neq 0 \implies$ la soluzione è proporzionale a \ref{comp1} e ha una \textbf{singolarità algebrica} dell'origine
+		\item $c_{-2} \neq 0 \implies$ la soluzione ha una \textbf{singolarità essenziale} nell'origine
+	\end{enumerate}
+	La presenza di poli rovina l'unicità della soluzione
+\end{enumerate}
+
+Ci concentriamo in questo corso nello studio di equazioni "standard" nella forma
+\begin{align}
+	\frac{d^2}{dz^2}u(z) + p(z) \frac{d}{dz}u(z) + q(z) u(z) = 0
+\end{align}
+Preso un punto $z_0 \in \C$, esso viene classificato come
+\begin{enumerate}
+	\item \textbf{punto regolare} dell'equazione se sia $p(z)$ che $q(z)$ sono analitiche in esso
+	\item \textbf{punto singolare} dell'equazione se non lo sono
+\end{enumerate}
+
+\newpage
+
+\subsubsection{Punti regolari e soluzione per serie}
+
+Sia il seguente problema di Cauchy
+\begin{align}
+	\triple{\ddot{u}(z) + p(z) \dot{u}(z) + q(z) u(z) = 0}{\dot{u}(z_0) = c_1 \hfill }{u(z_0) = c_0 \hfill}
+\end{align}
+e sia $z_0$ un punto regolare dell'equazione. 
+
+Vogliamo dimostrare come in un intorno $|z-z_0| < r_0$ la soluzione sia unica e come sia possibile determinarla con un procedimento iterativo.
+
+Sappiamo come sia possibile trattare i problemi al 2o ordine come combinazione di problemi al 1o ordine. riscriviamo quindi
+\begin{align}
+	\left\{
+	\begin{array}{c}
+		\dot{v}(z) = -p(z) v(z) - q(z) u(z) \\
+		\dot{u}(z) = v(z) \hfill\\
+		v(z_0) = c_1 = \dot{u}(z_0) \hfill\\
+		u(z_0) = c_0 \hfill
+	\end{array}
+	\right.
+\end{align}
+Questo è un caso particolare dove la dimostrazione passerebbe per la condizione di lipschitzianità invece che per quella di analiticità.
+
+Integriamo formalmente le prime due equazioni, e otteniamo
+\begin{align}
+	v(z) &= v(z_0) + \int_{z_0}^{z} d\xi [-p(\xi) v(\xi) - q(\xi)v(\xi)]\\
+	u(z) &= u(z_0) + \int_{z_0}^{z} d\xi \; v(\xi) 
+\end{align}
+
+\newpage
 
 \subsection{Esempi}
 N'aggio fatto in tempo, tanto Bufalini le ha scritte bene su Latex.
