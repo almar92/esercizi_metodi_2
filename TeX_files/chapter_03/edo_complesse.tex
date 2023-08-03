@@ -173,12 +173,96 @@ Da qui non ci resta che ricavare i coefficienti. Esplicitiamo i termini e sostit
 \end{align}
 Sostituiamo nell'equazione generale e otteniamo
 \begin{align}
-	&\ddot{u}(z) = - p(z) \dot{u}(z) - q(z) u(z) \firstpassage
-	&\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} = -p(z) \left(v_0 + \sum_{n=2}^{\infty} c_n n(z-z_0)^{n-1}\right) - q(z) \left( u_0 + v_0 (z-z_0) + \sum_{n=2}^{\infty} c_n(z-z_0)^n \right) \nextpassage
-	&\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} = -p(z)v_0 - q(z)[u_0 + v_0 (z-z_0) ] - \sum_{n=2}^{\infty} c_n [n(z-z_0)^{n-1} + (z-z_0)^n]
+	\ddot{u}(z) =& - p(z) \dot{u}(z) - q(z) u(z) \firstpassage
+	\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} =& -p(z) \left(v_0 + \sum_{n=2}^{\infty} c_n n(z-z_0)^{n-1}\right) - q(z) \left( u_0 + v_0 (z-z_0) + \sum_{n=2}^{\infty} c_n(z-z_0)^n \right) \nextpassage
+	\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} =& -p(z)v_0 - q(z)[u_0 + v_0 (z-z_0) ] + \nonumber\\ 
+	&- \sum_{n=2}^{\infty} c_n [np(z)(z-z_0)^{n-1} + q(z)(z-z_0)^n] \label{serieode}
+\end{align}
+\newpage
+Per comodità ripetiamo qui la \ref{serieode}
+\begin{align}
+	\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} =& -p(z)v_0 - q(z)[u_0 + v_0 (z-z_0) ] + \nonumber\\ 
+	&- \sum_{n=2}^{\infty} c_n [np(z)(z-z_0)^{n-1} + q(z)(z-z_0)^n]
+\end{align}
+Si procede quindi per confronto, trovando
+\begin{align}
+	n = 2 \to c_2 \cdot 2 \cdot (2-1) (z-z_0)^{2-2} = 2c_2
+\end{align}
+A dx della \ref{serieode} non abbiamo alcun termine corrispondente, ergo
+\begin{align}
+	c_2 = 0
+\end{align}
+Procediamo e troviamo
+\begin{align}
+	n = 3 \to c_3 \cdot 3 \cdot (3-1) (z-z_0)^{3-2} = 6c_3 (z-z_0)
+\end{align}
+A dx troviamo che il termine corrispondente è
+\begin{align}
+	- q(z)v_0 (z-z_0)
+\end{align}
+E dunque per confronto
+\begin{align}
+	&6c_3 \cancel{(z-z_0)} = - q(z)v_0 \cancel{(z-z_0)}\firstpassage
+	&c_3 = -\frac{v_0}{6}q(z) 
+\end{align}
+Proseguiamo imperterriti a mazzetta fino a trovare relazioni ricorrenti tra i coefficienti, e otteniamo così il  nostro sviluppo in serie.
+
+\newpage
+
+\subsubsection{Punti singolari}
+
+Per costruzione, le singolarità di una EDO della forma
+\begin{align}
+	\ddot{u}(z) + p(z) \dot{u}(z) + q(z)u(z) = 0
+\end{align}
+devono coincidere con quelle delle funzioni $p(z)$ e $q(z)$, esono divise in due categorie
+\begin{enumerate}
+	\item punti \textbf{singolari regolari} (anche detti \textbf{inessenziali} o \textbf{fuchsiani}).
+	
+	Sono particolarmente importanti quelli in cui le soluzioni non presentano singolarità essenziali.
+	\item punti \textbf{singolari irregolari}
+\end{enumerate}
+Concentriamoci un attimo sul caso di un punto singolare regolare $z_0$. Le soluzioni che possono essere trovate intorno ad esso di base non saranno in generale monodrome, e qualora si applichi un prolungamento ci troveremo ad avere
+\begin{align}
+	(z-z_0) &\to (z-z_0)e^{2\pi i}\\
+	u_1(z)  &\to U_1(z)\\
+	u_2(z)  &\to U_2(z)
+\end{align}
+Sappiamo però che $u_1(z)$ e $u_2(z)$ sono linearmente indipendenti, e formano quindi una base nello spazio delle soluzioni.
+
+Di conseguenza possiamo scrivere
+\begin{align}
+	&\double{U_1(z) = a_{11} u_1(z) + a_{12} u_2(z)}{U_2(z) = a_{21} u_1(z) + a_{22} u_2(z)}\firstpassage
+	&\left(
+	 \begin{array}{c}
+		 U_1(z)\\
+		 U_2(z)
+	 \end{array}\right) = 
+	 \begin{pmatrix}
+		 a_{11} & a_{12}\\
+		 a_{21} & a_{22}
+	 \end{pmatrix} 	\left(
+     \begin{array}{c}
+		 u_1(z)\\
+		 u_2(z)
+	\end{array}\right)
+\end{align}
+Si può dimostrare come
+\begin{align}
+	W(U_1,U_2) = \det(A) \cdot W(u_1, u_1)
 \end{align}
 
+\paragraph{Considerazioni sulla matrice}  
 
+La matrice $A$ è non singolare e dipendente dalla polidromia di $u_1(z)$ e $u_2(z)$. Come di consueto gli autovalori si ricavano dall'equazione caratteristica
+\begin{align}
+	\det(A -\lambda \mathbb{1}) = 0
+\end{align}
+e possono essere distinti o coincidenti.
+
+A noi interessa trovare una base dove le polidromie in gioco siano le più semplici possibili. 
+
+Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A.
 \newpage
 
 \subsection{Esempi}
