@@ -88,4 +88,4 @@
 \contentsline {subsection}{\numberline {3.4.1}Spunti di teoria}{76}{subsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.1.1}Concetti introduttivi}{76}{subsubsection.3.4.1.1}%
 \contentsline {subsubsection}{\numberline {3.4.1.2}Punti regolari e soluzione per serie}{77}{subsubsection.3.4.1.2}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{78}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{80}{subsection.3.4.2}%

@@ -65,9 +65,119 @@ Questo è un caso particolare dove la dimostrazione passerebbe per la condizione
 
 Integriamo formalmente le prime due equazioni, e otteniamo
 \begin{align}
-	v(z) &= v(z_0) + \int_{z_0}^{z} d\xi [-p(\xi) v(\xi) - q(\xi)v(\xi)]\\
-	u(z) &= u(z_0) + \int_{z_0}^{z} d\xi \; v(\xi) 
+	v(z) &= v(z_0) + \int_{z_0}^{z} d\zeta\; [-p(\zeta) v(\zeta) - q(\zeta)u(\zeta)]\\
+	u(z) &= u(z_0) + \int_{z_0}^{z} d\zeta \; v(\zeta) 
 \end{align}
+Andiamo ora a sostituire funzioni costanti pari ai valori di $v(z_0)$ e $u(z_0)$ negli integrali
+\begin{align}
+	v_1(z) &= v(z_0) + \int_{z_0}^{z} d\zeta\; [-p(\zeta) v_0 - q(\zeta)u_0]\\
+	u_1(z) &= u(z_0) + \int_{z_0}^{z} d\zeta \; v_0 
+\end{align}
+Al passo successivo, poniamo $u_0 = u_1$ e $v_0=v_1$ e ripetiamo
+\begin{align}
+	v_2(z) &= v_1(z_0) + \int_{z_0}^{z} d\zeta\; [-p(\zeta) v_1(\zeta) - q(\zeta)u_1(\zeta)]\\
+	u_2(z) &= u_1(z_0) + \int_{z_0}^{z} d\zeta \; v_1(\zeta) 
+\end{align}
+Siccome in $z=z_0$ i termini integrali spariscono, avremo in tutte le iterazioni che
+\begin{align}
+	v_n(z_0) &= v_0\\
+	u_n(z_0) &= u_0
+\end{align}
+e possiamo quindi riscrivere
+\begin{align}
+	v_2(z) &= v_0 + \int_{z_0}^{z} d\zeta\; [-p(\zeta) v_1(\zeta) - q(\zeta)u_1(\zeta)]\\
+	u_2(z) &= u_0 + \int_{z_0}^{z} d\zeta \; v_1(\zeta) \firstpassage
+	&\dots \nextpassage
+	v_n(z) &= v_0 + \int_{z_0}^{z} d\zeta\; [-p(\zeta) v_{n-1}(\zeta) - q(\zeta)u_{n-1}(\zeta)]\\ 
+	u_n(z) &= u_0 + \int_{z_0}^{z} d\zeta \; v_{n-1}(\zeta)
+\end{align}
+Osserviamo come
+\begin{align}
+	u_n(z) = u_0 + (u_1 - u_0) + (u_2 - u_1) + \dots + (u_n - u_{n-1})
+\end{align}
+I termini n-simi possono essere quindi interpretati come somme parziali di ordine $n$
+\begin{align}
+	v_n(z) &= v_0 + \sum_{k=1}^{n} [v_{k}(z) - v_{k-1}(z)]\\ 
+	u_n(z) &= u_0 + \sum_{k=1}^{n} [u_{k}(z) - u_{k-1}(z)]
+\end{align}
+Vogliamo quindi dimostrare che
+\begin{align}
+	&\limit{n}{\infty} u_n(z) = u(z)\\
+	&\limit{n}{\infty} v_n(z) = v(z)\\
+	&u(z), v(z) \quad \text{analitiche}
+\end{align}
+Definite le due grandezze
+\begin{align}
+	M &= max(|p|,|q|)\\
+	m &> max(|u_0|,|v_0|)
+\end{align}
+Confrontandole con le espressioni di $u_1(z)$ e $v_1(z)$ otteniamo
+\begin{align}
+	|u_1(z) - u_0| &\leq m |z-z_0|\\
+	|v_1(z) - v_0| &\leq 2Mm |z-z_0|	
+\end{align}
+Definendo
+\begin{align}
+	M_1 = max(m, 2Mm)
+\end{align}
+Possiamo maggiorare come
+\begin{align}
+	|u_1(z) - u_0| &\leq M_1 |z-z_0|\\
+	|v_1(z) - v_0| &\leq M_1 |z-z_0|	
+\end{align}
+Passando all'iterazione successiva avremo
+\begin{align}
+	u_2(z) - u_1(z) = \left(\cancel{u_0} + \int_{z_0}^{z} d\zeta \; v_1(\zeta) \right) - \left(\cancel{u_0} + \int_{z_0}^{z} d\zeta \; v_0(\zeta) \right) = \int_{z_0}^{z} d\zeta \; [v_1(\zeta) - v_0(\zeta)]
+\end{align}
+E analogamente avremo
+\begin{align}
+	v_2(z) - v_1(z) = \int_{z_0}^{z} d\zeta\; [-p(\zeta) (v_1(\zeta)-v_0) - q(\zeta)(u_1(\zeta)-u_0)]
+\end{align}
+Anche qui possiamo quindi maggiorare come
+\begin{align}
+	u_2(z) - u_1(z) &= M_1\int_{z_0}^{z} d\zeta\; [\zeta - z_0)]\\
+	v_2(z) - v_1(z) &= 2M_1m\int_{z_0}^{z} d\zeta\; [\zeta - z_0)]
+\end{align}
+Anche qui possiamo maggiorare con
+\begin{align}
+	&M_2 = max(M_1, 2M_1 m) \firstpassage
+	&M_1\int_{z_0}^{z} d\zeta\; [\zeta - z_0)] \leq M_2 \frac{|z-z_0|^2}{2} = M_2 \frac{r^2}{2}
+\end{align}
+Da cui possiamo scrivere
+\begin{align}
+	|u_2(z) - u_1(z)| &\leq M_n \frac{r^n}{n!}\\
+	|v_2(z) - v_1(z)| &\leq M_n \frac{r^n}{n!}	
+\end{align}
+Se adesso riprendiamo la
+\begin{align}
+	u_n(z) &= u_0 + \sum_{k=1}^{n} [u_{k}(z) - u_{k-1}(z)]
+\end{align}
+Possiamo riscrivere
+\begin{align}
+	|u_n(z)| &\leq \sum_{k=0}^{n} \frac{(Mr)^n}{n!}
+\end{align}
+Stesso discorso facciamo per $v(z)$.
+
+Esiste quindi per forza un $r_0$ tale per cui la serie converge in modo assoluto e uniforme, e che quindi definisce una funzione analitica.
+
+Possiamo quindi ridefinire la $u(z)$ tramite la sua espansione di taylor come
+\begin{align}
+	\triple{u(z) = \sum_{n=0}^{\infty} c_n(z-z_0)^n}{\dot{u}(z_0) = v_0 = c_1 \hfill}{u(z_0) = u_0 = c_0 \hfill}
+\end{align}
+Da qui non ci resta che ricavare i coefficienti. Esplicitiamo i termini e sostituiamo
+\begin{align}
+       u(z) &= c_0 + c_1 (z-z_0) + \sum_{n=2}^{\infty} c_n(z-z_0)^n = \nonumber \\
+            &= u_0 + v_0 (z-z_0) + \sum_{n=2}^{\infty} c_n(z-z_0)^n \firstpassage
+ \dot{u}(z) &= v_0 + \sum_{n=2}^{\infty} c_n n(z-z_0)^{n-1} \firstpassage
+\ddot{u}(z) &= \sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2}
+\end{align}
+Sostituiamo nell'equazione generale e otteniamo
+\begin{align}
+	&\ddot{u}(z) = - p(z) \dot{u}(z) - q(z) u(z) \firstpassage
+	&\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} = -p(z) \left(v_0 + \sum_{n=2}^{\infty} c_n n(z-z_0)^{n-1}\right) - q(z) \left( u_0 + v_0 (z-z_0) + \sum_{n=2}^{\infty} c_n(z-z_0)^n \right) \nextpassage
+	&\sum_{n=2}^{\infty} c_n n(n-1)(z-z_0)^{n-2} = -p(z)v_0 - q(z)[u_0 + v_0 (z-z_0) ] - \sum_{n=2}^{\infty} c_n [n(z-z_0)^{n-1} + (z-z_0)^n]
+\end{align}
+
 
 \newpage
 
