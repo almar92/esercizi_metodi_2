@@ -252,8 +252,6 @@ Si può dimostrare come
 	W(U_1,U_2) = \det(A) \cdot W(u_1, u_1)
 \end{align}
 
-\paragraph{Considerazioni sulla matrice $A$} \mbox{}\\
-
 La matrice $A$ è non singolare e dipendente dalla polidromia di $u_1(z)$ e $u_2(z)$. Come di consueto gli autovalori si ricavano dall'equazione caratteristica
 \begin{align}
 	\det(A -\lambda \mathbb{1}) = 0
@@ -262,33 +260,55 @@ e possono essere distinti o coincidenti.
 
 A noi interessa trovare una base dove le polidromie in gioco siano le più semplici possibili. 
 
-Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A.
+Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A. Andiamo a studiare i due possibili casi.
 
-Distinguiamo due casi
-\begin{enumerate}
-	\item $\lambda_1 \neq \lambda_2$
+\subsubsubsection{Autovalori di $A$ non coincidenti}
+
+Sia il caso $\lambda_1 \neq \lambda_2$, in questo caso possiamo porre
+\begin{align}
+	A = \begin{pmatrix}
+		\lambda_1 & 0 \\
+		0 & \lambda_1 
+		\end{pmatrix} \to \double{U_1 = \lambda_1 u_1}{U_2 = \lambda_2 u_2}
+\end{align}	
+Definita la polidromia delle potenze
+\begin{align}
+	(z-z_0)^{\rho_i} \to (z-z_0)^{\rho_i} e^{2\pi i \rho_i} 
+\end{align}
+Possiamo estenderla alle soluzioni imponendo
+\begin{align}
+	\rho_i = \frac{\ln(\lambda_i)}{2\pi i}
+\end{align}
+questo rende infatti monodrome le funzioni
+\begin{align}
+	f_i(z) = \frac{u_i(z)}{(z-z_0)^{\rho_i}}
+\end{align}
+E quindi, ricordando che $z_0$ è una singolarità essenziale, possiamo espandere in esso le $f_i(z)$ in serie di Laurent, ottenendo
+\begin{align}
+	&f_i(z) = \sum_{k\in \Z} c_k (z-z_0)^k = \frac{u_i(z)}{(z-z_0)^{\rho_i}}\firstpassage
+	&\double{u_1(z) = (z-z_0)^{\rho_1}\sum_{k\in \Z} c_k (z-z_0)^k}{u_2(z) = (z-z_0)^{\rho_2}\sum_{k\in \Z} c_k (z-z_0)^k}
+\end{align}
+
+\newpage
+
+\subsubsubsection{Autovalori di $A$ coincidenti}
 		
-		In questo caso possiamo porre
-		\begin{align}
-			A = \begin{pmatrix}
-				\lambda_1 & 0 \\
-				0 & \lambda_1 
-			\end{pmatrix} \to \double{U_1 = \lambda_1 u_1}{U_2 = \lambda_2 u_2}
-		\end{align}	
-		Deifinita la polidromia delle potenze
-		\begin{align}
-			(z-z_0)^{\rho_i} \to (z-z_0)^{\rho_i} e^{2\pi i \rho_i} 
-		\end{align}
-		Possiamo estenderla alle soluzioni imponendo
-		\begin{align}
-			\rho_i = \frac{\ln(\lambda_i)}{2\pi i}
-		\end{align}
+Se invece ci troviamo nel caso $\lambda_1 = \lambda_2$ non è detto che possiamo riscrivere la matrice in forma diagonale. Possiamo però ricondurci ad una matrice inferiore di Hessemberg del tipo
+\begin{align}
+	A = \begin{pmatrix}
+		\lambda_1 & 0        \\
+		b_{21}    & \lambda_1
+	\end{pmatrix} \to \double{U_1 = \lambda_1 u_1 \hfill}{U_2 = b_{21} u_1 + \lambda_1 u_2}
+\end{align}
+Riprendendo le funzioni definite prima, in questo caso vale ancora la monodromia per
+\begin{align}
+	f_1(z) =  \frac{u_1(z)}{(z-z_0)^{\rho_1}}
+\end{align}
+Invece per l'altra possiamo procedere nel seguente modo
+\begin{align}
+	\frac{U_2}{U_1} = \frac{b_{21} u_1 + \lambda_1 u_2}{\lambda_1 u_1} = \frac{b_{21}}{\lambda_1} + \frac{u_2}{u_1} 
+\end{align}
 
-	\item $\lambda_1 \neq \lambda_2$
-
-
-
-\end{enumerate}
 
 
 
