@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  3 AUG 2023 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 AUG 2023 09:55
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -721,7 +721,21 @@ Overfull \hbox (15.6699pt too wide) detected at line 180
 []
  []
 
-[79] [80] [81])) [82] (./esercizi_metodi.bbl) [83
+[79] [80]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 255.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 255.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+[81])) [82] (./esercizi_metodi.bbl) [83
 
 
 
@@ -733,11 +747,11 @@ Overfull \hbox (15.6699pt too wide) detected at line 180
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 9EE097F7B4BF411B52D3EC265EC42FC3;24307.
+(rerunfilecheck)             Checksum: 40FC79F334AF9FB0AFA7061485BB5481;24320.
  ) 
 Here is how much of TeX's memory you used:
- 12462 strings out of 478287
- 198229 string characters out of 5849289
+ 12467 strings out of 478287
+ 198293 string characters out of 5849289
  505017 words of memory out of 5000000
  29329 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
@@ -760,10 +774,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (89 pages, 517502 bytes).
+Output written on esercizi_metodi.pdf (89 pages, 518296 bytes).
 PDF statistics:
- 2098 PDF objects out of 2487 (max. 8388607)
- 1950 compressed objects within 20 object streams
- 1069 named destinations out of 1200 (max. 500000)
+ 2103 PDF objects out of 2487 (max. 8388607)
+ 1955 compressed objects within 20 object streams
+ 1074 named destinations out of 1200 (max. 500000)
  750 words of extra memory for PDF output out of 10000 (max. 10000000)
 

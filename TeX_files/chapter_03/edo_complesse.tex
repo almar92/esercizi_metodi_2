@@ -207,7 +207,6 @@ E dunque per confronto
 \end{align}
 Proseguiamo imperterriti a mazzetta fino a trovare relazioni ricorrenti tra i coefficienti, e otteniamo così il  nostro sviluppo in serie.
 
-\newpage
 
 \subsubsection{Punti singolari}
 
@@ -228,6 +227,7 @@ Concentriamoci un attimo sul caso di un punto singolare regolare $z_0$. Le soluz
 	u_1(z)  &\to U_1(z)\\
 	u_2(z)  &\to U_2(z)
 \end{align}
+\newpage
 Sappiamo però che $u_1(z)$ e $u_2(z)$ sono linearmente indipendenti, e formano quindi una base nello spazio delle soluzioni.
 
 Di conseguenza possiamo scrivere
@@ -252,7 +252,7 @@ Si può dimostrare come
 	W(U_1,U_2) = \det(A) \cdot W(u_1, u_1)
 \end{align}
 
-\paragraph{Considerazioni sulla matrice}  
+\paragraph{Considerazioni sulla matrice $A$} \mbox{}\\
 
 La matrice $A$ è non singolare e dipendente dalla polidromia di $u_1(z)$ e $u_2(z)$. Come di consueto gli autovalori si ricavano dall'equazione caratteristica
 \begin{align}
@@ -263,6 +263,38 @@ e possono essere distinti o coincidenti.
 A noi interessa trovare una base dove le polidromie in gioco siano le più semplici possibili. 
 
 Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A.
+
+Distinguiamo due casi
+\begin{enumerate}
+	\item $\lambda_1 \neq \lambda_2$
+		
+		In questo caso possiamo porre
+		\begin{align}
+			A = \begin{pmatrix}
+				\lambda_1 & 0 \\
+				0 & \lambda_1 
+			\end{pmatrix} \to \double{U_1 = \lambda_1 u_1}{U_2 = \lambda_2 u_2}
+		\end{align}	
+		Deifinita la polidromia delle potenze
+		\begin{align}
+			(z-z_0)^{\rho_i} \to (z-z_0)^{\rho_i} e^{2\pi i \rho_i} 
+		\end{align}
+		Possiamo estenderla alle soluzioni imponendo
+		\begin{align}
+			\rho_i = \frac{\ln(\lambda_i)}{2\pi i}
+		\end{align}
+
+	\item $\lambda_1 \neq \lambda_2$
+
+
+
+\end{enumerate}
+
+
+
+
+
+
 \newpage
 
 \subsection{Esempi}
