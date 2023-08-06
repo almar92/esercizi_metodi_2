@@ -315,7 +315,9 @@ che possiamo espandere in serie di Laurent intorno a $z_0$
 	&g(z) = \sum_{k\in \Z}d_k (z-z_0)^k = \frac{u_2(z)}{u_1(z)} -A\ln (z-z_0) \spacer A = \frac{b_{21}}{\lambda_1} \cdot \frac{1}{2\pi i} \firstpassage
 	&\frac{u_2(z)}{u_1(z)} = A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
 	&u_2(z) = u_1(z) \cdot \left[ A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k \right] \nextpassage
-	&u_2(z) = A u_1(z) \ln(z-z_0) + u_1(z) \sum_{k\in \Z}d_k (z-z_0)^k\nextpassagecomm{non chiaro, indagare}
+	&u_2(z) = A u_1(z) \ln(z-z_0) + u_1(z) \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
+	&u_2(z) = A u_1(z) \ln(z-z_0) + (z-z_0)^{\rho_1}\sum_{k\in \Z} c_k (z-z_0)^k \sum_{k\in \Z}d_k (z-z_0)^k\nextpassagecomm{applico il prodotto di Cauchy?}
+	&u_2(z) = A u_1(z) \ln(z-z_0) + (z-z_0)^{\rho_1}\sum_{k\in \Z}\sum_{i=0}^{k} c_k d_i (z-z_0)^{k+i}\nextpassage
 	&u_2(z) = A \ln(z-z_0) u_1(z) + (z-z_0)^{\rho_1} \sum_{k\in \Z}b_k (z-z_0)^k
 \end{align}
 
