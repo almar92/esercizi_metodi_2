@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 AUG 2023 22:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 AUG 2023 18:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -461,7 +461,7 @@ LaTeX Info: Redefining \nameref on input line 90.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=381, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=385, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 109.
@@ -484,11 +484,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-])
+] [2])
 \tf@toc=\write4
 \openout4 = `esercizi_metodi.toc'.
 
- [2] [3]
+ [3]
 \openout2 = `./TeX_files/introduzione.aux'.
 
 
@@ -730,30 +730,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 265.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
-
- []
-
 [81]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 294.
+(hyperref)                removing `math shift' on input line 293.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 294.
+(hyperref)                removing `math shift' on input line 293.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
-
- []
-
-[82])) [83] [84
+[82] [83] [84])) [85] [86
 
 
 
-] (./esercizi_metodi.bbl) [85
+] (./esercizi_metodi.bbl) [87
 
 ] (./esercizi_metodi.aux
 (./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
@@ -762,13 +752,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: D886366C05A60BF46E7DD8B1A2A54A43;24547.
+(rerunfilecheck)             Checksum: 09C8793C1B628AF50955A912E356B505;24748.
  ) 
 Here is how much of TeX's memory you used:
- 12478 strings out of 478287
- 198456 string characters out of 5849289
- 505030 words of memory out of 5000000
- 29331 multiletter control sequences out of 15000+600000
+ 12510 strings out of 478287
+ 198888 string characters out of 5849289
+ 506093 words of memory out of 5000000
+ 29333 multiletter control sequences out of 15000+600000
  482669 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -789,10 +779,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (93 pages, 520870 bytes).
+Output written on esercizi_metodi.pdf (95 pages, 528422 bytes).
 PDF statistics:
- 2133 PDF objects out of 2487 (max. 8388607)
- 1981 compressed objects within 20 object streams
- 1083 named destinations out of 1200 (max. 500000)
- 758 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2180 PDF objects out of 2487 (max. 8388607)
+ 2025 compressed objects within 21 object streams
+ 1113 named destinations out of 1200 (max. 500000)
+ 766 words of extra memory for PDF output out of 10000 (max. 10000000)
 

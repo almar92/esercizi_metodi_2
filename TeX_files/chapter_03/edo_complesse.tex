@@ -263,7 +263,6 @@ A noi interessa trovare una base dove le polidromie in gioco siano le più sempl
 Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A. Andiamo a studiare i due possibili casi.
 
 \subsubsubsection{Autovalori di $A$ non coincidenti}
-
 Sia il caso $\lambda_1 \neq \lambda_2$, in questo caso possiamo porre
 \begin{align}
 	A = \begin{pmatrix}
@@ -292,13 +291,12 @@ E quindi, ricordando che $z_0$ è una singolarità essenziale, possiamo espander
 \newpage
 
 \subsubsubsection{Autovalori di $A$ coincidenti}
-		
 Se invece ci troviamo nel caso $\lambda_1 = \lambda_2$ non è detto che possiamo riscrivere la matrice in forma diagonale. Possiamo però ricondurci ad una matrice inferiore di Hessemberg del tipo
 \begin{align}
 	A = \begin{pmatrix}
 		\lambda_1 & 0        \\
 		b_{21}    & \lambda_1
-	\end{pmatrix} \to \double{U_1 = \lambda_1 u_1 \hfill}{U_2 = b_{21} u_1 + \lambda_1 u_2}
+	\end{pmatrix} \to \double{U_1(z) = \lambda_1 u_1(z) \hfill}{U_2(z) = b_{21} u_1(z) + \lambda_1 u_2(z)}
 \end{align}
 Riprendendo le funzioni definite prima, in questo caso vale ancora la monodromia per
 \begin{align}
@@ -306,14 +304,99 @@ Riprendendo le funzioni definite prima, in questo caso vale ancora la monodromia
 \end{align}
 Invece per l'altra possiamo procedere nel seguente modo
 \begin{align}
-	\frac{U_2}{U_1} = \frac{b_{21} u_1 + \lambda_1 u_2}{\lambda_1 u_1} = \frac{b_{21}}{\lambda_1} + \frac{u_2}{u_1} 
+	\frac{U_2(z)}{U_1(z)} = \frac{b_{21} u_1(z) + \lambda_1 u_2(z)}{\lambda_1 u_1(z)} = \frac{b_{21}}{\lambda_1} + \frac{u_2(z)}{u_1(z)} 
+\end{align}
+Possiamo quindi affermare che il rapporto dei due vettori della base esibisce le stesse proprietà di polidromia del logaritmo (perché? cercare su appunti o scocciare paolo), e quindi possiamo definire la funzione monodroma
+\begin{align}
+	g(z) = \frac{u_2(z)}{u_1(z)} - \frac{b_{21}}{\lambda_1} \cdot \frac{\ln (z-z_0)}{2\pi i}
+\end{align}
+che possiamo espandere in serie di Laurent intorno a $z_0$
+\begin{align}
+	&g(z) = \sum_{k\in \Z}d_k (z-z_0)^k = \frac{u_2(z)}{u_1(z)} -A\ln (z-z_0) \spacer A = \frac{b_{21}}{\lambda_1} \cdot \frac{1}{2\pi i} \firstpassage
+	&\frac{u_2(z)}{u_1(z)} = A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
+	&u_2(z) = u_1(z) \cdot \left[ A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k \right] \nextpassage
+	&u_2(z) = A u_1(z) \ln(z-z_0) + u_1(z) \sum_{k\in \Z}d_k (z-z_0)^k\nextpassagecomm{non chiaro, indagare}
+	&u_2(z) = A \ln(z-z_0) u_1(z) + (z-z_0)^{\rho_1} \sum_{k\in \Z}b_k (z-z_0)^k
 \end{align}
 
+\newpage
 
+\subsubsubsection{Punti singolari regolari}
+Qualora $z_0$ sia un punto singolare regolare della funzione, e quindi non essenziale, le serie di Laurent devono troncarsi ad una potenza finita negativa. Dovremo quindi riscrivere, nel caso di autovalori non coincidenti
+\begin{align}
+	&\double{u_1(z) = (z-z_0)^{\tilde{\rho}_1}\sum_{n = -N}^{\infty} c_n (z-z_0)^n}{u_2(z) = (z-z_0)^{\tilde{\rho}_2}\sum_{n=-M}^{\infty} d_n (z-z_0)^n}
+\end{align}
+Sfruttando le proprietà di polidromia, sappiamo che possiamo porre
+\begin{align}
+	\tilde{\rho}_i = \rho_i + n_i \spacer \double{n_1 = N}{n_2 = M} \in \N
+\end{align} 
+in modo che
+\begin{enumerate}
+	\item essa sia contenuta tutta nei prefattori esterni alla somma
+	\item la coda della serie di Laurent venga eliminata
+\end{enumerate}
+e possiamo quindi riscrivere
+\begin{align}
+	&\double{u_1(z) = (z-z_0)^{\rho_1}\sum_{k = 0}^{\infty} c_k (z-z_0)^k}{u_2(z) = (z-z_0)^{\rho_2}\sum_{k=0}^{\infty} d_k (z-z_0)^k} \firstpassage
+	&\double{u_1(z) = \sum_{k = 0}^{\infty} c_k (z-z_0)^{k+\rho_1}}{u_2(z) = \sum_{k=0}^{\infty} d_k (z-z_0)^{k + \rho_2}}
+\end{align}
+Allargando il discorso al caso di autovalori coincidenti, possiamo scrivere
+\begin{align}
+	&\double{u_1(z) = \sum_{k = 0}^{\infty} c_k (z-z_0)^{k+\rho_1} \hfill }{u_2(z) = A \ln(z-z_0) \sum_{k = 0}^{\infty} c_k (z-z_0)^{k+\rho_1} + \sum_{k=0}^{\infty}b_k (z-z_0)^{k+\rho_1}} \firstpassage
+	&\double{u_1(z) = \sum_{k = 0}^{\infty} c_k (z-z_0)^{k+\rho_1} \hfill }{u_2(z) = A \ln(z-z_0) \sum_{k = 0}^{\infty} c_k (z-z_0)^{k+\rho_1} + \sum_{k=0}^{\infty}b_k (z-z_0)^{k+\rho_1}}
+\end{align}
+Se andiamo a riprendere la forma generale della EDO
+\begin{align}
+	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
+\end{align}
+a partire dalla forma delle soluzioni possiamo ricavare la forma dei coefficienti:
+\begin{enumerate}
+	\item Possiamo ricavare $q(z)$ direttamente dalla EDO
+	\begin{align}
+		q(z) = - \frac{\ddot{u}(z)}{u(z)} - p(z)\frac{\dot{u}(z)}{u(z)}
+	\end{align}
+	\item Invece $p(z)$ dall'equazione di Liouville che abbiamo introdotto in precedenza
+	\begin{align}
+		&\dot{W} + p(z) W = 0 \firstpassage
+		& p(z) = - \frac{\dot{W}}{W} \nextpassage
+		& p(z) = - \frac{u_1(z) \ddot{u}_2(z) - u_2(z) \ddot{u}_1(z)}{u_1(z) \dot{u}_2(z) - u_2(z) \dot{u}_1(z)} \label{pidizeta}
+	\end{align}
+\end{enumerate}
+Detto questo, prendiamo in esame il caso degli autovalori non coincidenti.
 
+Riscrivendo per comodità le soluzioni come
+\begin{align}
+	&\double{u_1(z) = (z-z_0)^{\rho_1} R_1(z)}{u_2(z) = (z-z_0)^{\rho_2}R_2(z) } \spacer \double{R_1(z) = \sum_{k = 0}^{\infty} c_k (z-z_0)^{k} }{ R_2(z) = \sum_{k = 0}^{\infty} d_k (z-z_0)^{k}}
+\end{align}
+E andiamo a calcolarne le derivate prime e seconde
+\begin{align}
+	\dot{u}_i(z) &= \rho_i(z-z_0)^{\rho_i-1} R_i(z) + (z-z_0)^{\rho_i} \dot{R}_i(z)\firstpassage
+	\dot{u}_i(z) &= (z-z_0)^{\rho_i-1}\cdot [\rho_i R_i(z) +(z-z_0)\dot{R}_i(z) ] = \nonumber\\
+				 &= (z-z_0)^{\rho_i-1}\cdot \tilde{R}_i(z) \firstpassagecomm{ripetendo il procedimento}
+	\ddot{u}_i(z)&= (z-z_0)^{\rho_i-2}\cdot \tilde{\tilde{R}}_i(z)
+\end{align}
+Siamo così andati a definire le funzioni $R_i(z)$, $\tilde{R}_i(z)$ $\tilde{\tilde{R}}_i(z)$ che in $z_0$ sono
+\begin{enumerate}
+	\item analitiche 
+	\item mai nulle
+\end{enumerate}
 
+Se quindi ad esempio prendiamo la \ref{pidizeta} possiamo scrivere
+\begin{align}
+	p(z) &= \frac{(z-z_0)^{\rho_1 + \rho_2 -2} (R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z))}{(z-z_0)^{\rho_1 + \rho_2 -1} (R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z))} = \nonumber \\
+	 	 &=(z-z_0)^{-1} \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)} = \nonumber\\
+	 	 &= \frac{P(z)}{z-z_0} \spacer P(z) = \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)}
+\end{align}
+E in modo analogo troviamo
+\begin{align}
+	q(z) = \frac{Q(z)}{(z-z_0)^2}
+\end{align}
 
-
+Per costruzione, sia $P(z)$ che $Q(z)$ sono analitiche, e quindi
+\begin{enumerate}
+	\item $p(z)$ ha al massimo un polo singolo
+	\item $q(z)$ ha al massimo un polo doppio
+\end{enumerate}
 
 \newpage
 
