@@ -76,7 +76,7 @@
 \contentsline {subsubsection}{\numberline {3.3.1.3}Teorema di Green}{61}{subsubsection.3.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.3.1.4}Applicazione del teorema di Green ai problemi di Sturm-Liouville}{62}{subsubsection.3.3.1.4}%
 \contentsline {subsubsection}{\numberline {3.3.1.5}Applicazione del teorema di Green ai problemi di Cauchy}{63}{subsubsection.3.3.1.5}%
-\contentsline {subsubsection}{\numberline {3.3.1.6}Operatori lineari, unicità delle soluzioni e teorema dell'alernativa}{63}{subsubsection.3.3.1.6}%
+\contentsline {subsubsection}{\numberline {3.3.1.6}Operatori lineari, unicità delle soluzioni e teorema dell'alternativa}{63}{subsubsection.3.3.1.6}%
 \contentsline {subsubsection}{\numberline {3.3.1.7}Applicazione del teorema dell'alternativa alle funzioni di Green}{65}{subsubsection.3.3.1.7}%
 \contentsline {subsection}{\numberline {3.3.2}Messaggio dall'autore}{66}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Esempio 1: Problema di Cauchy (Adriano Chialastri) }{66}{subsection.3.3.3}%
@@ -89,7 +89,7 @@
 \contentsline {subsubsection}{\numberline {3.4.1.1}Concetti introduttivi}{76}{subsubsection.3.4.1.1}%
 \contentsline {subsubsection}{\numberline {3.4.1.2}Punti regolari e soluzione per serie}{77}{subsubsection.3.4.1.2}%
 \contentsline {subsubsection}{\numberline {3.4.1.3}Punti singolari}{80}{subsubsection.3.4.1.3}%
-\contentsline {paragraph}{\numberline {3.4.1.3.1}Autovalori di $A$ non coincidenti}{81}{paragraph.3.4.1.3.1}%
-\contentsline {paragraph}{\numberline {3.4.1.3.2}Autovalori di $A$ coincidenti}{82}{paragraph.3.4.1.3.2}%
-\contentsline {paragraph}{\numberline {3.4.1.3.3}Punti singolari regolari}{83}{paragraph.3.4.1.3.3}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{85}{subsection.3.4.2}%
+\contentsline {paragraph}{\numberline {3.4.1.3.1}Soluzioni per autovalori di $A$ non coincidenti}{81}{paragraph.3.4.1.3.1}%
+\contentsline {paragraph}{\numberline {3.4.1.3.2}Soluzioni per autovalori di $A$ coincidenti}{82}{paragraph.3.4.1.3.2}%
+\contentsline {paragraph}{\numberline {3.4.1.3.3}Punti singolari regolari e teorema di Fuchs}{83}{paragraph.3.4.1.3.3}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{86}{subsection.3.4.2}%

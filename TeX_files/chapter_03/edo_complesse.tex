@@ -262,7 +262,7 @@ A noi interessa trovare una base dove le polidromie in gioco siano le più sempl
 
 Questo si traduce nello scegliere una base che renda o diagonale o di Jordan (diagonale a blocchi) la matrice A. Andiamo a studiare i due possibili casi.
 
-\subsubsubsection{Autovalori di $A$ non coincidenti}
+\subsubsubsection{Soluzioni per autovalori di $A$ non coincidenti}
 Sia il caso $\lambda_1 \neq \lambda_2$, in questo caso possiamo porre
 \begin{align}
 	A = \begin{pmatrix}
@@ -290,7 +290,7 @@ E quindi, ricordando che $z_0$ è una singolarità essenziale, possiamo espander
 
 \newpage
 
-\subsubsubsection{Autovalori di $A$ coincidenti}
+\subsubsubsection{Soluzioni per autovalori di $A$ coincidenti}
 Se invece ci troviamo nel caso $\lambda_1 = \lambda_2$ non è detto che possiamo riscrivere la matrice in forma diagonale. Possiamo però ricondurci ad una matrice inferiore di Hessemberg del tipo
 \begin{align}
 	A = \begin{pmatrix}
@@ -315,15 +315,15 @@ che possiamo espandere in serie di Laurent intorno a $z_0$
 	&g(z) = \sum_{k\in \Z}d_k (z-z_0)^k = \frac{u_2(z)}{u_1(z)} -A\ln (z-z_0) \spacer A = \frac{b_{21}}{\lambda_1} \cdot \frac{1}{2\pi i} \firstpassage
 	&\frac{u_2(z)}{u_1(z)} = A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
 	&u_2(z) = u_1(z) \cdot \left[ A\ln (z-z_0) + \sum_{k\in \Z}d_k (z-z_0)^k \right] \nextpassage
-	&u_2(z) = A u_1(z) \ln(z-z_0) + u_1(z) \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
-	&u_2(z) = A u_1(z) \ln(z-z_0) + (z-z_0)^{\rho_1}\sum_{k\in \Z} c_k (z-z_0)^k \sum_{k\in \Z}d_k (z-z_0)^k\nextpassagecomm{applico il prodotto di Cauchy?}
-	&u_2(z) = A u_1(z) \ln(z-z_0) + (z-z_0)^{\rho_1}\sum_{k\in \Z}\sum_{i=0}^{k} c_k d_i (z-z_0)^{k+i}\nextpassage
-	&u_2(z) = A \ln(z-z_0) u_1(z) + (z-z_0)^{\rho_1} \sum_{k\in \Z}b_k (z-z_0)^k
+	&u_2(z) = A\ln(z-z_0)u_1(z) + u_1(z) \sum_{k\in \Z}d_k (z-z_0)^k\nextpassage
+	&u_2(z) = A\ln(z-z_0)u_1(z) + (z-z_0)^{\rho_1}\sum_{k\in \Z} c_k (z-z_0)^k \sum_{k\in \Z}d_k (z-z_0)^k\nextpassagecomm{applico il prodotto di Cauchy?}
+	&u_2(z) = A\ln(z-z_0)u_1(z) + (z-z_0)^{\rho_1}\sum_{k\in \Z}\sum_{i=0}^{k} c_k d_i (z-z_0)^{k+i}\nextpassage
+	&u_2(z) = A\ln(z-z_0)u_1(z) + (z-z_0)^{\rho_1} \sum_{k\in \Z}b_k (z-z_0)^k
 \end{align}
 
 \newpage
 
-\subsubsubsection{Punti singolari regolari}
+\subsubsubsection{Punti singolari regolari e teorema di Fuchs}
 Qualora $z_0$ sia un punto singolare regolare della funzione, e quindi non essenziale, le serie di Laurent devono troncarsi ad una potenza finita negativa. Dovremo quindi riscrivere, nel caso di autovalori non coincidenti
 \begin{align}
 	&\double{u_1(z) = (z-z_0)^{\tilde{\rho}_1}\sum_{n = -N}^{\infty} c_n (z-z_0)^n}{u_2(z) = (z-z_0)^{\tilde{\rho}_2}\sum_{n=-M}^{\infty} d_n (z-z_0)^n}
@@ -355,7 +355,7 @@ a partire dalla forma delle soluzioni possiamo ricavare la forma dei coefficient
 \begin{enumerate}
 	\item Possiamo ricavare $q(z)$ direttamente dalla EDO
 	\begin{align}
-		q(z) = - \frac{\ddot{u}(z)}{u(z)} - p(z)\frac{\dot{u}(z)}{u(z)}
+		q(z) = - \frac{\ddot{u}_1(z)}{u_1(z)} - p(z)\frac{\dot{u}_1(z)}{u_1(z)}
 	\end{align}
 	\item Invece $p(z)$ dall'equazione di Liouville che abbiamo introdotto in precedenza
 	\begin{align}
@@ -386,18 +386,42 @@ Siamo così andati a definire le funzioni $R_i(z)$, $\tilde{R}_i(z)$ $\tilde{\ti
 Se quindi ad esempio prendiamo la \ref{pidizeta} possiamo scrivere
 \begin{align}
 	p(z) &= \frac{(z-z_0)^{\rho_1 + \rho_2 -2} (R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z))}{(z-z_0)^{\rho_1 + \rho_2 -1} (R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z))} = \nonumber \\
-	 	 &=(z-z_0)^{-1} \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)} = \nonumber\\
-	 	 &= \frac{P(z)}{z-z_0} \spacer P(z) = \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)}
+	 	 &=(z-z_0)^{-1} \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)} \nextpassage
+	p(z) &= \frac{P(z)}{z-z_0} \spacer P(z) = \frac{R_1(z)\tilde{\tilde{R}}_2(z) - R_2(z)\tilde{\tilde{R}}_1(z)}{R_1(z)\tilde{R}_2(z) - R_2(z)\tilde{R}_1(z)}
 \end{align}
 E in modo analogo troviamo
 \begin{align}
-	q(z) = \frac{Q(z)}{(z-z_0)^2}
+	q(z) &= -\frac{(z-z_0)^{\rho_1-2}\cdot \tilde{\tilde{R}}_1(z)}{(z-z_0)^{\rho_1} R_1(z)} - p(z)\frac{(z-z_0)^{\rho_1-1}\cdot \tilde{R}_1(z)}{(z-z_0)^{\rho_1} R_1(z)} = \nonumber \\
+		 &= -\frac{1}{(z-z_0)^{2}} \cdot \frac{\tilde{\tilde{R}}_1(z)}{R_1(z)} - \frac{P(z)}{z-z_0} \cdot \frac{1}{z-z_0} \cdot \frac{\tilde{R}_1(z)}{R_1(z)} = \nonumber \\
+		 &=	-\frac{1}{(z-z_0)^{2}} \cdot \left[ \frac{\tilde{\tilde{R}}_1(z)}{R_1(z)} - P(z)\cdot \frac{\tilde{R}_1(z)}{R_1(z)} \right] = \nextpassage
+	q(z) &= \frac{Q(z)}{(z-z_0)^2} \spacer Q(z) = P(z)\cdot \frac{\tilde{R}_1(z)}{R_1(z)} - \frac{\tilde{\tilde{R}}_1(z)}{R_1(z)} 
 \end{align}
+
+\newpage
 
 Per costruzione, sia $P(z)$ che $Q(z)$ sono analitiche, e quindi
 \begin{enumerate}
 	\item $p(z)$ ha al massimo un polo singolo
 	\item $q(z)$ ha al massimo un polo doppio
+\end{enumerate}
+
+Possiamo quindi enunciare il \textbf{Teorema di Fuch:} \textit{presa una EDO nella forma
+\begin{align}
+	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
+\end{align}
+un punto $z_0$ si dice \textbf{singolare regolare} o \textbf{fuchsiano} se e solo se valgono le seguenti condizioni
+\begin{align}
+	\double{\limit{z}{z_0} p(z)(z-z_0) = p_0}{\limit{z}{z_0} q(z)(z-z_0)^2 = q_0} \spacer p_0, q_0 \; \text{costanti}
+\end{align}
+}
+Questo significa che le EDO oggetto di studio di questo corso, in presenza di punti fuchsiani assumono la forma
+\begin{align}
+	\ddot{u}(z) + \frac{P(z-z_0)}{z-z_0} \cdot \dot{u}(z) + \frac{Q(z-z_0)}{(z-z_0)^2} \cdot u(z) = 0
+\end{align}
+Dobbiamo dimostrare ancora due cose
+\begin{enumerate}
+	\item che i coefficienti siano determinati a partire dalla EDO 
+	\item che le serie corrispondenti siano convergenti
 \end{enumerate}
 
 \newpage
