@@ -92,4 +92,5 @@
 \contentsline {paragraph}{\numberline {3.4.1.3.1}Soluzioni per autovalori di $A$ non coincidenti}{81}{paragraph.3.4.1.3.1}%
 \contentsline {paragraph}{\numberline {3.4.1.3.2}Soluzioni per autovalori di $A$ coincidenti}{82}{paragraph.3.4.1.3.2}%
 \contentsline {paragraph}{\numberline {3.4.1.3.3}Punti singolari regolari e teorema di Fuchs}{83}{paragraph.3.4.1.3.3}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{86}{subsection.3.4.2}%
+\contentsline {subparagraph}{\numberline {3.4.1.3.3.1}Verifica dei coefficienti}{85}{subparagraph.3.4.1.3.3.1}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{87}{subsection.3.4.2}%

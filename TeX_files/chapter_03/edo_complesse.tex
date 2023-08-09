@@ -418,10 +418,54 @@ Questo significa che le EDO oggetto di studio di questo corso, in presenza di pu
 \begin{align}
 	\ddot{u}(z) + \frac{P(z-z_0)}{z-z_0} \cdot \dot{u}(z) + \frac{Q(z-z_0)}{(z-z_0)^2} \cdot u(z) = 0
 \end{align}
-Dobbiamo dimostrare ancora due cose
+Dobbiamo dimostrare che
 \begin{enumerate}
-	\item che i coefficienti siano determinati a partire dalla EDO 
-	\item che le serie corrispondenti siano convergenti
+	\item i coefficienti siano determinati a partire dalla EDO 
+	\item le serie corrispondenti siano convergenti
+\end{enumerate}
+
+\subsubsubsubsection{Verifica dei coefficienti}
+Poniamo $\xi = z-z_0$ ed espandiamo secondo Taylor in $\xi = 0$ le due funzioni analitiche
+\begin{align}
+	P(\xi) = \sum_{k = 0}^{\infty} p_k \xi^k \spacer Q(\xi) = \sum_{k = 0}^{\infty} q_k \xi^k
+\end{align}
+Prendiamo ora un Ansatz generico
+\begin{align}
+	&u(z) = \xi^\rho \sum_{k=0}^{\infty} c_k \xi^k \firstpassage
+	&\double{\dot{u}(z) = \sum_{k=0}^{\infty} c_k (k+\rho)\xi^{k+\rho-1}\hfill}{\ddot{u}(z) = \sum_{k=0}^{\infty} c_k (k+\rho)(k+\rho-1)\xi^{k+\rho-2}}
+\end{align}
+Arriviamo così a riscrivere
+\begin{align}
+	&\ddot{u}(\xi) + \frac{P(\xi)}{\xi} \cdot \dot{u}(\xi) + \frac{Q(\xi)}{\xi^2} \cdot u(z) = 0 \firstpassage
+	&\sum_{k=0}^{\infty} c_k (k+\rho)(k+\rho-1)\xi^{k+\rho-2} + \sum_{n = 0}^{\infty} p_n \xi^{n-1} \sum_{k=0}^{\infty} c_k (k+\rho)\xi^{k+\rho-1} + \sum_{n = 0}^{\infty} q_n \xi^{n-2}\sum_{k=0}^{\infty} c_k \xi^{k+\rho} = 0 \nextpassage
+	&\sum_{k=0}^{\infty} c_k (k+\rho)(k+\rho-1)\xi^{k+\rho-2} + \sum_{n = 0}^{\infty} p_n \xi^n \sum_{k = 0}^{\infty} c_k (k+\rho)\xi^{k+\rho -2} + \sum_{n = 0}^{\infty} q_n \xi^n \sum_{k = 0}^{\infty} c_k \xi^{k+\rho -2} = 0
+\end{align}
+\newpage
+Come anche in precedenza, ci appoggiamo al prodotto di Cauchy e definendo l'inidce $l = n+k$ otteniamo
+\begin{align}
+	&\sum_{n = 0}^{\infty} p_n \xi^n \sum_{k = 0}^{\infty} c_k (k+\rho)\xi^{k+\rho -2} = \sum_{l = 0}^{\infty} \sum_{n = 0}^{l} p_n c_k (l-n+\rho)\xi^{l+\rho -2}\\
+	&\sum_{n = 0}^{\infty} q_n \xi^n \sum_{k = 0}^{\infty} c_k \xi^{k+\rho -2} = \sum_{n = 0}^{\infty}\sum_{n = 0}^{l} q_n c_l \xi^{l+\rho -2}
+\end{align}
+E sfruttando il fatto che $l$ e $k$ sono indici muti, possiamo raggruppare tutto sotto l'unica sommatoria
+\begin{align}
+	\sum_{k = 0}^\infty \left[ c_k (k+\rho)(k+\rho-1) + \sum_{n = 0}^{l} \left( p_n c_{k-n} (k-n+\rho) + q_n c_{k-n} \right) \right] \xi^{l+\rho -2} = 0
+\end{align}
+Da questo ricaviamo l'espressione ricorsiva dei coefficienti, data da
+\begin{align}
+	c_k (k+\rho)(k+\rho-1) + \sum_{n = 0}^{l} \left( p_n c_{k-n} (k-n+\rho) + q_n c_{k-n} \right) = 0
+\end{align}
+Ci si presentano due casi
+\begin{enumerate}
+	\item $c_0 = 0$
+	
+	In questo caso otteniamo la soluzione identicamente nulla
+	\item $c_0 \neq 0$
+	
+	In questo caso per $k=0$ otteniamo la cosidetta \textbf{equazione indiciale}
+	\begin{align}
+		\rho^2 + (p_0 -1)\rho + q_0 = 0
+	\end{align}
+	grazie alla quale possiamo ricavare gli indici $\rho_1$ e $\rho_2$ dell'equazione 
 \end{enumerate}
 
 \newpage
