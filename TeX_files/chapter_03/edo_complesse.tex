@@ -452,7 +452,7 @@ E sfruttando il fatto che $l$ e $k$ sono indici muti, possiamo raggruppare tutto
 \end{align}
 Da questo ricaviamo l'espressione ricorsiva dei coefficienti, data da
 \begin{align}
-	c_k (k+\rho)(k+\rho-1) + \sum_{n = 0}^{l} \left( p_n c_{k-n} (k-n+\rho) + q_n c_{k-n} \right) = 0
+	c_k (k+\rho)(k+\rho-1) + \sum_{n = 0}^{l} \left( p_n c_{k-n} (k-n+\rho) + q_n c_{k-n} \right) = 0 \label{ricors}
 \end{align}
 Ci si presentano due casi
 \begin{enumerate}
@@ -461,12 +461,40 @@ Ci si presentano due casi
 	In questo caso otteniamo la soluzione identicamente nulla
 	\item $c_0 \neq 0$
 	
-	In questo caso per $k=0$ otteniamo la cosidetta \textbf{equazione indiciale}
+	In questo caso per $k=0$ otteniamo la cosidetta \textbf{equazione indiciale}, indipendente dai $c_k$
 	\begin{align}
 		\rho^2 + (p_0 -1)\rho + q_0 = 0
 	\end{align}
-	grazie alla quale possiamo ricavare gli indici $\rho_1$ e $\rho_2$ dell'equazione 
+	grazie alla quale possiamo ricavare gli indici $\rho_1$ e $\rho_2$ dell'equazione. 
+	
+	Definiamo ora
+	\begin{align}
+		\double{F_0(\rho) = \rho(\rho -1) + \rho p_0 + q_0}{F_n(\rho) = \rho p_n + q_n \hfill}
+	\end{align}
+	questo ci permette di riscrivere la \ref{ricors} come
+	\begin{align}
+		&c_0 F_0(\rho) = 0\\
+		&c_1 F_0(\rho + 1) + c_0 F_1(\rho) = 0\\
+		&c_2 F_0(\rho + 2) + c_1 F_0(\rho + 1) + c_0 F_2(\rho) = 0\\
+		&\dots \nonumber\\
+		&c_n F_0(\rho + n) + c_{n-1} F_0(\rho + n-1) + \dots + c_1 F_n(\rho + 1) + c_0 F_1(\rho) = 0	 	
+	\end{align}
+ 	Dobbiamo ora distinguere due casi
+ 	\begin{enumerate}
+ 		\item $\rho_i \neq \rho_j + n \spacer i,j,n \in N$
+ 		
+ 		In questo caso $F_0(\rho_1 + n)$ è sempre non nullo in quanto l'argomento non può essere soluzione dell'equazione indiciale. 
+ 		
+ 		Quindi il sistema determina completamente \begin{enumerate}
+ 			\item i coefficienti $c_k$ di $u_1$ con indice $\rho_1$
+ 			\item i coefficienti $d_k$ di $u_2$ con indice $\rho_2$
+ 		\end{enumerate}
+ 		
+ 		\item $\rho_i =    \rho_j + n \spacer i,j,n \in N$
+ 	\end{enumerate}
 \end{enumerate}
+
+
 
 \newpage
 
