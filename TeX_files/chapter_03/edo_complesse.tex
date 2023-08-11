@@ -489,11 +489,58 @@ Ci si presentano due casi
  			\item i coefficienti $c_k$ di $u_1$ con indice $\rho_1$
  			\item i coefficienti $d_k$ di $u_2$ con indice $\rho_2$
  		\end{enumerate}
- 		
+ 		\newpage
  		\item $\rho_i =    \rho_j + n \spacer i,j,n \in N$
+ 		In questo caso bisogna cambiare Ansatz per la soluzione, altrimenti da $\rho_2$ in poi i termini vanno ad annullarsi in cascata.
+ 		
+ 		Dobbiamo quindi passapre per il metodo del Wronskiano passando per l'Ansatz
+ 		\begin{align}
+ 			u_2(z) = A\ln(z)u_1(z) + z^{\rho_2} \sum_{k=0}^{\infty} b_k z^k
+ 		\end{align}
+ 		e ricavando le relazioni ricorsive per i coefficienti $b_k$ e A, quest'ultimo può essere anche nullo. 		
  	\end{enumerate}
 \end{enumerate}
 
+
+\subsubsubsubsection{Convergenza delle serie}
+Consideriamo un intorno di $z_0$ di raggio $r$ compreso nel dominio di analiticità delle $P(\xi)$ e $Q(\xi)$.
+Abbiamo visto come possono essere espanse secondo Taylor
+\begin{align}
+	P(\xi) = \sum_{k=0}^{\infty} p_k \xi^k \\
+	Q(\xi) = \sum_{k=0}^{\infty} q_k \xi^k
+\end{align}
+Possiamo utilizzare la \textbf{formula di Cauchy} per riscrivere i coefficienti come
+\begin{align}
+	p_k = \frac{1}{k!} \frac{d^k P(\xi)}{d\xi^k} = \frac{1}{2\pi i} \oint d\xi \; \frac{P(\xi)}{\xi^{k+1}}\\
+	q_k = \frac{1}{k!} \frac{d^k Q(\xi)}{d\xi^k} = \frac{1}{2\pi i} \oint d\xi \; \frac{Q(\xi)}{\xi^{k+1}}
+\end{align}
+Per il \textbf{teorema del massimo modulo} sappiamo che
+\begin{align}
+	|p_k| &\leq \frac{\max |P|}{r^k} = M_p\\
+	|q_k| &\leq \frac{\max |Q|}{r^k} = M_q\\
+	|F_k(\rho)| =  | \rho_1 p_k + q_k| &\leq \frac{\max |\rho_1 P + Q|}{r^k} = M_f
+\end{align}
+Definendo 
+\begin{align}
+	M = \max (M_p, M_q, M_f)
+\end{align}
+sappiamo per certo che per $r<r_0$ avremo
+\begin{align}
+	|p_k|,|q_k|,|F_k(\rho_1)| \leq \frac{M}{r^k}
+\end{align}
+e possiamo quindi enunciare il \textbf{teorema:} \textit{data una serie i cui coefficienti sono definibili tramite la \ref{ricors}
+	\begin{align}
+		\sum_{k=0}^{\infty} c_k \xi^k
+\end{align}
+i coefficienti soddisferanno la relazione
+\begin{align}
+	|c_k| \leq c_0 \left(\frac{M}{r}\right)^k
+\end{align}
+e di conseguenza la serie avrà raggio di convergenza finito
+\begin{align}
+	R = \frac{r}{M}
+\end{align}
+}
 
 
 \newpage
