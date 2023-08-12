@@ -542,6 +542,62 @@ e di conseguenza la serie avrà raggio di convergenza finito
 \end{align}
 }
 
+Iniziamo notando come per ipotesi
+\begin{align}
+	&\rho_1 \neq \rho_2 +n \firstpassage
+	& \double{F_0(\rho) = (\rho - \rho_1)(\rho - \rho_2)\hfill }{F_0(\rho_1 +k) = (\rho_1 + k- \rho_1)(\rho_1 + k- \rho_2) = k (k+s)} \spacer s = \rho_1 - \rho_2
+\end{align}
+E dimostriamo il teorema per induzione
+\begin{enumerate}
+	\item $k=1$
+	\begin{align}
+		|c_1| = |c_0| \frac{|F_1(\rho_1)|}{|F_0(\rho_1 + 1)} \leq \frac{M}{r} \frac{|c_0|}{|s+1|} \leq |c_0| \frac{M}{r}
+	\end{align}
+	\item Supponiamo che il teorema sia valido fino a $n-1$
+	\item $k=n$
+	\begin{align}
+		&c_n F_0(\rho + n) + \sum_{l=1}^{n} c_{n-l} F_l (\rho + n -l ) = 0\firstpassage
+		&c_n  = - \frac{\sum_{l=1}^{n} c_{n-l} F_l (\rho + n -l )}{F_0(\rho + n)}\nextpassage
+		&|c_n|  \leq - \frac{\sum_{l=1}^{n} |c_{n-l}| |F_l (\rho + n -l )|}{|n(n+s)|}
+	\end{align}
+	Siccome abbiamo che
+	\begin{align}
+		|F_l (n-l + \rho_l)| &= |(n-l+\rho_1)p_i + q_i| =\nonumber \\
+							 &= |(n-l)p_l + (\rho_1p_i + q_i)| =\nonumber \\
+							 &= |(n-l)p_l + F_1(\rho_1)| \leq \nonumber\\
+							 &\leq (n-l)|p_l| + |F_1(\rho_1)| \leq \nonumber\\
+							 &\leq (n-l) \frac{M^l}{r^l} + \frac{M^l}{r^l}\firstpassage
+		|F_l (n-l + \rho_l)| &\leq (n-l+1) \cdot \frac{M^l}{r^l}	  
+	\end{align}
+
+	Utilizzando le relazioni
+	\begin{align}
+		&\sum_{l=1}^{n} (n-l+1) = (n+1)\sum_{l=1}^{n} 1 - \sum_{l=1}^{n}l = (n+l)n - \frac{n(n+1)}{2} = \frac{n(n+1)}{2}\\
+		&n(n+s) = n^2 + ns > n^2
+	\end{align}	
+	Otteniamo così la tesi
+	\begin{align}
+		|c_n| &\leq -\sum_{l=1}^{n} \frac{1}{n(n+s)} \left[|c_{n-l}| \cdot |F_l (\rho + n -l )| \right] \leq \nonumber \\
+			  &\leq - \frac{1}{n(n+s)} \cdot \sum_{l=1}^{n}  \left[|c_{n-l}| \cdot (n-l+1) \cdot \frac{M^l}{r^l}	 \right] \leq \nonumber \\
+			  &\leq - \frac{1}{n(n+s)} \cdot \sum_{l=1}^{n}  \left[ |c_0|\frac{M^{n-\cancel{l}}}{r^{n-\cancel{l}}} \cdot (n-l+1) \cdot \frac{\cancel{M^l}}{\cancel{r^l}}	 \right] \firstpassage
+		|c_n| &\leq - \frac{|c_0|}{n(n+s)}\cdot \frac{M^n}{r^n} \cdot \sum_{l=1}^{n}(n-l+1) \firstpassage
+		|c_n| &\leq - \frac{|c_0|}{\cancel{n}(n+s)}\cdot \frac{M^n}{r^n}\cdot \frac{\cancel{n}(n+1)}{2}\firstpassage
+		|c_n| &\leq - \frac{|c_0|}{2}\cdot \frac{n+1}{n+s}\cdot \frac{M^n}{r^n} \leq \nonumber\\
+			  &\leq - \frac{|c_0|}{2}\cdot \frac{M^n}{r^n} \leq \nonumber\\
+			  &\leq - |c_0|\cdot \frac{M^n}{r^n}
+	\end{align}
+\end{enumerate}
+
+\textbf{Nota bene:} la dimostrazione vale anche per $\rho_i = \rho_j + n$, rispetto alla parte non contenente il logaritmo.
+
+\subsubsubsection{Punti singolari non regolari}
+Qualora il punto singolare non sia regolare la situazione si complica. Quello che succede di solito è che riesce a ricavare al massimo uno solo degli indici e quindi una soluzione sola, e non sempre si riesce a dimostrare la convergenza della serie ottenuta, che potrebbe quindi essere asintotica.
+
+La situazione migliora in presenza del fenomeno di \textbf{confluenza}, ovvero quando la funzione oggetto di studio che presenta punti irreogolari è il limite di funzioni che invece presentano punti regolari. Vederemo un esempio più avanti.
+
+\newpage
+
+\subsubsection{Punto all'infinito}
 
 \newpage
 
