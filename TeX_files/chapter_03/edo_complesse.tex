@@ -599,7 +599,149 @@ La situazione migliora in presenza del fenomeno di \textbf{confluenza}, ovvero q
 
 \subsubsection{Punto all'infinito}
 
+Per studiare il comportamento della funzione intorno al punto all'infinito dobbiamo applicare il solito cambio di variaibli
+\begin{align}
+	\eta = \frac{1}{z}
+\end{align}
+Che matta il punto nell'origine, e che trasforma le derivate nel seguente modo
+\begin{align}
+	\frac{d}{dz} &= \frac{d}{d\eta} \frac{d\eta}{dz} = -\frac{1}{z^2} \frac{d}{d\eta} = -\eta^2 \frac{d}{d\eta}\\
+	\frac{d^2}{dz^2} &= -\eta^2 \frac{d}{d\eta} \left(-\eta^2 \frac{d}{d\eta}\right) = \eta^4 \frac{d^2}{d\eta^2} + 2\eta^3 \frac{d}{d\eta}
+\end{align}
+E quindi la EDO si trasforma nel seguente modo
+\begin{align}
+	&\frac{d^2}{dz^2} u(z) + p(z)\frac{d}{dz} u(z) + q(z)u(z) = 0 \firstpassage
+	&\left[\eta^4 \frac{d^2}{d\eta^2} + 2\eta^3 \frac{d}{d\eta}\right] u\left(\frac{1}{\eta}\right) + p\left(\frac{1}{\eta}\right)\left[-\eta^2 \frac{d}{d\eta}\right]u\left(\frac{1}{\eta}\right) + q\left(\frac{1}{\eta}\right)u\left(\frac{1}{\eta}\right) = 0 \nextpassage
+	&\eta^4 \frac{d^2}{d\eta^2}u\left(\frac{1}{\eta}\right) + \left[2\eta^3 -\eta^2p\left(\frac{1}{\eta}\right) \right] \frac{d}{d\eta}u\left(\frac{1}{\eta}\right) + q\left(\frac{1}{\eta}\right)u\left(\frac{1}{\eta}\right) = 0 \nextpassagecomm{riscrivo in forma normale}
+	&\frac{d^2}{d\eta^2}u\left(\frac{1}{\eta}\right) + \left[\frac{2}{\eta} -\frac{1}{\eta^2}p\left(\frac{1}{\eta}\right) \right] \frac{d}{d\eta}u\left(\frac{1}{\eta}\right) + \frac{1}{\eta^4} q\left(\frac{1}{\eta}\right)u\left(\frac{1}{\eta}\right) = 0 \label{pinf}
+\end{align}
+Definendo
+\begin{align}
+	\tilde{p}(\eta) &= \frac{2}{\eta} -\frac{1}{\eta^2}p\left(\frac{1}{\eta}\right) \\
+	\tilde{q}(\eta) &= \frac{1}{\eta^4} q\left(\frac{1}{\eta}\right)
+\end{align}
+Possiamo riscrivere la \ref{pinf} nella forma a noi nota (ricontrollare la dipendenza di u, scocciare qualcuno)
+\begin{align}
+	\ddot{u}(\eta) + \tilde{p}(\eta) \dot{u}(\eta) + \tilde{q}(\eta) u(\eta) = 0
+\end{align}
+Ne segue che il punto all'infinito sarà regolare se
+\begin{align}
+	&\limit{\eta}{0} \tilde{p}(\eta) = cost.\\
+	&\limit{\eta}{0} \tilde{q}(\eta) = cost.
+\end{align}
+Dalla prima ricaviamo che
+\begin{align}
+	&\limit{\eta}{0}\left[\frac{2}{\eta} -\frac{1}{\eta^2}p\left(\frac{1}{\eta}\right)\right] = cost \firstpassagecomm{espaniamo $p(\eta^{-1})$ secondo taylor in $\eta = 0$}
+	&p\left(\frac{1}{\eta}\right) = 2\eta + \sum_{k=2}^{\infty} c_k \eta^k \nextpassage
+	&\limit{\eta}{0}\frac{1}{\eta}p\left(\frac{1}{\eta}\right) = 2 \nextpassage
+	&\limit{z}{\infty}zp\left(z\right) = 2	
+\end{align}
+Invece dalla seconda
+\begin{align}
+	&\limit{\eta}{0} \left[\frac{1}{\eta^4} q\left(\frac{1}{\eta}\right)\right] = cost.\firstpassagecomm{espaniamo $q(\eta^{-1})$ secondo taylor in $\eta = 0$}
+	&q \left(\frac{1}{\eta}\right) = \sum_{k=4}^{\infty} c_k \eta^k = c_4 \eta^4 +  \sum_{k=5}^{\infty} c_k \eta^k \nextpassage
+	&\limit{\eta}{0} \left[\frac{1}{\eta^4} q\left(\frac{1}{\eta}\right)\right] = cost. \nextpassage
+	&\limit{z}{\infty} z^4 q\left(z\right) = cost.
+\end{align}
+Riasumendo, il punto all'infinito è \textbf{regolare} se
+\begin{align}
+	\double{\limit{z}{\infty}zp\left(z\right) &= 2\hfill}{\limit{z}{\infty} z^4 q\left(z\right) &= cost.}
+\end{align}
+Allo stesso modo si può arrivare a dire che il punto all'infinito è una \textbf{singolarità regolare} (ovvero è un \textbf{punto fuchsiano}) se
+\begin{align}
+	\double{\limit{z}{\infty}zp\left(z\right) &= cost. \hfill}{\limit{z}{\infty} z^2 q\left(z\right) &= cost.}
+\end{align}
+Se non rispetta nessuna di queste, è una \textbf{singolarità irregolare}.
+
+All'infinito la serie di Taylor diventa una serie di Laurent, e le soluzioni possono scriversi come
+\begin{align}
+	&\double{u_1(z) = z^{-\rho_1} \sum_{n=0} c_n z_{-n}}{u_2(z) = z^{-\rho_2} \sum_{n=0} d_n z_{-n}} &\spacer &\rho_1 \neq \rho_2 + n\\
+	&\double{u_1(z) = z^{-\rho_1} \sum_{n=0} c_n z_{-n}\hfill}{u_2(z) = z^{-\rho_2} \sum_{n=0} b_n z_{-n} + \alpha\ln(z) u_1(z) } &\spacer &\rho_1 = \rho_2 + n
+\end{align}
+
 \newpage
 
+\subsubsection{Equazioni fuchsiane}
+
+Se classificare le equazioni fuchsiane è improponibile, non lo è definirne la forma generale.
+
+Presa una equazione
+\begin{align}
+	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
+\end{align}
+con $N$ punti fuchsiani $\xi_i$ e il punto all'infinito anch'esso singolare regolare, possiamo definirne il P-sibolo come
+\begin{align}
+	P = \begin{pmatrix}
+		\xi_1 & \xi_2 & \dots & \xi_N & \infty\\
+		\downarrow & \downarrow & \downarrow & \downarrow & \downarrow\\
+		\alpha_1 & \alpha_2 & \dots & \alpha_N & \mu_1\\
+		\beta_1 & \beta_2 & \dots & \beta_N & \mu_2
+	\end{pmatrix} \begin{array}{c}
+	\leftarrow \text{punti singolari regolari} \hfill \\
+	\\
+	\leftarrow \text{primi indici relativi a ciascun punto}\hfill\\
+	\leftarrow \text{secondi indici relativi a ciascun punto}
+\end{array}
+\end{align}
+Devono quindi valere in contemporanea sia le condizioni di fuchsianità per gli $\xi_i$, ovvero
+\begin{align}
+	\double{\limit{z}{\xi_i} (z-\xi_i)p(z) = p_0}{\limit{z}{\xi_i} (z-\xi_i)^2 q(z)= q_0} \spacer p_0, q_0 \; \text{costanti} \label{omegakek}
+\end{align}
+che quelle per il punto all'infinito
+\begin{align}
+	\double{\limit{z}{\infty}zp\left(z\right) &= cost. \hfill}{\limit{z}{\infty} z^2 q\left(z\right) &= cost.}
+\end{align}
+Da queste ultime notiamo come, parametrizzando la funzione coefficiente $p(z)$ come 
+\begin{align}
+	p(z) = \frac{P(z)}{\prod_{i=1}^{N}(z-\xi_i)}
+\end{align}
+segue che $P(z)$ debba essere un polinomio di grado $N-1$ in $z$, e possiamo riscriverlo tramite il metodo delle frazioni parziali come
+\begin{align}
+	p(z) = \sum_{i=1}^{N} \frac{A_i}{z-\xi_i}
+\end{align}
+In modo analogo possiamo parametrizzare $q(z)$, tenendo a mente che il limite all'infinito deve avere un comportamento analogo a $z^{2N}$. Avremo quindi un poliniomio di grado $2N-2$ e possiamo quindi usare la rappresentazione
+\begin{align}
+	q(z) = \sum_{i=1}^{N} \frac{B_i}{(z-\xi_i)^2} +  \frac{\sum_{j=0}^{N-2} c_j z^{N-2-j} }{\prod_{i=1}^{N}(z-\xi_i)}
+\end{align}
+Con queste parametrizzazioni le condizioni \ref{omegakek} si riscrivono nella forma
+\begin{align}
+	\double{\limit{z}{\xi_i} (z-\xi_i)p(z) = A_i}{\limit{z}{\xi_i} (z-\xi_i)^2 q(z)= B_i}
+\end{align}
+L'equazione indiciale diventa
+\begin{align}
+	\rho^2 + (A_i -1)\rho + B_i = 0
+\end{align}
+In precedenza avevamo trovato
+\begin{align}
+	&\rho^2 + (p_0 -1)\rho + q_0 = 0 \firstpassage
+	&(\rho- \alpha_i)(\rho- \beta_i) = 0 \nextpassage
+	&\rho^2 - (\alpha_i + \beta_i) \rho +\alpha_i\beta_i = 0
+\end{align}
+Confrontando le due otteniamo
+\begin{align}
+	\double{ A_i =  1 - \alpha_i - \beta_i}{B_i = \alpha_i\beta_i \hfill}
+\end{align}
+Possiamo quindi riscrivere la nostra EDO come
+\begin{align}
+	&\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0\firstpassage
+	&\ddot{u}(z) + \left[ \sum_{i=1}^{N} \frac{A_i}{z-\xi_i} \right] \dot{u}(z) + \left[ \sum_{i=1}^{N} \frac{B_i}{(z-\xi_i)^2} +  \frac{\sum_{j=0}^{N-2} c_j z^{N-2-j} }{\prod_{i=1}^{N}(z-\xi_i)} \right] u(z) = 0\nextpassage
+	&\ddot{u}(z) + \left[ \sum_{i=1}^{N} \frac{1 - \alpha_i - \beta_i}{z-\xi_i} \right] \dot{u}(z) + \left[ \sum_{i=1}^{N} \frac{\alpha_i\beta_i}{(z-\xi_i)^2} +  \frac{\sum_{j=0}^{N-2} c_j z^{N-2-j} }{\prod_{i=1}^{N}(z-\xi_i)} \right] u(z) = 0
+\end{align}
+
+Andiamo ora ad analizzare l'equazione indiciale intorno al punto all'infitito. Appoggiandoci all'Ansatz $u(z) = z^{-\mu}$ e tenendo solo 'andamento dominante otteniamo
+\begin{align}
+	\mu^2 + \left[ \sum_{i=1}^{N} (\alpha_i + \beta_i) + (1-N) \right]\mu + \left[ c_0 + \sum_{i=1}^{N}\alpha_i \beta_i \right] = 0
+\end{align}
+
+Noi ci concentreremo su i casi $N=1,2,3$. Dobbiamo però prima fare una deviazione e definire uno strumento fondamentale per lo studio delle soluzioni.
+
+\subsubsubsection{Trasformazioni conformi}
+\subsubsubsection{Equazioni con 1 punto fuchsiano}
+\subsubsubsection{Equazioni con 2 punti fuchsiani}
+\subsubsubsection{Equazioni con 3 punti fuchsiani: Papperitz-Riemann}
+\subsubsubsection{Equazioni ipergeometriche}
+
+
+\newpage
 \subsection{Esempi}
 N'aggio fatto in tempo, tanto Bufalini le ha scritte bene su Latex.

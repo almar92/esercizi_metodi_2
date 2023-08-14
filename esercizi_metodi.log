@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  12 AUG 2023 22:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  14 AUG 2023 19:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -461,7 +461,7 @@ LaTeX Info: Redefining \nameref on input line 90.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=401, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=426, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 109.
@@ -743,11 +743,41 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Underfull \vbox (badness 2020) has occurred while \output is active []
 
  [88]
-[89] [90])) [91] [92
+[89] [90] [91] [92]
+Overfull \hbox (5.7353pt too wide) in paragraph at lines 731--732
+[]\OT1/cmr/m/n/12 Andiamo ora ad anal-iz-zare l'equazione in-di-ciale in-torno 
+al punto all'infitito. Ap-pog-gian-doci all'Ansatz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 742--743
+
+ []
+
+[93])) [94] (./esercizi_metodi.bbl) [95
 
 
 
-] (./esercizi_metodi.bbl) [93
 
 ] (./esercizi_metodi.aux
 (./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
@@ -756,13 +786,13 @@ Underfull \vbox (badness 2020) has occurred while \output is active []
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 3766EC15E724914AD664C4FAC0C99BB5;25809.
+(rerunfilecheck)             Checksum: 7E236E154732E1EAC3CEE63D3DA40504;27205.
  ) 
 Here is how much of TeX's memory you used:
- 12584 strings out of 478287
- 199964 string characters out of 5849289
- 506194 words of memory out of 5000000
- 29341 multiletter control sequences out of 15000+600000
+ 12633 strings out of 478287
+ 200766 string characters out of 5849289
+ 506305 words of memory out of 5000000
+ 29349 multiletter control sequences out of 15000+600000
  483028 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -784,10 +814,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (101 pages, 557179 bytes).
+Output written on esercizi_metodi.pdf (103 pages, 569540 bytes).
 PDF statistics:
- 2301 PDF objects out of 2487 (max. 8388607)
- 2137 compressed objects within 22 object streams
- 1178 named destinations out of 1200 (max. 500000)
- 798 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2384 PDF objects out of 2487 (max. 8388607)
+ 2217 compressed objects within 23 object streams
+ 1219 named destinations out of 1440 (max. 500000)
+ 846 words of extra memory for PDF output out of 10000 (max. 10000000)
 

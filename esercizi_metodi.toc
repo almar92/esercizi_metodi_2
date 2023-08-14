@@ -96,4 +96,10 @@
 \contentsline {subparagraph}{\numberline {3.4.1.3.3.2}Convergenza delle serie}{87}{subparagraph.3.4.1.3.3.2}%
 \contentsline {paragraph}{\numberline {3.4.1.3.4}Punti singolari non regolari}{89}{paragraph.3.4.1.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1.4}Punto all'infinito}{90}{subsubsection.3.4.1.4}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{91}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.1.5}Equazioni fuchsiane}{92}{subsubsection.3.4.1.5}%
+\contentsline {paragraph}{\numberline {3.4.1.5.1}Trasformazioni conformi}{93}{paragraph.3.4.1.5.1}%
+\contentsline {paragraph}{\numberline {3.4.1.5.2}Equazioni con 1 punto fuchsiano}{93}{paragraph.3.4.1.5.2}%
+\contentsline {paragraph}{\numberline {3.4.1.5.3}Equazioni con 2 punti fuchsiani}{93}{paragraph.3.4.1.5.3}%
+\contentsline {paragraph}{\numberline {3.4.1.5.4}Equazioni con 3 punti fuchsiani: Papperitz-Riemann}{93}{paragraph.3.4.1.5.4}%
+\contentsline {paragraph}{\numberline {3.4.1.5.5}Equazioni ipergeometriche}{93}{paragraph.3.4.1.5.5}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{94}{subsection.3.4.2}%
