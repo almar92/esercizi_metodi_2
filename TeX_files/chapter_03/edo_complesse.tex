@@ -736,8 +736,174 @@ Andiamo ora ad analizzare l'equazione indiciale intorno al punto all'infitito. A
 Noi ci concentreremo su i casi $N=1,2,3$. Dobbiamo però prima fare una deviazione e definire uno strumento fondamentale per lo studio delle soluzioni.
 
 \subsubsubsection{Trasformazioni conformi}
+
+Spesso fa comodo poter spostare le singolarità della EDO oggetto di studio. Uno strumento molto comodo è quello delle \textbf{trasformazioni conformi}, ovvero che mantengono gli angoli ma non le distanze. In particolare ci tornano molto utili le \textbf{trasformazioni lineari fratte} (o \textbf{di Möbius})
+\begin{align}
+	&z \to F(z) = \frac{az +b}{cz+d} \spacer \double{ad-bc= 1}{a,b,c,d\in \C} 
+\end{align}
+di cui un esempio è il \textbf{birapporto}, definito come
+\begin{align}
+	F = \frac{(z -z_1)(z_2 -z_3)}{(z -z_3)(z_2 -z_1)}
+\end{align}
+Queste trasformazioni formano un gruppo non-Abeliano isomorfo a $PSL(2,\C)$
+
+Per l'isomorfismo associamo alla trasformazione fratta la matrice
+\begin{align}
+	\hat{F} = \begin{pmatrix}
+		a & b \\
+		c & d
+	\end{pmatrix}
+\end{align}
+Le \textbf{trasformazioni di Möbius} godono delle seguenti proprietà:
+\begin{enumerate}
+	\item Composizione di due trasformazioni successive
+	\begin{align}
+		&z \to (F_2 \circ F_1)(z) = \frac{(a_1 a_2 + c_1b_2)z + (b_1a_2 + d_1 b_2)}{(c_2 a_1 + d_2c_1)z + (b_1c_2 + d_1 d_2)} = F_3(z) \firstpassage
+		&\hat{F}_3 == \begin{pmatrix}
+			a_1 a_2 + c_1b_2 & b_1a_2 + d_1 b_2 \\
+			c_2 a_1 + d_2c_1 & b_1c_2 + d_1 d_2
+		\end{pmatrix} = \begin{pmatrix}
+			a_1 & b_1 \\
+			c_1 & d_1
+		\end{pmatrix}\begin{pmatrix}
+			a_2 & b_2 \\
+			c_2 & d_2
+		\end{pmatrix} = \hat{F}_1 \hat{F}_2
+	\end{align}
+	\item LA trasformazione identica cosrrisponde alla matrice identià
+	\begin{align}
+		&z \to I(z) = z = \frac{1 \cdot z + 0 }{0 \cdot z + 1} \firstpassage
+		&\hat{I} = \begin{pmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{pmatrix}
+	\end{align}
+	\item la trasfomrazione inversa si ha solo per $cz + d \neq 0$ e sarà data da
+	\begin{align}
+		&w = \frac{az + b}{cz +d} \to z =\frac{b - dw}{cw - a} \spacer \double{cz + d \neq 0}{cw -a \neq 0}\firstpassage
+		&\hat{F}^{-1}  = \begin{pmatrix}
+			-d & b \\
+			c & -a
+		\end{pmatrix}
+	\end{align}
+	\item Essendo le trasformazioni apparententi al gruppo $PSL(2,\C)$, avremo che 
+	\begin{align}
+		&\forall \lambda\neq 0 \in \C \taleche (e,f,g,h) = (\lambda a,\lambda a,\lambda b,\lambda c,\lambda d)\firstpassage
+		&G=\frac{ex + f}{gx + h} = \frac{\lambda ax + \lambda b}{\lambda cx + \lambda d } =\frac{ax + b}{cx + d} = F
+	\end{align}
+ 	Abbiamo quindi che gruppi di parametri multipli per un numero, le trasformazioni sono uguali.
+\end{enumerate}
+
+Notiamo dalla definizione come le trasformazioni lineari fratte abbiano una singolarità in
+\begin{align}
+	z = -\frac{d}{c}
+\end{align}
+E allo stesso modo le inverse in
+\begin{align}
+	w = +\frac{a}{c}
+\end{align}
+Possiamo quindi estendere le trasformazioni al punto all'infinito imponendo che
+\begin{align}
+	\double{F \left( -\frac{d}{c} \right) &=+\infty \hfill}{F(+\infty) &= \frac{a}{c} \hfill}
+\end{align}
+Ma con queste assunzioni in gioco, le trasformate diventano l'unica mappa biunivoca per la sfera di Riemann in se stessa. 
+
+Possiamo quindi enunciare il seguente \textbf{teorema:} \textit{siano 
+\begin{align}
+	z_1,z_2,z_3\in \C
+\end{align}
+allora esiste una sola trasformazione lineare fratta tale che}
+\begin{align}
+	\triple{F(z_1) = w_1}{F(z_2) = w_2}{F(z_3) = w_3}
+\end{align}
+
+DIMOSTRAZIONE DA FARE
+
+\newpage
+
 \subsubsubsection{Equazioni con 1 punto fuchsiano}
+Partendo dall'espressione
+\begin{align}
+	\ddot{u}(z) + \frac{P(z)}{z-z_0}\cdot \dot{u}(z) + \frac{Q(z)}{(z-z_0)^2} \cdot u(z)=0 
+\end{align}
+Consideriamo equazioni che per semplicità abbiano
+\begin{enumerate}
+	\item Un punto singolare regolare finito
+	\item Il punto all'infinito regolare, il che ci impone
+	\begin{align}
+		\double{\limit{z}{\infty}zp\left(z\right) &= 2 \hfill}{\limit{z}{\infty} z^4 q\left(z\right) &= cost.} &\implies \double{P(z) = 2}{Q(z)= 0}   
+	\end{align}
+\end{enumerate}
+In questo caso avremo EDO nella forma
+\begin{align}
+	\ddot{u}(z) + \frac{2}{z-z_0}\cdot \dot{u}(z) =0 
+\end{align}
+Per la soluzione abbiamo due strade
+\begin{enumerate}
+	\item procedere per separazione di variabili
+	\item studiare l'equazione indiciale risultante dall'Ansatz $u= (z-z_0)^\rho + \xi^\rho$ dove otteniamo
+	\begin{align}
+		&\rho\cdot(\rho-1)\xi^{\rho -2} + \frac{2\rho}{\xi}\xi^{\rho-1} =0\firstpassage
+		&\rho^2 + \rho =0 \to \rho(\rho +1) =0 \nextpassage
+		&\rho_1 = 0 \spacer \rho_2 = -1\firstpassage
+		&u(z) = c_1 + \frac{c_2}{z-z_0} 
+	\end{align}
+\end{enumerate}
+\newpage
 \subsubsubsection{Equazioni con 2 punti fuchsiani}
+Consideriamo ora il caso con due punti singolari regolari al finito e il punto all'infinito regolare. Analogamente a prima avremo
+\begin{align}
+	\ddot{u}(z) + \left[ \sum_{i=1}^{2} \frac{A_i}{z-z_i} \right] \dot{u}(z) + \left[ \frac{Q(z)}{\prod_{i=1}^2 (z-z_i)^2} \right] u(z) =0
+\end{align}
+La regolarità del punto all'infinito impone
+	\begin{align}
+	\double{\limit{z}{\infty}zp\left(z\right) &= 2 \hfill}{\limit{z}{\infty} z^4 q\left(z\right) &= cost.} &\implies \double{A_1 + A_2 = 2\hfill}{Q(z)= cost.  = B}   \label{2punti}
+\end{align}
+Possiamo quindi scrivere le equazioni indiciali in forma generale come
+\begin{align}
+	&\rho^2 + (A_1 -1)\rho + \frac{B}{(z_1-z_2)^2} = 0 = (\rho - \alpha_1)(\rho - \beta_1) \firstpassage
+	& \double{A_1 -1 &= - \alpha_1-\beta_1}{\frac{B}{(z_1-z_2)^2} &= \alpha_1 \beta_1\hfill} \\
+	\nonumber \\
+	&\rho^2 + (A_2 -1)\rho + \frac{B}{(z_2-z_1)^2} = 0 = (\rho - \alpha_2)(\rho - \beta_2) \firstpassage
+	& \double{A_2 -1 &= - \alpha_2-\beta_2}{\frac{B}{(z_2-z_1)^2} &= \alpha_2 \beta_2\hfill}	
+\end{align}
+Dalla \ref{2punti} ricaviamo che
+\begin{align}
+	&A_1 + A_2 = 2 \firstpassage
+	&1 - \alpha_1-\beta_1 + 1 - \alpha_2-\beta_2 =2\nextpassage
+	&\alpha_1+ \beta_1 + \alpha_2 + \beta_2 =0 \nextpassagecomm{per confronto}
+	&\double{\alpha_1 = - \alpha_2}{\beta_1 = - \beta_2}\\
+	\nonumber \\
+	&B + B = \alpha_1\beta_1 (z_1-z_2)^2 + \alpha_2\beta_2 (z_2-z_1)^2 \firstpassage
+	& B = \frac{(\alpha_1\beta_1 + \alpha_2\beta_2)(z_1-z_2)^2 }{2}
+\end{align}
+E possiamo quindi riscrivere la EDO nella seguente forma
+\begin{align}
+	&\ddot{u}(z) + \left[ \sum_{i=1}^{2} \frac{1-( \alpha_i + \beta_i)}{z-z_i} \right] \dot{u}(z) + \left[ \frac{(\alpha_1\beta_1 + \alpha_2\beta_2)(z_1-z_2)^2}{2\prod_{i=1}^2 (z-z_i)^2} \right] u(z) =0 \firstpassagecomm{utilizzo le relazioni fra gli indici appena trovate}
+	&\ddot{u}(z) + \left[ \sum_{i=1}^{2} \frac{1+ (-1)^i (\alpha_1 + \beta_1)}{z-z_i} \right] \dot{u}(z) + \left[ \frac{\alpha_1\beta_1(z_1-z_2)^2}{\prod_{i=1}^2 (z-z_i)^2} \right] u(z) =0 
+\end{align}
+Se adesso applichiamo la trasformazione conforme
+\begin{align}
+	z \to \frac{z-z_1}{z-z_2} \taleche \double{z_1 \to 0\hfill}{z_2 \to \infty}
+\end{align}
+otteniamo l'equazione in forma \textbf{di Eulero}
+\begin{align}
+	&\ddot{u}(z) + \left[ \frac{1+ \alpha_1 + \beta_1}{z} \right] \dot{u}(z) + \left[ \frac{\alpha_1\beta_1}{z^2} \right] u(z) =0 
+\end{align}
+Di cui già conosciamo le soluzioni, e tornando alle variabili originali avremo due casi
+\begin{enumerate}
+	\item $\alpha_1 \neq \beta_1$
+		\begin{align}
+			u(z) = c_1\left(\frac{z-z_1}{z-z_2}\right)^{\alpha_1} + c_2\left(\frac{z-z_1}{z-z_2}\right)^{\beta_1}
+		\end{align}
+	\item $\alpha_1 = \beta_1$
+		\begin{align}
+			u(z) = c_1\left(\frac{z-z_1}{z-z_2}\right)^{\alpha_1} + 	c_2\left(\frac{z-z_1}{z-z_2}\right)^{\alpha_1}\ln\left(\frac{z-z_1}{z-z_2}\right)
+		\end{align}
+\end{enumerate}
+
+
+\newpage
 \subsubsubsection{Equazioni con 3 punti fuchsiani: Papperitz-Riemann}
 \subsubsubsection{Equazioni ipergeometriche}
 
