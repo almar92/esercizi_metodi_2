@@ -669,9 +669,9 @@ Presa una equazione
 \begin{align}
 	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
 \end{align}
-con $N$ punti fuchsiani $\xi_i$ e il punto all'infinito anch'esso singolare regolare, possiamo definirne il P-sibolo come
+con $N$ punti fuchsiani $\xi_i$ e il punto all'infinito anch'esso singolare regolare, possiamo rappresentarle con la seguente matrice, che espanderemo piu` avanti nel \textbf{P-simbolo}
 \begin{align}
-	P = \begin{pmatrix}
+	\begin{pmatrix}
 		\xi_1 & \xi_2 & \dots & \xi_N & \infty\\
 		\downarrow & \downarrow & \downarrow & \downarrow & \downarrow\\
 		\alpha_1 & \alpha_2 & \dots & \alpha_N & \mu_1\\
@@ -905,6 +905,70 @@ Di cui già conosciamo le soluzioni, e tornando alle variabili originali avremo 
 
 \newpage
 \subsubsubsection{Equazioni con 3 punti fuchsiani: Papperitz-Riemann}
+Ci limitiamo allo studio delle equazioni con tre punti fuchsiani al finito e il punto all'infinito regolare. Avremo quindi una EDO nella forma
+\begin{align}
+	\ddot{u}(z) + \frac{P(z)}{\prod_{i=1}^3(z-z_i)}\cdot \dot{u}(z) + \frac{Q(z)}{\prod_{i=1}^3(z-z_i)^2} \cdot u(z)=0 
+\end{align}
+Scegliamo i polinomi come
+\begin{align}
+	P(z)&= A_1(z-z_2)(z-z_3) + A_2(z-z_3)(z-z_1) + A_3(z-z_1)(z-z_2)\\
+	Q(z)&= B_1(z-z_2)(z-z_3) + B_2(z-z_3)(z-z_1) + B_3(z-z_1)(z-z_2)
+\end{align}
+Analogamente a prima, la regolarità del punto all'infinito impone che
+\begin{align}
+	A_1 + A_2 + A_3 = 2 
+\end{align}
+Mentre il confronto fra le espressioni dell'equazione indiciale portano a
+\begin{align}
+	\double{A_i = 1-\alpha_i - \beta_i\hfill}{B_i = \alpha_i\beta_i (z_i - z_k)(z_i - z_j)} \spacer \double{i,j,k = 1,2,3}{i\neq j \neq k\hfill}
+\end{align}
+Dalla prima ricaviamo anche la condizione
+\begin{align}
+	&1-\alpha_1 - \beta_1 + 1-\alpha_2 - \beta_2 + 1-\alpha_3 - \beta_3 = 2\firstpassage
+	&-\sum_{i=1}^{3}(\alpha_i + \beta_i) = 2-3\nextpassage
+	&\sum_{i=1}^{3}(\alpha_i + \beta_i) = 1
+\end{align}
+
+Ricordando che $i\neq j \neq k$, possiamo quindi riscrivere la EDO come
+\begin{align}
+	\ddot{u}(z) + \left[\sum_{i=1}^3\frac{1-\alpha_i - \beta_i}{z-z_i}\right]\cdot \dot{u}(z) + \left[\frac{1}{\prod_{i=1}^3(z-z_i)}\sum_{i=1}^3\frac{\alpha_i\beta_i}{z-z_i}(z_i-z_j)(z_i-z_k)\right] \cdot u(z)=0
+\end{align}
+Possiamo infine introdurre il \textbf{P-Simbolo} nominato in precedenza come
+\begin{align}
+	P\left\{\begin{matrix}
+		z_1 & z_2 & z_3 & \\
+		\alpha_1 & \alpha_2 & \alpha_3& z\\
+		\beta_1 & \beta_2 & \beta_3 & 
+	\end{matrix}\right\}
+\end{align}
+
+Il P-Simbolo gode di alcune proprietà, tra cui
+\begin{enumerate}
+	\item Siccome non c'è ordinamento tra i punti singolari, le colonne possono essere permutate a piacimento
+	\item Non vi è ordinamento tra gli indici
+	\item Siccome l'equazione oggetto di studio è omogenea, il P-Simbolo è definito a meno di una costante moltiplicativa
+	\item Se si applica una trasfomazione lineare fratta, i punti singolari cambiano ma non cambiano gli indici corrispondenti
+	\begin{align}
+		&z \to w(z)\\
+		&P\left\{\begin{matrix}
+			z_1 & z_2 & z_3 & \\
+			\alpha_1 & \alpha_2 & \alpha_3& z\\
+			\beta_1 & \beta_2 & \beta_3 & 
+		\end{matrix}\right\} =
+		P\left\{\begin{matrix}
+			w_1 & w_2 & w_3 & \\
+			\alpha_1 & \alpha_2 & \alpha_3& w\\
+			\beta_1 & \beta_2 & \beta_3 & 
+		\end{matrix}\right\}
+	\end{align}
+	\item è possibile fare anche il contrario, ovvero permutare gli indici lasciando invariati i punti singolari
+	
+	DA TERMINARE
+\end{enumerate}
+
+
+
+\newpage
 \subsubsubsection{Equazioni ipergeometriche}
 
 
