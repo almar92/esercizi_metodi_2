@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.21)  16 AUG 2023 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  18 AUG 2023 17:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -351,6 +351,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip60
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count289
@@ -365,24 +382,24 @@ LaTeX Warning: Label `omcond1' multiply defined.
 ))
 \openout1 = `esercizi_metodi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -440,7 +457,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 90.
+Package hyperref Info: Link coloring OFF on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -453,18 +470,18 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 90.
-LaTeX Info: Redefining \pageref on input line 90.
-LaTeX Info: Redefining \nameref on input line 90.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
 
 (./esercizi_metodi.out) (./esercizi_metodi.out)
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=426, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=430, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
-Package pdftex.def Info: ./turtwig.jpg  used on input line 109.
+Package pdftex.def Info: ./turtwig.jpg  used on input line 110.
 (pdftex.def)             Requested size: 262.61894pt x 262.63458pt.
  [1
 
@@ -754,16 +771,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
-[93] [94] [95] [96] [97] [98] [99]
-Underfull \hbox (badness 10000) in paragraph at lines 972--973
-
+[93] [94] [95] [96] [97] [98]
+Overfull \hbox (8.27185pt too wide) in paragraph at lines 984--985
+[]\OT1/cmr/m/n/12 Quest'ultima pro-priet^^Ra pre-senta il notev-ole risul-tato 
+di ridurre l'andamento in-torno al punto all'infinito
  []
 
-[100])) [101] [102
+[99]
+Overfull \hbox (7.85066pt too wide) detected at line 1040
+[]
+ []
+
+[100] [101])) [102] (./esercizi_metodi.bbl) [103
 
 
 
-] (./esercizi_metodi.bbl) [103
 
 ] (./esercizi_metodi.aux
 (./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
@@ -772,16 +794,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 972--973
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 7E236E154732E1EAC3CEE63D3DA40504;27205.
+(rerunfilecheck)             Checksum: DFCEC0B9B1F9DB1D4785157CBE7998DD;27427.
  ) 
 Here is how much of TeX's memory you used:
- 12707 strings out of 478287
- 201746 string characters out of 5849289
- 506371 words of memory out of 5000000
- 29351 multiletter control sequences out of 15000+600000
+ 13181 strings out of 478287
+ 207586 string characters out of 5849289
+ 515824 words of memory out of 5000000
+ 29801 multiletter control sequences out of 15000+600000
  483028 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,25n,63p,560b,613s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,25n,63p,560b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -800,10 +822,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (111 pages, 587153 bytes).
+Output written on esercizi_metodi.pdf (111 pages, 594741 bytes).
 PDF statistics:
- 2498 PDF objects out of 2984 (max. 8388607)
- 2322 compressed objects within 24 object streams
- 1291 named destinations out of 1440 (max. 500000)
- 846 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2527 PDF objects out of 2984 (max. 8388607)
+ 2351 compressed objects within 24 object streams
+ 1309 named destinations out of 1440 (max. 500000)
+ 854 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -851,7 +851,7 @@ Per la soluzione abbiamo due strade
 \end{enumerate}
 \newpage
 \subsubsubsection{Equazioni con 2 punti fuchsiani}
-Consideriamo ora il caso con due punti singolari regolari al finito e il punto all'infinito regolare. Analogamente a prima avremo
+Consideriamo ora il caso con due punti singolari regolari al finito e il punto all'infinito regolare o al più singolare regolare. Analogamente a prima avremo
 \begin{align}
 	\ddot{u}(z) + \left[ \sum_{i=1}^{2} \frac{A_i}{z-z_i} \right] \dot{u}(z) + \left[ \frac{Q(z)}{\prod_{i=1}^2 (z-z_i)^2} \right] u(z) =0
 \end{align}
@@ -905,7 +905,7 @@ Di cui già conosciamo le soluzioni, e tornando alle variabili originali avremo 
 
 \newpage
 \subsubsubsection{Equazioni con 3 punti fuchsiani: Papperitz-Riemann}
-Ci limitiamo allo studio delle equazioni con tre punti fuchsiani al finito e il punto all'infinito regolare. Avremo quindi una EDO nella forma
+Ci limitiamo allo studio delle equazioni con tre punti fuchsiani al finito e il punto all'infinito regolare o al più singolare regolare. Avremo quindi una EDO nella forma
 \begin{align}
 	\ddot{u}(z) + \frac{P(z)}{\prod_{i=1}^3(z-z_i)}\cdot \dot{u}(z) + \frac{Q(z)}{\prod_{i=1}^3(z-z_i)^2} \cdot u(z)=0 
 \end{align}
@@ -947,7 +947,7 @@ Il P-Simbolo gode di alcune proprietà, tra cui
 	\item Siccome non c'è ordinamento tra i punti singolari, le colonne possono essere permutate a piacimento
 	\item Non vi è ordinamento tra gli indici
 	\item Siccome l'equazione oggetto di studio è omogenea, il P-Simbolo è definito a meno di una costante moltiplicativa
-	\item Se si applica una trasfomazione lineare fratta, i punti singolari cambiano ma non cambiano gli indici corrispondenti
+	\item Se si applica una trasformazione lineare fratta, i punti singolari cambiano ma non cambiano gli indici corrispondenti
 	\begin{align}
 		&z \to w(z)\\
 		&P\left\{\begin{matrix}
@@ -961,16 +961,94 @@ Il P-Simbolo gode di alcune proprietà, tra cui
 			\beta_1 & \beta_2 & \beta_3 & 
 		\end{matrix}\right\}
 	\end{align}
-	\item è possibile fare anche il contrario, ovvero permutare gli indici lasciando invariati i punti singolari
-	
-	DA TERMINARE
+	\item è possibile fare anche il contrario, ovvero permutare gli indici lasciando invariati i punti singolari, visto che intorno al punto $z_i$ vale
+	\begin{align}
+		u_1 &= (z-z_i)^{\alpha_i}\sum_{n}c_nz^n =\nonumber\\
+			&=(z-z_i)^{\gamma_i}(z-z_i)^{-\gamma_i}(z-z_i)^{\alpha_i}\sum_{n}c_nz^n =\nonumber\\
+			&=(z-z_i)^{\gamma_i}\left[(z-z_i)^{\alpha_i-\gamma_i}\sum_{n}c_nz^n\right]\\
+			\nonumber\\
+		u_2 &= (z-z_i)^{\gamma_i}\left[(z-z_i)^{\beta_i-\gamma_i}\sum_{n}d_nz^n\right] \firstpassage
+		&P\left\{\begin{matrix}
+			z_1 & z_2 & z_3 & \\
+			\alpha_1 & \alpha_2 & \alpha_3& z\\
+			\beta_1 & \beta_2 & \beta_3 & 
+		\end{matrix}\right\} = \left(\prod_{i=1}^3 (z-z_i)^{\gamma_i} \right)P\left\{\begin{matrix}
+		z_1 & z_2 & z_3 & \\
+		\alpha_1 - \gamma_1 & \alpha_2 - \gamma_2 & \alpha_3 - \gamma_3& z\\
+		\beta_1 - \gamma_1 & \beta_2 - \gamma_2 & \beta_3  - \gamma_3& 
+	\end{matrix}\right\}	
+	\end{align}
+	Dove, per assicurare che la somma degli indici resti 1, si impone che $\sum_{i=0}^3 \gamma_i = 0$	
 \end{enumerate}
 
-
+Quest'ultima proprietà presenta il notevole risultato di ridurre l'andamento intorno al punto all'infinito un semplice riscalamento del prefattore.
 
 \newpage
-\subsubsubsection{Equazioni ipergeometriche}
+\subsubsubsection{Equazione ipergeometrica}
+L'esempio più noto di EDO con tre punti fuchsiani è la \textbf{Ipergeometrica}, ovvero con
+\begin{align}
+	\triple{z_1 = 0\hfill}{z_2 = 1\hfill}{z_3 = \infty}
+\end{align}
+e con P-simbolo
+\begin{align}
+	&F(a,b,c;z)=P\left\{\begin{matrix}
+		0 & 1 & \infty & \\
+		0 & 0 & a& z\\
+		1-c & c-a-b & b & 
+	\end{matrix}\right\}
+\end{align}
+Sfruttando le propiretà del P-simbolo, possiamo ricondurre qualunque equazione di Papperitz-Riemann ad una ipergeometrica facendo uso del \textbf{birapporto}:
+\begin{align}
+	w = \frac{z-z_1}{z-z_3}\cdot\frac{z_2-z_3}{z_2-z_1}
+\end{align}
+che mappa
+\begin{align}
+	&z_1 \to w_1 = \frac{\textcolor{red}{\cancel{z_1}-\cancel{z_1}}}{z_1-z_3}\cdot\frac{z_2-z_3}{z_2-z_1} = 0\\
+	&z_2 \to w_2 = \frac{\textcolor{red}{\cancel{z_2-z_1}}}{\textcolor{blue}{\cancel{z_2-z_3}}}\cdot\frac{\textcolor{blue}{\cancel{z_2-z_3}}}{\textcolor{red}{\cancel{z_2-z_1}}} = 1\\
+	&z_3 \to w_3 = \frac{z_3-z_1}{\textcolor{red}{\cancel{z_3}-\cancel{z_3}}}\cdot\frac{z_2-z_3}{z_2-z_1} = \infty
+\end{align}
+E quindi, per la proprietà 4, possiamo scrivere
+\begin{align}
+	P\left\{\begin{matrix}
+			z_1 & z_2 & z_3 & \\
+			\alpha_1 & \alpha_2 & \alpha_3& z\\
+			\beta_1 & \beta_2 & \beta_3 & 
+		\end{matrix}\right\} &=P\left\{\begin{matrix}
+		0 & 1 & \infty & \\
+		\alpha_1 & \alpha_2 & \alpha_3& w\\
+		\beta_1 & \beta_2 & \beta_3 & 
+	\end{matrix}\right\} 
+\end{align}
+Per la proprietà 5 invece arriviamo a scrivere
+\begin{align}
+	P\left\{\begin{matrix}
+		0 & 1 & \infty & \\
+		\alpha_1 & \alpha_2 & \alpha_3& w\\
+		\beta_1 & \beta_2 & \beta_3 & 
+	\end{matrix}\right\} &= w^{\alpha_1}(w-1)^{\alpha_2}P\left\{\begin{matrix}
+		0 & 1 & \infty & \\
+		0 & 0 &  \alpha_1 + \alpha_2 + \alpha_3& w\\
+		\beta_1-\alpha_1 & \beta_2-\alpha_2 & \beta_3 + \alpha_1  + \alpha_3& 
+	\end{matrix}\right\}
+\end{align}
+Si può ricaare l'ipergeometrica dalla forma generale di Papperitz-Riemann nel seguente modo
+\begin{align}
+	&\ddot{u}(z) + \left[\sum_{i=1}^3\frac{1-\alpha_i - \beta_i}{z-z_i}\right]\cdot \dot{u}(z) + \left[\frac{1}{\prod_{i=1}^3(z-z_i)}\sum_{i=1}^3\frac{\alpha_i\beta_i}{z-z_i}(z_i-z_j)(z_i-z_k)\right] \cdot u(z)=0\firstpassagecomm{applico il limite $z_3 \rightarrow \infty$}	
+	&\ddot{u}(z) + \left[\sum_{i=1}^2\frac{1-\alpha_i - \beta_i}{z-z_i}\right]\cdot \dot{u}(z) + \left[\frac{1}{\prod_{i=1}^3(z-z_i)}\left(\frac{\alpha_1\beta_1}{z-z_1}(z_1-z_2) + \frac{\alpha_2\beta_2}{z-z_2}(z_2-z_1) + \alpha_3\beta_3\right)\right] \cdot u(z)=0\nextpassagecomm{sostituisco i valori di $z_i,\alpha_i,\beta_i$ per la ipergeometrica}
+	&\ddot{u}(z) + \left[\frac{c}{z} + \frac{1-c+a+b}{z-1}\right]\cdot \dot{u}(z) + \left[\frac{ab}{z(z-z_1)}\right] \cdot u(z)=0\nextpassagecomm{posso riscrivere nella forma nota in letteratura}
+	&[z(1-z)]\cdot \ddot{u}(z)  + [c-(1+a+b)z] \cdot \dot{u}(z) - [ab]\cdot u(z) = 0
+\end{align}
 
+\newpage
+\subsubsubsubsection{Soluzioni dell'ipergeometrica}
+Utilizzando i metodi usati in precedenza possiamo trovare due soluzioni intorno ai 3 punti singolari
+\begin{align}
+	&z_1 = 0 \;\: \to \double{u_1(z) = R_1(z)\hfill}  	       {u_2(z) = z^{1-c}R_2(z)}\\
+	&z_2 = 1 \;\: \to \double{u_3(z) = R_3(z-1)\hfill}         {u_4(z) = (z-1)^{c-a-b}R_4(z-1)}\\
+	&z_3 = \infty \to \double{u_5(z) = z^{-a}R_5(z^{-1})\hfill}{u_6(z) = z^{-b}R_6(z^{-1})}\\
+	&R_i \quad \text{funzioni analitiche}	
+\end{align}
+Ogni coppia di soluzioni forma una base
 
 \newpage
 \subsection{Esempi}
