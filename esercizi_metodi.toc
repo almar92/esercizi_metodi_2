@@ -103,4 +103,5 @@
 \contentsline {paragraph}{\numberline {3.4.1.5.4}Equazioni con 3 punti fuchsiani: Papperitz-Riemann}{98}{paragraph.3.4.1.5.4}%
 \contentsline {paragraph}{\numberline {3.4.1.5.5}Equazione ipergeometrica}{100}{paragraph.3.4.1.5.5}%
 \contentsline {subparagraph}{\numberline {3.4.1.5.5.1}Soluzioni dell'ipergeometrica}{101}{subparagraph.3.4.1.5.5.1}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{102}{subsection.3.4.2}%
+\contentsline {subparagraph}{\numberline {3.4.1.5.5.2}Relazioni tra le soluzioni dell'ipergeometrica}{103}{subparagraph.3.4.1.5.5.2}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{104}{subsection.3.4.2}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  18 AUG 2023 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 AUG 2023 15:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -478,7 +478,7 @@ LaTeX Info: Redefining \nameref on input line 91.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=430, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=434, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 110.
@@ -782,25 +782,26 @@ Overfull \hbox (7.85066pt too wide) detected at line 1040
 []
  []
 
-[100] [101])) [102] (./esercizi_metodi.bbl) [103
+[100] [101] [102] [103])) [104] (./esercizi_metodi.bbl) [105
 
 
 
 
-] (./esercizi_metodi.aux
-(./TeX_files/introduzione.aux) (./TeX_files/chapter01.aux)
-(./TeX_files/chapter02.aux) (./TeX_files/chapter03.aux))
+]
+(./esercizi_metodi.aux (./TeX_files/introduzione.aux)
+(./TeX_files/chapter01.aux) (./TeX_files/chapter02.aux)
+(./TeX_files/chapter03.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: DFCEC0B9B1F9DB1D4785157CBE7998DD;27427.
+(rerunfilecheck)             Checksum: 371709392FCCB82FD82CAD7281942D55;27748.
  ) 
 Here is how much of TeX's memory you used:
- 13181 strings out of 478287
- 207586 string characters out of 5849289
- 515824 words of memory out of 5000000
- 29801 multiletter control sequences out of 15000+600000
+ 13212 strings out of 478287
+ 208014 string characters out of 5849289
+ 516884 words of memory out of 5000000
+ 29803 multiletter control sequences out of 15000+600000
  483028 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -822,10 +823,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (111 pages, 594741 bytes).
+Output written on esercizi_metodi.pdf (113 pages, 602012 bytes).
 PDF statistics:
- 2527 PDF objects out of 2984 (max. 8388607)
- 2351 compressed objects within 24 object streams
- 1309 named destinations out of 1440 (max. 500000)
- 854 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2579 PDF objects out of 2984 (max. 8388607)
+ 2394 compressed objects within 24 object streams
+ 1338 named destinations out of 1440 (max. 500000)
+ 862 words of extra memory for PDF output out of 10000 (max. 10000000)
 
