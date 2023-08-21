@@ -1141,10 +1141,80 @@ Trasformando il P-simbolo nel seguente modo
 \end{align}
 Troviamo così una soluzione incognita all'equazione, che definiamo come
 \begin{align}
-	\tilde{u}(z) = (1-z)^{c-a-b} {}_2F_1(c-b,c-a,c; z)
+	\tilde{u}(z) &= (1-z)^{c-a-b} {}_2F_1(c-b,c-a,c; z)
+\end{align}
+Se ora applichiamo il prodotto di Cauchy, notiamo come possiamo espandere $\tilde{u}(z)$ nel seguente modo
+\begin{align}
+	\tilde{u}(z) &= (1-z)^{c-a-b} {}_2F_1(c-b,c-a,c; z) = \nonumber\\
+				 &= \sum_{k=0}^{\infty} \frac{\Gamma(a+b-c+k)}{\Gamma(a+b-c) k!}\sum_{n=0}^{\infty} \frac{\Gamma(c)\Gamma (c-a+n)\Gamma (c-b+n)}{\Gamma (c-a)\Gamma (c-b)\Gamma (c+n)n!}z^{n+k} =\dots= \nonumber\\
+				 &= {}_2F_1(a,b,c; z) = u_1(z)
+\end{align}
+Questo ci porta a notare come per ogni soluzione abbiamo almeno 4 possibili espressioni, legate alla ridefinizione degli indici intorno ai due punti rimanenti.
+
+In totale abbiamo quindi $6\cdot4=24$ possiibli forme per le soluzioni, ma ci basta prendere due soluzioni linearmente indipendenti (una per gruppo da 4) per formare una base e quindi poter definire tutte le altre come combinazione delle due.
+
+Questo vuol dire che prese \textbf{tre} soluzioni, esiste una relazione lineare che lega. Di conseguenza, date le 24 soluzioni avremo 20 combinazioni lineari possibili.
+
+\subsubsubsubsection{Convergenza della serie ipergeometrica}
+Magari dopo lmao
+
+\newpage
+
+\subsubsubsection{Equazione ipergeometrica confluente}
+Abbiamo visto finora equazioni a tre punti fuchsiani distinti, ma è interessante scoprire cosa succede quando due di questi confluiscono in uno solo. Un modo per studiare questo caso è quello di mappare la singolarità $z=1$ in
+\begin{align}
+	\zeta = bz
+\end{align}
+per poi tendere $b\to \infty$. Questo ci pota a riscrivere la EDO nel seguente modo
+\begin{align}
+	&[z(1-z)]\cdot \ddot{u}(z)  + [c-(1+a+b)z] \cdot \dot{u}(z) - [ab]\cdot u(z) = 0 \firstpassage
+	&\ddot{u}(\zeta) + \left[ \frac{bc}{\zeta(b-\zeta)} - \frac{a+b+1}{b-\zeta} \right]\dot{u}(\zeta) - \frac{ab}{\zeta (b-\zeta)} u(z) = 0 \nextpassagecomm{applico il limite $b\to \infty$}
+	&\ddot{u}(\zeta) + \left[ \frac{c}{\zeta} - 1\right]\dot{u}(\zeta) - \frac{a}{\zeta } u(z) = 0 \nextpassagecomm{ridefinisco per comodità $\zeta=z$}
+	&[z]\cdot \ddot{u}(z)  + [c-z] \cdot \dot{u}(z) - [a]\cdot u(z) = 0 
+\end{align}
+Abbiamo così ricavato la cosiddetta \textbf{equazione ipergeometrica confluente}, dotata di
+\begin{enumerate}
+	\item $z=0$ singolarità regolare
+	\item $z=\infty$ singolarità irregolare
+\end{enumerate}
+
+Intorno alla singolarità regolare, l'equazione indiciale sarà uguale a
+\begin{align}
+	\rho^2 + (c-1)\rho = 0 \to \double{\alpha_1 = 0\hfill}{\beta_1 = 1-c}
 \end{align}
 
-
+Possiamo quindi ricavare due soluzioni linearmente indipendenti in due modi
+\begin{enumerate}
+	\item per serie
+	\item per limite, come fatto per l'ipergemoetrica. Se uno riscala
+	\begin{align}
+		&z \to \frac{z}{b} \firstpassage
+		&{}_2F_1 \left( a,b,c; \frac{z}{b} \right) = \sum_{k=0}^{\infty} \frac{(a)_k(b)_k}{(c)_k}\frac{z^k}{b^kk!}
+	\end{align}
+	Dato che
+	\begin{align}
+		\limit{b}{\infty} (b)_k \sim b^k
+	\end{align}
+	Ricaviamo la prima soluzione come
+	\begin{align}
+		&u_1(z) = \sum_{k=0}^{\infty} \frac{(a)_k}{(c)_k}\frac{z^k}{k!} = {}_1F_1(a,c;z) = \Phi(a,c;z)
+	\end{align}
+	Dove $\Phi(a,c;z)$ prende il nome di \textbf{funzione ipergeometrica confluente} (o\textbf{ di Kummer}).
+	
+	\newpage
+	
+	Abbiamo due scenari per la seconda soluzione (e quindi per l'integrale generale):
+	\begin{enumerate}
+		\item $c \notin \N$
+		\begin{align}
+			&u_2(z) = z^{1-c}\Phi(a-c+1, 2-c;z) \firstpassage
+			&u(z) = C_1\Phi(a,c;z) + C_2 z^{1-c}\Phi(a-c+1, 2-c;z)
+		\end{align}
+		\item $c \in \N$
+		
+		Salcazzo, devo chiedere a paolo
+	\end{enumerate}
+\end{enumerate}
 
 \newpage
 \subsection{Esempi}
