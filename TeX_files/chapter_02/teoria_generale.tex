@@ -79,6 +79,18 @@ Uno spazio \textbf{euclideo} è uno spazio normato la cui norma è definita attr
 
 Uno spazio euclideo completo si dice \textbf{spazio di Hilbert}.
 
+\subsubsubsection{Teorema del completamento}
+Uno spazio metrico non completo può essere "completato", combinandolo con l'insieme contentente tutti i limiti delle sue succesioni di Cauchy, al prezzo di considerare equivalenti le successioni con identico limite. 
+
+Possiamo fare questo appoggiandoci al \textbf{teorema del completamento:} \textit{dato uno spazio metrico $(X,d)$, esistono
+\begin{enumerate}
+	\item uno spazio metrico completo $(\tilde{X}, \tilde{d})$
+	\item una applicazione isometrica di $X$ su un insieme denso di $(\tilde{X}, \tilde{d})$
+\end{enumerate}
+}
+
+\newpage
+
 \subsection{Operatori}
 
 Presi due spazi di Hilbert $H_1$ e $H_2$, definiamo un \textbf{operatore lineare} $A$ come un'applicazione del tipo
@@ -92,8 +104,6 @@ Un operatore si dice
 	\item \textbf{Continuo} se $\forall \{ x_n\} \in \mathcal{D}_A \taleche x_n \rightarrow x$ segue che $\limit{n}{infty} A(x_n) = A(x)$
 	\textbf{Nota bene:} un operatore lineare $(A,\mathcal{D}_A)$ è continuo se e solo se è limitato.
 \end{enumerate}
-
-\newpage
 
 Iniziamo definendo il seguente funzionale lineare
 \begin{align}
@@ -126,6 +136,7 @@ Un operatore si dice \textbf{simmetrico} quando
 \end{align}
 Se un operatore è simmetrico e $\mathcal{D}_A = \mathcal{D}_{A^\dagger}$ allora si dice che è \textbf{autoaggiunto}.
 
+\newpage
 
 \subsubsection{Spettri per operatori Infinito-Dimensionali}
 

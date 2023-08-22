@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  21 AUG 2023 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.21)  22 AUG 2023 17:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -478,7 +478,7 @@ LaTeX Info: Redefining \nameref on input line 91.
 \@outlinefile=\write3
 \openout3 = `esercizi_metodi.out'.
 
-<./turtwig.jpg, id=442, 374.90062pt x 374.90062pt>
+<./turtwig.jpg, id=446, 374.90062pt x 374.90062pt>
 File: ./turtwig.jpg Graphic file (type jpg)
 <use ./turtwig.jpg>
 Package pdftex.def Info: ./turtwig.jpg  used on input line 110.
@@ -658,19 +658,13 @@ ELLI, PAOLO PROIA) \OT1/cmr/m/n/12 25
 
 ]
 Chapter 2.
-(./TeX_files/chapter_02/teoria_generale.tex [27] [28] [29])
-(./TeX_files/chapter_02/operatori_integrali.tex [30] [31] [32] [33] [34]
-[35]) (./TeX_files/chapter_02/operatori_differenziali.tex [36] [37] [38]
+(./TeX_files/chapter_02/teoria_generale.tex [27] [28] [29] [30])
+(./TeX_files/chapter_02/operatori_integrali.tex [31] [32] [33] [34] [35]
+[36]) (./TeX_files/chapter_02/operatori_differenziali.tex [37] [38] [39]
 Underfull \vbox (badness 7740) has occurred while \output is active []
 
- [39]
-[40]) (./TeX_files/chapter_02/operatori_a_blocchi.tex
-Overfull \hbox (11.73462pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
-I, PAOLO PROIA) \OT1/cmr/m/n/12 41
- []
-
-[41] [42]
+ [40]
+[41]) (./TeX_files/chapter_02/operatori_a_blocchi.tex [42]
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 43
@@ -682,13 +676,13 @@ Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 I, PAOLO PROIA) \OT1/cmr/m/n/12 45
  []
 
-[45]
+[45] [46]
 Overfull \hbox (2.00653pt too wide) in paragraph at lines 221--221
 []\OT1/cmr/bx/n/14.4 Esempio 2 con metodo es-plic-ito e analitico (Da-vide Bu-f
 alini, Alessan-
  []
 
-[46]
+
 Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
 I, PAOLO PROIA) \OT1/cmr/m/n/12 47
@@ -700,45 +694,51 @@ Overfull \hbox (11.73462pt too wide) has occurred while \output is active
 I, PAOLO PROIA) \OT1/cmr/m/n/12 49
  []
 
-[49])) [50]
+[49] [50]))
+Overfull \hbox (11.73462pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 2.4.  OPERATORI A BLOCCHI (DAVIDE BUFALINI, ALESSANDRO MARCELL
+I, PAOLO PROIA) \OT1/cmr/m/n/12 51
+ []
+
+[51]
 \openout2 = `./TeX_files/chapter03.aux'.
 
- (./TeX_files/chapter03.tex
-Chapter 3.
-(./TeX_files/chapter_03/teoria_generale.tex [51
+ (./TeX_files/chapter03.tex [52
 
 
 
 
 ]
+Chapter 3.
+(./TeX_files/chapter_03/teoria_generale.tex [53]
 Overfull \hbox (12.40942pt too wide) in paragraph at lines 97--99
 \OT1/cmr/m/n/12 L'integrale gen-erale di una EDO lin-eare pu^^Ro es-sere scritt
 o come com-bi-nazione della soluzione dell'omogenea
  []
 
-) (./TeX_files/chapter_03/edo_lin_1ord.tex [52] [53] [54] [55])
-(./TeX_files/chapter_03/edo_lin_2ord.tex [56] [57]
+) (./TeX_files/chapter_03/edo_lin_1ord.tex [54] [55] [56] [57])
+(./TeX_files/chapter_03/edo_lin_2ord.tex [58] [59]
 Overfull \hbox (3.36156pt too wide) detected at line 103
 []
  []
 
-[58] [59] [60]
+[60] [61] [62]
 Overfull \hbox (27.09805pt too wide) in paragraph at lines 228--229
 []\OT1/cmr/m/n/12 Iniziamo con-siderando i prob-lemi di Sturm-Liouville con con
 -dizioni ac-ces-sorie date sul bordo dell'intervallo
  []
 
-[61] [62] [63] [64] [65] [66] [67] [68] [69] [70]
+[63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71]
-[72] [73] [74] [75]) (./TeX_files/chapter_03/edo_complesse.tex [76] [77]
-[78]
+ [73]
+[74] [75] [76] [77]) (./TeX_files/chapter_03/edo_complesse.tex [78] [79]
+[80]
 Overfull \hbox (15.6699pt too wide) detected at line 180
 []
  []
 
-[79] [80]
+[81] [82]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 265.
@@ -747,7 +747,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 265.
 
-[81]
+[83]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 293.
@@ -756,11 +756,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 293.
 
-[82] [83] [84] [85] [86] [87]
+[84] [85] [86] [87] [88] [89]
 Underfull \vbox (badness 2020) has occurred while \output is active []
 
- [88]
-[89] [90] [91] [92]
+ [90]
+[91] [92] [93] [94]
 Overfull \hbox (5.7353pt too wide) in paragraph at lines 731--732
 []\OT1/cmr/m/n/12 Andiamo ora ad anal-iz-zare l'equazione in-di-ciale in-torno 
 al punto all'infitito. Ap-pog-gian-doci all'Ansatz
@@ -771,18 +771,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
-[93] [94] [95] [96] [97] [98]
+[95] [96] [97] [98] [99] [100]
 Overfull \hbox (8.27185pt too wide) in paragraph at lines 984--985
 []\OT1/cmr/m/n/12 Quest'ultima pro-priet^^Ra pre-senta il notev-ole risul-tato 
 di ridurre l'andamento in-torno al punto all'infinito
  []
 
-[99]
+[101]
 Overfull \hbox (7.85066pt too wide) detected at line 1040
 []
  []
 
-[100] [101] [102] [103] [104] [105])) [106] (./esercizi_metodi.bbl) [107
+[102] [103] [104] [105] [106] [107])) [108] (./esercizi_metodi.bbl) [109
 
 
 
@@ -795,13 +795,13 @@ Overfull \hbox (7.85066pt too wide) detected at line 1040
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `esercizi_metodi.out' has not changed.
-(rerunfilecheck)             Checksum: 4048F562F2857303C7C7B9AEDCEB771A;28283.
+(rerunfilecheck)             Checksum: 6EC49CB95F1CEF2BD6E0AC7AB10FE728;28490.
  ) 
 Here is how much of TeX's memory you used:
- 13235 strings out of 478287
- 208344 string characters out of 5849289
- 516884 words of memory out of 5000000
- 29805 multiletter control sequences out of 15000+600000
+ 13241 strings out of 478287
+ 208416 string characters out of 5849289
+ 516886 words of memory out of 5000000
+ 29806 multiletter control sequences out of 15000+600000
  483028 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,25n,63p,560b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -823,10 +823,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on esercizi_metodi.pdf (115 pages, 608368 bytes).
+Output written on esercizi_metodi.pdf (117 pages, 610545 bytes).
 PDF statistics:
- 2620 PDF objects out of 2984 (max. 8388607)
- 2432 compressed objects within 25 object streams
- 1359 named destinations out of 1440 (max. 500000)
- 878 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2636 PDF objects out of 2984 (max. 8388607)
+ 2446 compressed objects within 25 object streams
+ 1364 named destinations out of 1440 (max. 500000)
+ 886 words of extra memory for PDF output out of 10000 (max. 10000000)
 
