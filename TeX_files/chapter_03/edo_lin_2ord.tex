@@ -93,7 +93,7 @@ Presa in considerazione una EDO del tipo
 	&\ddot{u}(x) + a_1(x) \dot{u}(x) + a_2(x) u(x) = 0 \\
 	&a_1(x) =  \frac{b(x)}{a(x)} \spacer a_2(x)=\frac{c(x)}{a(x)}
 \end{align}
-e prese duesaoluzioni $u_1(x)$ e $u_2(x)$ possiamo ricavare
+e prese due soluzioni $u_1(x)$ e $u_2(x)$ possiamo ricavare
 \begin{align}
 	&u_1(x)\ddot{u}_2(x) + a_1(x) u_1(x)\dot{u}_2(x) + a_2(x) u_1(x)u_2(x) = 0 \\
 	&u_2(x)\ddot{u}_1(x) + a_1(x) u_2(x)\dot{u}_1(x) + a_2(x) u_2(x)u_1(x) = 0\firstpassagecomm{sottraggo membro a membro}
@@ -107,7 +107,7 @@ Per separazione delle variabili, e definendo $W(x_0)=W_0$ otteniamo la \textbf{f
 \end{align}
 Da cui notiamo che
 \begin{enumerate}
-	\item In formacanonica $W=0$
+	\item In forma canonica $W=0$
 	\item Se $\exists x_1 \taleche W(x_1) = 0 \to W(x) = 0\quad\forall x$
 	\item Se $u_1$ e $u_2$ sono lin ind allora $W(x) \neq 0 \quad \forall x$
 \end{enumerate}
@@ -117,11 +117,11 @@ Nota una delle due soluzioni, dalla formula di Liouville possiamo ricavare una d
 	&\frac{W}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
 	&\frac{u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)}{u_1^2(x)} = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)}
 \end{align}
-Il termnine a sinistra altro non è che 
+Il termine a sinistra altro non è che 
 \begin{align}
 	&\frac{u_1(x)\dot{u}_2(x) - u_2(x)\dot{u}_1(x)}{u_1^2(x)} = \frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right)
 \end{align}
-Da cui otteniamo, sostituendo $W_0$ con $A$ per liberare l'estremo inferior edi integrazione
+Da cui otteniamo, sostituendo $W_0$ con $A$ per liberare l'estremo inferiore dei integrazione
 \begin{align}
 	&\frac{d}{dx} \left( \frac{u_2(x)}{u_1(x)} \right) = \frac{W_0\cdot exp\left( -\int_{x_0}^{x} d\xi a_1(\xi) \right)}{u_1^2(x)} \firstpassage
 	& \int^x d\eta \; \frac{d}{d\eta} \left( \frac{u_2(\eta)}{u_1(\eta)} \right) =\int^x d\eta \; \frac{A \cdot exp\left( -\int_{x_0}^{\eta} d\xi a_1(\xi) \right)}{u_1^2(\eta)} + c_1 \nextpassage
@@ -138,7 +138,7 @@ Ne definiamo una \textbf{soluzione fondamentale} $G(x,y)$ come
 \begin{align}
 	&\mathcal{L}_x^{(2)} G(x,y)= \delta(x-y) \label{greenedo2}
 \end{align}
-Imponiamo la condzione di continuità 
+Imponiamo la condizione di continuità 
 \begin{align}
 	&\frac{d^2}{dx^2}G(x,y) \propto \delta(x-y)
 \end{align}
@@ -151,7 +151,7 @@ Siano ora $u_1(x)$ e $u_2(x)$ due soluzioni della omogenea associata alla \ref{g
 \begin{align}
 	G(x,y) = A u_1(x) + B u_2(x) + G_P(x,y)
 \end{align}
-La soluzone particolare può essere scritta nella forma
+La soluzione particolare può essere scritta nella forma
 \begin{align}
 	G_P(x,y) = \double{c_1 u_1 (x) + c_2 u_2 (x) \quad x<y}{d_1 u_1 (x) + d_2 u_2 (x) \quad x>y} \spacer c_i,d_i = \double{costanti}{c_i(y), d_i(y)}
 \end{align}
@@ -169,7 +169,7 @@ Otteniamo quindi il sistema
 \begin{align}
 	\double{(c_1 - d_1) u_1 (y) +(c_2 - d_2)u_2 (y) =0}{(d_1 - c_1)\dot{u}_1 (y) + (d_2 - c_2)\dot{u}_2 (y) = 1}
 \end{align}
-Se prendiamo come incognite le differenze tra i coefficienti tra parentesi, possiamo riscrivere il sistema come il prdotto matrice-vettore
+Se prendiamo come incognite le differenze tra i coefficienti tra parentesi, possiamo riscrivere il sistema come il prodotto matrice-vettore
 \begin{align}
 	\begin{pmatrix}
 		u_1 (y) & u_2 (y)\\
@@ -204,7 +204,7 @@ Possiamo riscrivere la seconda come
 	&\left[  c_1  -\frac{u_2(y)}{W(y)} \right] u_1 (x) + \left[ c_2 +\frac{u_1(y)}{W(y)} \right] u_2 (x)\firstpassage
 	&c_1 u_1 (x) + c_2 u_2 (x) + \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
 \end{align}
-Conforntando con il caso $x<y$ e impiegando il funzionale a gradino $\theta(x-y)$ possiamo riscrivere la soluzuione particolare nella seguente forma compatta
+Confrontando con il caso $x<y$ e impiegando il funzionale a gradino $\theta(x-y)$ possiamo riscrivere la soluzione particolare nella seguente forma compatta
 \begin{align}
 	G_P(x,y)= c_1 u_1 (x) + c_2 u_2 (x) + \theta(x-y) \frac{u_1(y)u_2(x) - u_1(x)u_2(y)}{W(y)}
 \end{align}
@@ -248,7 +248,7 @@ ed enunciare il \textbf{teorema di Green:} \textit{Sia il problema di Sturm-Liou
 	\begin{align}
 		u^{om}(x) = 0
 	\end{align}
-	all'ora l'integrale generale è dato da
+	allora l'integrale generale è dato da
 	\begin{align}
 		u(y) = \int_{a}^{b} dx \; G(x,y) f(x) + \left.\left[ u(x) \frac{dG(x,y)}{dx} - G(x,y) \frac{du(x)}{dx} \right]\right|_a^b
 	\end{align}
@@ -343,7 +343,7 @@ Se non ci si vuole ricondurre al caso di condizioni omogenee, bisogna tener da c
 
 \subsubsection{Operatori lineari, unicità delle soluzioni e teorema dell'alternativa}
 
-Vediamo un rapido excursus sugli operatori che ci serivrà nel prossimo paragrafo. 
+Vediamo un rapido excursus sugli operatori che ci servirà nel prossimo paragrafo. 
 Sia l'operatore $A$ definito come
 \begin{align}
 	&A \taleche \mathcal{H} \to \mathcal{H}\\
@@ -352,7 +352,7 @@ Sia l'operatore $A$ definito come
 \end{align}
 Definiamo il \textbf{nucleo} dell'operatore come l'insieme dei vettori mappati nel vettore nullo. Qualora esso contenga solo il vettore nullo, si di che è \textbf{triviale}.
 
-Vale il seguente teorema: \textit{se il nucle di $A$ non è nullo, allora la soluzione di \ref{syseq} non è unica, eviceversa.}
+Vale il seguente teorema: \textit{se il nucleo di $A$ non è nullo, allora la soluzione di \ref{syseq} non è unica, e viceversa.}
 
 Il teorema si può dimostrare in entrambe le direzioni:
 \begin{enumerate}
@@ -390,7 +390,7 @@ Anche qui dimostriamo entrambe le "direzioni":
 	
 	\item $\vec{y} \perp ker(A^\dagger) \implies \vec{y} \in R(A)$
 	
-	Sia $\vec{y} \perp ker(A^\dagger)$, vogliamo dimostrare che appartenza all'insieme risolvente $R(A)$. Iniziamo decomponendolo
+	Sia $\vec{y} \perp ker(A^\dagger)$, vogliamo dimostrare che appartenenza all'insieme risolvente $R(A)$. Iniziamo decomponendolo
 	\begin{align}
 		\vec{y} = \vec{y}_R + \vec{y}_R^\perp \spacer \vec{y}_R \in R(A) \; , \; \vec{y}_R^\perp \in R^\perp (A)
 	\end{align}
@@ -426,7 +426,7 @@ Abbiamo quindi dalla \ref{decomp} una decomposizione dello spazio di Hilbert $\m
 	
 	In questo caso vale il teorema dell'alternativa, e quindi
 	\begin{enumerate}
-		\item $A \vec{x} = \vec{y}$ ammete un'unica soluzione
+		\item $A \vec{x} = \vec{y}$ ammette un'unica soluzione
 		
 		\item $A \vec{x} = \vec{0}$ ammette soluzioni non banali, e quindi		
 		\begin{enumerate}
@@ -439,7 +439,7 @@ Abbiamo quindi dalla \ref{decomp} una decomposizione dello spazio di Hilbert $\m
 
 \subsubsection{Applicazione del teorema dell'alternativa alle funzioni di Green}
 
-Che cosa succede quando viene meno la condizione di invertibilità dell'operatore differenziale? Ci troviamo in presenza di \textbf{modi nulli}, ovvero di auovettori corrispondenti all'autovalore zero. 
+Che cosa succede quando viene meno la condizione di invertibilità dell'operatore differenziale? Ci troviamo in presenza di \textbf{modi nulli}, ovvero di autovettori corrispondenti all'autovalore zero. 
 
 Se quindi prendiamo il problema
 \begin{align}
@@ -465,7 +465,7 @@ Riporto qui, sotto richiesta dell'autore della maggior parte di questi esercizi,
 \subsection{Esempio 1: Problema di Cauchy (Adriano Chialastri) \label{canon}}
 Risolvere il seguente problema di Cauchy
 \begin{align}
-	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0\hfill}{y(1)=0\hfill}
 \end{align}
 Iniziamo passando in \textbf{forma canonica}
 \begin{align}
@@ -486,13 +486,13 @@ Da cui otteniamo che
 \end{align}
 Il nostro problema di Cauchy in forma canonica è quindi
 \begin{align}
-	\triple{\ddot{v}(x) = -\frac{1}{x^2}}{\dot{v}(1)=0}{v(1)=0}
+	\triple{\ddot{v}(x) = -\frac{1}{x^2}}{\dot{v}(1)=0\hfill}{v(1)=0\hfill}
 \end{align}
 Andiamo ora a risolvere l'\textbf{omogenea}
 \begin{align}
 	&\ddot{v}(x) = 0 \firstpassage
 	&v_{om}(x) = Ax + B  \label{kekwdiff1}\firstpassage
-	&\double{\dot{v}_{om}(1)=A=0}{v_{om}(1)=A+B=0} \to \double{A=0}{B=0} \to \text{l'operatore differenziale è invertibile} 
+	&\double{\dot{v}_{om}(1)=A=0\hfill}{v_{om}(1)=A+B=0} \to \double{A=0}{B=0} \to \text{l'operatore differenziale è invertibile} 
 \end{align}
 Dalla \ref{kekwdiff1} vediamo come
 \begin{align}
@@ -537,14 +537,14 @@ E quindi l'esercizio è verificato.
 \subsection{Esempio 2: Omogenea di Eulero (Adriano Chialastri)}
 Riprendiamo il precedente problema di Cauchy
 \begin{align}
-	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0}{y(1)=0}
+	\triple{x^2 \ddot{y} - 2x \dot{y} + 2y = -x}{\dot{y}(1)=0\hfill}{y(1)=0\hfill}
 \end{align}
 Partiamo dall'\textbf{omogenea}
 \begin{align}
 	&x^2 \ddot{y} - 2x\dot{y} + 2y = 0 \firstpassage
 	&\ddot{y} - \frac{2}{x}\dot{y} + \frac{2}{x^2}y = 0
 \end{align}
-L'omogena scritta in questa forma risulta essre un'\textbf{equazione di Eulero}. Per risolverla poniamo quindi l'\textbf{Ansatz} $y=x^\alpha$ dove otteniamo
+L'omogenea scritta in questa forma risulta essere un'\textbf{equazione di Eulero}. Per risolverla poniamo quindi l'\textbf{Ansatz} $y=x^\alpha$ dove otteniamo
 \begin{align}
 	&\alpha(\alpha -1) x^{\alpha-2} - 2 \alpha x^{\alpha-2} + 2x^{\alpha-2} = 0 \firstpassage
 	&\alpha^2 - \alpha - 2\alpha +2 =0 \nextpassage
@@ -566,7 +566,7 @@ Andiamo ora a cercare una \textbf{soluzione particolare} col \textbf{metodo dell
 Da cui otteniamo
 \begin{align}
 	&y(x) = y_p(x) + y_{om}(x) = y_p(x) + Ax + Bx^2 \firstpassage
-	&\double{\dot{y}(1) = \dot{y}_p(1) + A + 2B = 0}{y(1) = y_p(1) + A + B=0}
+	&\double{\dot{y}(1) = \dot{y}_p(1) + A + 2B = 0}{y(1) = y_p(1) + A + B=0\hfill}
 \end{align}
 
 \newpage
@@ -575,7 +575,7 @@ Da cui otteniamo
 
 Risolvere il seguente problema di Sturm-Liouville
 \begin{align}
-	\triple{x \ddot{u}(x) + 2 \dot{u}(x) + 4xu(x) = 4}{u \left( \frac{\pi}{4}\right)=0}{u \left( \frac{\pi}{2}\right)=0}
+	\triple{x \ddot{u}(x) + 2 \dot{u}(x) + 4xu(x) = 4}{u \left( \frac{\pi}{4}\right)=0\hfill}{u \left( \frac{\pi}{2}\right)=0\hfill}
 \end{align}
 Iniziamo passando il problema in \textbf{forma canonica}
 \begin{align}
@@ -584,7 +584,7 @@ Iniziamo passando il problema in \textbf{forma canonica}
 	&A(x)x \cdot \ddot{v}(x) + 2(\dot{A}(x)x + A(x)) \dot{v}(x) + (x \ddot{A}(x) + 2 \dot{A}(x) + 4xA(x)) v(x) = 4 \nextpassage
 	&\dot{A}(x)x + A(x)=0 \to \ln(A(x)) = -\ln(x) \to A(x)= x^{-1}\nextpassage
 	&\frac{1}{\cancel{x}} \cancel{x}\cdot \ddot{v}(x) + \left( \cancel{\cancel{x} \frac{2}{x^{\cancel{3}^2}}} - \cancel{\frac{2}{x^2}} + 4\cancel{x} \frac{1}{\cancel{x}} \right)v(x) = 4 \nextpassage
-	&\triple{\ddot{v}(x) + 4v(x)= 4}{v \left( \frac{\pi}{4}\right)=0}{v \left( \frac{\pi}{2}\right)=0} \label{kekwdiff2}
+	&\triple{\ddot{v}(x) + 4v(x)= 4}{v \left( \frac{\pi}{4}\right)=0\hfill}{v \left( \frac{\pi}{2}\right)=0\hfill} \label{kekwdiff2}
 \end{align}
 Andiamo ora a risolvere l'\textbf{omogenea associata} dell'equazione in forma canonica
 \begin{align}
@@ -647,7 +647,7 @@ VERIFICA DA COPIARE QUANDO SONO MENO ABBOTTATO (pag 7 del pdf)
 \subsection{Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}
 Risolvere il seguente \textbf{problema di Cauchy}
 \begin{align}
-	\triple{x^2 \ddot{f}(x) + 3x \dot{f}(x) + f(x) = 0}{\dot{f}(1)=0}{f(1) =1}
+	\triple{x^2 \ddot{f}(x) + 3x \dot{f}(x) + f(x) = 0}{\dot{f}(1)=0\hfill}{f(1) =1\hfill}
 \end{align}
 Affinché l'operatore sia lineare dobbiamo avere BC omogenee, che non è il nostro caso. Dobbiamo quindi \textbf{linearizzare} il problema. Andiamo a definire
 \begin{align}
@@ -661,7 +661,7 @@ Da cui otteniamo, imponendo che siamo omogenee le BC di $u(x)$
 \end{align}	
 Il nostro problema diventa quindi
 \begin{align}
-	\triple{x^2 \ddot{u}(x) + 3x \dot{u}(x) + u(x) = -1}{\dot{u}(1)=0}{u(1) = 0}
+	\triple{x^2 \ddot{u}(x) + 3x \dot{u}(x) + u(x) = -1}{\dot{u}(1)=0\hfill}{u(1) = 0\hfill}
 \end{align}
 Riscriviamo il problema in \textbf{forma canonica}
 \begin{align}
@@ -722,9 +722,9 @@ Verifichiamo la bontà della soluzione trovata
 \subsection{Esempio 5: prova d'esame (Alessandro Marcelli)}
 Sia il seguente problema di Cauchy
 \begin{align}
-	\triple{x^2 \ddot{f}(x) - x \dot{f}(x) + f(x) = x^2}{\dot{f}(1) = 0}{f(1)=0}
+	\triple{x^2 \ddot{f}(x) - x \dot{f}(x) + f(x) = x^2}{\dot{f}(1) = 0\hfill}{f(1)=0\hfill}
 \end{align}
-Si richede di calcolare
+Si richiede di calcolare
 \begin{enumerate}
 	\item la funzione di Green del problema
 	\item la soluzione della non omogenea col metodo di Green per $x\geq 1$
@@ -735,7 +735,7 @@ Iniziamo passando l'equazione in \textbf{forma omogenea} (omettiamo la dipendenz
 	&\dot{f} = \dot{A}v + A \dot{v} \to \ddot{f} = \ddot{A}v + 2 \dot{A}\dot{v} + A \ddot{v} \nextpassage
 	&x^2 \ddot{A}v + 2x^2 \dot{A}\dot{v} +x^2 A \ddot{v} -x\dot{A}v -x A \dot{v} + Av = x^2\nextpassage
 	& x^2 \ddot{A}v +x(2x \dot{A} - A) \dot{v} + (x^2 \ddot{A} - x \dot{A} + A)v = x^2\nextpassage
-	&2x \dot{A} - A = 0 \to \frac{dA}{dx} = \frac{A}{2x} \to \int dA \; \frac{1}{A} = \int dx \; \frac{1}{2x} = \ln(A) = \ln(\sqrt{x}) \nextpassage
+	&2x \dot{A} - A = 0 \to \frac{dA}{dx} = \frac{A}{2x} \to \int dA \; \frac{1}{A} = \int dx \; \frac{1}{2x} \to \ln(A) = \ln(\sqrt{x}) \nextpassage
 	&A = \sqrt{x} = x^{\frac{1}{2}} \to \dot{A} = \frac{1}{2}x^{-\frac{1}{2}} \to \ddot{A} = -\frac{1}{4}x^{-\frac{3}{2}} \nextpassage
 	&x^{\frac{5}{2}} \ddot{v} + \frac{1}{4} x^{\frac{1}{2}} = x^2\nextpassage
 	&\ddot{v} +\frac{1}{4} x^{-2} v = x^{-\frac{1}{2}}
@@ -762,7 +762,7 @@ nel nostro caso $a=0$, quindi
 \begin{align}
 	\frac{d^2 v}{dt^2} + \frac{dv}{dt} + \frac{v}{4}= 0
 \end{align}
-Il nostro  Ansatz diventa $v = x^\alpha = (e^t)^\alpha  = e^{\alpha t}$ eotteniamo le due soluzioni
+Il nostro  Ansatz diventa $v = x^\alpha = (e^t)^\alpha  = e^{\alpha t}$ e otteniamo le due soluzioni
 \begin{align}
 	v_1 = e^{\alpha t} \spacer v_2 = t e^{\alpha t} 
 \end{align}
