@@ -47,64 +47,66 @@
 \contentsline {subsection}{\numberline {2.1.1}Nozioni generali sugli spazi}{27}{subsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.1.1}Spazi vettoriali}{27}{subsubsection.2.1.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.1.2}Spazi metrici, normati ed euclidei}{28}{subsubsection.2.1.1.2}%
-\contentsline {paragraph}{\numberline {2.1.1.2.1}Teorema del completamento}{28}{paragraph.2.1.1.2.1}%
-\contentsline {subsection}{\numberline {2.1.2}Operatori}{29}{subsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.1}Spettri per operatori Infinito-Dimensionali}{30}{subsubsection.2.1.2.1}%
-\contentsline {section}{\numberline {2.2}Operatori integrali (Davide Bufalini, Alessandro Marcelli)}{31}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Spunti di teoria (Alessandro Marcelli)}{31}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Esempio 1 (Davide Bufalini)}{32}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Esempio 2 (Davide Bufalini)}{35}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Operatori differenziali (Davide Bufalini, Alessandro Marcelli)}{37}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Spunti di teoria (Alessandro Marcelli)}{37}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Esempio 1: Operatore Differenziale del IIo Ordine (Davide Bufalini)}{38}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Esempio 2 (Davide Bufalini)}{40}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Operatori a blocchi (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}{42}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Esempio 1 con metodo esplicito e analitico (Davide Bufalini, Paolo Proia)}{42}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Esempio 2 con metodo esplicito e analitico (Davide Bufalini, Alessandro Marcelli)}{47}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Equazioni Differenziali Ordinarie}{53}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Spunti di teoria generale (Alessandro Marcelli)}{53}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Concetti generali}{53}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Esistenza ed unicità delle soluzioni}{53}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Distribuzioni}{54}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Equazioni Differenziali Lineari}{54}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}EDO lineari del 1o ordine [teoria](Alessandro Marcelli)}{55}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Separazione di variabili + variazione delle costanti}{55}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Metodo della funzione di Green}{56}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}EDO lineari del 2o ordine (Adriano Chialastri, Alessandro Marcelli)}{58}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Spunti di teoria (Alessandro Marcelli)}{58}{subsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.1}Metodo del Wronskiano}{60}{subsubsection.3.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.2}Metodo della funzione di Green}{61}{subsubsection.3.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.3.1.3}Teorema di Green}{63}{subsubsection.3.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.3.1.4}Applicazione del teorema di Green ai problemi di Sturm-Liouville}{64}{subsubsection.3.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.3.1.5}Applicazione del teorema di Green ai problemi di Cauchy}{65}{subsubsection.3.3.1.5}%
-\contentsline {subsubsection}{\numberline {3.3.1.6}Operatori lineari, unicità delle soluzioni e teorema dell'alternativa}{65}{subsubsection.3.3.1.6}%
-\contentsline {subsubsection}{\numberline {3.3.1.7}Applicazione del teorema dell'alternativa alle funzioni di Green}{67}{subsubsection.3.3.1.7}%
-\contentsline {subsection}{\numberline {3.3.2}Messaggio dall'autore}{68}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Esempio 1: Problema di Cauchy (Adriano Chialastri) }{68}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{70}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{71}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{73}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Esempio 5: prova d'esame (Alessandro Marcelli)}{76}{subsection.3.3.7}%
-\contentsline {section}{\numberline {3.4}Equazioni Differenziali Ordinarie Complesse (Alessandro Marcelli)}{78}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Spunti di teoria}{78}{subsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.1}Concetti introduttivi}{78}{subsubsection.3.4.1.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.2}Punti regolari e soluzione per serie}{79}{subsubsection.3.4.1.2}%
-\contentsline {subsubsection}{\numberline {3.4.1.3}Punti singolari}{82}{subsubsection.3.4.1.3}%
-\contentsline {paragraph}{\numberline {3.4.1.3.1}Soluzioni per autovalori di $A$ non coincidenti}{83}{paragraph.3.4.1.3.1}%
-\contentsline {paragraph}{\numberline {3.4.1.3.2}Soluzioni per autovalori di $A$ coincidenti}{84}{paragraph.3.4.1.3.2}%
-\contentsline {paragraph}{\numberline {3.4.1.3.3}Punti singolari regolari e teorema di Fuchs}{85}{paragraph.3.4.1.3.3}%
-\contentsline {subparagraph}{\numberline {3.4.1.3.3.1}Verifica dei coefficienti}{87}{subparagraph.3.4.1.3.3.1}%
-\contentsline {subparagraph}{\numberline {3.4.1.3.3.2}Convergenza delle serie}{89}{subparagraph.3.4.1.3.3.2}%
-\contentsline {paragraph}{\numberline {3.4.1.3.4}Punti singolari non regolari}{91}{paragraph.3.4.1.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1.4}Punto all'infinito}{92}{subsubsection.3.4.1.4}%
-\contentsline {subsubsection}{\numberline {3.4.1.5}Equazioni fuchsiane}{94}{subsubsection.3.4.1.5}%
-\contentsline {paragraph}{\numberline {3.4.1.5.1}Trasformazioni conformi}{95}{paragraph.3.4.1.5.1}%
-\contentsline {paragraph}{\numberline {3.4.1.5.2}Equazioni con 1 punto fuchsiano}{97}{paragraph.3.4.1.5.2}%
-\contentsline {paragraph}{\numberline {3.4.1.5.3}Equazioni con 2 punti fuchsiani}{98}{paragraph.3.4.1.5.3}%
-\contentsline {paragraph}{\numberline {3.4.1.5.4}Equazioni con 3 punti fuchsiani: Papperitz-Riemann}{100}{paragraph.3.4.1.5.4}%
-\contentsline {paragraph}{\numberline {3.4.1.5.5}Equazione ipergeometrica}{102}{paragraph.3.4.1.5.5}%
-\contentsline {subparagraph}{\numberline {3.4.1.5.5.1}Soluzioni dell'ipergeometrica}{103}{subparagraph.3.4.1.5.5.1}%
-\contentsline {subparagraph}{\numberline {3.4.1.5.5.2}Relazioni tra le soluzioni dell'ipergeometrica}{105}{subparagraph.3.4.1.5.5.2}%
-\contentsline {subparagraph}{\numberline {3.4.1.5.5.3}Convergenza della serie ipergeometrica}{105}{subparagraph.3.4.1.5.5.3}%
-\contentsline {paragraph}{\numberline {3.4.1.5.6}Equazione ipergeometrica confluente}{106}{paragraph.3.4.1.5.6}%
-\contentsline {subsection}{\numberline {3.4.2}Esempi}{108}{subsection.3.4.2}%
+\contentsline {paragraph}{\numberline {2.1.1.2.1}Teorema del completamento}{29}{paragraph.2.1.1.2.1}%
+\contentsline {paragraph}{\numberline {2.1.1.2.2}Completezza di $l_2$}{30}{paragraph.2.1.1.2.2}%
+\contentsline {paragraph}{\numberline {2.1.1.2.3}Teorema di ortonormalizzazione}{31}{paragraph.2.1.1.2.3}%
+\contentsline {subsection}{\numberline {2.1.2}Operatori}{32}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}Spettri per operatori Infinito-Dimensionali}{33}{subsubsection.2.1.2.1}%
+\contentsline {section}{\numberline {2.2}Operatori integrali (Davide Bufalini, Alessandro Marcelli)}{34}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Spunti di teoria (Alessandro Marcelli)}{34}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Esempio 1 (Davide Bufalini)}{35}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Esempio 2 (Davide Bufalini)}{38}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Operatori differenziali (Davide Bufalini, Alessandro Marcelli)}{40}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Spunti di teoria (Alessandro Marcelli)}{40}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Esempio 1: Operatore Differenziale del IIo Ordine (Davide Bufalini)}{41}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Esempio 2 (Davide Bufalini)}{43}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Operatori a blocchi (Davide Bufalini, Alessandro Marcelli, Paolo Proia)}{45}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Esempio 1 con metodo esplicito e analitico (Davide Bufalini, Paolo Proia)}{45}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Esempio 2 con metodo esplicito e analitico (Davide Bufalini, Alessandro Marcelli)}{50}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Equazioni Differenziali Ordinarie}{55}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spunti di teoria generale (Alessandro Marcelli)}{55}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Concetti generali}{55}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Esistenza ed unicità delle soluzioni}{55}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Distribuzioni}{56}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Equazioni Differenziali Lineari}{56}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}EDO lineari del 1o ordine [teoria](Alessandro Marcelli)}{57}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Separazione di variabili + variazione delle costanti}{57}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Metodo della funzione di Green}{58}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}EDO lineari del 2o ordine (Adriano Chialastri, Alessandro Marcelli)}{60}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Spunti di teoria (Alessandro Marcelli)}{60}{subsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}Metodo del Wronskiano}{62}{subsubsection.3.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}Metodo della funzione di Green}{63}{subsubsection.3.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.3.1.3}Teorema di Green}{65}{subsubsection.3.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.3.1.4}Applicazione del teorema di Green ai problemi di Sturm-Liouville}{66}{subsubsection.3.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.3.1.5}Applicazione del teorema di Green ai problemi di Cauchy}{67}{subsubsection.3.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.3.1.6}Operatori lineari, unicità delle soluzioni e teorema dell'alternativa}{67}{subsubsection.3.3.1.6}%
+\contentsline {subsubsection}{\numberline {3.3.1.7}Applicazione del teorema dell'alternativa alle funzioni di Green}{69}{subsubsection.3.3.1.7}%
+\contentsline {subsection}{\numberline {3.3.2}Messaggio dall'autore}{70}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Esempio 1: Problema di Cauchy (Adriano Chialastri) }{70}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Esempio 2: Omogenea di Eulero (Adriano Chialastri)}{72}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Esempio 3: Problema di Sturm-Liouville (Adriano Chialastri)}{73}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Esempio 4: Problema di Cauchy non lineare (Adriano Chialastri)}{75}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Esempio 5: prova d'esame (Alessandro Marcelli)}{78}{subsection.3.3.7}%
+\contentsline {section}{\numberline {3.4}Equazioni Differenziali Ordinarie Complesse (Alessandro Marcelli)}{80}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Spunti di teoria}{80}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}Concetti introduttivi}{80}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}Punti regolari e soluzione per serie}{81}{subsubsection.3.4.1.2}%
+\contentsline {subsubsection}{\numberline {3.4.1.3}Punti singolari}{84}{subsubsection.3.4.1.3}%
+\contentsline {paragraph}{\numberline {3.4.1.3.1}Soluzioni per autovalori di $A$ non coincidenti}{85}{paragraph.3.4.1.3.1}%
+\contentsline {paragraph}{\numberline {3.4.1.3.2}Soluzioni per autovalori di $A$ coincidenti}{86}{paragraph.3.4.1.3.2}%
+\contentsline {paragraph}{\numberline {3.4.1.3.3}Punti singolari regolari e teorema di Fuchs}{87}{paragraph.3.4.1.3.3}%
+\contentsline {subparagraph}{\numberline {3.4.1.3.3.1}Verifica dei coefficienti}{89}{subparagraph.3.4.1.3.3.1}%
+\contentsline {subparagraph}{\numberline {3.4.1.3.3.2}Convergenza delle serie}{91}{subparagraph.3.4.1.3.3.2}%
+\contentsline {paragraph}{\numberline {3.4.1.3.4}Punti singolari non regolari}{93}{paragraph.3.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1.4}Punto all'infinito}{94}{subsubsection.3.4.1.4}%
+\contentsline {subsubsection}{\numberline {3.4.1.5}Equazioni fuchsiane}{96}{subsubsection.3.4.1.5}%
+\contentsline {paragraph}{\numberline {3.4.1.5.1}Trasformazioni conformi}{97}{paragraph.3.4.1.5.1}%
+\contentsline {paragraph}{\numberline {3.4.1.5.2}Equazioni con 1 punto fuchsiano}{99}{paragraph.3.4.1.5.2}%
+\contentsline {paragraph}{\numberline {3.4.1.5.3}Equazioni con 2 punti fuchsiani}{100}{paragraph.3.4.1.5.3}%
+\contentsline {paragraph}{\numberline {3.4.1.5.4}Equazioni con 3 punti fuchsiani: Papperitz-Riemann}{102}{paragraph.3.4.1.5.4}%
+\contentsline {paragraph}{\numberline {3.4.1.5.5}Equazione ipergeometrica}{104}{paragraph.3.4.1.5.5}%
+\contentsline {subparagraph}{\numberline {3.4.1.5.5.1}Soluzioni dell'ipergeometrica}{105}{subparagraph.3.4.1.5.5.1}%
+\contentsline {subparagraph}{\numberline {3.4.1.5.5.2}Relazioni tra le soluzioni dell'ipergeometrica}{107}{subparagraph.3.4.1.5.5.2}%
+\contentsline {subparagraph}{\numberline {3.4.1.5.5.3}Convergenza della serie ipergeometrica}{107}{subparagraph.3.4.1.5.5.3}%
+\contentsline {paragraph}{\numberline {3.4.1.5.6}Equazione ipergeometrica confluente}{108}{paragraph.3.4.1.5.6}%
+\contentsline {subsection}{\numberline {3.4.2}Esempi}{110}{subsection.3.4.2}%

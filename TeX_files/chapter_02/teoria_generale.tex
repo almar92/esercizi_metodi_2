@@ -79,6 +79,11 @@ Uno spazio \textbf{euclideo} è uno spazio normato la cui norma è definita attr
 
 Uno spazio euclideo completo si dice \textbf{spazio di Hilbert}.
 
+
+
+
+\newpage
+
 \subsubsubsection{Teorema del completamento}
 Uno spazio metrico non completo può essere "completato", combinandolo con l'insieme contentente tutti i limiti delle sue succesioni di Cauchy, al prezzo di considerare equivalenti le successioni con identico limite. 
 
@@ -89,7 +94,68 @@ Possiamo fare questo appoggiandoci al \textbf{teorema del completamento:} \texti
 \end{enumerate}
 }
 
+Per dimostrare il teorema, iniziamo definendo
+\begin{align}
+	Z = \left\{ \{z_n\} \taleche z_n \in X \; ,\; \{z_n\} \; \text{successione di Cauchy in } X \right\}
+\end{align}
+E definiamo la seguente relazione di equivalentza tra elementi di $Z$
+\begin{align}
+	\limit{n}{\infty} d(x_n,y_n) = 0 \implies \{x_n\} \sim \{y_n\} 
+\end{align}
+PAOLO
+
+
 \newpage
+
+
+\subsubsubsection{Completezza di $l_2$}
+Si può dimostrare la completezza dello spazio metrico $l_2$. Sia una successione di elementi di $l_2$ (successione di successioni)
+\begin{align}
+	\mathbf{x}_n = \{ x_n^1,  x_n^2, \dots, x_n^i, \dots\}\spacer \sum_{i=1}^{\infty} |x_n^i|^n < \infty
+\end{align}
+se la successione è di Cauchy, preso $\epsilon>0$ avremo che
+\begin{align}
+	 \exists n_\epsilon \taleche ||x_n-x_m||<\epsilon \quad \forall n,m\in n_\epsilon
+\end{align}
+Dobbiamo dimostrare come tale successione converga sempre ad un elemento di $l_2$.
+
+Se consideriamo la comonente i-esima di ogni elemento della successione avremo
+\begin{align}
+	|(\mathbf{x}_n-\mathbf{x}_m)^i| < ||\mathbf{x}_n-\mathbf{x}_m|| = \sum_{i=1}^{\infty} |(\mathbf{x}_n-\mathbf{x}_m)^i|<\epsilon
+\end{align}
+Questo implica che la successione delle i-esime componenti è di Cauchy in $\R$, che essendo completo garantisce la convergenza delle successioni.
+Se ora definiamo
+\begin{align}
+	x^i = \limit{n}{\infty}x_n^i
+\end{align}
+Possiamo quindi dire che la successione  $\{\mathbf{x}_n\}$ ha come limite la $\{\mathbf{x}\} = \{ x^1,x^2 ,\dots, x^i,\dots \}$ e ci basta dimostrare come questa dia un elemento di $l_2$, ovvero che
+\begin{align}
+	\sum_{i=1}^{\infty} |x^i|^2 < \infty
+\end{align}
+Se consideriamo la somma finita $\sum_{i=1}^{N} |x_n^i - x_m^i|$ possiamo procedere nel seguente modo
+\begin{align}
+	&\limit{m}{\infty}\left(\sum_{i=1}^{N} |x_n^i - x_m^i|\right) = \sum_{i=1}^{N} |x_n^i - x^i|\firstpassagecomm{per $n$ abbastanza grande}
+	&\sum_{i=1}^{N} |x_n^i - x^i| < \epsilon
+\end{align}
+Per $N\to \infty$ possiamo quindi scrivere 
+\begin{align}
+	\sum_{i=1}^{\infty} |x^i|^2 &= \sum_{i=1}^{\infty} |-x^i|^2 = \sum_{i=1}^{\infty} |-x^i + x_n^i - x_n^i|^2 = \nonumber\\
+	&= \sum_{i=1}^{\infty} | x_n^i -x^i - x_n^i|^2 \leq  \sum_{i=1}^{\infty} | x_n^i -x^i|^2 + \sum_{i=1}^{\infty}|- x_n^i|^2<\infty
+\end{align}
+	
+\newpage
+
+\subsubsubsection{Teorema di ortonormalizzazione}
+
+\textit{Sia $\{f_n\}$ un sistema di vettori linearmente indipendenti in uno spazio di Hilbert separabile. Allora esiste un sistema ortonormale $\{\phi_n\}$ equivalente al precedente}
+\begin{align}
+	\phi_n = \sum_{k} a_{nk} f_k \quad\leftrightarrow\quad f_n = \sum_{k} a_{nk} \phi_k
+\end{align}
+
+Dimostrazione: lul dopo
+
+\newpage
+
 
 \subsection{Operatori}
 

@@ -160,7 +160,7 @@ Stesso discorso facciamo per $v(z)$.
 
 Esiste quindi per forza un $r_0$ tale per cui la serie converge in modo assoluto e uniforme, e che quindi definisce una funzione analitica.
 
-Possiamo quindi ridefinire la $u(z)$ tramite la sua espansione di taylor come
+Possiamo quindi ridefinire la $u(z)$ tramite la sua espansione di Taylor come
 \begin{align}
 	\triple{u(z) = \sum_{n=0}^{\infty} c_n(z-z_0)^n}{\dot{u}(z_0) = v_0 = c_1 \hfill}{u(z_0) = u_0 = c_0 \hfill}
 \end{align}
@@ -214,7 +214,7 @@ Per costruzione, le singolarità di una EDO della forma
 \begin{align}
 	\ddot{u}(z) + p(z) \dot{u}(z) + q(z)u(z) = 0
 \end{align}
-devono coincidere con quelle delle funzioni $p(z)$ e $q(z)$, esono divise in due categorie
+devono coincidere con quelle delle funzioni $p(z)$ e $q(z)$, e sono divise in due categorie
 \begin{enumerate}
 	\item punti \textbf{singolari regolari} (anche detti \textbf{inessenziali} o \textbf{fuchsiani}).
 	
@@ -405,7 +405,7 @@ Per costruzione, sia $P(z)$ che $Q(z)$ sono analitiche, e quindi
 	\item $q(z)$ ha al massimo un polo doppio
 \end{enumerate}
 
-Possiamo quindi enunciare il \textbf{Teorema di Fuch:} \textit{presa una EDO nella forma
+Possiamo quindi enunciare il \textbf{Teorema di Fuchs:} \textit{presa una EDO nella forma
 \begin{align}
 	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
 \end{align}
@@ -461,7 +461,7 @@ Ci si presentano due casi
 	In questo caso otteniamo la soluzione identicamente nulla
 	\item $c_0 \neq 0$
 	
-	In questo caso per $k=0$ otteniamo la cosidetta \textbf{equazione indiciale}, indipendente dai $c_k$
+	In questo caso per $k=0$ otteniamo la cosiddetta \textbf{equazione indiciale}, indipendente dai $c_k$
 	\begin{align}
 		\rho^2 + (p_0 -1)\rho + q_0 = 0
 	\end{align}
@@ -493,7 +493,7 @@ Ci si presentano due casi
  		\item $\rho_i =    \rho_j + n \spacer i,j,n \in N$
  		In questo caso bisogna cambiare Ansatz per la soluzione, altrimenti da $\rho_2$ in poi i termini vanno ad annullarsi in cascata.
  		
- 		Dobbiamo quindi passapre per il metodo del Wronskiano passando per l'Ansatz
+ 		Dobbiamo quindi passare per il metodo del Wronskiano passando per l'Ansatz
  		\begin{align}
  			u_2(z) = A\ln(z)u_1(z) + z^{\rho_2} \sum_{k=0}^{\infty} b_k z^k
  		\end{align}
@@ -593,13 +593,13 @@ E dimostriamo il teorema per induzione
 \subsubsubsection{Punti singolari non regolari}
 Qualora il punto singolare non sia regolare la situazione si complica. Quello che succede di solito è che riesce a ricavare al massimo uno solo degli indici e quindi una soluzione sola, e non sempre si riesce a dimostrare la convergenza della serie ottenuta, che potrebbe quindi essere asintotica.
 
-La situazione migliora in presenza del fenomeno di \textbf{confluenza}, ovvero quando la funzione oggetto di studio che presenta punti irreogolari è il limite di funzioni che invece presentano punti regolari. Vederemo un esempio più avanti.
+La situazione migliora in presenza del fenomeno di \textbf{confluenza}, ovvero quando la funzione oggetto di studio che presenta punti irregolari è il limite di funzioni che invece presentano punti regolari. Vederemo un esempio più avanti.
 
 \newpage
 
 \subsubsection{Punto all'infinito}
 
-Per studiare il comportamento della funzione intorno al punto all'infinito dobbiamo applicare il solito cambio di variaibli
+Per studiare il comportamento della funzione intorno al punto all'infinito dobbiamo applicare il solito cambio di variabili
 \begin{align}
 	\eta = \frac{1}{z}
 \end{align}
@@ -643,7 +643,7 @@ Invece dalla seconda
 	&\limit{\eta}{0} \left[\frac{1}{\eta^4} q\left(\frac{1}{\eta}\right)\right] = cost. \nextpassage
 	&\limit{z}{\infty} z^4 q\left(z\right) = cost.
 \end{align}
-Riasumendo, il punto all'infinito è \textbf{regolare} se
+Riassumendo, il punto all'infinito è \textbf{regolare} se
 \begin{align}
 	\double{\limit{z}{\infty}zp\left(z\right) &= 2\hfill}{\limit{z}{\infty} z^4 q\left(z\right) &= cost.}
 \end{align}
@@ -669,7 +669,7 @@ Presa una equazione
 \begin{align}
 	\ddot{u}(z) + p(z)\dot{u}(z) + q(z)u(z) = 0
 \end{align}
-con $N$ punti fuchsiani $\xi_i$ e il punto all'infinito anch'esso singolare regolare, possiamo rappresentarle con la seguente matrice, che espanderemo piu` avanti nel \textbf{P-simbolo}
+con $N$ punti fuchsiani $\xi_i$ e il punto all'infinito anch'esso singolare regolare, possiamo rappresentarle con la seguente matrice, che espanderemo più` avanti nel \textbf{P-simbolo}
 \begin{align}
 	\begin{pmatrix}
 		\xi_1 & \xi_2 & \dots & \xi_N & \infty\\
@@ -699,7 +699,7 @@ segue che $P(z)$ debba essere un polinomio di grado $N-1$ in $z$, e possiamo ris
 \begin{align}
 	p(z) = \sum_{i=1}^{N} \frac{A_i}{z-\xi_i}
 \end{align}
-In modo analogo possiamo parametrizzare $q(z)$, tenendo a mente che il limite all'infinito deve avere un comportamento analogo a $z^{2N}$. Avremo quindi un poliniomio di grado $2N-2$ e possiamo quindi usare la rappresentazione
+In modo analogo possiamo parametrizzare $q(z)$, tenendo a mente che il limite all'infinito deve avere un comportamento analogo a $z^{2N}$. Avremo quindi un polinomio di grado $2N-2$ e possiamo quindi usare la rappresentazione
 \begin{align}
 	q(z) = \sum_{i=1}^{N} \frac{B_i}{(z-\xi_i)^2} +  \frac{\sum_{j=0}^{N-2} c_j z^{N-2-j} }{\prod_{i=1}^{N}(z-\xi_i)}
 \end{align}
@@ -728,7 +728,7 @@ Possiamo quindi riscrivere la nostra EDO come
 	&\ddot{u}(z) + \left[ \sum_{i=1}^{N} \frac{1 - \alpha_i - \beta_i}{z-\xi_i} \right] \dot{u}(z) + \left[ \sum_{i=1}^{N} \frac{\alpha_i\beta_i}{(z-\xi_i)^2} +  \frac{\sum_{j=0}^{N-2} c_j z^{N-2-j} }{\prod_{i=1}^{N}(z-\xi_i)} \right] u(z) = 0
 \end{align}
 
-Andiamo ora ad analizzare l'equazione indiciale intorno al punto all'infitito. Appoggiandoci all'Ansatz $u(z) = z^{-\mu}$ e tenendo solo 'andamento dominante otteniamo
+Andiamo ora ad analizzare l'equazione indiciale intorno al punto all'infinito. Appoggiandoci all'Ansatz $u(z) = z^{-\mu}$ e tenendo solo 'andamento dominante otteniamo
 \begin{align}
 	\mu^2 + \left[ \sum_{i=1}^{N} (\alpha_i + \beta_i) + (1-N) \right]\mu + \left[ c_0 + \sum_{i=1}^{N}\alpha_i \beta_i \right] = 0
 \end{align}
@@ -770,7 +770,7 @@ Le \textbf{trasformazioni di Möbius} godono delle seguenti proprietà:
 			c_2 & d_2
 		\end{pmatrix} = \hat{F}_1 \hat{F}_2
 	\end{align}
-	\item LA trasformazione identica cosrrisponde alla matrice identià
+	\item LA trasformazione identica corrisponde alla matrice identità
 	\begin{align}
 		&z \to I(z) = z = \frac{1 \cdot z + 0 }{0 \cdot z + 1} \firstpassage
 		&\hat{I} = \begin{pmatrix}
@@ -778,7 +778,7 @@ Le \textbf{trasformazioni di Möbius} godono delle seguenti proprietà:
 			0 & 1
 		\end{pmatrix}
 	\end{align}
-	\item la trasfomrazione inversa si ha solo per $cz + d \neq 0$ e sarà data da
+	\item la trasformazione inversa si ha solo per $cz + d \neq 0$ e sarà data da
 	\begin{align}
 		&w = \frac{az + b}{cz +d} \to z =\frac{b - dw}{cw - a} \spacer \double{cz + d \neq 0}{cw -a \neq 0}\firstpassage
 		&\hat{F}^{-1}  = \begin{pmatrix}
@@ -786,7 +786,7 @@ Le \textbf{trasformazioni di Möbius} godono delle seguenti proprietà:
 			c & -a
 		\end{pmatrix}
 	\end{align}
-	\item Essendo le trasformazioni apparententi al gruppo $PSL(2,\C)$, avremo che 
+	\item Essendo le trasformazioni appartenenti al gruppo $PSL(2,\C)$, avremo che 
 	\begin{align}
 		&\forall \lambda\neq 0 \in \C \taleche (e,f,g,h) = (\lambda a,\lambda a,\lambda b,\lambda c,\lambda d)\firstpassage
 		&G=\frac{ex + f}{gx + h} = \frac{\lambda ax + \lambda b}{\lambda cx + \lambda d } =\frac{ax + b}{cx + d} = F
@@ -997,7 +997,7 @@ e con P-simbolo
 		1-c & c-a-b & b & 
 	\end{matrix}\right\}
 \end{align}
-Sfruttando le propiretà del P-simbolo, possiamo ricondurre qualunque equazione di Papperitz-Riemann ad una ipergeometrica facendo uso del \textbf{birapporto}:
+Sfruttando le proprietà del P-simbolo, possiamo ricondurre qualunque equazione di Papperitz-Riemann ad una ipergeometrica facendo uso del \textbf{birapporto}:
 \begin{align}
 	w = \frac{z-z_1}{z-z_3}\cdot\frac{z_2-z_3}{z_2-z_1}
 \end{align}
@@ -1031,7 +1031,7 @@ Per la proprietà 5 invece arriviamo a scrivere
 		\beta_1-\alpha_1 & \beta_2-\alpha_2 & \beta_3 + \alpha_1  + \alpha_3& 
 	\end{matrix}\right\}
 \end{align}
-Si può ricaare l'ipergeometrica dalla forma generale di Papperitz-Riemann nel seguente modo
+Si può ricavare l'ipergeometrica dalla forma generale di Papperitz-Riemann nel seguente modo
 \begin{align}
 	&\ddot{u}(z) + \left[\sum_{i=1}^3\frac{1-\alpha_i - \beta_i}{z-z_i}\right]\cdot \dot{u}(z) + \left[\frac{1}{\prod_{i=1}^3(z-z_i)}\sum_{i=1}^3\frac{\alpha_i\beta_i}{z-z_i}(z_i-z_j)(z_i-z_k)\right] \cdot u(z)=0\firstpassagecomm{applico il limite $z_3 \rightarrow \infty$}	
 	&\ddot{u}(z) + \left[\sum_{i=1}^2\frac{1-\alpha_i - \beta_i}{z-z_i}\right]\cdot \dot{u}(z) + \left[\frac{1}{\prod_{i=1}^3(z-z_i)}\left(\frac{\alpha_1\beta_1}{z-z_1}(z_1-z_2) + \frac{\alpha_2\beta_2}{z-z_2}(z_2-z_1) + \alpha_3\beta_3\right)\right] \cdot u(z)=0\nextpassagecomm{sostituisco i valori di $z_i,\alpha_i,\beta_i$ per la ipergeometrica}
@@ -1077,7 +1077,7 @@ Andiamo a calcolare la coppia di soluzioni intorno all'origine.
 		&(a)_n = \prod_{i=1}^{n}(a+i-1) = \frac{\Gamma(a+n)}{\Gamma(a)}\firstpassage
 		&c_n = \frac{(a)_n (b)_n}{(c)_n} \cdot \frac{1}{n!} = \frac{\Gamma(c)}{\Gamma(a)\Gamma(b)} \cdot \frac{\Gamma(a+n)\Gamma(b+n)}{\Gamma(c+n)} \cdot \frac{1}{\Gamma(1+n)}
 	\end{align}
-	e ponendo $c_0=1$ siamo così arrivati a definire la prima soluzione con la cosidetta \textbf{serie ipergeometrica}
+	e ponendo $c_0=1$ siamo così arrivati a definire la prima soluzione con la cosiddetta \textbf{serie ipergeometrica}
 	\begin{align}
 		u_1(z) = \frac{\Gamma(c)}{\Gamma(a)\Gamma(b)} \cdot \sum_{n=0}^{\infty} \frac{\Gamma(a+n)\Gamma(b+n)}{\Gamma(c+n)\Gamma(1+n)} \cdot z^n = {}_2F_1(a,b,c;z)
 	\end{align}
@@ -1121,7 +1121,7 @@ Ci troviamo ora di fronte a due casi per la soluzione generale $u^{(0)}(z)$ into
 	
 	\item $c\in \N$
 	
-	In questo caso si procede con il metodo del wronskiano, come abbiamo già visto in precedenza.
+	In questo caso si procede con il metodo del Wronskiano, come abbiamo già visto in precedenza.
 
 \end{enumerate}
 
@@ -1151,7 +1151,7 @@ Se ora applichiamo il prodotto di Cauchy, notiamo come possiamo espandere $\tild
 \end{align}
 Questo ci porta a notare come per ogni soluzione abbiamo almeno 4 possibili espressioni, legate alla ridefinizione degli indici intorno ai due punti rimanenti.
 
-In totale abbiamo quindi $6\cdot4=24$ possiibli forme per le soluzioni, ma ci basta prendere due soluzioni linearmente indipendenti (una per gruppo da 4) per formare una base e quindi poter definire tutte le altre come combinazione delle due.
+In totale abbiamo quindi $6\cdot4=24$ possibili forme per le soluzioni, ma ci basta prendere due soluzioni linearmente indipendenti (una per gruppo da 4) per formare una base e quindi poter definire tutte le altre come combinazione delle due.
 
 Questo vuol dire che prese \textbf{tre} soluzioni, esiste una relazione lineare che lega. Di conseguenza, date le 24 soluzioni avremo 20 combinazioni lineari possibili.
 
