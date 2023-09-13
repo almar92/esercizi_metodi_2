@@ -719,7 +719,7 @@ Verifichiamo la bontà della soluzione trovata
 	&\cancel{x^2}\frac{2\ln(x) -1}{x^{\cancel{3}}} - 3\cancel{x} \frac{\ln(x)}{x^{\cancel{2}}} + \frac{1+\ln(x)}{x} = 0 \to \frac{1}{x}[\cancel{2\ln(x)} -\cancel{3\ln(x)} + \cancel{\ln(x)} -\cancel{1} +\cancel{1}] = 0 \quad \leftarrow \quad \text{ok}
 \end{align}
 \newpage 
-\subsection{Esempio 5: prova d'esame (Alessandro Marcelli)}
+\subsection{Esempio 5: Prova d'esame (Alessandro Marcelli)}
 Sia il seguente problema di Cauchy
 \begin{align}
 	\triple{x^2 \ddot{f}(x) - x \dot{f}(x) + f(x) = x^2}{\dot{f}(1) = 0\hfill}{f(1)=0\hfill}
@@ -792,12 +792,78 @@ Andiamo ora calcolare la \textbf{funzione di Green avanzata} del problema
 	G(x,y) &= \theta(x-y)\left[ \frac{v_1(y) v_2(x) -v_1(x)v_2(y)}{W} \right] = \nonumber \\
 	&= \theta(x-y)\left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] 
 \end{align}
-Possiamo ora andare a calcolare la soluzione particolare
+Possiamo ora andare a calcolare l'integrale generale
 \begin{align}
 	v(x) &= \int_{1}^{x} dy \; G(x,y) \cdot y^2 = \nonumber\\
 	&= \int_{1}^{x} dy \; \left[y^\frac{1}{2} x^\frac{1}{2} \ln(x) - x^\frac{1}{2} y^\frac{1}{2}\ln(y) \right] y^2 = \nonumber\\
 	&= x^\frac{1}{2} \ln(x)\int_{1}^{x} dy \;y^\frac{5}{2} - x^\frac{1}{2}\int_{1}^{x} dy \; y^\frac{5}{2}\ln(y)  = \nonumber\\
 	&= x^\frac{1}{2} \ln(x) \left.\frac{2}{7}y^{\frac{7}{2}} \right|_1^x + 
 \end{align}
+
+DA RICONTROLLARE E COMPLETARE
+
+\newpage
+
+\subsection{Esempio 6: Prova d'esame (Alessandro Marcelli)}
+
+Dato il seguente problema di Cauchy
+\begin{align}
+	\triple{\ddot{f}(x) + 4f(x) = 1}{\dot{f}(0) = 1 \hfill}{f(0) = \frac{1}{4}\hfill}
+\end{align}
+Si richiede di calcolare
+\begin{enumerate}
+	\item la funzione di Green del problema
+	\item la soluzione della non omogenea col metodo di Green per $x\geq 0$
+\end{enumerate}
+
+Ci riconduciamo al caso di condizioni omogenee con la seguente trasformazione
+\begin{align}
+	&u(x) = f(x) + mx + q \to \dot{u}(x) = \dot{f}(x) + m\firstpassage
+	&\double{\dot{u}(0) = f(0) + m\hfill }{u(0) = f(0) + q\hfill} \to \double{0 = 1 + m\hfill }{0 = \frac{1}{4} + q\hfill} \to \double{m&=-1\hfill }{q &= -\frac{1}{4}\hfill} \nextpassage
+	&u(x) = f(x) -x  -\frac{1}{4} \leftrightarrow f(x) = u(x) +x  +\frac{1}{4} \nextpassage
+	&\triple{\ddot{u}(x) + 4u(x) +4x +1 = 1}{\dot{u}(0) = 0 \hfill}{u(0) = 0\hfill} \to \triple{\ddot{u}(x) + 4u(x) = -4x}{\dot{u}(0) = 0 \hfill}{u(0) = 0\hfill} 
+\end{align} 
+Andiamo a studiarne l'omogenea, ottenendo
+\begin{align}
+	&\ddot{u}(x) + 4u(x) =0 \firstpassagecomm{eq. a coefficienti costanti}
+	&\alpha^2 e^{\alpha x} + 4e^{\alpha x} = 0 \to \alpha^2 = -4 \to \alpha_{1,2} = \pm 2i \nextpassage
+	&u^{om}(x) = Ae^{2ix} + Be^{-2ix} \to \dot{u}(x) = 2i(Ae^{2ix} - Be^{-2ix})
+\end{align}
+Verifichiamo ora come l'equazione non ammetta modi nulli
+\begin{align}
+	\double{\dot{u}(0) = 2i(A - B) = 0}{u(0) = A+B =0\hfill} \to \double{A=-B}{A=+B} \to A=B=0
+\end{align}
+Possiamo quindi risolvere con Green. Iniziamo calcolando il Wronskiano
+\begin{align}
+	W = \begin{vmatrix}
+		e^{2iy}   & e^{-2iy}\\
+		2ie^{2iy} & -2ie^{-2iy}
+	\end{vmatrix} = -4i
+\end{align}
+E quindi possiamo calcolare la funzione di Green
+\begin{align}
+	G(x,y) &= \frac{1}{W} [u_1(y)u_2(x) - u_1(x)u_2(y)] = \nonumber\\
+		   &= \frac{i}{4} [e^{2iy}e^{-2ix} - e^{2ix}e^{-2iy} ]
+\end{align}
+
+\newpage
+Possiamo quindi calcolare l'integrale generale sovrapponendo la funzione di Green alla forzante
+\begin{align}
+	u(x) &= \int_{0}^x dy \; \frac{i}{\cancel{4}} [e^{2iy}e^{-2ix} - e^{2ix}e^{-2iy} ] (-\cancel{4}y) =-i \left[e^{-2ix}\int_{0}^x dy \; e^{2iy}y - e^{2ix}\int_{0}^x dy \; e^{-2iy}  y\right] = \nonumber\\
+	 &=-i \left[e^{-2ix} \left( \frac{1}{2i}x e^{2ix} + \frac{1}{4} e^{2ix} -\frac{1}{4} \right) - e^{2ix}\left( -\frac{1}{2i}x e^{-2ix} + \frac{1}{4} e^{-2ix} -\frac{1}{4} \right)\right] = \nonumber\\
+	 &=-i \left[ \frac{1}{2i}x + \cancel{\frac{1}{4}} -\frac{1}{4}e^{-2ix} \frac{1}{2i}x - \cancel{\frac{1}{4}} -\frac{1}{4}e^{2ix}   \right] =\frac{i}{4} (e^{2ix} -e^{-2ix} ) -x  = \nonumber\\
+	 &= \frac{1}{2} \sin (2x) -x
+\end{align}
+Verifichiamo la soluzione trovata
+\begin{align}
+	&u(x) = \frac{1}{2} \sin (2x) -x \to \dot{u} = \cos(2x) -1 \to \ddot{u}(x) = -2\sin(2x) \firstpassage
+	&\double{\dot{u}(0) = \cos(0) -1 = 1-1=0}{u(0) = \frac{1}{2} \sin (0) -0 = 0 \hfill} \spacer \textcolor{red}{\cancel{-2\sin(2x)}} +4\left[\textcolor{red}{\cancel{\frac{1}{2} \sin (2x)}} -\textcolor{blue}{\cancel{x}} \right] = -\textcolor{blue}{\cancel{4x}}
+\end{align}
+Tornando alla funzione originaria, la nosta soluzione sarà quindi
+\begin{align}
+	&f(x) = \frac{1}{2} \sin (2x) - \cancel{x} + \cancel{x} + \frac{1}{4} \firstpassage
+	&f(x) = \frac{1}{4}(2\sin (2x) +1 )
+\end{align}
+
 
 \newpage

@@ -48,7 +48,7 @@ Qualora servano termini successivi (di solito ci si ferma al termine Next-to-Lea
 \textbf{NOTA BENE:} qualora una delle due funzioni sia una trigonometrica elevata a potenza conviene sviluppare solo la trigonometrica e mettere a potenza lo sviluppo, e fare altri magheggi
 quali utilizzare le relazioni trigonometriche per fare il meno conti possibile.
 
-\subsubsection{Metodo del punto di sella (Davide Bufalini)}
+\subsubsection{Metodo del punto di sella (Davide Bufalini, Alessandro Marcelli)}
 
 Abbiamo finora visto integrali sulla retta reale. Qualora si abbia una generica curva $\gamma \in \C$ il procedimento si complica leggermente. 
 
@@ -60,7 +60,7 @@ Qualora $\phi(t)$ e $g(t)$ siano analitiche in un dominio $\mathit{D}$ e si abbi
 \begin{align}
 	\phi(t) &= u(t) + iv(t)
 \end{align}
-All'interno del dominio non è detto che $v(t)$ sia costante, il che ci impedisce di restringerci al caso reale. Inoltre, per $t \in \gamma$ il termine $e^{iv(t)}$ oscilla fortemente, portanto la $I(x)$ ad essere mediata a 0. 
+All'interno del dominio non è detto che $v(t)$ sia costante, il che ci impedisce di restringerci al caso reale. Inoltre, per $t \in \gamma$ il termine $e^{iv(t)}$ oscilla fortemente, portando la $I(x)$ ad essere mediata a 0 (\textbf{lemma di Riemann-Lebesgue}). 
 
 Cerchiamo un modo per rendere costante la $v(t)$ e rendere massima la $u(t)$, in modo da rispettare il comportamento asintotico.
 Il procedimento si snoda nei seguenti passaggi
@@ -76,11 +76,19 @@ Il procedimento si snoda nei seguenti passaggi
 	\end{enumerate}
 	\item Cerchiamo il punto di sella $t_0$ di $\phi(t)$ tale
 	\begin{align}
-		\phi(t_0) &= 0 \\
+		\dot{\phi}(t_0) &= 0 \\
 		\ddot{\phi}(t_0) &: \ddot{u}(t_0) <0 
 	\end{align}
-	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$  
-	\item Una volta trovato questo cammino, risolviamo con i metodi noti per il caso reale
+	\item Cerchiamo quindi i percorsi a fase costante passanti per $t_0$, ovvero ponendo $v(t)= v(t_0)$, da cui segue $Im(\phi(t)) m= Im(\phi(t_0))$. Una volta trovati questi cammini, vediamo se è possibile deformare la curva $\gamma$ su un cammino a fase costante $\gamma^*$ dove $\ddot{u}(t_0) <0$, ovvero sul cammino detto di \textbf{Steepest Descent}.
+	\item Una volta trovato questo cammino, dobbiamo trovare il modo di \textbf{chiudere} il percorso di integrazione in una curva $\gamma_c$, per mandare gli estremi di integrazione agli estremi dell'asse reale. Avremo due casi possibili
+	\begin{enumerate}
+		\item All'interno del percorso chiuso non ci sono poli per $g(t)$, e quindi avremo per il teorema di Cauchy
+		\begin{align}
+			\oint_{\gamma_c} = 0 = \int_\gamma + \int_{-\infty}^{+\infty} \to \int_\gamma = - \int_{-\infty}^{+\infty}
+		\end{align}
+		\item Sono presenti poli, e in tal caso al risultato di sopra vanno sommati i corrispettivi residui
+	\end{enumerate}
+	\item Risolviamo l'integrale sull'asse reale con i metodi noti 
 	
 \end{enumerate}
 
@@ -478,3 +486,41 @@ Possiamo quindi riscrivere la nostra funzione integrale come
 	&= \frac{e^{-i\left( x-\frac{\pi}{4} \right)}}{\sqrt{2}}\left[ \int_\R d\tau  \; e^{-x\tau^2}  + \frac{3i}{32} \int_\R d\tau \; e^{-x\tau^2} \tau^2\right] = \nonumber \\
 	&= \frac{e^{-i\left( x-\frac{\pi}{4} \right)}}{\sqrt{2}}\left[ \sqrt{\frac{\pi}{x}}   + \frac{3i}{32} \sqrt{\frac{\pi}{x^3}} \right]
 \end{align}
+
+\newpage
+
+\subsection{Esempio 7: Prova d'esame (Paolo Flavoni)}
+
+Calcolare il termine Leading per la funzione
+\begin{align}
+	I(x) = \int_{-i\infty}^{i\infty} dt \; \frac{e^{t^2 - 2xt}}{t+x}
+\end{align}
+Notiamo come la funzione integrale non sia nella forma tipica studiata finora. Dobbiamo quindi applicare un cambio di variabili per ricondurcela. Poniamo
+\begin{align}
+	s &= \frac{t}{x} \leftrightarrow t = xs\\
+	dt &= x ds
+\end{align}
+Così facendo possiamo riscrivere
+\begin{align}
+	I(x) &= \int_{-i\infty}^{i\infty} ds \; x\cdot \frac{e^{x^2(s^2 - 2s)}}{xs+x} = \nonumber\\
+	&= \int_{-i\infty}^{i\infty} ds \; \frac{e^{x^2(s^2 - 2s)}}{s+1}
+\end{align}
+E quindi otteniamo
+\begin{align}
+	g(t) &= \frac{1}{s+1} \to s_p = -1 \quad \text{polo di ordine 1}\\
+	\phi(s) &= s^2 -2s \firstpassage
+	\dot{\phi}(s) &= 2s -2 \to s_0 = 1 \to \alpha_0 + i\beta_0 = 1 + i\cdot 0 \to \double{\alpha_0 &= 1}{\beta_0 &= 0}
+\end{align}
+In questo caso, scomporre nella forma $z = \alpha + i \beta$ non aiuta, ci conviene invece fare un secondo cambio di variabile
+\begin{align}
+	s &= 1+ i \rho \to ds = id\rho\firstpassage
+	\phi(\rho) &= (1+ i \rho)^2 - 2(1+ i \rho) = 1+2i\rho -\rho^2 -2 -2i\rho = -(1 +\rho^2)\\
+	I(x) &= i\int_{-\infty}^{\infty} d\rho \; \frac{e^{-x^2(1 +\rho^2)}}{1+i\rho+1} = \nonumber\\
+	&= ie^{-x^2}\int_{-\infty}^{\infty} d\rho \; \frac{e^{-x^2\rho^2}}{2+i\rho}
+\end{align}	
+Siccome ci basta il termine Leading, possiamo procedere nel seguente modo
+\begin{align}
+	I(x) &= ie^{-x^2}\int_{-\infty}^{\infty} d\rho \; \frac{e^{-x^2\rho^2}}{2+i\rho} = \nonumber\\
+	&= \frac{i}{2}e^{-x^2}\int_{-\infty}^{\infty} d\rho \; \frac{e^{-x^2\rho^2}}{1+\frac{i}{2}\rho}\sim \frac{e^{\frac{\pi}{2}}e^{-x^2}}{2}\int_{-\infty}^{\infty} d\rho \; e^{-x^2\rho^2} = \frac{e^{\frac{\pi}{2}}e^{-x^2}}{2} \cdot \frac{\sqrt{\pi}}{x}
+\end{align}	
+
