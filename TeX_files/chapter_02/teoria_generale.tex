@@ -228,11 +228,20 @@ Tale inverso prende il nome di \textbf{Operatore risolvente} di $A$ e viene defi
 Se invece $z \notin Res(A)$, allora si dice che esso appartiene allo spettro di $A$.
 Rispetto agli operatori finito-dimensionali questo non implica che $z$ sia autovalore di $A$. Ci troviamo quindi a dividere gli elementi dello spettro in tre categorie:
 \begin{enumerate}
-	\item Lo \textbf{spettro puntuale} $\sigma_p(A)$, ovvero l'insieme degli autovalori di $A$, per i quali quindi esiste un $x \neq 0 \taleche Ax = zx$
+	\item Lo \textbf{spettro puntuale} $\sigma_p(A)$, ovvero l'insieme degli autovalori di $A$
+	\begin{align}
+		 \sigma_p= \{ z \in \C \taleche  z \mathbb{1}\vec{x} = A\vec{x} \; , \vec{x} \neq \vec{0} \} 
+	\end{align}
 	
-	\item Lo \textbf{spettro residuo} $\sigma_\rho(A)$, ovvero l'insieme degli $z\notin \sigma_p(A)$ per i quali $R_z(A)$ non è densamente definito.
+	\item Lo \textbf{spettro residuo} $\sigma_\rho(A)$, ovvero l'insieme degli $z\notin \sigma_p(A)$ per i quali $R_z(A)$ non è densamente definito, il che si traduce in
+	\begin{align}
+		 \sigma_\rho= \{ z \in \C \taleche \exists \vec{\eta} \neq \vec{0} \taleche  (\vec{\eta}, (z\mathbb{1} -A)\vec{x})=\vec{0} \} 
+	\end{align}
+	\item \textbf{Spettro continuo} $\sigma_c(A)$, ovvero l'insieme degli $z\notin \sigma_p(A) \cup \sigma_\rho (A)$  per i quali $R_z(A)$, per quanto densamente definito, non è limitato, ovvero
+	\begin{align}
+		\sigma_c= \{ z \in \C \taleche \exists \{\vec{x}^{(n)}\} \taleche  ||(z\mathbb{1} -A)^{-1}||> M \; \forall M\in \N \} 
+	\end{align}
 	
-	\item \textbf{Spettro continuo} $\sigma_c(A)$, ovvero l'insieme degli $z\notin \sigma_p(A) \cup \sigma_\rho (A)$  per i quali $R_z(A)$, per quanto densamente definito, non è limitato.
 \end{enumerate}
 
 
